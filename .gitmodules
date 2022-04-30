@@ -1,3 +1,6 @@
 [submodule "Tools/Luban"]
 	path = Tools/Luban
 	url = git@github.com:zerohualin/luban_examples.git
+[submodule "Unity/Assets/ThirdParty/BundleMaster"]
+	path = Unity/Assets/ThirdParty/BundleMaster
+	url = git@github.com:zerohualin/BundleMaster.git
