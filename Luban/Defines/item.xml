@@ -1,0 +1,18 @@
+<module name="item">
+
+	<enum name="EItemQuality" comment="道具品质">
+		<var name="WHITE" alias="白" comment="白"/>
+		<var name="GREEN" alias="绿"/>
+		<var name="BLUE" alias="蓝"/>
+		<var name="PURPLE" alias="紫"/>
+		<var name="GOLDEN" alias="金"/>
+	</enum>
+
+	<bean name="Item" comment="道具">
+		<var name="id" type="int" comment="道具id"/>
+		<var name="name" type="string"/>
+		<var name="quality" type="EItemQuality"/>
+	</bean>
+
+	<table name="TbItem" value="Item" input="ZeusDemos/item.xlsx" comment="道具表"/>
+</module>

@@ -12,5 +12,9 @@
             
         }
         
+        public struct LubanDemoStart
+        {
+            
+        }
     }
 }
