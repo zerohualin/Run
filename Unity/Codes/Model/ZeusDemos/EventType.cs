@@ -6,5 +6,11 @@
         {
             public Scene ZoneScene;
         }
+
+        public struct FUIDemoStart
+        {
+            
+        }
+        
     }
 }

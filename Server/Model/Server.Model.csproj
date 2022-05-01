@@ -22,12 +22,36 @@
   </PropertyGroup>
   <ItemGroup>
 
+    <Compile Include="..\..\Unity\Assets\Mono\Luban\ByteBuf.cs">
+      <Link>Module\Luban\ByteBuf.cs</Link>
+    </Compile>
+
     <Compile Include="..\..\Unity\Codes\Model\Core\**\*.cs"> 
       <Link>Core\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </Compile>
 
     <Compile Include="..\..\Unity\Codes\Model\Demo\Unit\UnitType.cs">
       <Link>Demo\Unit\UnitType.cs</Link>
+    </Compile>
+
+    <Compile Include="..\..\Unity\Codes\Model\Module\Luban\BeanBase.cs">
+      <Link>Module\Luban\BeanBase.cs</Link>
+    </Compile>
+
+    <Compile Include="..\..\Unity\Codes\Model\Module\Luban\ConfigUtil.cs">
+      <Link>Module\Luban\ConfigUtil.cs</Link>
+    </Compile>
+
+    <Compile Include="..\..\Unity\Codes\Model\Module\Luban\ITypeId.cs">
+      <Link>Module\Luban\ITypeId.cs</Link>
+    </Compile>
+
+    <Compile Include="..\..\Unity\Codes\Model\Module\Luban\LubanComponent.cs">
+      <Link>Module\Luban\LubanComponent.cs</Link>
+    </Compile>
+
+    <Compile Include="..\..\Unity\Codes\Model\Module\Luban\StringUtil.cs">
+      <Link>Module\Luban\StringUtil.cs</Link>
     </Compile>
 
     <Compile Include="..\..\Unity\Codes\Model\Module\Recast\**\*.cs">

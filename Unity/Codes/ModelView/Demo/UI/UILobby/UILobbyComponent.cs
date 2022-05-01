@@ -1,12 +1,15 @@
-﻿
+﻿using FairyGUI;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace ET
 {
-	public class UILobbyComponent : Entity, IAwake
-	{
-		public GameObject enterMap;
-		public Text text;
-	}
+    [FGUIComponent(Cfg.FGUIType.Lobby)]
+    public class UILobbyComponent : Entity
+    {
+        [FGUIObject]
+        public GButton Btn_EnterMap;
+        [FGUIObject]
+        public GTextField Txt_Title;
+    }
 }

@@ -1,3 +1,6 @@
+using Bright.Serialization;
+using UnityEngine;
+
 namespace ET
 {
     public class AppStart_Init: AEvent<EventType.AppStart>
@@ -12,6 +15,10 @@ namespace ET
             Game.Scene.AddComponent<TimerComponent>();
             Game.Scene.AddComponent<CoroutineLockComponent>();
 
+            // Game.Scene.AddComponent<AddressableComponent>();
+            Game.Scene.AddComponent<LubanComponent>();
+            await LubanComponent.Instance.LoadAsync(ByteBufLoader);
+            
             // 加载配置
             Game.Scene.AddComponent<ResourcesComponent>();
             await ResourcesComponent.Instance.LoadBundleAsync("config.unity3d");
@@ -29,11 +36,16 @@ namespace ET
             Game.Scene.AddComponent<GlobalComponent>();
             Game.Scene.AddComponent<NumericWatcherComponent>();
             Game.Scene.AddComponent<AIDispatcherComponent>();
-            await ResourcesComponent.Instance.LoadBundleAsync("unit.unity3d");
-            
+
             Scene zoneScene = SceneFactory.CreateZoneScene(1, "Game", Game.Scene);
             
             Game.EventSystem.Publish(new EventType.AppStartInitFinish() { ZoneScene = zoneScene });
+        }
+        
+        private ByteBuf ByteBufLoader(string file)
+        {
+            TextAsset config = AddressableComponent.Instance.LoadAssetByPath<TextAsset>(file);
+            return new ByteBuf(config.bytes);
         }
     }
 }

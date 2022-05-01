@@ -28,5 +28,14 @@
             // 通知等待场景切换的协程
             zoneScene.GetComponent<ObjectWait>().Notify(new WaitType.Wait_SceneChangeFinish());
         }
+        
+        // 场景切换协程
+        public static async ETTask PureSceneChangeTo(Scene zoneScene, string sceneName, long sceneInstanceId)
+        {
+            CurrentScenesComponent currentScenesComponent = zoneScene.GetComponent<CurrentScenesComponent>();
+            currentScenesComponent.Scene?.Dispose();
+            Scene currentScene = SceneFactory.CreateCurrentScene(sceneInstanceId, zoneScene.Zone, sceneName, currentScenesComponent);
+            await Game.EventSystem.PublishAsync(new EventType.SceneChangeStart() {ZoneScene = zoneScene});
+        }
     }
 }

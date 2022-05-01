@@ -41,18 +41,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\DelegateState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\StateMachine1.InputBuffer.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\AssemblyInfo.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\StateMachine2.InputBuffer.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\KeyChange.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\StateMachine1.WithDefault.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\StateChange.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\IState.cs" />
      <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\StateMachine1.StateSelector.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\StateChange.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\AssemblyInfo.cs" />
      <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\StateMachine1.cs" />
      <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\StateMachine2.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\DelegateState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\StateMachine2.InputBuffer.cs" />
      <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\StateBehaviour.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\KeyChange.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\StateMachine1.WithDefault.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\StateMachine1.InputBuffer.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Utilities\FSM\IState.cs" />
      <None Include="Assets\Plugins\Animancer\Utilities\FSM\Animancer.FSM.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\Unity 2021.3.0f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -318,6 +318,9 @@
      <Reference Include="Sirenix.Serialization.Config">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.dll</HintPath>
      </Reference>
+     <Reference Include="Animancer.Lite">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Animancer\Internal\Core\Animancer.Lite.dll</HintPath>
+     </Reference>
      <Reference Include="Sirenix.Utilities">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.dll</HintPath>
      </Reference>
@@ -332,9 +335,6 @@
      </Reference>
      <Reference Include="Sirenix.Utilities.Editor">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Animancer.Lite">
-     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Animancer\Internal\Core\Animancer.Lite.dll</HintPath>
      </Reference>
      <Reference Include="mscorlib">
      <HintPath>C:\Program Files\Unity\Hub\Editor\Unity 2021.3.0f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\mscorlib.dll</HintPath>

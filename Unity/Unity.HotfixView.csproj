@@ -50,6 +50,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Codes\HotfixView\**\*.cs" />
+    <Reference Include="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>Temp\Bin\Debug\Unity.Addressables.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>Temp\Bin\Debug\Unity.ResourceManager.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>./Temp/bin/Debug/UnityEngine.dll</HintPath>
     </Reference>
@@ -592,6 +598,10 @@
     <ProjectReference Include="..\Tools\Analyzer\Analyzer.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false">
       <Project>{d1f2986b-b296-4a2d-8f12-be9f470014c3}</Project>
       <Name>Analyzer</Name>
+    </ProjectReference>
+    <ProjectReference Include="BundleMasterRuntime.csproj">
+      <Project>{2c3f40f9-4a6f-5879-c24e-09b76ab27820}</Project>
+      <Name>BundleMasterRuntime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Hotfix.csproj">
       <Project>{52f66610-896a-c4d1-9881-1a19df7ab80e}</Project>
