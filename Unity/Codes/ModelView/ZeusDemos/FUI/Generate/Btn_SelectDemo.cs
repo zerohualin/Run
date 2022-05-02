@@ -3,7 +3,7 @@
 using FairyGUI;
 namespace ET
 {
-    public sealed class Btn_SelectDemo : Entity, IFGUIComponent
+    public sealed partial class Btn_SelectDemo : Entity, IFGUIComponent
     {
         public const string UIPackageName = "ZeusDemos";
         public const string UIResName = "Btn_SelectDemo";

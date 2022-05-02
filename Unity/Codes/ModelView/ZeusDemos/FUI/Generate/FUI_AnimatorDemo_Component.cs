@@ -4,7 +4,7 @@ using FairyGUI;
 namespace ET
 {
     [FGUIComponent(Cfg.FGUIType.AnimatorDemo)]
-    public sealed class FUI_AnimatorDemo_Component : Entity, IFGUIComponent
+    public sealed partial class FUI_AnimatorDemo_Component : Entity, IFGUIComponent
     {
         public const string UIPackageName = "ZeusDemos";
         public const string UIResName = "FUI_AnimatorDemo_Component";

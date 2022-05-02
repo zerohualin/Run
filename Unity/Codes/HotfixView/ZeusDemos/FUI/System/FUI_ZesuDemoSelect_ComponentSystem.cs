@@ -9,7 +9,7 @@ namespace ET
         {
             Log.Error("I Select SelectDemo !!!");
             FGUIComponent.Instance.Close(FGUIType.ZesuDemoSelect);
-            FGUIComponent.Instance.OpenAysnc(FGUIType.AnimatorDemo).Coroutine();
+            FGUIComponent.Instance.OpenAysnc(FGUIType.BattleDemo).Coroutine();
         }
     }
 

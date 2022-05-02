@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <component id="n0_trm4" name="Btn_StartBattle" src="v3w91" fileName="Btn_SelectDemo.xml" xy="1641,876"/>
+  </displayList>
+</component>

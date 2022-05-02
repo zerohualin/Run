@@ -4,6 +4,7 @@
     <component id="v3w90" name="FUI_ZesuDemoSelect_Component.xml" path="/" exported="true"/>
     <component id="v3w91" name="Btn_SelectDemo.xml" path="/" exported="true"/>
     <component id="gerh2" name="FUI_AnimatorDemo_Component.xml" path="/" exported="true"/>
+    <component id="trm43" name="FUI_BattleDemo_Component.xml" path="/" exported="true"/>
   </resources>
   <publish name="ZeusDemos" genCode="true"/>
 </packageDescription>

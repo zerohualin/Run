@@ -39,5 +39,9 @@ namespace Cfg
         /// 6
         /// </summary>
         AnimatorDemo = 6,
+        /// <summary>
+        /// 7
+        /// </summary>
+        BattleDemo = 7,
     }
 }

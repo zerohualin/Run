@@ -118,7 +118,7 @@ local function generateClass()
             enumName = string.gsub(enumName, "FUI_", "")
             writer:writeln('[FGUIComponent(Cfg.FGUIType.%s)]', enumName)
         end
-        writer:writeln('public sealed class %s : Entity, IFGUIComponent', classInfo.className)
+        writer:writeln('public sealed partial class %s : Entity, IFGUIComponent', classInfo.className)
         writer:startBlock()
             writer:writeln('public const string UIPackageName = "%s";', codePkgName)
             writer:writeln('public const string UIResName = "%s";', classInfo.resName)

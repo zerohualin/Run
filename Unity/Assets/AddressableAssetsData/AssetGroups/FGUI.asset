@@ -41,8 +41,8 @@ MonoBehaviour:
     m_Address: UILogin_fui
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 7afb243c8518df44487b3be81767b8ed
-    m_Address: ZesuDemos_fui
+  - m_GUID: 1b1a25a3dca4d5e4cac346263268760f
+    m_Address: ZeusDemos_fui
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
