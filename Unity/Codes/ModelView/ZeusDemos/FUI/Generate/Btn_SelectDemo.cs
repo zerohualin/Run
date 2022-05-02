@@ -3,9 +3,9 @@
 using FairyGUI;
 namespace ET
 {
-    public sealed class Btn_SelectDemo : Entity, IFGUIComponent, IAwake<GObject>
+    public sealed class Btn_SelectDemo : Entity, IFGUIComponent
     {
-        public const string UIPackageName = "ZesuDemos";
+        public const string UIPackageName = "ZeusDemos";
         public const string UIResName = "Btn_SelectDemo";
         public const string URL = "ui://4gaby71ov3w91";
 

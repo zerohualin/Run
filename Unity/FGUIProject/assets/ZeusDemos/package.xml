@@ -5,5 +5,5 @@
     <component id="v3w91" name="Btn_SelectDemo.xml" path="/" exported="true"/>
     <component id="gerh2" name="FUI_AnimatorDemo_Component.xml" path="/" exported="true"/>
   </resources>
-  <publish name="ZesuDemos" genCode="true"/>
+  <publish name="ZeusDemos" genCode="true"/>
 </packageDescription>

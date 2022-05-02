@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ET
 {
-    public static partial class FUI_ZesuDemoSelect_ComponentSystem
+    public static class FUI_ZesuDemoSelect_ComponentSystem
     {
         public static void SelectDemo(this FUI_ZesuDemoSelect_Component self)
         {
@@ -18,10 +18,10 @@ namespace ET
     [FriendClass(typeof (Btn_SelectDemo))]
     public class FUI_ZesuDemoSelect_ComponentEvent: FGUIEvent<FUI_ZesuDemoSelect_Component>
     {
-        public override void OnCreate(FUI_ZesuDemoSelect_Component self)
+        public override void OnCreate(FUI_ZesuDemoSelect_Component component)
         {
-            FGUIHelper.AddButtonListener(self.Btn_SelectDemo.self, self.SelectDemo);
-            self.Txt_TestTitle.text = "这个是测试用的";
+            component.Btn_SelectDemo.self.AddListener(component.SelectDemo);
+            component.Txt_TestTitle.text = "这个是测试用的";
         }
 
         public override void OnShow(FUI_ZesuDemoSelect_Component self)

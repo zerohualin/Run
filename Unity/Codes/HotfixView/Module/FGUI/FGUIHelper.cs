@@ -79,6 +79,11 @@ namespace ET
             button.onClick.Add(() => action?.Invoke());
         }
 
+        public static void AddListener(this GButton self, Action action)
+        {
+            self.onClick.Add(() => action?.Invoke());
+        }
+
         public static ETTask<GObject> CreateObjectAsync(string pkgName, string resName)
         {
             ETTask<GObject> tcs = ETTask<GObject>.Create(true);
