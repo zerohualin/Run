@@ -31,5 +31,13 @@ namespace Cfg
         /// 4
         /// </summary>
         Lobby = 4,
+        /// <summary>
+        /// 5
+        /// </summary>
+        ZesuDemoSelect = 5,
+        /// <summary>
+        /// 6
+        /// </summary>
+        AnimatorDemo = 6,
     }
 }

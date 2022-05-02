@@ -1,0 +1,11 @@
+{
+  "name": "ZesuFUI",
+  "displayName": "宙斯FairyUI",
+  "description": "参考烟雨为宝雨接入的FUI提供自动生成代码，并符合ET新版本对代码的限制。包括不能二次继承Entity以及Model代码不包含任何逻辑。",
+  "version": "1.0",
+  "author": {
+    "name": "Hualin"
+  },
+  "icon": "",
+  "main": "main.lua"
+}

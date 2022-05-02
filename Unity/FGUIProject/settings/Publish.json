@@ -9,10 +9,10 @@
   "compressPNG": false,
   "codeGeneration": {
     "allowGenCode": true,
-    "codePath": "../Assets/HotfixView/FGUI",
-    "classNamePrefix": "UI_",
-    "memberNamePrefix": "m_",
-    "packageName": null,
+    "codePath": "../Codes",
+    "classNamePrefix": "",
+    "memberNamePrefix": "",
+    "packageName": "ET",
     "ignoreNoname": true,
     "getMemberByName": false,
     "codeType": ""

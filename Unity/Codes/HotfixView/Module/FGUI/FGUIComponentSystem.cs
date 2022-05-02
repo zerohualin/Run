@@ -11,21 +11,22 @@ using UnityEngine.AddressableAssets;
 
 namespace ET
 {
-    public class FGUIAwakeSystem : AwakeSystem<FGUIComponent>
+    public class FGUIAwakeSystem: AwakeSystem<FGUIComponent>
     {
         public override void Awake(FGUIComponent self)
         {
-            if(FGUIComponent.Instance != null)
+            if (FGUIComponent.Instance != null)
             {
                 Debug.LogError($"已创建过{self.GetType().Name}的实例");
                 return;
             }
+
             FGUIComponent.Instance = self;
 
-            var fguiTypes = Game.EventSystem.GetTypes(typeof(FGUIComponentAttribute));
+            var fguiTypes = Game.EventSystem.GetTypes(typeof (FGUIComponentAttribute));
             foreach (Type type in fguiTypes)
             {
-                object[] attrs = type.GetCustomAttributes(typeof(FGUIComponentAttribute), false);
+                object[] attrs = type.GetCustomAttributes(typeof (FGUIComponentAttribute), false);
                 if (attrs.Length == 0)
                 {
                     continue;
@@ -36,28 +37,26 @@ namespace ET
             }
         }
     }
-    
-    public class FGUIDestroySystem : DestroySystem<FGUIComponent>
+
+    public class FGUIDestroySystem: DestroySystem<FGUIComponent>
     {
         public override void Destroy(FGUIComponent self)
         {
             FGUIComponent.Instance = null;
-
         }
     }
-    
-    [FriendClass(typeof(FGUIComponent))]
+
+    [FriendClass(typeof (FGUIComponent))]
     public static class FGUIComponentSystem
     {
         public static async void OnLoadResourceFinished(string name, string extension, System.Type type, PackageItem item)
         {
             Debug.Log($"{name}, {extension}, {type.ToString()}, {item.ToString()}");
 
-            if (type == typeof(Texture))
+            if (type == typeof (Texture))
             {
                 Texture t = await Addressables.LoadAssetAsync<Texture>(name).Task;
                 item.owner.SetItemAsset(item, t, DestroyMethod.Custom);
-
             }
         }
 
@@ -67,12 +66,14 @@ namespace ET
             {
                 return;
             }
+
             TextAsset desc = await AddressableComponent.Instance.LoadAssetByPathAsync<TextAsset>("ABaseComponents_fui");
             UIPackage.AddPackage(desc.bytes, "ABaseComponents", OnLoadResourceFinished);
             self.InitializedBasePackages = true;
             await Task.CompletedTask;
         }
-        public static async ETTask OpenAysnc(this FGUIComponent self,FGUIType uiType)
+
+        public static async ETTask OpenAysnc(this FGUIComponent self, FGUIType uiType)
         {
             try
             {
@@ -80,20 +81,13 @@ namespace ET
                 if (self.UIDict.ContainsKey(uiType))
                 {
                     entity = self.UIDict[uiType];
-                    GRoot.inst.AddChild(entity.GObject);//显示到最上层
+                    GRoot.inst.AddChild(entity.GObject); //显示到最上层
                     self.Event.OnRefresh(entity);
                     return;
                 }
+
                 await self.InitBasePackage();
 
-                FguiConfig config = ConfigUtil.Tables.TbFguiConfig.Get(uiType);
-                await AddressableComponent.Instance.AddFGUIPackageAsync(config.Path);
-                GComponent gCom = null;
-                GObject go = await FGUIHelper.CreateObjectAsync(config.PackageName, config.ComponentName);
-                gCom = go as GComponent;
-                gCom.sortingOrder = (int)config.Layer * 100;
-                gCom.displayObject.name = config.ComponentName;
-                GRoot.inst.AddChild(gCom);
                 if (!self.TypeDict.TryGetValue(uiType, out Type type))
                 {
                     type = self.TypeDict[FGUIType.Default];
@@ -102,14 +96,28 @@ namespace ET
                         Log.Error("没有定义好Default作为Fallback");
                     }
                 }
+
                 entity = self.AddChild<FGUIEntity, Type, FGUIType>(type, uiType);
                 Entity component = entity.AddComponent(type);
                 if (component == null)
                 {
                     Log.Error($"打开UI错误，类型为空: {type.Name}");
                 }
+
+                var fuiCom = entity.UIComponent as IFGUIComponent;
+
+                FguiConfig config = ConfigUtil.Tables.TbFguiConfig.Get(uiType);
+                await AddressableComponent.Instance.AddFGUIPackageAsync(fuiCom.GetAddressablePath());
+                GComponent gCom = null;
+                GObject go = await FGUIHelper.CreateObjectAsync(fuiCom.GetPackageName(), fuiCom.GetComponentName());
+                gCom = go as GComponent;
+                gCom.sortingOrder = (int)config.Layer * 100;
+                gCom.displayObject.name = fuiCom.GetComponentName();
+                GRoot.inst.AddChild(gCom);
                 entity.AddComponent<GObjectComponent, GObject>(gCom);
+
                 FGUIHelper.BindRoot(type, component, gCom);
+
                 self.Event.OnCreate(entity);
                 self.Event.OnShow(entity);
                 self.UIDict.Add(uiType, entity);
@@ -120,7 +128,7 @@ namespace ET
             }
         }
 
-        public static void Close(this FGUIComponent self,FGUIType uiType)
+        public static void Close(this FGUIComponent self, FGUIType uiType)
         {
             try
             {

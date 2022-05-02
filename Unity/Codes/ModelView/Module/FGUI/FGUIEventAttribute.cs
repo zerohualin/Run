@@ -19,6 +19,20 @@ namespace ET
     { 
 
     }
+    
+    [AttributeUsage(AttributeTargets.Field)]
+    public class FGUISelfObjectAttribute : BaseAttribute
+    { 
+
+    }
+
+    
+    [AttributeUsage(AttributeTargets.Field)]
+    public class FGUICustomComAttribute : BaseAttribute
+    { 
+
+    }
+    
     [AttributeUsage(AttributeTargets.Class)]
     public class FGUIComponentAttribute : BaseAttribute
     {

@@ -16,4 +16,3 @@ namespace ET
         public FGUIEventComponent Event => Parent.GetComponent<FGUIEventComponent>();
     }
 }
-

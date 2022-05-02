@@ -33,6 +33,10 @@ MonoBehaviour:
     m_Address: demo_tbunitmeta
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: fac556b3a8550a7419add8d9b3bf1e6b
+    m_Address: item_tbitem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a89af19382b7a7c419e37936dfa2edeb, type: 2}
   m_SchemaSet:

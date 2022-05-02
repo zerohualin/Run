@@ -6,8 +6,7 @@ namespace ET
     {
         protected override async ETTask Run(EventType.FUIDemoStart args)
         {
-            await FGUIComponent.Instance.OpenAysnc(FGUIType.Lobby);
-            // FGUIComponent.Instance.Close(FGUIType.Lobby);
+            await FGUIComponent.Instance.OpenAysnc(FGUIType.ZesuDemoSelect);
             // FGUIComponent.Instance.Close(FGUIType.Background);
         }
     }
