@@ -2,7 +2,9 @@
 <component size="200,80" pivot="0.5,0.5" extention="Button">
   <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
   <displayList>
-    <graph id="n4_axd6" name="Bg" xy="0,-1" size="200,81" type="rect"/>
+    <graph id="n4_axd6" name="Bg" xy="0,-1" size="200,81" type="rect">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
     <text id="n3_v3w9" name="Txt_Title" xy="0,0" size="200,80" fontSize="33" align="center" vAlign="middle" autoSize="none" text="选择Demo">
       <relation target="" sidePair="width-width,height-height"/>
     </text>

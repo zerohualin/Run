@@ -1,5 +1,4 @@
-﻿using System;
-using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson.Serialization.Attributes;
 using UnityEngine;
 
 namespace ET
@@ -7,6 +6,11 @@ namespace ET
     public class Unit: Entity, IAwake<int>
     {
         public int ConfigId; //配置表id
+        
+        /// <summary>
+        /// 归属的房间
+        /// </summary>
+        public Room BelongToRoom;
 
         [BsonIgnore]
         public UnitConfig Config => UnitConfigCategory.Instance.Get(this.ConfigId);

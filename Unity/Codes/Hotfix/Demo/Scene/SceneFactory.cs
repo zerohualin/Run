@@ -1,6 +1,6 @@
 namespace ET
 {
-    public static class SceneFactory
+    public static partial class SceneFactory
     {
         public static Scene CreateZoneScene(int zone, string name, Entity parent)
         {
@@ -19,11 +19,8 @@ namespace ET
         {
             Scene currentScene = EntitySceneFactory.CreateScene(id, IdGenerater.Instance.GenerateInstanceId(), zone, SceneType.Current, name, currentScenesComponent);
             currentScenesComponent.Scene = currentScene;
-            
             Game.EventSystem.Publish(new EventType.AfterCreateCurrentScene() {CurrentScene = currentScene});
             return currentScene;
         }
-        
-        
     }
 }

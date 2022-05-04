@@ -6,15 +6,17 @@
         {
             public Scene ZoneScene;
         }
-
-        public struct FUIDemoStart
-        {
-            
-        }
         
         public struct LubanDemoStart
         {
             
+        }
+        
+        public struct AfterUnitCreate_CreateGo
+        {
+            public int HeroConfigId;
+            public Unit Unit;
+            public bool IsLocalPlayer;
         }
     }
 }

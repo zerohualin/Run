@@ -8,6 +8,5 @@ namespace ET
         
         public Transform Global { get; set; }
         public Transform Unit { get; set; }
-        public Transform UI { get; set; }
     }
 }

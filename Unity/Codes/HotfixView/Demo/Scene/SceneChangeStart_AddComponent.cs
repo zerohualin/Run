@@ -27,8 +27,7 @@ namespace ET
             {
                 sceneChangeComponent?.Dispose();
             }
-			
-
+            
             currentScene.AddComponent<OperaComponent>();
         }
     }

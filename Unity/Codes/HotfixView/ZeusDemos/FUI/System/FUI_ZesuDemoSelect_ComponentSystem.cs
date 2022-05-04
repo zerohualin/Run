@@ -7,9 +7,9 @@ namespace ET
     {
         public static void SelectDemo(this FUI_ZesuDemoSelect_Component self)
         {
-            Log.Error("I Select SelectDemo !!!");
-            FGUIComponent.Instance.Close(FGUIType.ZesuDemoSelect);
-            FGUIComponent.Instance.OpenAysnc(FGUIType.BattleDemo).Coroutine();
+            // Log.Error("I Select SelectDemo !!!");
+            // FGUIComponent.Instance.Close(FGUIType.ZesuDemoSelect);
+            // FGUIComponent.Instance.OpenAysnc(FGUIType.BattleDemo).Coroutine();
         }
     }
 
@@ -21,7 +21,6 @@ namespace ET
         public override void OnCreate(FUI_ZesuDemoSelect_Component component)
         {
             component.Btn_SelectDemo.self.AddListener(component.SelectDemo);
-            component.Txt_TestTitle.text = "这个是测试用的";
         }
 
         public override void OnShow(FUI_ZesuDemoSelect_Component self)

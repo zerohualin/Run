@@ -3,8 +3,8 @@
     "rootNamespace": "",
     "references": [
         "Unity.ThirdParty",
-        "BundleMasterRuntime",
-        "Unity.Addressables"
+        "Unity.Addressables",
+        "Unity.RenderPipelines.Universal.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

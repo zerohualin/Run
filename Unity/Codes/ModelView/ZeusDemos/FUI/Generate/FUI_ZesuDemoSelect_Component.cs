@@ -21,7 +21,5 @@ namespace ET
 
         [FGUICustomCom]
         public Btn_SelectDemo Btn_SelectDemo;
-        [FGUIObject]
-        public GTextField Txt_TestTitle;
     }
 }

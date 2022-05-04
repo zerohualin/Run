@@ -50,8 +50,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Codes\HotfixView\**\*.cs" />
+    <Reference Include="Animancer.Lite, Version=7.2.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>Assets\Plugins\Animancer\Internal\Core\Animancer.Lite.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>Temp\Bin\Debug\Unity.Addressables.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>Temp\Bin\Debug\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>Temp\Bin\Debug\Unity.ResourceManager.dll</HintPath>
@@ -599,9 +605,9 @@
       <Project>{d1f2986b-b296-4a2d-8f12-be9f470014c3}</Project>
       <Name>Analyzer</Name>
     </ProjectReference>
-    <ProjectReference Include="BundleMasterRuntime.csproj">
-      <Project>{2c3f40f9-4a6f-5879-c24e-09b76ab27820}</Project>
-      <Name>BundleMasterRuntime</Name>
+    <ProjectReference Include="Animancer.csproj">
+      <Project>{159e65f6-d363-1a6d-ec57-6db30da1b98f}</Project>
+      <Name>Animancer</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Hotfix.csproj">
       <Project>{52f66610-896a-c4d1-9881-1a19df7ab80e}</Project>

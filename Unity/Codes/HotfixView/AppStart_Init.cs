@@ -37,9 +37,10 @@ namespace ET
             Game.Scene.AddComponent<NumericWatcherComponent>();
             Game.Scene.AddComponent<AIDispatcherComponent>();
 
-            Scene zoneScene = SceneFactory.CreateZoneScene(1, "Game", Game.Scene);
-            
-            Game.EventSystem.Publish(new EventType.AppStartInitFinish() { ZoneScene = zoneScene });
+            // Scene zoneScene = SceneFactory.CreateZoneScene(1, "Game", Game.Scene);
+            Scene zoneScene = await SceneFactory.CreateMarsZoneSceneAsync(0, "MarsDemo", Game.Scene);
+
+            Game.EventSystem.PublishAsync(new EventType.AppStartInitFinish() { ZoneScene = zoneScene }).Coroutine();
         }
         
         private ByteBuf ByteBufLoader(string file)
