@@ -14,7 +14,7 @@ namespace ET
     /// <summary>
     /// Box2D的碰撞体可视化Debugger组件
     /// </summary>
-    public class B2S_DebuggerComponent : Entity
+    public class B2S_DebuggerComponent : Entity, IAwake, ILateUpdate
     {
         public Dictionary<Unit, B2S_DebuggerProcessor> AllLinerRendersDic =
             new Dictionary<Unit, B2S_DebuggerProcessor>();

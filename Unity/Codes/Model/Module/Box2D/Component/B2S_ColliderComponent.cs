@@ -5,6 +5,7 @@
 //------------------------------------------------------------
 
 using Box2DSharp.Dynamics;
+using UnityEngine;
 
 namespace ET
 {
@@ -12,7 +13,7 @@ namespace ET
     /// 一个碰撞体Component,包含一个碰撞实例所有信息，直接挂载到碰撞体Unit上
     /// 比如诺手Q技能碰撞体UnitA，那么这个B2S_ColliderComponent的Entity就是UnitA，而其中的BelongToUnit就是诺手
     /// </summary>
-    public class B2S_ColliderComponent: Entity
+    public class B2S_ColliderComponent: Entity, IAwake<CreateSkillColliderArgs>, ILateUpdate, IDestroy, IAwake<CreateHeroColliderArgs>
     {
         public B2S_WorldComponent WorldComponent;
 

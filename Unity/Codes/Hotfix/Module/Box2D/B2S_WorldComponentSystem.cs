@@ -4,6 +4,7 @@ using Box2DSharp.Dynamics;
 namespace ET
 {
     [FriendClass(typeof (B2S_WorldComponent))]
+    [ObjectSystem]
     public class B2S_WorldComponentAwakeSystem: AwakeSystem<B2S_WorldComponent>
     {
         public override void Awake(B2S_WorldComponent self)
@@ -13,6 +14,7 @@ namespace ET
     }
 
     [FriendClass(typeof (B2S_WorldComponent))]
+    [ObjectSystem]
     public static class B2S_WorldComponentSystem
     {
         public static void AddBodyTobeDestroyed(this B2S_WorldComponent self, Body body)

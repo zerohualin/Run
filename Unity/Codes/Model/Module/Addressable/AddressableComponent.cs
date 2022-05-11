@@ -1,6 +1,6 @@
 ﻿namespace ET
 {
-    public class AddressableComponent: Entity, IAwake
+    public class AddressableComponent : Entity, IAwake
     {
         public static AddressableComponent Instance { get; set; }
         public bool initialize = false;

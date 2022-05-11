@@ -12,6 +12,8 @@ namespace ET
         
         private async ETTask RunAsync(EventType.AppStart args)
         {
+            MongoRegister.Init();
+            
             Game.Scene.AddComponent<TimerComponent>();
             Game.Scene.AddComponent<CoroutineLockComponent>();
 

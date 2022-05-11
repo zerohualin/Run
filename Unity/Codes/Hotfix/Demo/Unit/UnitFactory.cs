@@ -2,8 +2,19 @@
 
 namespace ET
 {
+	[FriendClass(typeof(Unit))]
     public static class UnitFactory
     {
+	    public static Unit CreateUnit(Room room, long id, int configId)
+	    {
+		    UnitComponent unitComponent = room.GetComponent<UnitComponent>();
+		    Unit unit = unitComponent.AddChildWithId<Unit, int>(id, configId);
+		    unit.BelongToRoom = room;
+		    unitComponent.Add(unit);
+		    return unit;
+	    }
+	    
+	    
         public static Unit Create(Scene currentScene, UnitInfo unitInfo)
         {
 	        UnitComponent unitComponent = currentScene.GetComponent<UnitComponent>();

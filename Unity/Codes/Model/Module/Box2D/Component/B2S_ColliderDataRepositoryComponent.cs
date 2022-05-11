@@ -20,7 +20,7 @@ namespace ET
 #if SERVER
                 private string colliderDataPath = "../Config/ColliderDatas/";
 #endif
-        private List<string> colliderDataName = new List<string>() {"BoxColliderData", "CircleColliderData", "PolygonColliderData"};
+        public List<string> colliderDataName = new List<string>() {"BoxColliderData", "CircleColliderData", "PolygonColliderData"};
 
         public ColliderDataSupporter BoxColliderDatas = new ColliderDataSupporter();
         public ColliderDataSupporter CircleColliderDatas = new ColliderDataSupporter();

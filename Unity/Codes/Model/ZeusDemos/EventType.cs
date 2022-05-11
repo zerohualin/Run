@@ -12,6 +12,11 @@
             
         }
         
+        public struct FSMStateChanged_PlayAnim
+        {
+            public Unit Unit;
+        }
+        
         public struct AfterUnitCreate_CreateGo
         {
             public int HeroConfigId;

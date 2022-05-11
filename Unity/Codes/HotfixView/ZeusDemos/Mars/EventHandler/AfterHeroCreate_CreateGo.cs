@@ -8,6 +8,7 @@ namespace ET
         {
             GameObjectComponent gameObjectComponent = args.Unit.AddComponent<GameObjectComponent, string>("Rick");
             args.Unit.AddComponent<AnimationComponent>();
+            args.Unit.AddComponent<B2S_DebuggerComponent>();
         }
     }
 }
