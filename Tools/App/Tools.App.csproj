@@ -33,6 +33,9 @@
         <Compile Include="..\..\Unity\Assets\Mono\Luban\ByteBuf.cs">
           <Link>Module\Luban\ByteBuf.cs</Link>
         </Compile>
+        <Compile Include="..\..\Unity\Assets\Mono\Module\Mongodb\StructBsonSerialize.cs">
+          <Link>StructBsonSerialize.cs</Link>
+        </Compile>
         <Compile Include="..\..\Unity\Codes\Model\Core\**\*.cs">
             <Link>Core\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>

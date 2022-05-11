@@ -48,7 +48,11 @@
     <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
-  <ItemGroup><Compile Include="Codes\Hotfix\**\*.cs" />
+  <ItemGroup><Compile Include="Codes\Hotfix\**\*.cs" /><Reference Include="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+  <HintPath>Temp\Bin\Debug\Unity.Addressables.dll</HintPath>
+</Reference><Reference Include="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+  <HintPath>Temp\Bin\Debug\Unity.ResourceManager.dll</HintPath>
+</Reference>
  <Reference Include="UnityEngine">
  <HintPath>./Temp/bin/Debug/UnityEngine.dll</HintPath>
  </Reference>

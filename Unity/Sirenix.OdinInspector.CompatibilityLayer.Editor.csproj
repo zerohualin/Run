@@ -306,6 +306,9 @@
      <Reference Include="UnityEditor.WindowsStandalone.Extensions">
      <HintPath>C:\Program Files\Unity\Hub\Editor\Unity 2021.3.0f1c1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
      </Reference>
+     <Reference Include="MonKey Core">
+     <HintPath>C:\101_Dream\Run\Unity\Packages\MonKey Commander\Plugins\MonKey Core.dll</HintPath>
+     </Reference>
      <Reference Include="Sirenix.OdinInspector.Editor">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.dll</HintPath>
      </Reference>
@@ -333,11 +336,14 @@
      <Reference Include="Animancer.Lite">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Animancer\Internal\Core\Animancer.Lite.dll</HintPath>
      </Reference>
-     <Reference Include="Sirenix.Utilities">
-     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.dll</HintPath>
+     <Reference Include="MonKey Commander">
+     <HintPath>C:\101_Dream\Run\Unity\Packages\MonKey Commander\Editor\Libs\MonKey Commander.dll</HintPath>
      </Reference>
      <Reference Include="System.Runtime.CompilerServices.Unsafe">
      <HintPath>C:\101_Dream\Run\Unity\Assets\ThirdParty\Box2D\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+     </Reference>
+     <Reference Include="Sirenix.Utilities">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.dll</HintPath>
      </Reference>
      <Reference Include="ICSharpCode.SharpZipLib">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>

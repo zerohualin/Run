@@ -17,7 +17,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.ModelView</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
   </PropertyGroup>
@@ -628,6 +628,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Codes\ModelView\Module\Animator" />
+    <Folder Include="Codes\ModelView\Module\Box2D" />
     <Folder Include="Codes\ModelView\ZeusDemos\FUI\Generate" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -26,6 +26,14 @@
       <Link>Module\Luban\ByteBuf.cs</Link>
     </Compile>
 
+    <Compile Include="..\..\Unity\Assets\Mono\Module\Mongodb\StructBsonSerialize.cs">
+      <Link>Base\StructBsonSerialize.cs</Link>
+    </Compile>
+
+    <Compile Include="..\..\Unity\Codes\Hotfix\Module\Mongodb\MongoRegister.cs">
+      <Link>Base\MongoRegister.cs</Link>
+    </Compile>
+
     <Compile Include="..\..\Unity\Codes\Model\Core\**\*.cs"> 
       <Link>Core\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </Compile>

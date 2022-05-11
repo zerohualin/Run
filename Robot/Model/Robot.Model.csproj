@@ -28,14 +28,59 @@
         <Compile Include="..\..\Server\Model\Base\MongoRegister.cs">
           <Link>Base\MongoRegister.cs</Link>
         </Compile>
-        <Compile Include="..\..\Server\Model\Base\StructBsonSerialize.cs">
-          <Link>Base\StructBsonSerialize.cs</Link>
-        </Compile>
         <Compile Include="..\..\Server\Model\Config\ConfigLoader.cs">
           <Link>Config\ConfigLoader.cs</Link>
         </Compile>
         <Compile Include="..\..\Unity\Assets\Mono\Luban\ByteBuf.cs">
           <Link>Module\Luban\ByteBuf.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Box2D\CollisionHandler\AB2S_CollisionHandler.cs">
+          <Link>Module\Box2D\CollisionHandler\AB2S_CollisionHandler.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Box2D\CollisionHandler\B2S_CollisionDispatcherComponent.cs">
+          <Link>Module\Box2D\CollisionHandler\B2S_CollisionDispatcherComponent.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Box2D\CollisionRelations\B2S_AllCollideableObject.cs">
+          <Link>Module\Box2D\CollisionRelations\B2S_AllCollideableObject.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Box2D\CollisionRelations\B2S_CollisionInstance.cs">
+          <Link>Module\Box2D\CollisionRelations\B2S_CollisionInstance.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Box2D\CollisionRelations\B2S_CollisionRelationSupport.cs">
+          <Link>Module\Box2D\CollisionRelations\B2S_CollisionRelationSupport.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Box2D\Component\B2S_ColliderComponent.cs">
+          <Link>Module\Box2D\Component\B2S_ColliderComponent.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Box2D\Component\B2S_ColliderDataRepositoryComponent.cs">
+          <Link>Module\Box2D\Component\B2S_ColliderDataRepositoryComponent.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Box2D\Component\B2S_CollisionListenerComponent.cs">
+          <Link>Module\Box2D\Component\B2S_CollisionListenerComponent.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Box2D\Component\B2S_RoleCastComponent.cs">
+          <Link>Module\Box2D\Component\B2S_RoleCastComponent.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Box2D\Component\B2S_WorldColliderManagerComponent.cs">
+          <Link>Module\Box2D\Component\B2S_WorldColliderManagerComponent.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Box2D\Component\B2S_WorldComponent.cs">
+          <Link>Module\Box2D\Component\B2S_WorldComponent.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Box2D\DataStructure\B2S_BoxColliderDataStructure.cs">
+          <Link>Module\Box2D\DataStructure\B2S_BoxColliderDataStructure.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Box2D\DataStructure\B2S_CircleColliderDataStructure.cs">
+          <Link>Module\Box2D\DataStructure\B2S_CircleColliderDataStructure.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Box2D\DataStructure\B2S_ColliderDataStructureBase.cs">
+          <Link>Module\Box2D\DataStructure\B2S_ColliderDataStructureBase.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Box2D\DataStructure\B2S_DataSupporter.cs">
+          <Link>Module\Box2D\DataStructure\B2S_DataSupporter.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Box2D\DataStructure\B2S_PolygonColliderDataStructure.cs">
+          <Link>Module\Box2D\DataStructure\B2S_PolygonColliderDataStructure.cs</Link>
         </Compile>
         <Compile Include="..\..\Unity\Codes\Model\Module\Config\**\*.cs">
             <Link>Module\Config\%(RecursiveDir)%(FileName)%(Extension)</Link>
@@ -140,12 +185,93 @@
         <Compile Include="..\..\Server\Model\Module\Console\**\*.cs">
             <Link>Module\Console\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
+
+        <Compile Include="..\..\Unity\Codes\Model\ZeusDemos\EventType.cs">
+          <Link>ZeusDemos\EventType.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Codes\Model\ZeusDemos\Mars\Attrribute\BsonDeserializerRegisterAttribute.cs">
+          <Link>ZeusDemos\Mars\Attrribute\BsonDeserializerRegisterAttribute.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Codes\Model\ZeusDemos\Mars\Battle\Room\Room.cs">
+          <Link>ZeusDemos\Mars\Battle\Room\Room.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Codes\Model\ZeusDemos\Mars\Battle\Room\RoomManagerComponent.cs">
+          <Link>ZeusDemos\Mars\Battle\Room\RoomManagerComponent.cs</Link>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\..\ThirdParty\ETTask\ETTask.csproj" />
       <ProjectReference Include="..\..\ThirdParty\ShareLib\ShareLib.csproj" />
       <ProjectReference Include="..\..\ThirdParty\UnityEngine\UnityEngine.csproj" />
       <ProjectReference Include="..\..\Tools\Analyzer\Analyzer.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\CollisionHandler.meta">
+        <Link>Module\Box2D\CollisionHandler.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\CollisionHandler\AB2S_CollisionHandler.cs.meta">
+        <Link>Module\Box2D\CollisionHandler\AB2S_CollisionHandler.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\CollisionHandler\B2S_CollisionDispatcherComponent.cs.meta">
+        <Link>Module\Box2D\CollisionHandler\B2S_CollisionDispatcherComponent.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\CollisionRelations.meta">
+        <Link>Module\Box2D\CollisionRelations.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\CollisionRelations\B2S_AllCollideableObject.cs.meta">
+        <Link>Module\Box2D\CollisionRelations\B2S_AllCollideableObject.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\CollisionRelations\B2S_CollisionInstance.cs.meta">
+        <Link>Module\Box2D\CollisionRelations\B2S_CollisionInstance.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\CollisionRelations\B2S_CollisionRelationSupport.cs.meta">
+        <Link>Module\Box2D\CollisionRelations\B2S_CollisionRelationSupport.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\Component.meta">
+        <Link>Module\Box2D\Component.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\Component\B2S_ColliderComponent.cs.meta">
+        <Link>Module\Box2D\Component\B2S_ColliderComponent.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\Component\B2S_ColliderDataRepositoryComponent.cs.meta">
+        <Link>Module\Box2D\Component\B2S_ColliderDataRepositoryComponent.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\Component\B2S_CollisionListenerComponent.cs.meta">
+        <Link>Module\Box2D\Component\B2S_CollisionListenerComponent.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\Component\B2S_RoleCastComponent.cs.meta">
+        <Link>Module\Box2D\Component\B2S_RoleCastComponent.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\Component\B2S_WorldColliderManagerComponent.cs.meta">
+        <Link>Module\Box2D\Component\B2S_WorldColliderManagerComponent.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\Component\B2S_WorldComponent.cs.meta">
+        <Link>Module\Box2D\Component\B2S_WorldComponent.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\DataStructure.meta">
+        <Link>Module\Box2D\DataStructure.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\DataStructure\B2S_BoxColliderDataStructure.cs.meta">
+        <Link>Module\Box2D\DataStructure\B2S_BoxColliderDataStructure.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\DataStructure\B2S_CircleColliderDataStructure.cs.meta">
+        <Link>Module\Box2D\DataStructure\B2S_CircleColliderDataStructure.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\DataStructure\B2S_ColliderDataStructureBase.cs.meta">
+        <Link>Module\Box2D\DataStructure\B2S_ColliderDataStructureBase.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\DataStructure\B2S_DataSupporter.cs.meta">
+        <Link>Module\Box2D\DataStructure\B2S_DataSupporter.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\DataStructure\B2S_PolygonColliderDataStructure.cs.meta">
+        <Link>Module\Box2D\DataStructure\B2S_PolygonColliderDataStructure.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Codes\Model\Module\Box2D\Utility.meta">
+        <Link>Module\Box2D\Utility.meta</Link>
+      </Content>
     </ItemGroup>
 
 </Project>
