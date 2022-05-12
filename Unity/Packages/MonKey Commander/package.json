@@ -1,0 +1,13 @@
+{
+    "name": "com.wavegamer.monkeycommander",
+    "displayName": "ThirdParty.MonKey Commander",
+    "version": "1.4.0",
+    "unity": "2018.1",
+    "description": "Editor命令行工具",
+    "keywords": [
+        "Editor",
+        "Commander"
+    ],
+    "category": "Script",
+    "dependencies": {}
+}
