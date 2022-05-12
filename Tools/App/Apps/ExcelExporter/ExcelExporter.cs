@@ -580,6 +580,8 @@ namespace ET
                     }
                 case "string":
                     return $"\"{value}\"";
+                case "bool":
+                    return $"{value.ToLower()}";
                 case "AttrConfig":
                     string[] ss = value.Split(':');
                     return "{\"_t\":\"AttrConfig\"," + "\"Ks\":" + ss[0] + ",\"Vs\":" + ss[1] + "}";

@@ -21,6 +21,7 @@
         {
             public int HeroConfigId;
             public Unit Unit;
+            public Unit ColliderUnit;
             public bool IsLocalPlayer;
         }
     }

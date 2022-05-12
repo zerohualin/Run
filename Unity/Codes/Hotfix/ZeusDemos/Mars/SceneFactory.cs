@@ -35,8 +35,7 @@ namespace ET
             }, 999);
             
             var unit = MarsUnitFactory.CreateUnit(room, IdGenerater.Instance.GenerateUnitId(zoneScene.Zone), 1001);
-            MarsUnitFactory.CreateSpecialColliderUnit(unit.BelongToRoom, unit.Id, 100101, 10001, 1, true, true, new Vector3(0, 0, 0), new Vector3(0, 0, 0), 0);
-            
+
             return zoneScene;
         }
         
