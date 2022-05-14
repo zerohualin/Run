@@ -1,4 +1,5 @@
-﻿using Box2DSharp.Collision.Shapes;
+﻿using System.Collections.Generic;
+using Box2DSharp.Collision.Shapes;
 using Box2DSharp.Dynamics;
 using UnityEngine;
 
@@ -35,7 +36,10 @@ namespace ET
             }, 999);
             
             var unit = MarsUnitFactory.CreateUnit(room, IdGenerater.Instance.GenerateUnitId(zoneScene.Zone), 1001);
+            zoneScene.GetComponent<PlayerComponent>().MyId = unit.Id;
 
+            await Game.Scene.GetComponent<TimerComponent>().WaitAsync(1000);
+            
             return zoneScene;
         }
         

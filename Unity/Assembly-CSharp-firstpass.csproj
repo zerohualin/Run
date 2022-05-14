@@ -814,6 +814,10 @@
       <Project>{041131cd-3018-19b1-81b6-5dbee2467ffb}</Project>
       <Name>Unity.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Hotfix.csproj">
+      <Project>{52f66610-896a-c4d1-9881-1a19df7ab80e}</Project>
+      <Name>Unity.Hotfix</Name>
+    </ProjectReference>
     <ProjectReference Include="Sirenix.OdinInspector.Modules.UnityMathematics.csproj">
       <Project>{56df1de4-7636-2075-3b3d-021f8dba6bfa}</Project>
       <Name>Sirenix.OdinInspector.Modules.UnityMathematics</Name>
@@ -826,22 +830,6 @@
       <Project>{774b51b6-b901-b97e-d593-35721140fea6}</Project>
       <Name>Animancer.FSM</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Mono.csproj">
-      <Project>{5910fa29-5797-199c-985b-fc9fc473328e}</Project>
-      <Name>Unity.Mono</Name>
-    </ProjectReference>
-    <ProjectReference Include="Animancer.csproj">
-      <Project>{159e65f6-d363-1a6d-ec57-6db30da1b98f}</Project>
-      <Name>Animancer</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ThirdParty.csproj">
-      <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
-      <Name>Unity.ThirdParty</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Hotfix.csproj">
-      <Project>{52f66610-896a-c4d1-9881-1a19df7ab80e}</Project>
-      <Name>Unity.Hotfix</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.HotfixView.csproj">
       <Project>{de4513d3-889b-5c52-8e9c-744c99ae7509}</Project>
       <Name>Unity.HotfixView</Name>
@@ -850,9 +838,21 @@
       <Project>{9498bfb4-d9f5-c441-13e3-3f26f7700e29}</Project>
       <Name>Unity.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Mono.csproj">
+      <Project>{5910fa29-5797-199c-985b-fc9fc473328e}</Project>
+      <Name>Unity.Mono</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.ModelView.csproj">
       <Project>{c109842f-01da-64d4-dbf2-00c6449e459e}</Project>
       <Name>Unity.ModelView</Name>
+    </ProjectReference>
+    <ProjectReference Include="Animancer.csproj">
+      <Project>{159e65f6-d363-1a6d-ec57-6db30da1b98f}</Project>
+      <Name>Animancer</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ThirdParty.csproj">
+      <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
+      <Name>Unity.ThirdParty</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

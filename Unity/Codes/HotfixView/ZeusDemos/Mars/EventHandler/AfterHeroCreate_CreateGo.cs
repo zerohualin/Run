@@ -8,8 +8,11 @@ namespace ET
         {
             GameObjectComponent gameObjectComponent = args.Unit.AddComponent<GameObjectComponent, string>("Rick");
             args.Unit.AddComponent<AnimationComponent>();
-            args.Unit.AddComponent<B2S_DebuggerComponent>();
-            args.Unit.GetComponent<B2S_DebuggerComponent>().AddBox2dCollider(args.ColliderUnit);
+            if (args.ColliderUnit != null)
+            {
+                args.Unit.AddComponent<B2S_DebuggerComponent>();
+                args.Unit.GetComponent<B2S_DebuggerComponent>().AddBox2dCollider(args.ColliderUnit);
+            }
         }
     }
 }

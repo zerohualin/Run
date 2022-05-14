@@ -1,4 +1,6 @@
-﻿using Cfg;
+﻿using System.Collections.Generic;
+using Cfg;
+using UnityEngine;
 
 namespace ET
 {
@@ -12,6 +14,13 @@ namespace ET
             await FGUIComponent.Instance.OpenAysnc(FGUIType.ZesuDemoSelect);
             
             args.ZoneScene.AddComponent<CameraManagerComponent>();
+            
+            var unit = UnitHelper.GetMyUnitFromBattleRoom(args.ZoneScene);
+            
+            var list = new List<Vector3>();
+            list.Add(new Vector3(1, 0, 1));
+            list.Add(new Vector3(3, 0, 3));
+            await unit.MoveToAsync(list);
         }
     }
 }

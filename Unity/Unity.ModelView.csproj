@@ -17,7 +17,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.ModelView</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
   </PropertyGroup>
@@ -42,7 +42,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Animancer, Version=7.2.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>Temp\Bin\Debug\Animancer.dll</HintPath>
+      <HintPath>Temp\Bin\Debug\Animancer\Animancer.dll</HintPath>
+    </Reference>
+    <Reference Include="Animancer.Lite, Version=7.2.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>Temp\Bin\Debug\Animancer\Animancer.Lite.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\Unity 2021.3.0f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

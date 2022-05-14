@@ -5,6 +5,7 @@ namespace ET
 {
     public static class GameObjectComponentSystem
     {
+        [ObjectSystem]
         public class GameObjectComponentAwakeSystem: AwakeSystem<GameObjectComponent, string>
         {
             public override void Awake(GameObjectComponent self, string name)

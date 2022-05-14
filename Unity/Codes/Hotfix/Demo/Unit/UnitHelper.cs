@@ -14,5 +14,12 @@
             PlayerComponent playerComponent = currentScene.Parent.Parent.GetComponent<PlayerComponent>();
             return currentScene.GetComponent<UnitComponent>().Get(playerComponent.MyId);
         }
+
+        public static Unit GetMyUnitFromBattleRoom(Scene currentScene)
+        {
+            var room = currentScene.GetComponent<RoomManagerComponent>().GetOrCreateBattleRoom();
+            PlayerComponent playerComponent = currentScene.GetComponent<PlayerComponent>();
+            return room.GetComponent<UnitComponent>().Get(playerComponent.MyId);
+        }
     }
 }
