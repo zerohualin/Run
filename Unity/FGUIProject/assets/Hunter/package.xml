@@ -2,7 +2,8 @@
 <packageDescription id="qasmgabs">
   <resources>
     <component id="qouv0" name="FUI_HunterBattle_Component.xml" path="/" exported="true"/>
-    <component id="qouv1" name="Card.xml" path="/" exported="true"/>
+    <component id="cw0i3" name="FUI_Card.xml" path="/" exported="true"/>
+    <component id="s6264" name="Btn_EndTurn.xml" path="/" exported="true"/>
   </resources>
   <publish name="Hunter" genCode="true"/>
 </packageDescription>

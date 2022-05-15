@@ -41,6 +41,10 @@ MonoBehaviour:
     m_Address: Assets/Bundles/Config/B2SColliderConfig
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 091a73f13fb2ea448b40a312f6cd9819
+    m_Address: hunter_tbcardconfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a89af19382b7a7c419e37936dfa2edeb, type: 2}
   m_SchemaSet:

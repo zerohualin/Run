@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="170,240" pivot="0.5,0.5" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <graph id="n9_cw0i" name="CanUseFrame" xy="0,0" size="170,240" type="rect" fillColor="#ff009933"/>
+    <graph id="n10_cw0i" name="Bg" xy="5,5" size="160,230" type="rect" fillColor="#ff003399"/>
+    <graph id="n11_cw0i" name="ContentFrame" xy="7,136" size="156,72" type="rect"/>
+    <richtext id="n12_cw0i" name="TitleTxt" xy="7,6" size="158,48" fontSize="25" color="#ffffff" autoSize="none" text="标题"/>
+    <richtext id="n13_cw0i" name="ContentTxt" xy="8,137" size="154,70" fontSize="18" vAlign="middle" autoSize="none" text="说明"/>
+    <richtext id="n14_cw0i" name="CostTxt" xy="6,206" size="79,29" fontSize="20" color="#ffffff" vAlign="middle" autoSize="none" text="消耗"/>
+  </displayList>
+  <Button downEffect="scale" downEffectValue="1.1"/>
+</component>

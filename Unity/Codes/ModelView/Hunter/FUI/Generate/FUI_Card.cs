@@ -3,11 +3,11 @@
 using FairyGUI;
 namespace ET
 {
-    public sealed partial class Card : Entity, IFGUIComponent
+    public sealed partial class FUI_Card : Entity, IFGUIComponent
     {
         public const string UIPackageName = "Hunter";
-        public const string UIResName = "Card";
-        public const string URL = "ui://qasmgabsqouv1";
+        public const string UIResName = "FUI_Card";
+        public const string URL = "ui://qasmgabscw0i3";
 
         public string GetAddressablePath() { return $"{UIPackageName}_fui"; }
 
@@ -16,8 +16,10 @@ namespace ET
         public string GetComponentName() { return UIResName; }
 
         [FGUISelfObjectAttribute]
-        public GComponent self;
+        public GButton self;
 
+        [FGUIObject]
+        public GGraph CanUseFrame;
         [FGUIObject]
         public GGraph Bg;
         [FGUIObject]

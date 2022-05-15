@@ -1,0 +1,19 @@
+<module name="hunter">
+
+	<enum name="CardActionType" comment="道具品质">
+		<var name="WHITE" alias="白" comment="白"/>
+		<var name="GREEN" alias="绿"/>
+		<var name="BLUE" alias="蓝"/>
+		<var name="PURPLE" alias="紫"/>
+		<var name="GOLDEN" alias="金"/>
+	</enum>
+
+	<bean name="CardConfig" comment="卡牌">
+		<var name="id" type="int" comment="卡牌id"/>
+		<var name="name" type="string"/>
+		<var name="desc" type="string"/>
+		<var name="cost" type="int"/>
+	</bean>
+
+	<table name="TbCardConfig" value="CardConfig" input="Hunter/card.xlsx" comment="道具表"/>
+</module>

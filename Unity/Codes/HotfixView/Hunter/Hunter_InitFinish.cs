@@ -2,7 +2,7 @@
 
 namespace ET
 {
-    public class HunterInitFinishHandler : AEventAsync<EventType.HunterInitFinish>
+    public class Hunter_InitFinishHandler : AEventAsync<EventType.HunterInitFinish>
     {
         protected override async ETTask Run(EventType.HunterInitFinish args)
         {

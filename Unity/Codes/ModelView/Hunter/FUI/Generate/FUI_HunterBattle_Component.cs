@@ -4,7 +4,7 @@ using FairyGUI;
 namespace ET
 {
     [FGUIComponent(Cfg.FGUIType.HunterBattle)]
-    public sealed partial class FUI_HunterBattle_Component : Entity, IFGUIComponent, IUpdate, IAwake
+    public sealed partial class FUI_HunterBattle_Component : Entity, IFGUIComponent
     {
         public const string UIPackageName = "Hunter";
         public const string UIResName = "FUI_HunterBattle_Component";
@@ -23,5 +23,7 @@ namespace ET
         public GList CardList;
         [FGUIObject]
         public GTextField TurnTxt;
+        [FGUICustomCom]
+        public Btn_EndTurn Btn_EndTurn;
     }
 }
