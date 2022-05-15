@@ -20,7 +20,7 @@ namespace ET
             unit.AddComponent<MoveComponent>();
 
             Unit ColliderUnit = null; 
-            ColliderUnit = CreateSpecialColliderUnit(unit.BelongToRoom, unit.Id, 100101, 10001, 1, true, true, new Vector3(0, 0, 0), new Vector3(0, 0, 0), 0);
+            ColliderUnit = CreateSpecialColliderUnit(unit.BelongToRoom, unit.Id, configId * 10 + 1, 10001, 1, true, true, new Vector3(0, 0, 0), new Vector3(0, 0, 0), 0);
 
             AfterUnitCreate_CreateGo createGo = new AfterUnitCreate_CreateGo() { Unit = unit, HeroConfigId = configId, ColliderUnit = ColliderUnit };
             Game.EventSystem.Publish(createGo);

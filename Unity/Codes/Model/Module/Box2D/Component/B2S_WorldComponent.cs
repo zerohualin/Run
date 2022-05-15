@@ -13,7 +13,7 @@ namespace ET
     /// <summary>
     /// 物理世界组件，代表一个物理世界
     /// </summary>
-    public class B2S_WorldComponent : Entity, IAwake
+    public class B2S_WorldComponent : Entity, IAwake, IDestroy, ILateUpdate
     {
         public World m_World;
 

@@ -3,6 +3,9 @@
 	// 这个可弄个配置表生成
     public static class NumericType
     {
+	    //最小值，小于此值的都被认为是原始属性
+	    public const int Min = 10000;
+			    
 	    public const int Max = 10000;
 
 	    public const int Speed = 1000;

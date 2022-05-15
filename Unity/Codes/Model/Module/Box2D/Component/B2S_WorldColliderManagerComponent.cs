@@ -11,7 +11,7 @@ namespace ET
     /// <summary>
     /// 用于管理一个物理世界中所有的碰撞实体
     /// </summary>
-    public class B2S_WorldColliderManagerComponent: Entity
+    public class B2S_WorldColliderManagerComponent: Entity, IAwake
     {
         /// <summary>
         /// 用于管理碰撞实体

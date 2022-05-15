@@ -56,6 +56,7 @@ namespace ET
             else
             {
                 GameObject gameObject = new GameObject();
+                gameObject.name = "B2S_Collider_View";
                 b2SDebuggerProcessor = gameObject.AddComponent<B2S_DebuggerProcessor>();
                 gameObject.transform.SetParent(self.GoSupportor.transform);
                 gameObject.transform.localPosition = Vector3.zero;

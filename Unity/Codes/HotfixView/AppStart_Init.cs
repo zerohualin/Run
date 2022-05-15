@@ -38,6 +38,8 @@ namespace ET
             Game.Scene.AddComponent<GlobalComponent>();
             Game.Scene.AddComponent<NumericWatcherComponent>();
             Game.Scene.AddComponent<AIDispatcherComponent>();
+            
+            Game.Scene.AddComponent<B2S_CollisionDispatcherComponent>();
 
             // Scene zoneScene = SceneFactory.CreateZoneScene(1, "Game", Game.Scene);
             Scene zoneScene = await SceneFactory.CreateMarsZoneSceneAsync(0, "MarsDemo", Game.Scene);
