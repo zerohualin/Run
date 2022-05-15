@@ -20,7 +20,7 @@
 
     [FriendClass(typeof(RoomManagerComponent))]
     [FriendClass(typeof(Room))]
-    public static class RoomManagerComponentSystem
+    public static partial class RoomManagerComponentSystem
     {
         public static Room CreateLobbyRoom(this RoomManagerComponent self, long id)
         {

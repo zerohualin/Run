@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="170,240">
+  <displayList>
+    <graph id="n5_qouv" name="Bg" xy="0,0" size="170,240" type="rect" fillColor="#ff003399"/>
+    <graph id="n3_qouv" name="ContentFrame" xy="5,136" size="156,72" type="rect"/>
+    <richtext id="n1_qouv" name="TitleTxt" xy="4,4" size="161,48" fontSize="25" color="#ffffff" autoSize="none" text="标题"/>
+    <richtext id="n2_qouv" name="ContentTxt" xy="6,137" size="154,70" fontSize="18" vAlign="middle" autoSize="none" text="说明"/>
+    <richtext id="n0_qouv" name="CostTxt" xy="6,210" size="79,29" fontSize="20" color="#ffffff" vAlign="middle" autoSize="none" text="消耗"/>
+  </displayList>
+</component>

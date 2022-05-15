@@ -157,5 +157,10 @@ namespace ET
                 self.Event.OnRefresh(entity);
             }
         }
+
+        public static T GetFUICom<T>(this FGUIComponent self, FGUIType uiType) where T : Entity
+        {
+            return self.UIDict[uiType].GetComponent<T>();
+        }
     }
 }

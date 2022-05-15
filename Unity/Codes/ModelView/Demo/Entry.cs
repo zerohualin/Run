@@ -14,7 +14,8 @@ namespace ET
 				
 				Game.EventSystem.Add(CodeLoader.Instance.GetHotfixTypes());
 
-				Game.EventSystem.Publish(new EventType.AppStart());
+				// Game.EventSystem.Publish(new EventType.AppStart());
+				Game.EventSystem.Publish(new EventType.HunterStart());
 			}
 			catch (Exception e)
 			{

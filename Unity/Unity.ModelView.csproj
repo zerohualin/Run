@@ -997,4 +997,7 @@
       <Project>{d1f2986b-b296-4a2d-8f12-be9f470014c3}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Codes\ModelView\Hunter" />
+  </ItemGroup>
 </Project>

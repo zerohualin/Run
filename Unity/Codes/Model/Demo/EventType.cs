@@ -8,7 +8,6 @@ namespace ET
         {
         }
         
-
         public struct SceneChangeStart
         {
             public Scene ZoneScene;

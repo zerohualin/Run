@@ -33,5 +33,10 @@
     "Id": 7,
     "Name": "BattleDemo",
     "Layer": 2
+  },
+  {
+    "Id": 8,
+    "Name": "HunterBattle",
+    "Layer": 2
   }
 ]

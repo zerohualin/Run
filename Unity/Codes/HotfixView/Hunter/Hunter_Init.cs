@@ -1,23 +1,23 @@
-using Bright.Serialization;
+﻿using Bright.Serialization;
 using UnityEngine;
 
 namespace ET
 {
-    public class AppStart_Init: AEvent<EventType.AppStart>
+    public class Hunter_Init: AEvent<EventType.HunterStart>
     {
-        protected override void Run(EventType.AppStart args)
+        protected override void Run(EventType.HunterStart args)
         {
-            RunAsync(args).Coroutine();
+            RunAsync().Coroutine();
         }
         
-        private async ETTask RunAsync(EventType.AppStart args)
+        public async ETTask RunAsync()
         {
             MongoRegister.Init();
             
             Game.Scene.AddComponent<TimerComponent>();
             Game.Scene.AddComponent<CoroutineLockComponent>();
 
-            // Game.Scene.AddComponent<AddressableComponent>();
+            Game.Scene.AddComponent<AddressableComponent>();
             Game.Scene.AddComponent<LubanComponent>();
             await LubanComponent.Instance.LoadAsync(ByteBufLoader);
             
@@ -27,6 +27,8 @@ namespace ET
             Game.Scene.AddComponent<ConfigComponent>();
             ConfigComponent.Instance.Load();
             ResourcesComponent.Instance.UnloadBundle("config.unity3d");
+            
+            Game.Scene.AddComponent<GlobalComponent>();
 
             Game.Scene.AddComponent<UserInputComponent>();
             
@@ -36,20 +38,16 @@ namespace ET
             Game.Scene.AddComponent<NetThreadComponent>();
             Game.Scene.AddComponent<SessionStreamDispatcher>();
             Game.Scene.AddComponent<ZoneSceneManagerComponent>();
-            
-            Game.Scene.AddComponent<GlobalComponent>();
+
             Game.Scene.AddComponent<NumericWatcherComponent>();
             Game.Scene.AddComponent<AIDispatcherComponent>();
             
-            Game.Scene.AddComponent<B2S_CollisionDispatcherComponent>();
-
-            // Scene zoneScene = SceneFactory.CreateZoneScene(1, "Game", Game.Scene);
-            Scene zoneScene = await SceneFactory.CreateMarsZoneSceneAsync(0, "MarsDemo", Game.Scene);
-
-            Game.EventSystem.PublishAsync(new EventType.AppStartInitFinish() { ZoneScene = zoneScene }).Coroutine();
+            Scene zoneScene = await SceneFactory.CreateHunterZoneSceneAsync(0, "HunterBattle", Game.Scene);
+            
+            Game.EventSystem.PublishAsync(new EventType.HunterInitFinish() { ZoneScene = zoneScene }).Coroutine();
         }
         
-        private ByteBuf ByteBufLoader(string file)
+        private static ByteBuf ByteBufLoader(string file)
         {
             TextAsset config = AddressableComponent.Instance.LoadAssetByPath<TextAsset>(file);
             return new ByteBuf(config.bytes);
