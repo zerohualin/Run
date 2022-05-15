@@ -51,6 +51,8 @@
                 self.BattleRoom.AddComponent<B2S_WorldComponent>();
                 self.BattleRoom.AddComponent<B2S_WorldColliderManagerComponent>();
                 self.BattleRoom.AddComponent<B2S_CollisionListenerComponent>();
+                self.BattleRoom.AddComponent<MouseTargetSelectorComponent>();
+                self.BattleRoom.AddComponent<MapClickCompoent>();
             }
 
             return self.BattleRoom;

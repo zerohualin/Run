@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ET
@@ -36,7 +37,16 @@ namespace ET
                     self.frameClickMap.X = self.ClickPoint.x;
                     self.frameClickMap.Y = self.ClickPoint.y;
                     self.frameClickMap.Z = self.ClickPoint.z;
-                    self.ZoneScene().GetComponent<SessionComponent>().Session.Send(self.frameClickMap);
+                    
+                    //这个是用于服务端的
+                    // self.ZoneScene().GetComponent<SessionComponent>().Session.Send(self.frameClickMap);
+                    
+                    var Scene = self.DomainScene().GetComponent<CurrentScenesComponent>().Scene;
+                    var Unit = UnitHelper.GetMyUnitFromBattleRoom(Scene);
+                    var list = new List<Vector3>();
+                    list.Add(Unit.Position);
+                    list.Add(hit.point);
+                    Unit.MoveToAsync(list).Coroutine();
                 }
             }
 

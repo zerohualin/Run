@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4346523029939163000}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Lips_Bottom_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 625610117651471686}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_L_Shin_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3901904432058229514}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_L_Coat_03_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 344834002114780410}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_Index_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5432014904174851624}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Brow_R1_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3617494012065108035}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_L_Coat_01_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 469993663537450163}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Mouth_Left_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3748508867027143097}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_Thumb_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4609337897339045358}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_L_Coat_04_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7176620378684868480}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_Coat_04_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4170834127982603383}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Teeth_Bottom_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1638731235230313187}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_L_Shoulder_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6658128258171391871}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_L_Coat_02_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,7 +419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8722340602056872536}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_eyelid_bottom_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3271075984906578608}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Brow_L1_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +481,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5751698797610053494}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_Elbow_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,7 +513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8483693333658419426}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_L_Elbow_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5226265542511083407}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Head_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1270780480519883065}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_L_Coat_end_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2457852124125660730}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_Shoulder_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -655,7 +655,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9004067500858485633}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Brow_C_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -686,7 +686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3981253607373905669}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_eyelid_top_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -717,7 +717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4836908546413437016}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Brow_R2_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -748,7 +748,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3064024942769732170}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Jaw_End_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -779,7 +779,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 827871837555551777}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_L_eye_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,7 +810,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7711184736665541530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Jaw_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -843,7 +843,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3479627315887409118}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_L_eyelid_bottom_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -874,7 +874,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3597228640118787600}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Mouth_Right_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -909,7 +909,7 @@ GameObject:
   - component: {fileID: 7040027058411888134}
   - component: {fileID: -9160100834707491622}
   - component: {fileID: 6550813266832820610}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1011,7 +1011,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4809618465295636745}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_L_eyelid_top_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1042,7 +1042,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3332195231622538322}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_eye_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1073,7 +1073,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4427634515252473682}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_Thigh_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1105,7 +1105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4665448556563058047}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_Foot_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1136,7 +1136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1905980420772717857}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_L_Foot_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1167,7 +1167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4890258302419125310}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_Clavicle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1199,7 +1199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3235219691562495540}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Neck_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1231,7 +1231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8976225472870435255}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_Coat_end_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1262,7 +1262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4590356767789117283}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Spine1_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1294,7 +1294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1432232358345718286}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Brow_L2_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1325,7 +1325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7116254456507025948}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_L_Clavicle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1357,7 +1357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3343269044714902044}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Spine_2_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1391,7 +1391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8949721860165109144}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_Coat_02_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1423,7 +1423,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9052271498293386112}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Spine_3_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1455,7 +1455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5397031884874905552}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_Coat_03_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1487,7 +1487,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4107690915261454224}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Lips_Top_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1518,7 +1518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5161674319902908605}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Root_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1552,7 +1552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7470533668561489179}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_L_Thumb_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1583,7 +1583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7027476282888506364}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CharacterScale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1615,7 +1615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5618734927366364090}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_Wrist_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1649,7 +1649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2102567995673968337}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_Fingers_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1680,7 +1680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4269379460479833019}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_L_Thigh_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1713,7 +1713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3495567156052924507}
   - component: {fileID: 9108030215518924198}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1849,7 +1849,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7585177321069562981}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_Chest_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1883,7 +1883,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6291229333266709115}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1915,7 +1915,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8319568339486593949}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_Shin_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1947,7 +1947,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3959223165350191764}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_R_Coat_01_JNT1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1979,7 +1979,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6170042698208590411}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rick_L_Wrist_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
