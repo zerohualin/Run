@@ -7,45 +7,32 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Cfg
+namespace Cfg.hunter
 {
-    public enum FGUIType
+    /// <summary>
+    /// 道具品质
+    /// </summary>
+    public enum CardActionType
     {
         /// <summary>
-        /// 0
+        /// 白
         /// </summary>
-        Default = 0,
+        WHITE = 0,
         /// <summary>
-        /// 1
+        /// 绿
         /// </summary>
-        Loading = 1,
+        GREEN = 1,
         /// <summary>
-        /// 2
+        /// 蓝
         /// </summary>
-        Login = 2,
+        BLUE = 2,
         /// <summary>
-        /// 3
+        /// 紫
         /// </summary>
-        Background = 3,
+        PURPLE = 3,
         /// <summary>
-        /// 4
+        /// 金
         /// </summary>
-        Lobby = 4,
-        /// <summary>
-        /// 5
-        /// </summary>
-        ZesuDemoSelect = 5,
-        /// <summary>
-        /// 6
-        /// </summary>
-        AnimatorDemo = 6,
-        /// <summary>
-        /// 7
-        /// </summary>
-        BattleDemo = 7,
-        /// <summary>
-        /// 8
-        /// </summary>
-        HunterBattle = 8,
+        GOLDEN = 4,
     }
 }

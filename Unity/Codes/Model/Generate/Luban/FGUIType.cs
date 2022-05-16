@@ -43,5 +43,9 @@ namespace Cfg
         /// 7
         /// </summary>
         BattleDemo = 7,
+        /// <summary>
+        /// 8
+        /// </summary>
+        HunterBattle = 8,
     }
 }
