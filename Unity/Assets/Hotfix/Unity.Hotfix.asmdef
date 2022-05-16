@@ -4,7 +4,9 @@
     "references": [
         "Unity.Model",
         "Unity.ThirdParty",
-        "Unity.Mono"
+        "Unity.Mono",
+        "Unity.Addressables",
+        "Unity.ResourceManager"
     ],
     "includePlatforms": [
         "Editor"
