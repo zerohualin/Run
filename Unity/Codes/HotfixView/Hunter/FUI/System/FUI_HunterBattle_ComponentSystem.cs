@@ -54,10 +54,9 @@ namespace ET
             self.TurnTxt.text = $"当前回合数 {trunNum}";
         }
 
-        public static void RenderListItem(this FUI_HunterBattle_Component self, int index, GObject obj)
+        public static void RenderListItem(this FUI_HunterBattle_Component self, GObject obj, Card data)
         {
             GButton card = (GButton)obj;
-            var data = self.HandComponent.Cards[index];
             card.GetChild("CanUseFrame").visible = data.CanUse;
             card.GetChild("TitleTxt").text = data.Config.Name;
         }
@@ -74,10 +73,18 @@ namespace ET
             component.HandComponent = component.DomainScene().GetCardRoom().GetComponent<HandComponent>();
 
             var list = component.CardList.asList;
-            list.SetVirtual();
-            list.itemRenderer = component.RenderListItem;
-            list.itemProvider = (int index) => { return "ui://Hunter/FUI_Card"; };
-            list.numItems = component.HandComponent.Cards.Count;
+            var cards = list.GetChildren();
+            for (int i = 0; i < cards.Length; i++)
+            {
+                cards[i].Dispose();
+            }
+
+            list.RemoveChildren();
+            for (int i = 0; i < component.HandComponent.Cards.Count; i++)
+            {
+                var cardCell = list.AddItemFromPool();
+                component.RenderListItem(cardCell, component.HandComponent.Cards[i]);
+            }
 
             component.Btn_EndTurn.self.AddListener(() =>
             {
