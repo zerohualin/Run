@@ -41,27 +41,6 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Animancer, Version=7.2.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>Temp\Bin\Debug\Animancer\Animancer.dll</HintPath>
-    </Reference>
-    <Reference Include="Animancer.Lite, Version=7.2.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>Temp\Bin\Debug\Unity.Mono\Animancer.Lite.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>Temp\Bin\Debug\Unity.Mono\Unity.Addressables.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>Temp\Bin\Debug\Unity.Mono\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>Temp\Bin\Debug\Unity.Mono\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>Temp\Bin\Debug\Unity.Mono\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>Temp\Bin\Debug\Unity.Mono\Unity.ResourceManager.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\Unity 2021.3.0f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -971,6 +950,15 @@
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\Unity 2021.3.0f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\netstandard.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>C:\101_Dream\Run\Unity\Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>C:\101_Dream\Run\Unity\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>C:\101_Dream\Run\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:\101_Dream\Run\Unity\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
@@ -1004,6 +992,10 @@
     <ProjectReference Include="Unity.ModelView.csproj">
       <Project>{c109842f-01da-64d4-dbf2-00c6449e459e}</Project>
       <Name>Unity.ModelView</Name>
+    </ProjectReference>
+    <ProjectReference Include="Animancer.csproj">
+      <Project>{159e65f6-d363-1a6d-ec57-6db30da1b98f}</Project>
+      <Name>Animancer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
