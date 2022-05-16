@@ -11,8 +11,7 @@
 
             zoneScene.AddComponent<ZoneSceneFlagComponent>();
             zoneScene.AddComponent<ObjectWait>();
-            zoneScene.AddComponent<CardPlayerComponent>();
-            
+
             zoneScene.AddComponent<RoomManagerComponent>();
             zoneScene.GetComponent<RoomManagerComponent>().CreatCardRoom(20220515);
 

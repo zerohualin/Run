@@ -4,6 +4,7 @@ namespace ET
 {
     public class CardPlayerComponent : Entity, IAwake
     {
-        public Dictionary<long, CardUnit> CardUnits = new Dictionary<long, CardUnit>();
+        public CardPlayer CardPlayerA;
+        public CardPlayer CardPlayerB;
     }
 }

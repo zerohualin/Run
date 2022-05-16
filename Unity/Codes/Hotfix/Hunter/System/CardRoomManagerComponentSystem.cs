@@ -10,6 +10,9 @@
             self.CardRoom.AddComponent<CardTurnComponent>();
             self.CardRoom.AddComponent<CardUnitManagerComponent>();
             self.CardRoom.AddComponent<HandComponent>();
+            
+            self.CardRoom.AddComponent<CardPlayerComponent>();
+            
             return self.CardRoom;
         }
 
