@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
   <displayList>
-    <list id="n1_qouv" name="CardList" xy="248,811" size="1423,249" layout="row" scroll="horizontal" colGap="20" defaultItem="ui://qasmgabscw0i3" align="center" vAlign="middle">
+    <list id="n1_qouv" name="CardList" xy="248,811" size="1423,249" layout="row" scroll="horizontal" colGap="20" defaultItem="ui://qasmgabscw0i3" align="center" vAlign="middle" autoClearItems="true">
       <relation target="" sidePair="center-center,bottom-bottom"/>
       <item/>
       <item/>

@@ -30,5 +30,7 @@ namespace ET
         public GRichTextField ContentTxt;
         [FGUIObject]
         public GRichTextField CostTxt;
+        [FGUIObject]
+        public GGroup CardGroup;
     }
 }

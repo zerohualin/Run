@@ -57,8 +57,46 @@ namespace ET
         public static void RenderListItem(this FUI_HunterBattle_Component self, GObject obj, Card data)
         {
             GButton card = (GButton)obj;
+            var group = card.GetChild("CardGroup");
             card.GetChild("CanUseFrame").visible = data.CanUse;
             card.GetChild("TitleTxt").text = data.Config.Name;
+            ETCancellationToken cancerToken = null;
+
+            Vector2 GetGroupV2()
+            {
+                var LogicPos = GRoot.inst.GlobalToLocal(Input.mousePosition);
+                var v2 = card.GlobalToLocal(new Vector2(LogicPos.x, GRoot.inst.height - LogicPos.y));
+                return new Vector2(v2.x - group.width * 0.5f, v2.y - group.height * 0.5f);
+            }
+
+            async void TouchBegin()
+            {
+                cancerToken = new ETCancellationToken();
+                @group.TweenMove(GetGroupV2(), 0.15f);
+                @group.TweenScale(Vector2.one * 1.1f, 0.15f);
+                await Game.Scene.GetComponent<TimerComponent>().WaitAsync(150);
+                while (!cancerToken.IsCancel())
+                {
+                    await Game.Scene.GetComponent<TimerComponent>().WaitAsync(10, cancerToken);
+                    var v2 = GetGroupV2();
+                    @group.SetXY(v2.x, v2.y);
+                }
+            }
+
+            card.onTouchBegin.Add(TouchBegin);
+            card.onTouchEnd.Add(() =>
+            {
+                cancerToken.Cancel();
+                if (-group.y > group.height * 0.66f)
+                {
+                    
+                }
+                else
+                {
+                    @group.TweenScale(Vector2.one, 0.15f);
+                    @group.TweenMove(Vector2.zero, 0.15f);
+                }
+            });
         }
     }
 
