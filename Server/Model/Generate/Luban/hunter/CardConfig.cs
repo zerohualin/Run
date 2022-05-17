@@ -23,8 +23,9 @@ public sealed class CardConfig :  Bright.Config.BeanBase
     {
         Id = _buf.ReadInt();
         Name = _buf.ReadString();
-        Desc = _buf.ReadString();
         Cost = _buf.ReadInt();
+        Type = (hunter.CardType)_buf.ReadInt();
+        Desc = _buf.ReadString();
     }
 
     public static CardConfig DeserializeCardConfig(ByteBuf _buf)
@@ -37,8 +38,9 @@ public sealed class CardConfig :  Bright.Config.BeanBase
     /// </summary>
     public int Id { get; private set; }
     public string Name { get; private set; }
-    public string Desc { get; private set; }
     public int Cost { get; private set; }
+    public hunter.CardType Type { get; private set; }
+    public string Desc { get; private set; }
 
     public const int __ID__ = -1688655424;
     public override int GetTypeId() => __ID__;
@@ -56,8 +58,9 @@ public sealed class CardConfig :  Bright.Config.BeanBase
         return "{ "
         + "Id:" + Id + ","
         + "Name:" + Name + ","
-        + "Desc:" + Desc + ","
         + "Cost:" + Cost + ","
+        + "Type:" + Type + ","
+        + "Desc:" + Desc + ","
         + "}";
     }
     }

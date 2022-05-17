@@ -15,5 +15,10 @@
         {
             public Scene ZoneScene;
         }
+        
+        public struct ChangeEnergy
+        {
+            public Scene ZoneScene;
+        }
     }
 }

@@ -10,5 +10,8 @@
     </list>
     <text id="n2_lhxg" name="TurnTxt" xy="795,22" size="330,79" fontSize="40" align="center" vAlign="middle" autoSize="none" text="当前回合：100"/>
     <component id="n3_s626" name="Btn_EndTurn" src="s6264" fileName="Btn_EndTurn.xml" xy="1623,893"/>
+    <component id="n4_jggg" name="ProgressBar_Energy" src="jggg5" fileName="ProgressBar_Energy.xml" xy="32,717">
+      <ProgressBar value="50" max="100"/>
+    </component>
   </displayList>
 </component>

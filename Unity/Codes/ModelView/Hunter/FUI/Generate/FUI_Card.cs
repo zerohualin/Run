@@ -23,13 +23,15 @@ namespace ET
         [FGUIObject]
         public GGraph Bg;
         [FGUIObject]
-        public GGraph ContentFrame;
+        public GGraph DescFrame;
         [FGUIObject]
         public GRichTextField TitleTxt;
         [FGUIObject]
-        public GRichTextField ContentTxt;
+        public GRichTextField DescTxt;
         [FGUIObject]
         public GRichTextField CostTxt;
+        [FGUIObject]
+        public GGraph CanNotUseFrame;
         [FGUIObject]
         public GGroup CardGroup;
     }

@@ -12,27 +12,15 @@ namespace Cfg.hunter
     /// <summary>
     /// 道具品质
     /// </summary>
-    public enum CardActionType
+    public enum CardType
     {
         /// <summary>
         /// 白
         /// </summary>
-        WHITE = 0,
+        Action = 0,
         /// <summary>
-        /// 绿
+        /// 白
         /// </summary>
-        GREEN = 1,
-        /// <summary>
-        /// 蓝
-        /// </summary>
-        BLUE = 2,
-        /// <summary>
-        /// 紫
-        /// </summary>
-        PURPLE = 3,
-        /// <summary>
-        /// 金
-        /// </summary>
-        GOLDEN = 4,
+        Response = 1,
     }
 }

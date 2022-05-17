@@ -7,10 +7,9 @@
         public static Room CreatCardRoom(this RoomManagerComponent self, long id)
         {
             self.CardRoom = self.AddChildWithId<Room>(id);
+            
             self.CardRoom.AddComponent<CardTurnComponent>();
             self.CardRoom.AddComponent<CardUnitManagerComponent>();
-            self.CardRoom.AddComponent<HandComponent>();
-            
             self.CardRoom.AddComponent<CardPlayerComponent>();
             
             return self.CardRoom;

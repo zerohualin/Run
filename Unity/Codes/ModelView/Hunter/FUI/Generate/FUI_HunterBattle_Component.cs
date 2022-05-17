@@ -25,5 +25,7 @@ namespace ET
         public GTextField TurnTxt;
         [FGUICustomCom]
         public Btn_EndTurn Btn_EndTurn;
+        [FGUICustomCom]
+        public ProgressBar_Energy ProgressBar_Energy;
     }
 }

@@ -37,15 +37,28 @@ namespace ET
         }
     }
 
+    public class FUI_HunterBattle_ChangeEnergy: AEvent<EventType.ChangeEnergy>
+    {
+        protected override void Run(EventType.ChangeEnergy args)
+        {
+            var FUICom = args.ZoneScene.GetComponent<FGUIComponent>().GetFUICom<FUI_HunterBattle_Component>(FGUIType.HunterBattle);
+            FUICom.RefreshEnerge();
+        }
+    }
+
     [FriendClass(typeof (CardTurnComponent))]
     [FriendClass(typeof (HandComponent))]
     [FriendClass(typeof (Card))]
     [FriendClass(typeof (FUI_HunterBattle_Component))]
+    [FriendClass(typeof (ProgressBar_Energy))]
+    [FriendClass(typeof (EnergyComponent))]
     public static class FUI_HunterBattle_ComponentSystem
     {
         public static void Refresh(this FUI_HunterBattle_Component self)
         {
             self.RefreshTurn();
+            self.RefreshCard();
+            self.RefreshEnerge();
         }
 
         public static void RefreshTurn(this FUI_HunterBattle_Component self)
@@ -54,18 +67,46 @@ namespace ET
             self.TurnTxt.text = $"当前回合数 {trunNum}";
         }
 
+        public static void RefreshEnerge(this FUI_HunterBattle_Component self)
+        {
+            var EnergyComponent = self.DomainScene().GetMyPlayer().GetComponent<EnergyComponent>();
+            self.ProgressBar_Energy.self.max = EnergyComponent.Max;
+            self.ProgressBar_Energy.self.value = EnergyComponent.Current;
+            self.ProgressBar_Energy.ProgressTxt.text = $"{EnergyComponent.Current} / {EnergyComponent.Max}";
+        }
+
+        public static void RefreshCard(this FUI_HunterBattle_Component self)
+        {
+            var list = self.CardList.asList;
+            var cards = list.GetChildren();
+            for (int i = 0; i < cards.Length; i++)
+            {
+                cards[i].Dispose();
+            }
+
+            list.RemoveChildren();
+            for (int i = 0; i < self.HandComponent.Cards.Count; i++)
+            {
+                var cardCell = list.AddItemFromPool();
+                self.RenderListItem(cardCell, self.HandComponent.Cards[i]);
+            }
+        }
+
         public static void RenderListItem(this FUI_HunterBattle_Component self, GObject obj, Card data)
         {
-            GButton card = (GButton)obj;
-            var group = card.GetChild("CardGroup");
-            card.GetChild("CanUseFrame").visible = data.CanUse;
-            card.GetChild("TitleTxt").text = data.Config.Name;
+            GButton Cell = (GButton)obj;
+            var group = Cell.GetChild("CardGroup");
+            Cell.GetChild("CanUseFrame").visible = data.CanUse();
+            Cell.GetChild("CanNotUseFrame").visible = !data.CanUse();
+            Cell.GetChild("TitleTxt").text = data.Config.Name;
+            Cell.GetChild("DescTxt").text = data.Config.Desc;
+            Cell.GetChild("CostTxt").text = $"消耗能量 {data.Config.Cost}";
             ETCancellationToken cancerToken = null;
 
             Vector2 GetGroupV2()
             {
                 var LogicPos = GRoot.inst.GlobalToLocal(Input.mousePosition);
-                var v2 = card.GlobalToLocal(new Vector2(LogicPos.x, GRoot.inst.height - LogicPos.y));
+                var v2 = Cell.GlobalToLocal(new Vector2(LogicPos.x, GRoot.inst.height - LogicPos.y));
                 return new Vector2(v2.x - group.width * 0.5f, v2.y - group.height * 0.5f);
             }
 
@@ -83,13 +124,21 @@ namespace ET
                 }
             }
 
-            card.onTouchBegin.Add(TouchBegin);
-            card.onTouchEnd.Add(() =>
+            Cell.onTouchBegin.Add(TouchBegin);
+            Cell.onTouchEnd.Add(() =>
             {
                 cancerToken.Cancel();
-                if (-group.y > group.height * 0.66f)
+                bool useSucess = true;
+
+                useSucess = useSucess && -group.y > group.height * 0.66f;
+
+                EnergyComponent energyComponent = self.DomainScene().GetMyPlayer().GetComponent<EnergyComponent>();
+                useSucess = useSucess && energyComponent.CheckCast(data.Config.Cost);
+                if (useSucess)
                 {
-                    
+                    energyComponent.Cast(data.Config.Cost);
+                    self.HandComponent.RemoveCard(data);
+                    self.RefreshCard();
                 }
                 else
                 {
@@ -108,22 +157,8 @@ namespace ET
     {
         public override void OnCreate(FUI_HunterBattle_Component component)
         {
-            component.HandComponent = component.DomainScene().GetCardRoom().GetComponent<HandComponent>();
-
-            var list = component.CardList.asList;
-            var cards = list.GetChildren();
-            for (int i = 0; i < cards.Length; i++)
-            {
-                cards[i].Dispose();
-            }
-
-            list.RemoveChildren();
-            for (int i = 0; i < component.HandComponent.Cards.Count; i++)
-            {
-                var cardCell = list.AddItemFromPool();
-                component.RenderListItem(cardCell, component.HandComponent.Cards[i]);
-            }
-
+            component.HandComponent = component.DomainScene().GetMyPlayer().GetComponent<HandComponent>();
+            component.Refresh();
             component.Btn_EndTurn.self.AddListener(() =>
             {
                 component.DomainScene().GetComponent<RoomManagerComponent>().GetCardRoom().GetComponent<CardTurnComponent>().EndTurn();

@@ -2,8 +2,8 @@
 
 namespace ET
 {
-    public class CardPlayer : Entity
+    public class CardPlayer : Entity, IAwake<int>
     {
-        public Dictionary<long, CardUnit> CardUnits = new Dictionary<long, CardUnit>();
+
     }
 }

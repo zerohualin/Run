@@ -2,6 +2,7 @@
 
 namespace ET
 {
+    [ChildType(typeof (CardPlayer))]
     public class CardPlayerComponent : Entity, IAwake
     {
         public CardPlayer CardPlayerA;

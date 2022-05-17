@@ -3,9 +3,17 @@
     [FriendClass(typeof(CardPlayer))]
     public static class CardPlayerComponentSystem
     {
-        public static void AddUnit(this CardPlayer self, CardUnit unit)
+
+    }
+    
+    [ObjectSystem]
+    [FriendClass(typeof (LubanComponent))]
+    public class CardPlayerAwakeSystem: AwakeSystem<CardPlayer, int>
+    {
+        public override void Awake(CardPlayer self, int configId)
         {
-            self.CardUnits.Add(unit.Id, unit);
+            self.AddComponent<HandComponent>();
+            self.AddComponent<EnergyComponent>();
         }
     }
 }

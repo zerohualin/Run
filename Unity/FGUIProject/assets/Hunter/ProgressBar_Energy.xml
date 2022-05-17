@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="400,50" extention="ProgressBar">
+  <displayList>
+    <graph id="n0_jggg" name="Bg" xy="0,0" size="400,50" type="rect" lineColor="#ffa0a0a0" fillColor="#fff0f0f0">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <graph id="n1_jggg" name="Bar" xy="3,1" size="394,48" type="rect" lineSize="0" fillColor="#ff3399ff">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n2_jggg" name="ProgressTxt" xy="0,0" size="400,52" fontSize="38" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="6/10"/>
+  </displayList>
+  <ProgressBar titleType="valueAndmax"/>
+</component>
