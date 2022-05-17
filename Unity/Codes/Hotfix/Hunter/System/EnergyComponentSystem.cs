@@ -34,5 +34,10 @@ namespace ET
             self.Current = Math.Max(0, self.Current);
             Game.EventSystem.Publish(new EventType.ChangeEnergy() { ZoneScene = self.DomainScene() });
         }
+
+        public static void Full(this EnergyComponent self)
+        {
+            self.Current = self.Max;
+        }
     }
 }

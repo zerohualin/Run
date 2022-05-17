@@ -28,12 +28,22 @@ namespace ET
         }
     }
 
+    public class FUI_HunterBattle_NewTrun: AEvent<EventType.NewTrun>
+    {
+        protected override void Run(EventType.NewTrun args)
+        {
+            var FUICom = args.ZoneScene.GetComponent<FGUIComponent>().GetFUICom<FUI_HunterBattle_Component>(FGUIType.HunterBattle);
+            FUICom.Refresh();
+        }
+    }
+
     public class FUI_HunterBattle_ChangeTrun: AEvent<EventType.ChangeTrun>
     {
         protected override void Run(EventType.ChangeTrun args)
         {
             var FUICom = args.ZoneScene.GetComponent<FGUIComponent>().GetFUICom<FUI_HunterBattle_Component>(FGUIType.HunterBattle);
             FUICom.RefreshTurn();
+            FUICom.RefreshEnerge();
         }
     }
 

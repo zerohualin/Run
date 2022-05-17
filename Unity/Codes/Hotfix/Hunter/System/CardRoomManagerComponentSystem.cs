@@ -8,9 +8,9 @@
         {
             self.CardRoom = self.AddChildWithId<Room>(id);
             
-            self.CardRoom.AddComponent<CardTurnComponent>();
-            self.CardRoom.AddComponent<CardUnitManagerComponent>();
             self.CardRoom.AddComponent<CardPlayerComponent>();
+            self.CardRoom.AddComponent<CardUnitManagerComponent>();
+            self.CardRoom.AddComponent<CardTurnComponent>();
             
             return self.CardRoom;
         }

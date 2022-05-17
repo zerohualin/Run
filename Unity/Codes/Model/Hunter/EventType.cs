@@ -11,6 +11,11 @@
             public Scene ZoneScene;
         }
         
+        public struct NewTrun
+        {
+            public Scene ZoneScene;
+        }
+        
         public struct ChangeTrun
         {
             public Scene ZoneScene;
