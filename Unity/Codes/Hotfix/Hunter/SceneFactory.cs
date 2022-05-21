@@ -14,8 +14,9 @@
 
             zoneScene.AddComponent<RoomManagerComponent>();
             zoneScene.GetComponent<RoomManagerComponent>().CreatCardRoom(20220515);
-
+            
             await Game.EventSystem.PublishAsync(new EventType.AfterCreateZoneScene() { ZoneScene = zoneScene });
+            
             return zoneScene;
         }
     }

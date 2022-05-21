@@ -23,7 +23,7 @@ namespace ET
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                self.DomainScene().GetComponent<RoomManagerComponent>().GetCardRoom().GetComponent<CardTurnComponent>().EndTurn();
+                self.DomainScene().GetMyPlayer().TryEndMyTurn();
             }
         }
     }
@@ -32,8 +32,8 @@ namespace ET
     {
         protected override void Run(EventType.NewTrun args)
         {
-            var FUICom = args.ZoneScene.GetComponent<FGUIComponent>().GetFUICom<FUI_HunterBattle_Component>(FGUIType.HunterBattle);
-            FUICom.Refresh();
+            var FUICom = args.ZoneScene.GetComponent<FGUIComponent>()?.GetFUICom<FUI_HunterBattle_Component>(FGUIType.HunterBattle);
+            FUICom?.Refresh();
         }
     }
 
@@ -171,7 +171,7 @@ namespace ET
             component.Refresh();
             component.Btn_EndTurn.self.AddListener(() =>
             {
-                component.DomainScene().GetComponent<RoomManagerComponent>().GetCardRoom().GetComponent<CardTurnComponent>().EndTurn();
+                component.DomainScene().GetMyPlayer().TryEndMyTurn();
             });
         }
 

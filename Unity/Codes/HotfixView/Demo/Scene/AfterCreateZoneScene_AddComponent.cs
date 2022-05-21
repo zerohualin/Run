@@ -6,7 +6,6 @@ namespace ET
         {
             Scene zoneScene = args.ZoneScene;
             await Game.EventSystem.PublishAsync(new EventType.SceneChangeStart() {ZoneScene = zoneScene});
-            
         }
     }
 }

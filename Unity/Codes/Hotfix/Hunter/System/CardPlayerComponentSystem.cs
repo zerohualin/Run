@@ -9,6 +9,7 @@
         {
             self.CardPlayerA = self.AddChild<CardPlayer, int>(1);
             self.CardPlayerB = self.AddChild<CardPlayer, int>(2);
+            self.CardPlayerB.AddComponent<AIComponent, int>(3);
         }
     }
 }

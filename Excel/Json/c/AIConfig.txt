@@ -2,4 +2,6 @@
 {"_t":"AIConfig","_id":101,"AIConfigId":1,"Order":1,"Name":"AI_Attack","NodeParams":[]},
 {"_t":"AIConfig","_id":102,"AIConfigId":1,"Order":2,"Name":"AI_XunLuo","NodeParams":[]},
 {"_t":"AIConfig","_id":201,"AIConfigId":2,"Order":1,"Name":"AI_XunLuo","NodeParams":[]},
+{"_t":"AIConfig","_id":301,"AIConfigId":3,"Order":1,"Name":"AI_WaitAndNewTurn","NodeParams":[]},
+{"_t":"AIConfig","_id":302,"AIConfigId":3,"Order":2,"Name":"AI_OthersTurn","NodeParams":[]},
 ]}
