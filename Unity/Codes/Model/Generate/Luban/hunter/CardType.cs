@@ -10,17 +10,21 @@
 namespace Cfg.hunter
 {
     /// <summary>
-    /// 道具品质
+    /// 牌的类型
     /// </summary>
     public enum CardType
     {
         /// <summary>
-        /// 白
+        /// 只有自己的行动阶段可以使用的牌。打出后进入堆叠，不论成功结算与否都进入弃牌区。
         /// </summary>
-        Action = 0,
+        Skill = 0,
         /// <summary>
-        /// 白
+        /// 随时可以使用的牌。打出后进入堆叠，不论成功结算与否都进入弃牌区。
         /// </summary>
-        Response = 1,
+        Counter = 1,
+        /// <summary>
+        /// 成功结算则停留在战斗区，否则进入弃牌区；若不被外来效果移除，会永久存在。
+        /// </summary>
+        Summon = 2,
     }
 }
