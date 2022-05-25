@@ -20,31 +20,38 @@ MonoBehaviour:
   - m_GUID: 985bb3ce80409cb4f82cf962390812b7
     m_Address: ABaseComponents_atlas0
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - FUI
   - m_GUID: 5e0b793e94066b54ea51f3c742a94965
     m_Address: ABaseComponents_fui
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - FUI
   - m_GUID: 115e25ba431740e4dbfe51eeee1ad035
     m_Address: ACommonResources_fui
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - FUI
   - m_GUID: 5e9e7d7cfa816604093baed37c2158db
     m_Address: UILobby_fui
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - FUI
   - m_GUID: 644ebe33288c8254ea0399142ccc6f07
     m_Address: UILogin_atlas0
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - FUI
   - m_GUID: d28d924f11e081c42813e121bb6b8eaf
     m_Address: UILogin_fui
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - FUI
   - m_GUID: 1b1a25a3dca4d5e4cac346263268760f
     m_Address: ZeusDemos_fui
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - FUI
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a89af19382b7a7c419e37936dfa2edeb, type: 2}
   m_SchemaSet:
