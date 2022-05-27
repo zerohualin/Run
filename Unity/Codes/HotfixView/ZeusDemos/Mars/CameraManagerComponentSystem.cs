@@ -4,7 +4,7 @@ using UnityEngine.Rendering.Universal;
 namespace ET
 {
     [ObjectSystem]
-    public class CameraManagerComponentAwakeSystem : AwakeSystem<CameraManagerComponent>
+    public class CameraManagerComponentAwakeSystem: AwakeSystem<CameraManagerComponent>
     {
         public override void Awake(CameraManagerComponent self)
         {
@@ -16,7 +16,25 @@ namespace ET
     }
 
     [ObjectSystem]
-    public class CameraManagerComponentDestroySystem : DestroySystem<CameraManagerComponent>
+    public class CameraManagerComponentUpdateSystem: UpdateSystem<CameraManagerComponent>
+    {
+        public override void Update(CameraManagerComponent self)
+        {
+            if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
+            {
+                self.FTra.transform.position += new Vector3(-Input.GetAxis("Mouse X"), 0, -Input.GetAxis("Mouse Y"));
+            }
+
+            var scroll = Input.GetAxis("Mouse ScrollWheel");
+            if (scroll != 0)
+            {
+                self.PlayerCamera.orthographicSize += scroll * 3;
+            }
+        }
+    }
+
+    [ObjectSystem]
+    public class CameraManagerComponentDestroySystem: DestroySystem<CameraManagerComponent>
     {
         public override void Destroy(CameraManagerComponent self)
         {
@@ -24,7 +42,7 @@ namespace ET
         }
     }
 
-    [FriendClass(typeof(CameraManagerComponent))]
+    [FriendClass(typeof (CameraManagerComponent))]
     public static class CameraManagerComponentSystem
     {
         public static void SetStageCamera(this CameraManagerComponent self)
