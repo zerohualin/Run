@@ -2,8 +2,11 @@
 
 namespace ET
 {
-    public class Building : Entity, IAwake
+    public class Building : Entity, IAwake, IAwake<CardConfig>, IAwake<int, int, CardConfig>
     {
-        public CardConfig Data;
+        public CardConfig Config;
+
+        public int PosX;
+        public int PosZ;
     }
 }

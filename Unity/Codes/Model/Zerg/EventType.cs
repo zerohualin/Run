@@ -16,5 +16,10 @@
         {
             public GridNode Node;
         }
+
+        public struct InitBuilding
+        {
+            public Building Building;
+        }
     }
 }

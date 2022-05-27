@@ -20,6 +20,10 @@ namespace ET
     {
         public override void Update(CameraManagerComponent self)
         {
+            var BuildingPreviewComponent = self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<BuildingPreviewComponent>();
+            if (BuildingPreviewComponent.PreviewBuildingData != null)
+                return;
+            
             if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
             {
                 self.FTra.transform.position += new Vector3(-Input.GetAxis("Mouse X"), 0, -Input.GetAxis("Mouse Y"));

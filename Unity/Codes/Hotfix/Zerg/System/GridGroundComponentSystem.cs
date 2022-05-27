@@ -45,6 +45,8 @@ namespace ET
                     self.UpdateVision(node, data.Vision);
                 }
             }
+
+            self.AddChild<Building, int, int, CardConfig>(x, y, data);
         }
 
         public static void UpdateVision(this GridGroundComponent self, GridNode centerNode, int range)

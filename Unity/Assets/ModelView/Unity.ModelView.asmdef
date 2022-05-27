@@ -5,7 +5,8 @@
         "Unity.Model",
         "Unity.Mono",
         "Unity.ThirdParty",
-        "Animancer"
+        "Animancer",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [
         "Editor"
