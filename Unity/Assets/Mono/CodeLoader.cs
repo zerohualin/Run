@@ -4,6 +4,7 @@ using System.IO;
 using System.Reflection;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.AddressableAssets;
 
 namespace ET
 {
@@ -62,21 +63,20 @@ namespace ET
 			{
 				case CodeMode.Mono:
 				{
-					(AssetBundle assetsBundle, Dictionary<string, UnityEngine.Object> dictionary) = AssetsBundleHelper.LoadBundle("code.unity3d");
-					byte[] assBytes = ((TextAsset)dictionary["Code.dll"]).bytes;
-					byte[] pdbBytes = ((TextAsset)dictionary["Code.pdb"]).bytes;
-					
-					if (assetsBundle != null)
-					{
-						assetsBundle.Unload(true);	
-					}
-					
+					var dllAsset = Addressables.LoadAssetAsync<TextAsset>("Assets/Bundles/Code/Code.dll.bytes");
+					dllAsset.WaitForCompletion();
+					var pdbAsset = Addressables.LoadAssetAsync<TextAsset>("Assets/Bundles/Code/Code.pdb.bytes");
+					pdbAsset.WaitForCompletion();
+					byte[] assBytes = dllAsset.Result.bytes;
+					byte[] pdbBytes = pdbAsset.Result.bytes;
+
 					assembly = Assembly.Load(assBytes, pdbBytes);
 					foreach (Type type in this.assembly.GetTypes())
 					{
 						this.monoTypes[type.FullName] = type;
 						this.hotfixTypes[type.FullName] = type;
 					}
+					
 					IStaticMethod start = new MonoStaticMethod(assembly, "ET.Entry", "Start");
 					start.Run();
 					break;

@@ -1,4 +1,5 @@
 ﻿using Cfg;
+using UnityEngine;
 
 namespace ET
 {
@@ -12,6 +13,11 @@ namespace ET
             await FGUIComponent.Instance.OpenAysnc(FGUIType.HunterBattle);
             
             args.ZoneScene.AddComponent<CameraManagerComponent>();
+            args.ZoneScene.GetComponent<CameraManagerComponent>().FTra.transform.position = new Vector3(50, 0, 50);
+            
+            args.ZoneScene.GetComponent<GridGroundComponent>().AddComponent<GridGroundViewComponent>();
+
+            args.ZoneScene.AddComponent<CameraRayCastViewComponent>();
         }
     }
 }

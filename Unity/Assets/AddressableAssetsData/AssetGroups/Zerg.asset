@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Zerg
+  m_EditorClassIdentifier: 
+  m_GroupName: Zerg
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 180b97cb1e5380549a099ed16dba7483
+  m_SerializeEntries:
+  - m_GUID: 0ab60af4405cc834597d2dbed8495a13
+    m_Address: Assets/Bundles/Zerg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a89af19382b7a7c419e37936dfa2edeb, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b658de2adb1b9cc428f6dbab9fda2151, type: 2}
+    - {fileID: 11400000, guid: e9c298db6ae252e478f299fa6165b361, type: 2}
