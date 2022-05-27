@@ -16,6 +16,7 @@ namespace ET
             args.ZoneScene.GetComponent<CameraManagerComponent>().FTra.transform.position = new Vector3(50, 0, 50);
             
             args.ZoneScene.GetComponent<GridGroundComponent>().AddComponent<GridGroundViewComponent>();
+            args.ZoneScene.GetComponent<GridGroundComponent>().AddComponent<BuildingPreviewComponent>();
 
             args.ZoneScene.AddComponent<CameraRayCastViewComponent>();
         }

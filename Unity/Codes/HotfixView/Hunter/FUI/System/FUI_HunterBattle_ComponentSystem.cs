@@ -122,6 +122,8 @@ namespace ET
 
             async void TouchBegin()
             {
+                self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<BuildingPreviewComponent>().CreatePreviewBuilding();
+
                 cancerToken = new ETCancellationToken();
                 @group.TweenMove(GetGroupV2(), 0.15f);
                 @group.TweenScale(Vector2.one * 1.1f, 0.15f);
@@ -137,9 +139,10 @@ namespace ET
             Cell.onTouchBegin.Add(TouchBegin);
             Cell.onTouchEnd.Add(() =>
             {
-                cancerToken.Cancel();
+                if (cancerToken != null)
+                    cancerToken.Cancel();
+                
                 bool useSucess = true;
-
                 useSucess = useSucess && -group.y > group.height * 0.66f;
 
                 EnergyComponent energyComponent = self.DomainScene().GetMyPlayer().GetComponent<EnergyComponent>();
@@ -169,10 +172,7 @@ namespace ET
         {
             component.HandComponent = component.DomainScene().GetMyPlayer().GetComponent<HandComponent>();
             component.Refresh();
-            component.Btn_EndTurn.self.AddListener(() =>
-            {
-                component.DomainScene().GetMyPlayer().TryEndMyTurn();
-            });
+            component.Btn_EndTurn.self.AddListener(() => { component.DomainScene().GetMyPlayer().TryEndMyTurn(); });
         }
 
         public override void OnShow(FUI_HunterBattle_Component component)

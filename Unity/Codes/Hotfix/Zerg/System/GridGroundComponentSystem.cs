@@ -31,20 +31,30 @@
 
     public static class GridGroundComponentSystem
     {
-        public static void AddBuild(this GridGroundComponent self, int x, int y)
+        public static void AddBuild(this GridGroundComponent self, int x, int y, BuildingData data)
         {
-            var node = self.GridData[x][y];
-            if (!node.CanView)
-                return;
-            node.Builded = true;
-            int range = 3;
+            for (int _x = x; _x < x + data.Width; _x++)
+            {
+                for (int _y = y; _y < y + data.Height; _y++)
+                {
+                    var node = self.GridData[_x][_y];
+                    node.CanBuild = false;
+                    Game.EventSystem.Publish(new EventType.UpdateGridNode() { Node = node });
+                    self.UpdateVision(node, data.VisionRange);
+                }
+            }
+        }
+
+        public static void UpdateVision(this GridGroundComponent self, GridNode centerNode, int range)
+        {
+            int x = centerNode.x;
+            int y = centerNode.y;
+            
             for (int _x = x - range; _x <= x + range; _x++)
             {
                 for (int _y = y - range; _y <= y + range; _y++)
                 {
-                    if (_x < 0 || _x > self.Width - 1 || _y < 0 || _y > self.Height)
-                    {
-                    }
+                    if (_x < 0 || _x > self.Width - 1 || _y < 0 || _y > self.Height) { }
                     else
                     {
                         if (!self.GridData[_x][_y].CanView)
@@ -55,7 +65,6 @@
                     }
                 }
             }
-            Game.EventSystem.Publish(new EventType.UpdateGridNode() { Node = node });
         }
 
         public static void ChangeGround(this GridGroundComponent self, int x, int y)
@@ -63,7 +72,7 @@
             var node = self.GridData[x][y];
             if (!node.CanView)
                 return;
-            node.Builded = true;
+            node.CanBuild = false;
             node.CanView = true;
             Game.EventSystem.Publish(new EventType.UpdateGridNode() { Node = node });
         }

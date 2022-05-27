@@ -2,7 +2,7 @@
 {
     public class GridNode : Entity, IAwake, IAwake<int, int>
     {
-        public bool Builded = false;
+        public bool CanBuild = true;
         public bool CanView = false;
 
         public int x = 0;
