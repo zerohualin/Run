@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "大本营",
+    "cost": 2,
+    "width": 10,
+    "height": 10,
+    "vision": 3,
+    "type": 0,
+    "desc": "\u002B1⚡️每回合"
+  },
+  {
+    "id": 2,
+    "name": "探照灯",
+    "cost": 2,
+    "width": 5,
+    "height": 5,
+    "vision": 10,
+    "type": 0,
+    "desc": ""
+  },
+  {
+    "id": 3,
+    "name": "矿场",
+    "cost": 1,
+    "width": 3,
+    "height": 3,
+    "vision": 3,
+    "type": 0,
+    "desc": "\u002B1石每回合"
+  },
+  {
+    "id": 4,
+    "name": "地下声纳",
+    "cost": 5,
+    "width": 0,
+    "height": 0,
+    "vision": 2,
+    "type": 2,
+    "desc": "每5回合定位一次高密度入侵点"
+  },
+  {
+    "id": 5,
+    "name": "防御塔",
+    "cost": 3,
+    "width": 6,
+    "height": 6,
+    "vision": 5,
+    "type": 0,
+    "desc": "dps 30 单体，子弹伤害。"
+  },
+  {
+    "id": 6,
+    "name": "火力覆盖",
+    "cost": 3,
+    "width": 4,
+    "height": 4,
+    "vision": 5,
+    "type": 1,
+    "desc": "400 AOE3x3，子弹伤害。"
+  },
+  {
+    "id": 7,
+    "name": "冶金厂",
+    "cost": 3,
+    "width": 2,
+    "height": 2,
+    "vision": 3,
+    "type": 0,
+    "desc": "与矿场相邻时，无需维持费用。"
+  },
+  {
+    "id": 8,
+    "name": "升级大本营",
+    "cost": 3,
+    "width": 0,
+    "height": 0,
+    "vision": 0,
+    "type": 1,
+    "desc": "卡包3选1"
+  }
+]

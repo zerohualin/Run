@@ -17,11 +17,11 @@ public sealed class Tables
     /// <summary>
     /// 道具表
     /// </summary>
-    public hunter.TbCardConfig TbCardConfig {get; }
-    /// <summary>
-    /// 道具表
-    /// </summary>
     public item.TbItem TbItem {get; }
+    /// <summary>
+    /// 卡牌表
+    /// </summary>
+    public zerg.TbCardConfig TbCardConfig {get; }
     public Global.TbGlobal TbGlobal {get; }
     public StartServer.TbStartMachine TbStartMachine {get; }
     public StartServer.TbStartProcess TbStartProcess {get; }
@@ -33,10 +33,10 @@ public sealed class Tables
     public Tables(System.Func<string, ByteBuf> loader)
     {
         var tables = new System.Collections.Generic.Dictionary<string, object>();
-        TbCardConfig = new hunter.TbCardConfig(loader("hunter_tbcardconfig")); 
-        tables.Add("hunter.TbCardConfig", TbCardConfig);
         TbItem = new item.TbItem(loader("item_tbitem")); 
         tables.Add("item.TbItem", TbItem);
+        TbCardConfig = new zerg.TbCardConfig(loader("zerg_tbcardconfig")); 
+        tables.Add("zerg.TbCardConfig", TbCardConfig);
         TbGlobal = new Global.TbGlobal(loader("global_tbglobal")); 
         tables.Add("Global.TbGlobal", TbGlobal);
         TbStartMachine = new StartServer.TbStartMachine(loader("startserver_tbstartmachine")); 
@@ -52,8 +52,8 @@ public sealed class Tables
         TbUnitMeta = new Demo.TbUnitMeta(loader("demo_tbunitmeta")); 
         tables.Add("Demo.TbUnitMeta", TbUnitMeta);
 
-        TbCardConfig.Resolve(tables); 
         TbItem.Resolve(tables); 
+        TbCardConfig.Resolve(tables); 
         TbGlobal.Resolve(tables); 
         TbStartMachine.Resolve(tables); 
         TbStartProcess.Resolve(tables); 
@@ -65,8 +65,8 @@ public sealed class Tables
 
     public void TranslateText(System.Func<string, string, string> translator)
     {
-        TbCardConfig.TranslateText(translator); 
         TbItem.TranslateText(translator); 
+        TbCardConfig.TranslateText(translator); 
         TbGlobal.TranslateText(translator); 
         TbStartMachine.TranslateText(translator); 
         TbStartProcess.TranslateText(translator); 

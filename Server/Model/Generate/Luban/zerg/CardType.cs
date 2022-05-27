@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Cfg.hunter
+namespace Cfg.zerg
 {
     /// <summary>
     /// 牌的类型
@@ -15,16 +15,16 @@ namespace Cfg.hunter
     public enum CardType
     {
         /// <summary>
-        /// 只有自己的行动阶段可以使用的牌。打出后进入堆叠，不论成功结算与否都进入弃牌区。
+        /// 建筑
         /// </summary>
-        Skill = 0,
+        Building = 0,
         /// <summary>
-        /// 随时可以使用的牌。打出后进入堆叠，不论成功结算与否都进入弃牌区。
+        /// 技能
         /// </summary>
-        Counter = 1,
+        Skill = 1,
         /// <summary>
-        /// 成功结算则停留在战斗区，否则进入弃牌区；若不被外来效果移除，会永久存在。
+        /// 召唤牌
         /// </summary>
-        Summon = 2,
+        Module = 2,
     }
 }

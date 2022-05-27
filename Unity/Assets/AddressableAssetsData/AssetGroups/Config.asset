@@ -41,8 +41,8 @@ MonoBehaviour:
     m_Address: Assets/Bundles/Config/B2SColliderConfig
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 091a73f13fb2ea448b40a312f6cd9819
-    m_Address: hunter_tbcardconfig
+  - m_GUID: 4f2f2b276aeb313479cf4f8b84c6a1e4
+    m_Address: zerg_tbcardconfig
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

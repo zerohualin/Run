@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cfg.zerg;
+using UnityEngine;
 
 namespace ET
 {
@@ -15,9 +16,9 @@ namespace ET
 
     public static class BuildingPreviewComponentSystem
     {
-        public static void CreatePreviewBuilding(this BuildingPreviewComponent self)
+        public static void CreatePreviewBuilding(this BuildingPreviewComponent self, CardConfig cardConfig)
         {
-            self.PreviewBuildingData = new BuildingData() { Width = 3, Height = 2, VisionRange = 3, ArtUrl = "" };
+            self.PreviewBuildingData = cardConfig;
 
             for (int x = 0; x < self.PreviewBuildingData.Width; x++)
             {

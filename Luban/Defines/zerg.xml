@@ -1,0 +1,21 @@
+<module name="zerg">
+
+	<enum name="CardType" comment="牌的类型">
+		<var name="Building" alias="建筑" comment=""/>
+		<var name="Skill" alias="技能" comment=""/>
+		<var name="Module" alias="召唤牌" comment=""/>
+	</enum>
+
+	<bean name="CardConfig" comment="卡牌">
+		<var name="id" type="int" comment="卡牌id"/>
+		<var name="name" type="string"/>
+		<var name="cost" type="int"/>
+		<var name="width" type="int"/>
+		<var name="height" type="int"/>
+		<var name="vision" type="int"/>
+		<var name="type" type="CardType"/>
+		<var name="desc" type="string"/>
+	</bean>
+
+	<table name="TbCardConfig" value="CardConfig" input="zerg/card.xlsx" comment="卡牌表"/>
+</module>

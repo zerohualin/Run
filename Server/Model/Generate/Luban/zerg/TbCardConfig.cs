@@ -9,37 +9,37 @@
 using Bright.Serialization;
 using System.Collections.Generic;
 
-namespace Cfg.hunter
+namespace Cfg.zerg
 {
    
 /// <summary>
-/// 道具表
+/// 卡牌表
 /// </summary>
 public sealed class TbCardConfig
 {
-    private readonly Dictionary<int, hunter.CardConfig> _dataMap;
-    private readonly List<hunter.CardConfig> _dataList;
+    private readonly Dictionary<int, zerg.CardConfig> _dataMap;
+    private readonly List<zerg.CardConfig> _dataList;
     
     public TbCardConfig(ByteBuf _buf)
     {
-        _dataMap = new Dictionary<int, hunter.CardConfig>();
-        _dataList = new List<hunter.CardConfig>();
+        _dataMap = new Dictionary<int, zerg.CardConfig>();
+        _dataList = new List<zerg.CardConfig>();
         
         for(int n = _buf.ReadSize() ; n > 0 ; --n)
         {
-            hunter.CardConfig _v;
-            _v = hunter.CardConfig.DeserializeCardConfig(_buf);
+            zerg.CardConfig _v;
+            _v = zerg.CardConfig.DeserializeCardConfig(_buf);
             _dataList.Add(_v);
             _dataMap.Add(_v.Id, _v);
         }
     }
 
-    public Dictionary<int, hunter.CardConfig> DataMap => _dataMap;
-    public List<hunter.CardConfig> DataList => _dataList;
+    public Dictionary<int, zerg.CardConfig> DataMap => _dataMap;
+    public List<zerg.CardConfig> DataList => _dataList;
 
-    public hunter.CardConfig GetOrDefault(int key) => _dataMap.TryGetValue(key, out var v) ? v : null;
-    public hunter.CardConfig Get(int key) => _dataMap[key];
-    public hunter.CardConfig this[int key] => _dataMap[key];
+    public zerg.CardConfig GetOrDefault(int key) => _dataMap.TryGetValue(key, out var v) ? v : null;
+    public zerg.CardConfig Get(int key) => _dataMap[key];
+    public zerg.CardConfig this[int key] => _dataMap[key];
 
     public void Resolve(Dictionary<string, object> _tables)
     {

@@ -11,7 +11,7 @@ using System.Collections.Generic;
 
 
 
-namespace Cfg.hunter
+namespace Cfg.zerg
 {
 
 /// <summary>
@@ -24,13 +24,16 @@ public sealed class CardConfig :  Bright.Config.BeanBase
         Id = _buf.ReadInt();
         Name = _buf.ReadString();
         Cost = _buf.ReadInt();
-        Type = (hunter.CardType)_buf.ReadInt();
+        Width = _buf.ReadInt();
+        Height = _buf.ReadInt();
+        Vision = _buf.ReadInt();
+        Type = (zerg.CardType)_buf.ReadInt();
         Desc = _buf.ReadString();
     }
 
     public static CardConfig DeserializeCardConfig(ByteBuf _buf)
     {
-        return new hunter.CardConfig(_buf);
+        return new zerg.CardConfig(_buf);
     }
 
     /// <summary>
@@ -39,10 +42,13 @@ public sealed class CardConfig :  Bright.Config.BeanBase
     public int Id { get; private set; }
     public string Name { get; private set; }
     public int Cost { get; private set; }
-    public hunter.CardType Type { get; private set; }
+    public int Width { get; private set; }
+    public int Height { get; private set; }
+    public int Vision { get; private set; }
+    public zerg.CardType Type { get; private set; }
     public string Desc { get; private set; }
 
-    public const int __ID__ = -1688655424;
+    public const int __ID__ = -2130970976;
     public override int GetTypeId() => __ID__;
 
     public  void Resolve(Dictionary<string, object> _tables)
@@ -59,6 +65,9 @@ public sealed class CardConfig :  Bright.Config.BeanBase
         + "Id:" + Id + ","
         + "Name:" + Name + ","
         + "Cost:" + Cost + ","
+        + "Width:" + Width + ","
+        + "Height:" + Height + ","
+        + "Vision:" + Vision + ","
         + "Type:" + Type + ","
         + "Desc:" + Desc + ","
         + "}";

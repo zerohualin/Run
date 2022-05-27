@@ -1,4 +1,6 @@
-﻿namespace ET
+﻿using Cfg.zerg;
+
+namespace ET
 {
     [ObjectSystem]
     public class GridGroundComponentAwakeSystem: AwakeSystem<GridGroundComponent, int, int>
@@ -31,7 +33,7 @@
 
     public static class GridGroundComponentSystem
     {
-        public static void AddBuild(this GridGroundComponent self, int x, int y, BuildingData data)
+        public static void AddBuild(this GridGroundComponent self, int x, int y, CardConfig data)
         {
             for (int _x = x; _x < x + data.Width; _x++)
             {
@@ -40,7 +42,7 @@
                     var node = self.GridData[_x][_y];
                     node.CanBuild = false;
                     Game.EventSystem.Publish(new EventType.UpdateGridNode() { Node = node });
-                    self.UpdateVision(node, data.VisionRange);
+                    self.UpdateVision(node, data.Vision);
                 }
             }
         }
@@ -49,12 +51,14 @@
         {
             int x = centerNode.x;
             int y = centerNode.y;
-            
+
             for (int _x = x - range; _x <= x + range; _x++)
             {
                 for (int _y = y - range; _y <= y + range; _y++)
                 {
-                    if (_x < 0 || _x > self.Width - 1 || _y < 0 || _y > self.Height) { }
+                    if (_x < 0 || _x > self.Width - 1 || _y < 0 || _y > self.Height)
+                    {
+                    }
                     else
                     {
                         if (!self.GridData[_x][_y].CanView)

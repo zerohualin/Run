@@ -1,6 +1,7 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 using Cfg;
+using Cfg.zerg;
 using FairyGUI;
 using UnityEngine;
 
@@ -113,6 +114,20 @@ namespace ET
             Cell.GetChild("CostTxt").text = $"消耗能量 {data.Config.Cost}";
             ETCancellationToken cancerToken = null;
 
+            var bg = Cell.GetChild("Bg").asGraph;
+            switch (data.Config.Type)
+            {
+                case CardType.Building:
+                    bg.color = Color.cyan * 0.6f;
+                    break;
+                case CardType.Skill:
+                    bg.color = Color.yellow * 0.6f;
+                    break;
+                case CardType.Module:
+                    bg.color = Color.gray * 0.6f;
+                    break;
+            }
+
             Vector2 GetGroupV2()
             {
                 var LogicPos = GRoot.inst.GlobalToLocal(Input.mousePosition);
@@ -122,7 +137,17 @@ namespace ET
 
             async void TouchBegin()
             {
-                self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<BuildingPreviewComponent>().CreatePreviewBuilding();
+                switch (data.Config.Type)
+                {
+                    case CardType.Building:
+                        self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<BuildingPreviewComponent>()
+                                .CreatePreviewBuilding(data.Config);
+                        break;
+                    case CardType.Skill:
+                        break;
+                    case CardType.Module:
+                        break;
+                }
 
                 cancerToken = new ETCancellationToken();
                 @group.TweenMove(GetGroupV2(), 0.15f);
@@ -141,7 +166,7 @@ namespace ET
             {
                 if (cancerToken != null)
                     cancerToken.Cancel();
-                
+
                 bool useSucess = true;
                 useSucess = useSucess && -group.y > group.height * 0.66f;
 

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Cfg.zerg;
 using UnityEngine;
 
 namespace ET
@@ -6,7 +7,7 @@ namespace ET
     public class BuildingPreviewComponent: Entity, IAwake
     {
         public bool CanBuild = false;
-        public BuildingData PreviewBuildingData = null;
+        public CardConfig PreviewBuildingData = null;
 
         public GameObject PreviewGridObjParent;
         public GameObject PreviewGridObj;
