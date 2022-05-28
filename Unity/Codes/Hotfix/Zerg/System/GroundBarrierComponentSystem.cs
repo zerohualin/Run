@@ -4,7 +4,7 @@
     {
         public override void Awake(GroundBarrierComponent self)
         {
-            self.GetParent<GridNode>().IsBarrier = true;
+            
         }
     }
 }

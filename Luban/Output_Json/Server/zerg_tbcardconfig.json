@@ -7,7 +7,8 @@
     "height": 10,
     "vision": 3,
     "type": 0,
-    "desc": "\u002B1⚡️每回合"
+    "desc": "\u002B1⚡️每回合",
+    "requireGroundType": 1
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "height": 5,
     "vision": 10,
     "type": 0,
-    "desc": ""
+    "desc": "",
+    "requireGroundType": 1
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
     "height": 3,
     "vision": 3,
     "type": 0,
-    "desc": "\u002B1石每回合"
+    "desc": "\u002B1石每回合",
+    "requireGroundType": 3
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
     "height": 0,
     "vision": 2,
     "type": 2,
-    "desc": "每5回合定位一次高密度入侵点"
+    "desc": "每5回合定位一次高密度入侵点",
+    "requireGroundType": 1
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@
     "height": 6,
     "vision": 5,
     "type": 0,
-    "desc": "dps 30 单体，子弹伤害。"
+    "desc": "dps 30 单体，子弹伤害。",
+    "requireGroundType": 1
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@
     "height": 4,
     "vision": 5,
     "type": 1,
-    "desc": "400 AOE3x3，子弹伤害。"
+    "desc": "400 AOE3x3，子弹伤害。",
+    "requireGroundType": 0
   },
   {
     "id": 7,
@@ -67,7 +73,8 @@
     "height": 2,
     "vision": 3,
     "type": 0,
-    "desc": "与矿场相邻时，无需维持费用。"
+    "desc": "与矿场相邻时，无需维持费用。",
+    "requireGroundType": 1
   },
   {
     "id": 8,
@@ -77,6 +84,7 @@
     "height": 0,
     "vision": 0,
     "type": 1,
-    "desc": "卡包3选1"
+    "desc": "卡包3选1",
+    "requireGroundType": 0
   }
 ]

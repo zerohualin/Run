@@ -29,6 +29,7 @@ public sealed class CardConfig :  Bright.Config.BeanBase
         Vision = _buf.ReadInt();
         Type = (zerg.CardType)_buf.ReadInt();
         Desc = _buf.ReadString();
+        RequireGroundType = (zerg.GroundType)_buf.ReadInt();
     }
 
     public static CardConfig DeserializeCardConfig(ByteBuf _buf)
@@ -47,6 +48,7 @@ public sealed class CardConfig :  Bright.Config.BeanBase
     public int Vision { get; private set; }
     public zerg.CardType Type { get; private set; }
     public string Desc { get; private set; }
+    public zerg.GroundType RequireGroundType { get; private set; }
 
     public const int __ID__ = -2130970976;
     public override int GetTypeId() => __ID__;
@@ -70,6 +72,7 @@ public sealed class CardConfig :  Bright.Config.BeanBase
         + "Vision:" + Vision + ","
         + "Type:" + Type + ","
         + "Desc:" + Desc + ","
+        + "RequireGroundType:" + RequireGroundType + ","
         + "}";
     }
     }

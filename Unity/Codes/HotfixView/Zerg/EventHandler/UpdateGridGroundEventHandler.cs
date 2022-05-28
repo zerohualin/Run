@@ -15,13 +15,17 @@ namespace ET
             {
                 mat.color = Color.gray;
             }
-            else if (args.Node.CanBuild)
+            else if(args.Node.IsMineral)
             {
-                mat.color = Color.white;
+                mat.color = Color.yellow;
+            }
+            else if (args.Node.IsBuilded)
+            {
+                mat.color = Color.red;
             }
             else
             {
-                mat.color = Color.red;
+                mat.color = Color.white;
             }
             view.VisionObj.SetActive(!args.Node.CanView);
         }

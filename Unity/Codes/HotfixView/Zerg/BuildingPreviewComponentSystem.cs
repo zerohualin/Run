@@ -43,7 +43,7 @@ namespace ET
                     if (!self.CanBuild)
                         continue;
                     var node = ground.GetNode(x, y);
-                    if (node == null || !node.CanBuild || !node.CanView)
+                    if (node == null || !node.CanBuild(self.PreviewBuildingData) || !node.CanView)
                     {
                         self.CanBuild = false;
                     }

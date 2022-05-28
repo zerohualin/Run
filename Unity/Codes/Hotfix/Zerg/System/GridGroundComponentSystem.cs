@@ -24,12 +24,15 @@ namespace ET
                 }
             }
 
-            self.AddSpotLight(new AreaData() { StartPosX = 30, StartPosY = 30, Width = 20, Height = 20 });
+            self.AddSpotLight(new AreaData() { StartPosX = 30, StartPosY = 30, Width = 30, Height = 30 });
 
             self.AddBarrier(new AreaData() { StartPosX = 20, StartPosY = 20, Width = 5, Height = 5 });
+            
+            self.AddMineral(new AreaData() { StartPosX = 40, StartPosY = 40, Width = 5, Height = 3 });
 
             var BaseCampConfig = Game.Scene.GetComponent<LubanComponent>().Tables.TbCardConfig.Get(1);
-            self.AddBuild(new AreaData() { StartPosX = 30, StartPosY = 30, Width = BaseCampConfig.Width, Height = BaseCampConfig.Height }, BaseCampConfig);
+            self.AddBuild(new AreaData() { StartPosX = 30, StartPosY = 30, Width = BaseCampConfig.Width, Height = BaseCampConfig.Height },
+                BaseCampConfig);
         }
     }
 
@@ -47,18 +50,17 @@ namespace ET
 
         public static void AddBuild(this GridGroundComponent self, AreaData area, CardConfig data)
         {
+            Building building = self.AddChild<Building, int, int, CardConfig>(area.StartPosX, area.StartPosY, data);
             for (int _x = area.StartPosX; _x <= area.EndPosX; _x++)
             {
                 for (int _y = area.StartPosY; _y <= area.EndPosY; _y++)
                 {
                     var node = self.GridData[_x][_y];
-                    node.IsBuilded = true;
+                    node.BuildingId = building.InstanceId;
                     Game.EventSystem.Publish(new EventType.UpdateGridNode() { Node = node });
                     self.UpdateVision(node, data.Vision);
                 }
             }
-
-            self.AddChild<Building, int, int, CardConfig>(area.StartPosX, area.StartPosY, data);
         }
 
         public static void AddSpotLight(this GridGroundComponent self, AreaData area)
@@ -81,7 +83,20 @@ namespace ET
                 for (int _y = area.StartPosX; _y <= area.EndPosY; _y++)
                 {
                     var node = self.GridData[_x][_y];
-                    node.AddChild<GroundBarrierComponent>();
+                    node.AddComponent<GroundBarrierComponent>();
+                    Game.EventSystem.Publish(new EventType.UpdateGridNode() { Node = node });
+                }
+            }
+        }
+
+        public static void AddMineral(this GridGroundComponent self, AreaData area)
+        {
+            for (int _x = area.StartPosX; _x <= area.EndPosX; _x++)
+            {
+                for (int _y = area.StartPosX; _y <= area.EndPosY; _y++)
+                {
+                    var node = self.GridData[_x][_y];
+                    node.AddComponent<GridMineralComponent>();
                     Game.EventSystem.Publish(new EventType.UpdateGridNode() { Node = node });
                 }
             }
@@ -109,16 +124,6 @@ namespace ET
                     }
                 }
             }
-        }
-
-        public static void ChangeGround(this GridGroundComponent self, int x, int y)
-        {
-            var node = self.GridData[x][y];
-            if (!node.CanView)
-                return;
-            node.IsBuilded = true;
-            node.CanView = true;
-            Game.EventSystem.Publish(new EventType.UpdateGridNode() { Node = node });
         }
     }
 }
