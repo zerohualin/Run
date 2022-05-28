@@ -16,17 +16,17 @@ namespace ET
 
     public static class AreaPreviewComponentSystem
     {
-        public static void CreatePreviewBuilding(this AreaPreviewComponent self, CardConfig cardConfig)
+        public static void CreatePreviewBuilding(this AreaPreviewComponent self, Card card)
         {
-            self.PreviewData = cardConfig;
+            self.Card = card;
             if (self.PreviewGridObjDic.Count > 0)
             {
                 self.DestoryPreviewBuilding();
             }
 
-            for (int x = 0; x < self.PreviewData.Width; x++)
+            for (int x = 0; x < self.Card.Config.Width; x++)
             {
-                for (int y = 0; y < self.PreviewData.Height; y++)
+                for (int y = 0; y < self.Card.Config.Height; y++)
                 {
                     self.PreviewGridObjDic.Add(x * 1000 + y, GameObject.Instantiate(self.PreviewGridObj, self.PreviewGridObjParent.transform));
                 }
@@ -40,13 +40,13 @@ namespace ET
         {
             if (self.PreviewGridObjDic.Count == 0)
             {
-                self.CreatePreviewBuilding(self.PreviewData);
+                self.CreatePreviewBuilding(self.Card);
             }
 
             var ground = self.GetParent<GridGroundComponent>();
             self.CanBuild = true;
 
-            var area = AreaHelper.GetArea(posX, posY, self.PreviewData.Width, self.PreviewData.Height);
+            var area = AreaHelper.GetArea(posX, posY, self.Card.Config.Width, self.Card.Config.Height);
 
             self.AreaData = area;
 
@@ -57,7 +57,7 @@ namespace ET
                     if (!self.CanBuild)
                         continue;
                     var node = ground.GetNode(x, y);
-                    if (node == null || !node.CanBuild(self.PreviewData) || !node.CanView)
+                    if (node == null || !node.CanBuild(self.Card.Config) || !node.CanView)
                     {
                         self.CanBuild = false;
                     }
@@ -93,29 +93,38 @@ namespace ET
 
         public static void ClosePreviewBuilding(this AreaPreviewComponent self)
         {
-            self.PreviewData = null;
+            self.Card = null;
             self.DestoryPreviewBuilding();
         }
 
         public static void TryUseCard(this AreaPreviewComponent self)
         {
-            switch (self.PreviewData.Type)
+            bool CanUse = false;
+            Card card = self.Card;
+            switch (self.Card.Config.Type)
             {
                 case CardType.Building:
                     if (self.CanBuild)
                     {
-                        self.DomainScene().GetComponent<GridGroundComponent>().AddBuild(self.AreaData, self.PreviewData);
+                        self.DomainScene().GetComponent<GridGroundComponent>().AddBuild(self.AreaData, self.Card.Config);
                         self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>().ClosePreviewBuilding();
+                        CanUse = true;
                     }
                     else
                     {
                         // Log.Error("不行啦,有东西挡住啦");
                     }
-
                     break;
                 case CardType.Skill:
                     self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>().ClosePreviewBuilding();
+                    CanUse = true;
                     break;
+            }
+
+            if (CanUse)
+            {
+                var HandComponent = self.DomainScene().GetMyPlayer().GetComponent<HandComponent>();
+                HandComponent.TryUseCard(card);
             }
         }
 

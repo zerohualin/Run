@@ -16,7 +16,7 @@ namespace ET
         {
             var AreaPreviewComponent = self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>();
 
-            if (AreaPreviewComponent.PreviewData == null)
+            if (AreaPreviewComponent.Card == null)
                 return;
 
             if (Stage.isTouchOnUI)

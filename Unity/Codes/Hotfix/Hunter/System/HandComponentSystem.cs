@@ -1,4 +1,6 @@
-﻿namespace ET
+﻿using UnityEngine;
+
+namespace ET
 {
     [ObjectSystem]
     [FriendClass(typeof (LubanComponent))]
@@ -31,6 +33,20 @@
         public static void RemoveCard(this HandComponent self, Card card)
         {
             self.Cards.Remove(card);
+        }
+
+        public static void TryUseCard(this HandComponent self, Card card)
+        {
+            self.RemoveCard(card);
+            Game.EventSystem.Publish(new EventType.ChangeCard() { ZoneScene = self.DomainScene() });
+        }
+
+        public static void TryAddRandomCard(this HandComponent self)
+        {
+            var dataList = Game.Scene.GetComponent<LubanComponent>().Tables.TbCardConfig.DataList;
+            int randomCardIndex = Random.Range(0, dataList.Count);
+            self.AddCard(dataList[randomCardIndex].Id);
+            Game.EventSystem.Publish(new EventType.ChangeCard() { ZoneScene = self.DomainScene() });
         }
     }
 }

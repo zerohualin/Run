@@ -29,6 +29,15 @@ namespace ET
         }
     }
 
+    public class FUI_HunterBattle_ChangeCard: AEvent<EventType.ChangeCard>
+    {
+        protected override void Run(EventType.ChangeCard args)
+        {
+            var FUICom = args.ZoneScene.GetComponent<FGUIComponent>()?.GetFUICom<FUI_HunterBattle_Component>(FGUIType.HunterBattle);
+            FUICom?.Refresh();
+        }
+    }
+    
     public class FUI_HunterBattle_NewTrun: AEvent<EventType.NewTrun>
     {
         protected override void Run(EventType.NewTrun args)
@@ -61,7 +70,7 @@ namespace ET
     [FriendClass(typeof (HandComponent))]
     [FriendClass(typeof (Card))]
     [FriendClass(typeof (FUI_HunterBattle_Component))]
-    [FriendClass(typeof (ProgressBar_Energy))]
+    [FriendClass(typeof (ProgressBar_Resource))]
     [FriendClass(typeof (EnergyComponent))]
     public static class FUI_HunterBattle_ComponentSystem
     {
@@ -81,9 +90,9 @@ namespace ET
         public static void RefreshEnerge(this FUI_HunterBattle_Component self)
         {
             var EnergyComponent = self.DomainScene().GetMyPlayer().GetComponent<EnergyComponent>();
-            self.ProgressBar_Energy.self.max = EnergyComponent.Max;
-            self.ProgressBar_Energy.self.value = EnergyComponent.Current;
-            self.ProgressBar_Energy.ProgressTxt.text = $"{EnergyComponent.Current} / {EnergyComponent.Max}";
+            self.ProgressBar_Mineral.self.max = EnergyComponent.Max;
+            self.ProgressBar_Mineral.self.value = EnergyComponent.Current;
+            self.ProgressBar_Mineral.ProgressTxt.text = $"{EnergyComponent.Current} / {EnergyComponent.Max}";
         }
 
         public static void RefreshCard(this FUI_HunterBattle_Component self)
@@ -142,7 +151,7 @@ namespace ET
                     case CardType.Skill:
                     case CardType.Building:
                     case CardType.Module:
-                        self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>().CreatePreviewBuilding(data.Config);
+                        self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>().CreatePreviewBuilding(data);
                         break;
                 }
 
@@ -194,7 +203,10 @@ namespace ET
         {
             component.HandComponent = component.DomainScene().GetMyPlayer().GetComponent<HandComponent>();
             component.Refresh();
-            component.Btn_EndTurn.self.AddListener(() => { component.DomainScene().GetMyPlayer().TryEndMyTurn(); });
+            component.Btn_EndTurn.self.AddListener(() =>
+            {
+                component.HandComponent.TryAddRandomCard();
+            });
         }
 
         public override void OnShow(FUI_HunterBattle_Component component)

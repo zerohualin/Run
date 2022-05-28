@@ -25,5 +25,10 @@
         {
             public Scene ZoneScene;
         }
+
+        public struct ChangeCard
+        {
+            public Scene ZoneScene;
+        }
     }
 }

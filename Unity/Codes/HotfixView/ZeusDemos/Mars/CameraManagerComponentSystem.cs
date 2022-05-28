@@ -27,7 +27,7 @@ namespace ET
             }
 
             var BuildingPreviewComponent = self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>();
-            if (BuildingPreviewComponent.PreviewData != null)
+            if (BuildingPreviewComponent.Card != null)
                 return;
 
             if (Input.GetMouseButton(0) || Input.GetMouseButton(1))

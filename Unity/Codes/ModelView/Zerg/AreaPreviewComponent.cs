@@ -7,7 +7,7 @@ namespace ET
     public class AreaPreviewComponent: Entity, IAwake
     {
         public bool CanBuild = false;
-        public CardConfig PreviewData = null;
+        public Card Card = null;
 
         public GameObject PreviewGridObjParent;
         public GameObject PreviewGridObj;

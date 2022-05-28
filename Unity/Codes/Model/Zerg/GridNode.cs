@@ -31,7 +31,7 @@
         {
             get
             {
-                var Mineral = GetComponent<GridMineralComponent>();
+                var Mineral = GetComponent<GroundMineralComponent>();
                 return Mineral != null;
             }
         }

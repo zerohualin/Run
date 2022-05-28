@@ -33,7 +33,7 @@ namespace ET
             else
             {
                 var AreaPreview = self.GetParent<AreaPreviewComponent>();
-                Config = AreaPreview.PreviewData;
+                Config = AreaPreview.Card.Config;
                 PosY = 3;
             }
 
@@ -61,8 +61,8 @@ namespace ET
         public static void UpdatePos(this BuildingViewComponent self)
         {
             var AreaPreview = self.GetParent<AreaPreviewComponent>();
-            float x = AreaPreview.AreaData.StartPosX + AreaPreview.PreviewData.Width * 0.5f - 0.5f;
-            float z = AreaPreview.AreaData.StartPosY + AreaPreview.PreviewData.Height * 0.5f - 0.5f;
+            float x = AreaPreview.AreaData.StartPosX + AreaPreview.Card.Config.Width * 0.5f - 0.5f;
+            float z = AreaPreview.AreaData.StartPosY + AreaPreview.Card.Config.Height * 0.5f - 0.5f;
             self.BuildingObj.transform.position = new Vector3(x, 3, z);
         }
     }

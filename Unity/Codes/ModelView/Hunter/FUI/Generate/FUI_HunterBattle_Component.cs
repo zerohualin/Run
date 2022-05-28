@@ -26,6 +26,6 @@ namespace ET
         [FGUICustomCom]
         public Btn_EndTurn Btn_EndTurn;
         [FGUICustomCom]
-        public ProgressBar_Energy ProgressBar_Energy;
+        public ProgressBar_Resource ProgressBar_Mineral;
     }
 }

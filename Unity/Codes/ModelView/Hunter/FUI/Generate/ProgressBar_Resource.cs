@@ -3,10 +3,10 @@
 using FairyGUI;
 namespace ET
 {
-    public sealed partial class ProgressBar_Energy : Entity, IFGUIComponent
+    public sealed partial class ProgressBar_Resource : Entity, IFGUIComponent
     {
         public const string UIPackageName = "Hunter";
-        public const string UIResName = "ProgressBar_Energy";
+        public const string UIResName = "ProgressBar_Resource";
         public const string URL = "ui://qasmgabsjggg5";
 
         public string GetAddressablePath() { return $"{UIPackageName}_fui"; }
@@ -24,5 +24,7 @@ namespace ET
         public GGraph Bar;
         [FGUIObject]
         public GTextField ProgressTxt;
+        [FGUIObject]
+        public GTextField ProgressTitle;
     }
 }

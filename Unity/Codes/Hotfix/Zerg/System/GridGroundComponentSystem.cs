@@ -96,7 +96,7 @@ namespace ET
                 for (int _y = area.StartPosX; _y <= area.EndPosY; _y++)
                 {
                     var node = self.GridData[_x][_y];
-                    node.AddComponent<GridMineralComponent>();
+                    node.AddComponent<GroundMineralComponent>();
                     Game.EventSystem.Publish(new EventType.UpdateGridNode() { Node = node });
                 }
             }
