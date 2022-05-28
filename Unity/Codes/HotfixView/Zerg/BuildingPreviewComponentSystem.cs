@@ -23,6 +23,7 @@ namespace ET
             {
                 self.DestoryPreviewBuilding();
             }
+
             for (int x = 0; x < self.PreviewBuildingData.Width; x++)
             {
                 for (int y = 0; y < self.PreviewBuildingData.Height; y++)
@@ -38,7 +39,7 @@ namespace ET
             {
                 self.CreatePreviewBuilding(self.PreviewBuildingData);
             }
-            
+
             var ground = self.GetParent<GridGroundComponent>();
             self.CanBuild = true;
 
@@ -63,7 +64,10 @@ namespace ET
                 var x = VARIABLE.Key / 1000;
                 var y = VARIABLE.Key % 1000;
                 VARIABLE.Value.transform.position = new Vector3(area.StartPosX + x, 6, area.StartPosY + y);
-                VARIABLE.Value.GetComponentInChildren<Renderer>().material.color = self.CanBuild? Color.cyan : Color.yellow;
+                VARIABLE.Value.GetComponentInChildren<Renderer>().material.color = self.CanBuild? Color.blue : Color.red ;
+                var color = VARIABLE.Value.GetComponentInChildren<Renderer>().material.color;
+                color.a = 0.6f;
+                VARIABLE.Value.GetComponentInChildren<Renderer>().material.color = color;
             }
 
             return area;
@@ -75,6 +79,7 @@ namespace ET
             {
                 GameObject.Destroy(VARIABLE.Value);
             }
+
             self.PreviewGridObjDic.Clear();
         }
 
