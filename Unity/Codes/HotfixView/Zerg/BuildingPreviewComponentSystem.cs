@@ -19,7 +19,7 @@ namespace ET
         public static void CreatePreviewBuilding(this BuildingPreviewComponent self, CardConfig cardConfig)
         {
             self.PreviewBuildingData = cardConfig;
-
+            self.PreviewGridObjDic.Clear();
             for (int x = 0; x < self.PreviewBuildingData.Width; x++)
             {
                 for (int y = 0; y < self.PreviewBuildingData.Height; y++)
