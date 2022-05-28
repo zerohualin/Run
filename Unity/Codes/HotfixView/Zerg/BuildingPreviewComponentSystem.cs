@@ -19,7 +19,10 @@ namespace ET
         public static void CreatePreviewBuilding(this BuildingPreviewComponent self, CardConfig cardConfig)
         {
             self.PreviewBuildingData = cardConfig;
-            self.PreviewGridObjDic.Clear();
+            if (self.PreviewGridObjDic.Count > 0)
+            {
+                self.DestoryPreviewBuilding();
+            }
             for (int x = 0; x < self.PreviewBuildingData.Width; x++)
             {
                 for (int y = 0; y < self.PreviewBuildingData.Height; y++)
@@ -31,6 +34,11 @@ namespace ET
 
         public static AreaData UpdatePreviewBuilding(this BuildingPreviewComponent self, float posX, float posY)
         {
+            if (self.PreviewGridObjDic.Count == 0)
+            {
+                self.CreatePreviewBuilding(self.PreviewBuildingData);
+            }
+            
             var ground = self.GetParent<GridGroundComponent>();
             self.CanBuild = true;
 
@@ -61,15 +69,19 @@ namespace ET
             return area;
         }
 
-        public static void ClosePreviewBuilding(this BuildingPreviewComponent self)
+        public static void DestoryPreviewBuilding(this BuildingPreviewComponent self)
         {
-            self.PreviewBuildingData = null;
             foreach (var VARIABLE in self.PreviewGridObjDic)
             {
                 GameObject.Destroy(VARIABLE.Value);
             }
-
             self.PreviewGridObjDic.Clear();
+        }
+
+        public static void ClosePreviewBuilding(this BuildingPreviewComponent self)
+        {
+            self.PreviewBuildingData = null;
+            self.DestoryPreviewBuilding();
         }
     }
 }

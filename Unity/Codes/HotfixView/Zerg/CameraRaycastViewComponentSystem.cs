@@ -12,15 +12,16 @@ namespace ET
     {
         public override void Update(CameraRayCastViewComponent self)
         {
-            if (Stage.isTouchOnUI)
-            {
-                return;
-            }
-
             var BuildingPreviewComponent = self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<BuildingPreviewComponent>();
 
             if (BuildingPreviewComponent.PreviewBuildingData == null)
                 return;
+            
+            if (Stage.isTouchOnUI)
+            {
+                BuildingPreviewComponent.DestoryPreviewBuilding();
+                return;
+            }
 
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
