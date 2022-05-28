@@ -20,14 +20,16 @@ namespace ET
                 for (int y = 0; y < self.GridData[x].Length; y++)
                 {
                     self.GridData[x][y] = self.AddChild<GridNode, int, int>(x, y);
-                    if (x > 40 && x < 60)
-                    {
-                        self.GridData[x][y].CanView = true;
-                    }
-
                     Game.EventSystem.Publish(new EventType.UpdateGridNode() { Node = self.GridData[x][y] });
                 }
             }
+
+            self.AddSpotLight(30, 30, 20);
+            
+            self.AddBarrier(35, 35, 5);
+            
+            var BaseCampConfig = Game.Scene.GetComponent<LubanComponent>().Tables.TbCardConfig.Get(1);
+            self.AddBuild(40, 40, BaseCampConfig);
         }
     }
 
@@ -40,13 +42,39 @@ namespace ET
                 for (int _y = y; _y < y + data.Height; _y++)
                 {
                     var node = self.GridData[_x][_y];
-                    node.CanBuild = false;
+                    node.IsBuilded = true;
                     Game.EventSystem.Publish(new EventType.UpdateGridNode() { Node = node });
                     self.UpdateVision(node, data.Vision);
                 }
             }
 
             self.AddChild<Building, int, int, CardConfig>(x, y, data);
+        }
+
+        public static void AddSpotLight(this GridGroundComponent self, int x, int y, int range)
+        {
+            for (int _x = x; _x < x + range; _x++)
+            {
+                for (int _y = y; _y < y + range; _y++)
+                {
+                    var node = self.GridData[_x][_y];
+                    node.CanView = true;
+                    Game.EventSystem.Publish(new EventType.UpdateGridNode() { Node = node });
+                }
+            }
+        }
+
+        public static void AddBarrier(this GridGroundComponent self, int x, int y, int range)
+        {
+            for (int _x = x; _x < x + range; _x++)
+            {
+                for (int _y = y; _y < y + range; _y++)
+                {
+                    var node = self.GridData[_x][_y];
+                    node.AddChild<GroundBarrierComponent>();
+                    Game.EventSystem.Publish(new EventType.UpdateGridNode() { Node = node });
+                }
+            }
         }
 
         public static void UpdateVision(this GridGroundComponent self, GridNode centerNode, int range)
@@ -78,7 +106,7 @@ namespace ET
             var node = self.GridData[x][y];
             if (!node.CanView)
                 return;
-            node.CanBuild = false;
+            node.IsBuilded = true;
             node.CanView = true;
             Game.EventSystem.Publish(new EventType.UpdateGridNode() { Node = node });
         }
