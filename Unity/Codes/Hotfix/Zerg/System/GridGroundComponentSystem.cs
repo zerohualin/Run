@@ -24,12 +24,12 @@ namespace ET
                 }
             }
 
-            self.AddSpotLight(30, 30, 20);
+            self.AddSpotLight(new AreaData() { StartPosX = 30, StartPosY = 30, Width = 20, Height = 20 });
 
-            self.AddBarrier(35, 35, 5);
+            self.AddBarrier(new AreaData() { StartPosX = 35, StartPosY = 35, Width = 5, Height = 5 });
 
             var BaseCampConfig = Game.Scene.GetComponent<LubanComponent>().Tables.TbCardConfig.Get(1);
-            self.AddBuild(40, 40, BaseCampConfig);
+            self.AddBuild(new AreaData() { StartPosX = 30, StartPosY = 30, Width = BaseCampConfig.Width, Height = BaseCampConfig.Height }, BaseCampConfig);
         }
     }
 
@@ -41,14 +41,15 @@ namespace ET
             {
                 return null;
             }
+
             return self.GridData[x][y];
         }
 
-        public static void AddBuild(this GridGroundComponent self, int x, int y, CardConfig data)
+        public static void AddBuild(this GridGroundComponent self, AreaData area, CardConfig data)
         {
-            for (int _x = x; _x < x + data.Width; _x++)
+            for (int _x = area.StartPosX; _x <= area.EndPosX; _x++)
             {
-                for (int _y = y; _y < y + data.Height; _y++)
+                for (int _y = area.StartPosY; _y <= area.EndPosY; _y++)
                 {
                     var node = self.GridData[_x][_y];
                     node.IsBuilded = true;
@@ -57,14 +58,14 @@ namespace ET
                 }
             }
 
-            self.AddChild<Building, int, int, CardConfig>(x, y, data);
+            self.AddChild<Building, int, int, CardConfig>(area.StartPosX, area.StartPosY, data);
         }
 
-        public static void AddSpotLight(this GridGroundComponent self, int x, int y, int range)
+        public static void AddSpotLight(this GridGroundComponent self, AreaData area)
         {
-            for (int _x = x; _x < x + range; _x++)
+            for (int _x = area.StartPosX; _x <= area.EndPosX; _x++)
             {
-                for (int _y = y; _y < y + range; _y++)
+                for (int _y = area.StartPosX; _y <= area.EndPosY; _y++)
                 {
                     var node = self.GridData[_x][_y];
                     node.CanView = true;
@@ -73,11 +74,11 @@ namespace ET
             }
         }
 
-        public static void AddBarrier(this GridGroundComponent self, int x, int y, int range)
+        public static void AddBarrier(this GridGroundComponent self, AreaData area)
         {
-            for (int _x = x; _x < x + range; _x++)
+            for (int _x = area.StartPosX; _x <= area.EndPosX; _x++)
             {
-                for (int _y = y; _y < y + range; _y++)
+                for (int _y = area.StartPosX; _y <= area.EndPosY; _y++)
                 {
                     var node = self.GridData[_x][_y];
                     node.AddChild<GroundBarrierComponent>();

@@ -16,7 +16,7 @@ namespace ET
             {
                 return;
             }
-            
+
             var BuildingPreviewComponent = self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<BuildingPreviewComponent>();
 
             if (BuildingPreviewComponent.PreviewBuildingData == null)
@@ -27,23 +27,18 @@ namespace ET
             {
                 if (hit.collider)
                 {
-                    var pos = hit.collider.transform.position;
-                    int posX = (int)pos.x;
-                    int posZ = (int)pos.z;
-
-                    BuildingPreviewComponent.UpdatePreviewBuilding(posX, posZ);
+                    var Area = BuildingPreviewComponent.UpdatePreviewBuilding(hit.point.x, hit.point.z);
 
                     if (Input.GetMouseButtonDown(0))
                     {
                         if (BuildingPreviewComponent.CanBuild)
                         {
-                            Log.Debug("可以建造了哦");
-                            self.DomainScene().GetComponent<GridGroundComponent>().AddBuild(posX, posZ, BuildingPreviewComponent.PreviewBuildingData);
+                            self.DomainScene().GetComponent<GridGroundComponent>().AddBuild(Area, BuildingPreviewComponent.PreviewBuildingData);
                             self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<BuildingPreviewComponent>().ClosePreviewBuilding();
                         }
                         else
                         {
-                            Log.Error("不行啦,有东西挡住啦");
+                            // Log.Error("不行啦,有东西挡住啦");
                         }
                     }
 

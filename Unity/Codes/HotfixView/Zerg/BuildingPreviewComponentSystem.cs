@@ -29,13 +29,16 @@ namespace ET
             }
         }
 
-        public static void UpdatePreviewBuilding(this BuildingPreviewComponent self, int centerPosX, int centerPosZ)
+        public static AreaData UpdatePreviewBuilding(this BuildingPreviewComponent self, float posX, float posY)
         {
             var ground = self.GetParent<GridGroundComponent>();
             self.CanBuild = true;
-            for (int x = centerPosX; x < centerPosX + self.PreviewBuildingData.Width; x++)
+
+            AreaData area = AreaHelper.GetArea(posX, posY, self.PreviewBuildingData.Width, self.PreviewBuildingData.Height);
+
+            for (int x = area.StartPosX; x < area.StartPosX + area.Width; x++)
             {
-                for (int y = centerPosZ; y < centerPosZ + self.PreviewBuildingData.Height; y++)
+                for (int y = area.StartPosY; y < area.StartPosY + area.Height; y++)
                 {
                     if (!self.CanBuild)
                         continue;
@@ -51,9 +54,11 @@ namespace ET
             {
                 var x = VARIABLE.Key / 1000;
                 var y = VARIABLE.Key % 1000;
-                VARIABLE.Value.transform.position = new Vector3(centerPosX + x, 6, centerPosZ + y);
+                VARIABLE.Value.transform.position = new Vector3(area.StartPosX + x, 6, area.StartPosY + y);
                 VARIABLE.Value.GetComponentInChildren<Renderer>().material.color = self.CanBuild? Color.cyan : Color.yellow;
             }
+
+            return area;
         }
 
         public static void ClosePreviewBuilding(this BuildingPreviewComponent self)
