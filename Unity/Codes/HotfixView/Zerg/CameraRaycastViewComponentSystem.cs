@@ -1,4 +1,6 @@
-﻿using FairyGUI;
+﻿using System.Web.Hosting;
+using Cfg.zerg;
+using FairyGUI;
 using UnityEngine;
 
 namespace ET
@@ -12,14 +14,14 @@ namespace ET
     {
         public override void Update(CameraRayCastViewComponent self)
         {
-            var BuildingPreviewComponent = self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>();
+            var AreaPreviewComponent = self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>();
 
-            if (BuildingPreviewComponent.PreviewData == null)
+            if (AreaPreviewComponent.PreviewData == null)
                 return;
-            
+
             if (Stage.isTouchOnUI)
             {
-                BuildingPreviewComponent.DestoryPreviewBuilding();
+                AreaPreviewComponent.DestoryPreviewBuilding();
                 return;
             }
 
@@ -28,24 +30,16 @@ namespace ET
             {
                 if (hit.collider)
                 {
-                    var Area = BuildingPreviewComponent.UpdatePreviewBuilding(hit.point.x, hit.point.z);
+                    var Area = AreaPreviewComponent.UpdatePreviewBuilding(hit.point.x, hit.point.z);
 
                     if (Input.GetMouseButtonDown(0))
                     {
-                        if (BuildingPreviewComponent.CanBuild)
-                        {
-                            self.DomainScene().GetComponent<GridGroundComponent>().AddBuild(Area, BuildingPreviewComponent.PreviewData);
-                            self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>().ClosePreviewBuilding();
-                        }
-                        else
-                        {
-                            // Log.Error("不行啦,有东西挡住啦");
-                        }
+                        AreaPreviewComponent.TryUseCard();
                     }
 
                     if (Input.GetMouseButtonDown(1))
                     {
-                        self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>().ClosePreviewBuilding();
+                        AreaPreviewComponent.CancelUse();
                     }
                 }
             }

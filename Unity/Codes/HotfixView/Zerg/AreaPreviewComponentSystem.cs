@@ -31,7 +31,9 @@ namespace ET
                     self.PreviewGridObjDic.Add(x * 1000 + y, GameObject.Instantiate(self.PreviewGridObj, self.PreviewGridObjParent.transform));
                 }
             }
-            self.AddComponent<BuildingViewComponent>();
+
+            if (self.GetComponent<BuildingViewComponent>() == null)
+                self.AddComponent<BuildingViewComponent>();
         }
 
         public static AreaData UpdatePreviewBuilding(this AreaPreviewComponent self, float posX, float posY)
@@ -67,14 +69,13 @@ namespace ET
                 var x = VARIABLE.Key / 1000;
                 var y = VARIABLE.Key % 1000;
                 VARIABLE.Value.transform.position = new Vector3(area.StartPosX + x, 6, area.StartPosY + y);
-                VARIABLE.Value.GetComponentInChildren<Renderer>().material.color = self.CanBuild? Color.blue : Color.red ;
+                VARIABLE.Value.GetComponentInChildren<Renderer>().material.color = self.CanBuild? Color.blue : Color.red;
                 var color = VARIABLE.Value.GetComponentInChildren<Renderer>().material.color;
                 color.a = 0.4f;
                 VARIABLE.Value.GetComponentInChildren<Renderer>().material.color = color;
             }
 
-            var CardView = self.GetComponent<BuildingViewComponent>();
-            CardView.UpdatePos();
+            self.GetComponent<BuildingViewComponent>()?.UpdatePos();
 
             return area;
         }
@@ -85,6 +86,7 @@ namespace ET
             {
                 GameObject.Destroy(VARIABLE.Value);
             }
+
             self.PreviewGridObjDic.Clear();
             self.GetComponent<BuildingViewComponent>()?.Dispose();
         }
@@ -93,6 +95,33 @@ namespace ET
         {
             self.PreviewData = null;
             self.DestoryPreviewBuilding();
+        }
+
+        public static void TryUseCard(this AreaPreviewComponent self)
+        {
+            switch (self.PreviewData.Type)
+            {
+                case CardType.Building:
+                    if (self.CanBuild)
+                    {
+                        self.DomainScene().GetComponent<GridGroundComponent>().AddBuild(self.AreaData, self.PreviewData);
+                        self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>().ClosePreviewBuilding();
+                    }
+                    else
+                    {
+                        // Log.Error("不行啦,有东西挡住啦");
+                    }
+
+                    break;
+                case CardType.Skill:
+                    self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>().ClosePreviewBuilding();
+                    break;
+            }
+        }
+
+        public static void CancelUse(this AreaPreviewComponent self)
+        {
+            self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>().ClosePreviewBuilding();
         }
     }
 }
