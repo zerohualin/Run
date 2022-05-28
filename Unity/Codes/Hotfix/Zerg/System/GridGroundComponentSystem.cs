@@ -26,7 +26,7 @@ namespace ET
 
             self.AddSpotLight(new AreaData() { StartPosX = 30, StartPosY = 30, Width = 20, Height = 20 });
 
-            self.AddBarrier(new AreaData() { StartPosX = 35, StartPosY = 35, Width = 5, Height = 5 });
+            self.AddBarrier(new AreaData() { StartPosX = 20, StartPosY = 20, Width = 5, Height = 5 });
 
             var BaseCampConfig = Game.Scene.GetComponent<LubanComponent>().Tables.TbCardConfig.Get(1);
             self.AddBuild(new AreaData() { StartPosX = 30, StartPosY = 30, Width = BaseCampConfig.Width, Height = BaseCampConfig.Height }, BaseCampConfig);

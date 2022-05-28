@@ -25,11 +25,11 @@ namespace ET
             {
                 return;
             }
-            
+
             var BuildingPreviewComponent = self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<BuildingPreviewComponent>();
             if (BuildingPreviewComponent.PreviewBuildingData != null)
                 return;
-            
+
             if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
             {
                 self.FTra.transform.position += new Vector3(-Input.GetAxis("Mouse X"), 0, -Input.GetAxis("Mouse Y"));
@@ -38,7 +38,7 @@ namespace ET
             var scroll = Input.GetAxis("Mouse ScrollWheel");
             if (scroll != 0)
             {
-                self.PlayerCamera.orthographicSize -= scroll * 3;
+                self.PlayerCamera.orthographicSize -= scroll * 10;
             }
         }
     }
@@ -91,6 +91,11 @@ namespace ET
         {
             var cameraData = camera.GetUniversalAdditionalCameraData();
             cameraData.cameraStack.Add(self.StageCamera);
+        }
+
+        public static void JumpTo(this CameraManagerComponent self, float posX, float posY)
+        {
+            self.FTra.transform.position = new Vector3(posX, 0, posY);
         }
     }
 }
