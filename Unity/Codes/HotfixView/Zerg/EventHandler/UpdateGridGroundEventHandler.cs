@@ -10,7 +10,19 @@ namespace ET
             if (view == null)
                 return;
 
-            view.GroundStateObj.GetComponentInChildren<Renderer>().material.color = args.Node.Builded? Color.red : Color.white;
+            var mat = view.GroundStateObj.GetComponentInChildren<Renderer>().material;
+            if (args.Node.IsBarrier)
+            {
+                mat.color = Color.gray;
+            }
+            else if (args.Node.CanBuild)
+            {
+                mat.color = Color.white;
+            }
+            else
+            {
+                mat.color = Color.red;
+            }
             view.VisionObj.SetActive(!args.Node.CanView);
         }
     }

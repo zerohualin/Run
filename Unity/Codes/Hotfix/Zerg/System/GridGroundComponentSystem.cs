@@ -25,9 +25,9 @@ namespace ET
             }
 
             self.AddSpotLight(30, 30, 20);
-            
+
             self.AddBarrier(35, 35, 5);
-            
+
             var BaseCampConfig = Game.Scene.GetComponent<LubanComponent>().Tables.TbCardConfig.Get(1);
             self.AddBuild(40, 40, BaseCampConfig);
         }
@@ -35,6 +35,15 @@ namespace ET
 
     public static class GridGroundComponentSystem
     {
+        public static GridNode GetNode(this GridGroundComponent self, int x, int y)
+        {
+            if (x >= self.Width || x < 0 || y >= self.Height || y < 0)
+            {
+                return null;
+            }
+            return self.GridData[x][y];
+        }
+
         public static void AddBuild(this GridGroundComponent self, int x, int y, CardConfig data)
         {
             for (int _x = x; _x < x + data.Width; _x++)
@@ -86,7 +95,7 @@ namespace ET
             {
                 for (int _y = y - range; _y <= y + range; _y++)
                 {
-                    if (_x < 0 || _x > self.Width - 1 || _y < 0 || _y > self.Height)
+                    if (_x < 0 || _x >= self.Width || _y < 0 || _y >= self.Height)
                     {
                     }
                     else

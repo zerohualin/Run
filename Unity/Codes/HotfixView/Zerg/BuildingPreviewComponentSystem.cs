@@ -39,8 +39,8 @@ namespace ET
                 {
                     if (!self.CanBuild)
                         continue;
-                    var node = ground.GridData[x][y];
-                    if (!node.CanBuild || !node.CanView)
+                    var node = ground.GetNode(x, y);
+                    if (node == null || !node.CanBuild || !node.CanView)
                     {
                         self.CanBuild = false;
                     }

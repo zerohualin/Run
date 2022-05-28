@@ -19,7 +19,7 @@ namespace ET
 
             await Game.EventSystem.PublishAsync(new EventType.AfterCreateZoneScene() { ZoneScene = zoneScene });
             
-            zoneScene.AddComponent<GridGroundComponent, int, int>(100, 100);
+            zoneScene.AddComponent<GridGroundComponent, int, int>(60, 60);
             
             return zoneScene;
         }
