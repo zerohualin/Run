@@ -7,6 +7,6 @@ namespace ET
         public CardConfig Config;
 
         public int PosX;
-        public int PosZ;
+        public int PosY;
     }
 }

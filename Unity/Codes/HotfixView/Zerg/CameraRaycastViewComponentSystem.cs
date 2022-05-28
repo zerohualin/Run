@@ -12,9 +12,9 @@ namespace ET
     {
         public override void Update(CameraRayCastViewComponent self)
         {
-            var BuildingPreviewComponent = self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<BuildingPreviewComponent>();
+            var BuildingPreviewComponent = self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>();
 
-            if (BuildingPreviewComponent.PreviewBuildingData == null)
+            if (BuildingPreviewComponent.PreviewData == null)
                 return;
             
             if (Stage.isTouchOnUI)
@@ -34,8 +34,8 @@ namespace ET
                     {
                         if (BuildingPreviewComponent.CanBuild)
                         {
-                            self.DomainScene().GetComponent<GridGroundComponent>().AddBuild(Area, BuildingPreviewComponent.PreviewBuildingData);
-                            self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<BuildingPreviewComponent>().ClosePreviewBuilding();
+                            self.DomainScene().GetComponent<GridGroundComponent>().AddBuild(Area, BuildingPreviewComponent.PreviewData);
+                            self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>().ClosePreviewBuilding();
                         }
                         else
                         {
@@ -45,7 +45,7 @@ namespace ET
 
                     if (Input.GetMouseButtonDown(1))
                     {
-                        self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<BuildingPreviewComponent>().ClosePreviewBuilding();
+                        self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>().ClosePreviewBuilding();
                     }
                 }
             }

@@ -140,7 +140,7 @@ namespace ET
                 switch (data.Config.Type)
                 {
                     case CardType.Building:
-                        self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<BuildingPreviewComponent>().CreatePreviewBuilding(data.Config);
+                        self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>().CreatePreviewBuilding(data.Config);
                         break;
                     case CardType.Skill:
                         break;

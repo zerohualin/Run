@@ -4,13 +4,15 @@ using UnityEngine;
 
 namespace ET
 {
-    public class BuildingPreviewComponent: Entity, IAwake
+    public class AreaPreviewComponent: Entity, IAwake
     {
         public bool CanBuild = false;
-        public CardConfig PreviewBuildingData = null;
+        public CardConfig PreviewData = null;
 
         public GameObject PreviewGridObjParent;
         public GameObject PreviewGridObj;
         public Dictionary<int, GameObject> PreviewGridObjDic = new Dictionary<int, GameObject>();
+
+        public AreaData AreaData = new AreaData();
     }
 }
