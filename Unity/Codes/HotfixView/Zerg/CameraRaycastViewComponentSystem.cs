@@ -12,10 +12,10 @@ namespace ET
     {
         public override void Update(CameraRayCastViewComponent self)
         {
-            // if (Stage.isTouchOnUI)
-            // {
-            //     return;
-            // }
+            if (Stage.isTouchOnUI)
+            {
+                return;
+            }
             
             var BuildingPreviewComponent = self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<BuildingPreviewComponent>();
 

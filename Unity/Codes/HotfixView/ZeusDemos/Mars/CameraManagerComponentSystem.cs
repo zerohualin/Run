@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using FairyGUI;
+using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 namespace ET
@@ -20,6 +21,11 @@ namespace ET
     {
         public override void Update(CameraManagerComponent self)
         {
+            if (Stage.isTouchOnUI)
+            {
+                return;
+            }
+            
             var BuildingPreviewComponent = self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<BuildingPreviewComponent>();
             if (BuildingPreviewComponent.PreviewBuildingData != null)
                 return;
@@ -32,7 +38,7 @@ namespace ET
             var scroll = Input.GetAxis("Mouse ScrollWheel");
             if (scroll != 0)
             {
-                self.PlayerCamera.orthographicSize += scroll * 3;
+                self.PlayerCamera.orthographicSize -= scroll * 3;
             }
         }
     }
