@@ -22,6 +22,10 @@ public sealed class Tables
     /// 卡牌表
     /// </summary>
     public zerg.TbCardConfig TbCardConfig {get; }
+    /// <summary>
+    /// 蓝图表
+    /// </summary>
+    public zerg.TbBluePrint TbBluePrint {get; }
     public Global.TbGlobal TbGlobal {get; }
     public Demo.TbAIMetas TbAIMetas {get; }
     public Demo.TbUnitMeta TbUnitMeta {get; }
@@ -34,6 +38,8 @@ public sealed class Tables
         tables.Add("item.TbItem", TbItem);
         TbCardConfig = new zerg.TbCardConfig(loader("zerg_tbcardconfig")); 
         tables.Add("zerg.TbCardConfig", TbCardConfig);
+        TbBluePrint = new zerg.TbBluePrint(loader("zerg_tbblueprint")); 
+        tables.Add("zerg.TbBluePrint", TbBluePrint);
         TbGlobal = new Global.TbGlobal(loader("global_tbglobal")); 
         tables.Add("Global.TbGlobal", TbGlobal);
         TbAIMetas = new Demo.TbAIMetas(loader("demo_tbaimetas")); 
@@ -45,6 +51,7 @@ public sealed class Tables
 
         TbItem.Resolve(tables); 
         TbCardConfig.Resolve(tables); 
+        TbBluePrint.Resolve(tables); 
         TbGlobal.Resolve(tables); 
         TbAIMetas.Resolve(tables); 
         TbUnitMeta.Resolve(tables); 
@@ -55,6 +62,7 @@ public sealed class Tables
     {
         TbItem.TranslateText(translator); 
         TbCardConfig.TranslateText(translator); 
+        TbBluePrint.TranslateText(translator); 
         TbGlobal.TranslateText(translator); 
         TbAIMetas.TranslateText(translator); 
         TbUnitMeta.TranslateText(translator); 

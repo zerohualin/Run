@@ -1,4 +1,5 @@
-﻿using FairyGUI;
+﻿using Cfg;
+using FairyGUI;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -21,6 +22,11 @@ namespace ET
     {
         public override void Update(CameraManagerComponent self)
         {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                FGUIComponent.Instance.OpenAysnc(FGUIType.BulePrintStore).Coroutine();
+            }
+            
             if (Stage.isTouchOnUI)
             {
                 return;

@@ -22,6 +22,10 @@ public sealed class Tables
     /// 卡牌表
     /// </summary>
     public zerg.TbCardConfig TbCardConfig {get; }
+    /// <summary>
+    /// 蓝图表
+    /// </summary>
+    public zerg.TbBluePrint TbBluePrint {get; }
     public Global.TbGlobal TbGlobal {get; }
     public StartServer.TbStartMachine TbStartMachine {get; }
     public StartServer.TbStartProcess TbStartProcess {get; }
@@ -37,6 +41,8 @@ public sealed class Tables
         tables.Add("item.TbItem", TbItem);
         TbCardConfig = new zerg.TbCardConfig(loader("zerg_tbcardconfig")); 
         tables.Add("zerg.TbCardConfig", TbCardConfig);
+        TbBluePrint = new zerg.TbBluePrint(loader("zerg_tbblueprint")); 
+        tables.Add("zerg.TbBluePrint", TbBluePrint);
         TbGlobal = new Global.TbGlobal(loader("global_tbglobal")); 
         tables.Add("Global.TbGlobal", TbGlobal);
         TbStartMachine = new StartServer.TbStartMachine(loader("startserver_tbstartmachine")); 
@@ -54,6 +60,7 @@ public sealed class Tables
 
         TbItem.Resolve(tables); 
         TbCardConfig.Resolve(tables); 
+        TbBluePrint.Resolve(tables); 
         TbGlobal.Resolve(tables); 
         TbStartMachine.Resolve(tables); 
         TbStartProcess.Resolve(tables); 
@@ -67,6 +74,7 @@ public sealed class Tables
     {
         TbItem.TranslateText(translator); 
         TbCardConfig.TranslateText(translator); 
+        TbBluePrint.TranslateText(translator); 
         TbGlobal.TranslateText(translator); 
         TbStartMachine.TranslateText(translator); 
         TbStartProcess.TranslateText(translator); 

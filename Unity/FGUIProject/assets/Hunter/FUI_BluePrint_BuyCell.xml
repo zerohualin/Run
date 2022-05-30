@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="250,420">
+  <displayList>
+    <component id="n0_feco" name="BluePrint" src="feco7" fileName="FUI_BulePrint.xml" xy="0,1"/>
+    <component id="n1_feco" name="Btn_BluePrint" src="feco9" fileName="Btn_BuyBluePrint.xml" xy="75,365" size="100,42"/>
+  </displayList>
+</component>

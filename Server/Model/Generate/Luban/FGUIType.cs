@@ -47,5 +47,9 @@ namespace Cfg
         /// 8
         /// </summary>
         HunterBattle = 8,
+        /// <summary>
+        /// 9
+        /// </summary>
+        BulePrintStore = 9,
     }
 }

@@ -5,6 +5,11 @@
     <component id="cw0i3" name="FUI_Card.xml" path="/" exported="true"/>
     <component id="s6264" name="Btn_EndTurn.xml" path="/" exported="true"/>
     <component id="jggg5" name="ProgressBar_Resource.xml" path="/" exported="true"/>
+    <component id="feco6" name="FUI_BulePrintStore_Component.xml" path="/" exported="true"/>
+    <component id="feco7" name="FUI_BulePrint.xml" path="/" exported="true"/>
+    <component id="feco8" name="FUI_BluePrint_BuyCell.xml" path="/" exported="true"/>
+    <component id="feco9" name="Btn_BuyBluePrint.xml" path="/" exported="true"/>
+    <component id="fecoa" name="Btn_LeaveStore.xml" path="/" exported="true"/>
   </resources>
   <publish name="Hunter" genCode="true"/>
 </packageDescription>

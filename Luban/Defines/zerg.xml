@@ -13,6 +13,10 @@
 		<var name="Module" alias="召唤牌" comment=""/>
 	</enum>
 
+	<enum name="BuildingType" comment="建筑类型">
+		<var name="Building" alias="建筑" comment=""/>
+	</enum>
+
 	<bean name="CardConfig" comment="卡牌">
 		<var name="id" type="int" comment="卡牌id"/>
 		<var name="name" type="string"/>
@@ -25,5 +29,16 @@
 		<var name="requireGroundType" type="GroundType"/>
 	</bean>
 
+	<bean name="BluePrint" comment="蓝图">
+		<var name="id" type="string"/>
+		<var name="name" type="string"/>
+		<var name="type" type="BuildingType"/>
+		<var name="level" type="int"/>
+		<var name="rare" type="int"/>
+		<var name="cost" type="int"/>
+		<var name="linkBuilding" type="string"/>
+	</bean>
+
 	<table name="TbCardConfig" value="CardConfig" input="zerg/card.xlsx" comment="卡牌表"/>
+	<table name="TbBluePrint" value="BluePrint" input="zerg/blueprint.xlsx" comment="蓝图表"/>
 </module>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="250,350" pivot="0.5,0.5" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <graph id="n9_cw0i" name="CanUseFrame" xy="0,0" size="250,350" group="n15_gjdq" type="rect" fillColor="#ff009933"/>
+    <graph id="n10_cw0i" name="Bg" xy="5,5" size="240,340" group="n15_gjdq" type="rect" fillColor="#ff003399"/>
+    <graph id="n11_cw0i" name="DescFrame" xy="7,165" size="236,108" group="n15_gjdq" type="rect"/>
+    <richtext id="n12_cw0i" name="TitleTxt" xy="7,17" size="238,147" group="n15_gjdq" fontSize="25" color="#ffffff" autoSize="none" text="标题"/>
+    <richtext id="n13_cw0i" name="DescTxt" xy="8,166" size="234,109" group="n15_gjdq" fontSize="16" vAlign="middle" autoSize="none" text="说明"/>
+    <richtext id="n14_cw0i" name="CostTxt" xy="12,276" size="224,68" group="n15_gjdq" fontSize="20" color="#ffffff" align="right" vAlign="middle" autoSize="none" text="消耗"/>
+    <graph id="n16_jggg" name="CanNotUseFrame" xy="0,0" size="250,350" group="n15_gjdq" type="rect" lineColor="#00000000" fillColor="#54000000"/>
+    <richtext id="n17_g2kf" name="LvTxt" xy="14,17" size="223,71" group="n15_gjdq" fontSize="25" color="#ffffff" align="right" autoSize="none" text="标题"/>
+    <group id="n15_gjdq" name="CardGroup" xy="0,0" size="250,350" advanced="true"/>
+  </displayList>
+  <Button/>
+</component>

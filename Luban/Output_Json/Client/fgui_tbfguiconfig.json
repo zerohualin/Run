@@ -38,5 +38,10 @@
     "Id": 8,
     "Name": "HunterBattle",
     "Layer": 2
+  },
+  {
+    "Id": 9,
+    "Name": "BulePrintStore",
+    "Layer": 2
   }
 ]

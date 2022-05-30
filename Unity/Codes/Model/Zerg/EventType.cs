@@ -21,5 +21,10 @@
         {
             public Building Building;
         }
+
+        public struct InitEnemy
+        {
+            public Enemy Enemy;  
+        }
     }
 }

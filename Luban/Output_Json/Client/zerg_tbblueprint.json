@@ -1,0 +1,218 @@
+[
+  {
+    "id": "BP000001",
+    "name": "大本",
+    "type": 0,
+    "level": 1,
+    "rare": 1,
+    "cost": 1,
+    "linkBuilding": "BD000001"
+  },
+  {
+    "id": "BP000002",
+    "name": "大本",
+    "type": 0,
+    "level": 2,
+    "rare": 1,
+    "cost": 2,
+    "linkBuilding": "BD000001"
+  },
+  {
+    "id": "BP000003",
+    "name": "大本",
+    "type": 0,
+    "level": 3,
+    "rare": 1,
+    "cost": 3,
+    "linkBuilding": "BD000001"
+  },
+  {
+    "id": "BP000004",
+    "name": "大本",
+    "type": 0,
+    "level": 4,
+    "rare": 1,
+    "cost": 4,
+    "linkBuilding": "BD000001"
+  },
+  {
+    "id": "BP000005",
+    "name": "灯塔",
+    "type": 0,
+    "level": 1,
+    "rare": 1,
+    "cost": 1,
+    "linkBuilding": "BD000002"
+  },
+  {
+    "id": "BP000006",
+    "name": "灯塔",
+    "type": 0,
+    "level": 2,
+    "rare": 1,
+    "cost": 2,
+    "linkBuilding": "BD000002"
+  },
+  {
+    "id": "BP000007",
+    "name": "灯塔",
+    "type": 0,
+    "level": 3,
+    "rare": 1,
+    "cost": 3,
+    "linkBuilding": "BD000002"
+  },
+  {
+    "id": "BP000008",
+    "name": "灯塔",
+    "type": 0,
+    "level": 4,
+    "rare": 1,
+    "cost": 4,
+    "linkBuilding": "BD000002"
+  },
+  {
+    "id": "BP000009",
+    "name": "采集塔红",
+    "type": 0,
+    "level": 1,
+    "rare": 1,
+    "cost": 1,
+    "linkBuilding": "BD000003"
+  },
+  {
+    "id": "BP000010",
+    "name": "采集塔红",
+    "type": 0,
+    "level": 2,
+    "rare": 1,
+    "cost": 2,
+    "linkBuilding": "BD000003"
+  },
+  {
+    "id": "BP000011",
+    "name": "采集塔红",
+    "type": 0,
+    "level": 3,
+    "rare": 1,
+    "cost": 3,
+    "linkBuilding": "BD000003"
+  },
+  {
+    "id": "BP000012",
+    "name": "采集塔红",
+    "type": 0,
+    "level": 4,
+    "rare": 1,
+    "cost": 4,
+    "linkBuilding": "BD000003"
+  },
+  {
+    "id": "BP000013",
+    "name": "采集塔黄",
+    "type": 0,
+    "level": 1,
+    "rare": 1,
+    "cost": 1,
+    "linkBuilding": "BD000004"
+  },
+  {
+    "id": "BP000014",
+    "name": "采集塔黄",
+    "type": 0,
+    "level": 2,
+    "rare": 1,
+    "cost": 2,
+    "linkBuilding": "BD000004"
+  },
+  {
+    "id": "BP000015",
+    "name": "采集塔黄",
+    "type": 0,
+    "level": 3,
+    "rare": 1,
+    "cost": 3,
+    "linkBuilding": "BD000004"
+  },
+  {
+    "id": "BP000016",
+    "name": "采集塔黄",
+    "type": 0,
+    "level": 4,
+    "rare": 1,
+    "cost": 4,
+    "linkBuilding": "BD000004"
+  },
+  {
+    "id": "BP000017",
+    "name": "采集塔蓝",
+    "type": 0,
+    "level": 1,
+    "rare": 1,
+    "cost": 1,
+    "linkBuilding": "BD000005"
+  },
+  {
+    "id": "BP000018",
+    "name": "采集塔蓝",
+    "type": 0,
+    "level": 2,
+    "rare": 1,
+    "cost": 2,
+    "linkBuilding": "BD000005"
+  },
+  {
+    "id": "BP000019",
+    "name": "采集塔蓝",
+    "type": 0,
+    "level": 3,
+    "rare": 1,
+    "cost": 3,
+    "linkBuilding": "BD000005"
+  },
+  {
+    "id": "BP000020",
+    "name": "采集塔蓝",
+    "type": 0,
+    "level": 4,
+    "rare": 1,
+    "cost": 4,
+    "linkBuilding": "BD000005"
+  },
+  {
+    "id": "BP000021",
+    "name": "采集塔绿",
+    "type": 0,
+    "level": 1,
+    "rare": 1,
+    "cost": 1,
+    "linkBuilding": "BD000006"
+  },
+  {
+    "id": "BP000022",
+    "name": "采集塔绿",
+    "type": 0,
+    "level": 2,
+    "rare": 1,
+    "cost": 2,
+    "linkBuilding": "BD000006"
+  },
+  {
+    "id": "BP000023",
+    "name": "采集塔绿",
+    "type": 0,
+    "level": 3,
+    "rare": 1,
+    "cost": 3,
+    "linkBuilding": "BD000006"
+  },
+  {
+    "id": "BP000024",
+    "name": "采集塔绿",
+    "type": 0,
+    "level": 4,
+    "rare": 1,
+    "cost": 4,
+    "linkBuilding": "BD000006"
+  }
+]
