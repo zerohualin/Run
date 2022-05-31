@@ -351,11 +351,11 @@
      <Reference Include="Sirenix.Utilities">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Burst.Cecil.Rocks">
-     <HintPath>C:\101_Dream\Run\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
-     </Reference>
      <Reference Include="ICSharpCode.SharpZipLib">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst.Cecil.Rocks">
+     <HintPath>C:\101_Dream\Run\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
      </Reference>
      <Reference Include="Sirenix.Serialization">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.dll</HintPath>
