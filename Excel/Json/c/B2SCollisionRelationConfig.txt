@@ -1,5 +1,0 @@
-{"list":[
-{"_t":"B2SCollisionRelationConfig","_id":10001,"B2S_ColliderConfigId":10001,"B2S_ColliderHandlerName":"Darius_Q_CollisionHandler","FriendlyHero":0,"EnemyHero":1,"FriendlySoldier":0,"EnemySoldier":1,"FriendlyBuilds":0,"EnemyBuilds":0,"Creeps":1},
-{"_t":"B2SCollisionRelationConfig","_id":10002,"B2S_ColliderConfigId":10002,"B2S_ColliderHandlerName":"Darius_E_CollisionHandler","FriendlyHero":0,"EnemyHero":1,"FriendlySoldier":0,"EnemySoldier":1,"FriendlyBuilds":0,"EnemyBuilds":0,"Creeps":1},
-{"_t":"B2SCollisionRelationConfig","_id":10003,"B2S_ColliderConfigId":10003.00,"B2S_ColliderHandlerName":"Darius_R_CollisionHandler","FriendlyHero":0,"EnemyHero":1,"FriendlySoldier":0,"EnemySoldier":1,"FriendlyBuilds":0,"EnemyBuilds":0,"Creeps":1},
-]}
