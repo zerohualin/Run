@@ -11,6 +11,8 @@ namespace ET
 
             string path = "Assets/Bundles/Zerg/Prefabs/PreViewNode.prefab";
             self.PreviewGridObj = AddressableComponent.Instance.LoadAssetByPath<GameObject>(path);
+            string path2 = "Assets/Bundles/Zerg/Prefabs/FieldNode.prefab";
+            self.FieldObj = AddressableComponent.Instance.LoadAssetByPath<GameObject>(path2);
         }
     }
 
@@ -29,6 +31,14 @@ namespace ET
                 for (int y = 0; y < self.BuildingData.Config.Size.Y; y++)
                 {
                     self.PreviewGridObjDic.Add(x * 1000 + y, GameObject.Instantiate(self.PreviewGridObj, self.PreviewGridObjParent.transform));
+                }
+            }
+
+            for (int x = 0; x < self.BuildingData.Config.GetFiledX(); x++)
+            {
+                for (int y = 0; y < self.BuildingData.Config.GetFiledY(); y++)
+                {
+                    self.FieldObjDic.Add(x * 1000 + y, GameObject.Instantiate(self.FieldObj, self.PreviewGridObjParent.transform));
                 }
             }
 
@@ -68,11 +78,19 @@ namespace ET
             {
                 var x = VARIABLE.Key / 1000;
                 var y = VARIABLE.Key % 1000;
-                VARIABLE.Value.transform.position = new Vector3(area.StartPosX + x, 6, area.StartPosY + y);
+                VARIABLE.Value.transform.position = new Vector3(area.StartPosX + x, 7.7f, area.StartPosY + y);
                 VARIABLE.Value.GetComponentInChildren<Renderer>().material.color = self.CanBuild? Color.blue : Color.red;
                 var color = VARIABLE.Value.GetComponentInChildren<Renderer>().material.color;
                 color.a = 0.4f;
                 VARIABLE.Value.GetComponentInChildren<Renderer>().material.color = color;
+            }
+
+            var fieldArea = AreaHelper.GetArea(posX, posY, self.BuildingData.Config.GetFiledX(), self.BuildingData.Config.GetFiledY());
+            foreach (var VARIABLE in self.FieldObjDic)
+            {
+                var x = VARIABLE.Key / 1000;
+                var y = VARIABLE.Key % 1000;
+                VARIABLE.Value.transform.position = new Vector3(fieldArea.StartPosX + x, 6, fieldArea.StartPosY + y);
             }
 
             self.GetComponent<BuildingViewComponent>()?.UpdatePos();
@@ -87,7 +105,13 @@ namespace ET
                 GameObject.Destroy(VARIABLE.Value);
             }
 
+            foreach (var VARIABLE in self.FieldObjDic)
+            {
+                GameObject.Destroy(VARIABLE.Value);
+            }
+
             self.PreviewGridObjDic.Clear();
+            self.FieldObjDic.Clear();
             self.GetComponent<BuildingViewComponent>()?.Dispose();
         }
 
@@ -114,6 +138,7 @@ namespace ET
                     {
                         // Log.Error("不行啦,有东西挡住啦");
                     }
+
                     break;
                 // case BuildingType.Skill:
                 //     self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>().ClosePreviewBuilding();

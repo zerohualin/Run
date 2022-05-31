@@ -72,7 +72,7 @@ namespace ET
             var AreaPreview = self.GetParent<AreaPreviewComponent>();
             float x = AreaPreview.AreaData.StartPosX + AreaPreview.BuildingData.Config.Size.X * 0.5f - 0.5f;
             float z = AreaPreview.AreaData.StartPosY + AreaPreview.BuildingData.Config.Size.Y * 0.5f - 0.5f;
-            self.BuildingObj.transform.position = new Vector3(x, 3, z);
+            self.BuildingObj.transform.position = new Vector3(x, 7, z);
         }
     }
 }

@@ -12,7 +12,9 @@ namespace ET
         public GameObject PreviewGridObjParent;
         public GameObject PreviewGridObj;
         public Dictionary<int, GameObject> PreviewGridObjDic = new Dictionary<int, GameObject>();
-
+        public GameObject FieldObj;
+        public Dictionary<int, GameObject> FieldObjDic = new Dictionary<int, GameObject>();
+        
         public AreaData AreaData = new AreaData();
     }
 }

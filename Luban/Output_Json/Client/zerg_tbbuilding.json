@@ -80,7 +80,7 @@
     ],
     "maxLevel": 4,
     "maxSlot": 3,
-    "requireGroundType": 3
+    "requireGroundType": 1
   },
   {
     "id": "BD000004",
@@ -176,7 +176,7 @@
     ],
     "maxLevel": 4,
     "maxSlot": 3,
-    "requireGroundType": 0
+    "requireGroundType": 1
   },
   {
     "id": "BD000007",
@@ -240,7 +240,7 @@
     ],
     "maxLevel": 4,
     "maxSlot": 3,
-    "requireGroundType": 0
+    "requireGroundType": 1
   },
   {
     "id": "BD000009",
