@@ -17,19 +17,12 @@
 		<var name="Building" alias="建筑" comment=""/>
 	</enum>
 
-	<bean name="CardConfig" comment="卡牌">
-		<var name="id" type="int" comment="卡牌id"/>
-		<var name="name" type="string"/>
-		<var name="cost" type="int"/>
-		<var name="width" type="int"/>
-		<var name="height" type="int"/>
-		<var name="vision" type="int"/>
-		<var name="type" type="CardType"/>
-		<var name="desc" type="string"/>
-		<var name="requireGroundType" type="GroundType"/>
-	</bean>
+	<bean name="AreaSize">
+        <var name="x" type="int"/>
+        <var name="y" type="int"/>
+    </bean>
 
-	<bean name="BluePrint" comment="蓝图">
+	<bean name="BluePrintConfig" comment="蓝图">
 		<var name="id" type="string"/>
 		<var name="name" type="string"/>
 		<var name="type" type="BuildingType"/>
@@ -39,6 +32,20 @@
 		<var name="linkBuilding" type="string"/>
 	</bean>
 
-	<table name="TbCardConfig" value="CardConfig" input="zerg/card.xlsx" comment="卡牌表"/>
-	<table name="TbBluePrint" value="BluePrint" input="zerg/blueprint.xlsx" comment="蓝图表"/>
+	<bean name="BuildingConfig" comment="建筑">
+		<var name="id" type="string"/>
+		<var name="name" type="string"/>
+		<var name="type" type="BuildingType"/>
+		<var name="size" type="AreaSize"/>
+		<var name="field" type="AreaSize"/>
+		<var name="hp" type="int"/>
+		<var name="invadeFix" type="float"/>
+		<var name="lvModules" type="map,int,string"/>
+		<var name="maxLevel" type="int"/>
+		<var name="maxSlot" type="int"/>
+		<var name="requireGroundType" type="GroundType"/>
+	</bean>
+
+	<table name="TbBluePrint" value="BluePrintConfig" input="zerg/blueprint.xlsx" comment="蓝图表"/>
+	<table name="TbBuilding" value="BuildingConfig" input="zerg/building.xlsx" comment="建筑表"/>
 </module>

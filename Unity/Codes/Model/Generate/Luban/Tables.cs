@@ -19,13 +19,13 @@ public sealed class Tables
     /// </summary>
     public item.TbItem TbItem {get; }
     /// <summary>
-    /// 卡牌表
-    /// </summary>
-    public zerg.TbCardConfig TbCardConfig {get; }
-    /// <summary>
     /// 蓝图表
     /// </summary>
     public zerg.TbBluePrint TbBluePrint {get; }
+    /// <summary>
+    /// 建筑表
+    /// </summary>
+    public zerg.TbBuilding TbBuilding {get; }
     public Global.TbGlobal TbGlobal {get; }
     public Demo.TbAIMetas TbAIMetas {get; }
     public Demo.TbUnitMeta TbUnitMeta {get; }
@@ -36,10 +36,10 @@ public sealed class Tables
         var tables = new System.Collections.Generic.Dictionary<string, object>();
         TbItem = new item.TbItem(loader("item_tbitem")); 
         tables.Add("item.TbItem", TbItem);
-        TbCardConfig = new zerg.TbCardConfig(loader("zerg_tbcardconfig")); 
-        tables.Add("zerg.TbCardConfig", TbCardConfig);
         TbBluePrint = new zerg.TbBluePrint(loader("zerg_tbblueprint")); 
         tables.Add("zerg.TbBluePrint", TbBluePrint);
+        TbBuilding = new zerg.TbBuilding(loader("zerg_tbbuilding")); 
+        tables.Add("zerg.TbBuilding", TbBuilding);
         TbGlobal = new Global.TbGlobal(loader("global_tbglobal")); 
         tables.Add("Global.TbGlobal", TbGlobal);
         TbAIMetas = new Demo.TbAIMetas(loader("demo_tbaimetas")); 
@@ -50,8 +50,8 @@ public sealed class Tables
         tables.Add("Fgui.TbFguiConfig", TbFguiConfig);
 
         TbItem.Resolve(tables); 
-        TbCardConfig.Resolve(tables); 
         TbBluePrint.Resolve(tables); 
+        TbBuilding.Resolve(tables); 
         TbGlobal.Resolve(tables); 
         TbAIMetas.Resolve(tables); 
         TbUnitMeta.Resolve(tables); 
@@ -61,8 +61,8 @@ public sealed class Tables
     public void TranslateText(System.Func<string, string, string> translator)
     {
         TbItem.TranslateText(translator); 
-        TbCardConfig.TranslateText(translator); 
         TbBluePrint.TranslateText(translator); 
+        TbBuilding.TranslateText(translator); 
         TbGlobal.TranslateText(translator); 
         TbAIMetas.TranslateText(translator); 
         TbUnitMeta.TranslateText(translator); 

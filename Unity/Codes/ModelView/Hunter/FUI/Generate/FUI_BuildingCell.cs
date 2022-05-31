@@ -3,10 +3,10 @@
 using FairyGUI;
 namespace ET
 {
-    public sealed partial class FUI_Card : Entity, IFGUIComponent
+    public sealed partial class FUI_BuildingCell : Entity, IFGUIComponent, IAwake
     {
         public const string UIPackageName = "Hunter";
-        public const string UIResName = "FUI_Card";
+        public const string UIResName = "FUI_BuildingCell";
         public const string URL = "ui://qasmgabscw0i3";
 
         public string GetAddressablePath() { return $"{UIPackageName}_fui"; }
@@ -23,16 +23,10 @@ namespace ET
         [FGUIObject]
         public GGraph Bg;
         [FGUIObject]
-        public GGraph DescFrame;
-        [FGUIObject]
         public GRichTextField TitleTxt;
-        [FGUIObject]
-        public GRichTextField DescTxt;
         [FGUIObject]
         public GRichTextField CostTxt;
         [FGUIObject]
         public GGraph CanNotUseFrame;
-        [FGUIObject]
-        public GGroup CardGroup;
     }
 }

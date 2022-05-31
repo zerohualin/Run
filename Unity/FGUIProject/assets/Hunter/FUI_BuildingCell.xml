@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="130,130" pivot="0.5,0.5" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <graph id="n9_cw0i" name="CanUseFrame" xy="0,0" size="130,130" type="rect" fillColor="#ff009933">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <graph id="n10_cw0i" name="Bg" xy="5,5" size="120,120" type="rect" fillColor="#ff003399">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <richtext id="n12_cw0i" name="TitleTxt" xy="7,6" size="118,48" fontSize="25" color="#ffffff" autoSize="none" text="标题">
+      <relation target="" sidePair="width-width,top-top"/>
+    </richtext>
+    <richtext id="n14_cw0i" name="CostTxt" xy="6,92" size="119,33" fontSize="20" color="#ffffff" vAlign="middle" autoSize="none" text="消耗">
+      <relation target="" sidePair="width-width,bottom-bottom"/>
+    </richtext>
+    <graph id="n16_jggg" name="CanNotUseFrame" xy="0,0" size="130,130" type="rect" lineColor="#00000000" fillColor="#54000000">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+  </displayList>
+  <Button/>
+</component>

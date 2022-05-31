@@ -13,33 +13,33 @@ namespace Cfg.zerg
 {
    
 /// <summary>
-/// 卡牌表
+/// 建筑表
 /// </summary>
-public sealed class TbCardConfig
+public sealed class TbBuilding
 {
-    private readonly Dictionary<int, zerg.CardConfig> _dataMap;
-    private readonly List<zerg.CardConfig> _dataList;
+    private readonly Dictionary<string, zerg.BuildingConfig> _dataMap;
+    private readonly List<zerg.BuildingConfig> _dataList;
     
-    public TbCardConfig(ByteBuf _buf)
+    public TbBuilding(ByteBuf _buf)
     {
-        _dataMap = new Dictionary<int, zerg.CardConfig>();
-        _dataList = new List<zerg.CardConfig>();
+        _dataMap = new Dictionary<string, zerg.BuildingConfig>();
+        _dataList = new List<zerg.BuildingConfig>();
         
         for(int n = _buf.ReadSize() ; n > 0 ; --n)
         {
-            zerg.CardConfig _v;
-            _v = zerg.CardConfig.DeserializeCardConfig(_buf);
+            zerg.BuildingConfig _v;
+            _v = zerg.BuildingConfig.DeserializeBuildingConfig(_buf);
             _dataList.Add(_v);
             _dataMap.Add(_v.Id, _v);
         }
     }
 
-    public Dictionary<int, zerg.CardConfig> DataMap => _dataMap;
-    public List<zerg.CardConfig> DataList => _dataList;
+    public Dictionary<string, zerg.BuildingConfig> DataMap => _dataMap;
+    public List<zerg.BuildingConfig> DataList => _dataList;
 
-    public zerg.CardConfig GetOrDefault(int key) => _dataMap.TryGetValue(key, out var v) ? v : null;
-    public zerg.CardConfig Get(int key) => _dataMap[key];
-    public zerg.CardConfig this[int key] => _dataMap[key];
+    public zerg.BuildingConfig GetOrDefault(string key) => _dataMap.TryGetValue(key, out var v) ? v : null;
+    public zerg.BuildingConfig Get(string key) => _dataMap[key];
+    public zerg.BuildingConfig this[string key] => _dataMap[key];
 
     public void Resolve(Dictionary<string, object> _tables)
     {

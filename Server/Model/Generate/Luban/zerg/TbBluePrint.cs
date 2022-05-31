@@ -17,29 +17,29 @@ namespace Cfg.zerg
 /// </summary>
 public sealed class TbBluePrint
 {
-    private readonly Dictionary<string, zerg.BluePrint> _dataMap;
-    private readonly List<zerg.BluePrint> _dataList;
+    private readonly Dictionary<string, zerg.BluePrintConfig> _dataMap;
+    private readonly List<zerg.BluePrintConfig> _dataList;
     
     public TbBluePrint(ByteBuf _buf)
     {
-        _dataMap = new Dictionary<string, zerg.BluePrint>();
-        _dataList = new List<zerg.BluePrint>();
+        _dataMap = new Dictionary<string, zerg.BluePrintConfig>();
+        _dataList = new List<zerg.BluePrintConfig>();
         
         for(int n = _buf.ReadSize() ; n > 0 ; --n)
         {
-            zerg.BluePrint _v;
-            _v = zerg.BluePrint.DeserializeBluePrint(_buf);
+            zerg.BluePrintConfig _v;
+            _v = zerg.BluePrintConfig.DeserializeBluePrintConfig(_buf);
             _dataList.Add(_v);
             _dataMap.Add(_v.Id, _v);
         }
     }
 
-    public Dictionary<string, zerg.BluePrint> DataMap => _dataMap;
-    public List<zerg.BluePrint> DataList => _dataList;
+    public Dictionary<string, zerg.BluePrintConfig> DataMap => _dataMap;
+    public List<zerg.BluePrintConfig> DataList => _dataList;
 
-    public zerg.BluePrint GetOrDefault(string key) => _dataMap.TryGetValue(key, out var v) ? v : null;
-    public zerg.BluePrint Get(string key) => _dataMap[key];
-    public zerg.BluePrint this[string key] => _dataMap[key];
+    public zerg.BluePrintConfig GetOrDefault(string key) => _dataMap.TryGetValue(key, out var v) ? v : null;
+    public zerg.BluePrintConfig Get(string key) => _dataMap[key];
+    public zerg.BluePrintConfig this[string key] => _dataMap[key];
 
     public void Resolve(Dictionary<string, object> _tables)
     {

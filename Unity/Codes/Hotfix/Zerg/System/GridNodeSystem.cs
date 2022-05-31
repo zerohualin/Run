@@ -17,7 +17,7 @@ namespace ET
         {
             return self.IsBuilded;
         }
-        public static bool CanBuild(this GridNode self, CardConfig config)
+        public static bool CanBuild(this GridNode self, BuildingConfig config)
         {
             switch (config.RequireGroundType)
             {

@@ -2,9 +2,9 @@
 
 namespace ET
 {
-    public class BuildingAwakeSystem: AwakeSystem<Building, int, int, CardConfig>
+    public class BuildingAwakeSystem: AwakeSystem<Building, int, int, BuildingConfig>
     {
-        public override void Awake(Building self, int centerPosX, int centerPosY, CardConfig a)
+        public override void Awake(Building self, int centerPosX, int centerPosY, BuildingConfig a)
         {
             self.PosX = centerPosX;
             self.PosY = centerPosY;

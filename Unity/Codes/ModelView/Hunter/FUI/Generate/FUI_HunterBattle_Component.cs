@@ -21,8 +21,6 @@ namespace ET
 
         [FGUIObject]
         public GList CardList;
-        [FGUIObject]
-        public GTextField TurnTxt;
         [FGUICustomCom]
         public Btn_EndTurn Btn_EndTurn;
         [FGUICustomCom]

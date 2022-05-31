@@ -29,7 +29,7 @@ namespace ET
 
             var AreaPreviewComponent = self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>();
 
-            if (AreaPreviewComponent.Card == null)
+            if (AreaPreviewComponent.BuildingData == null)
                 return;
 
             if (Stage.isTouchOnUI)

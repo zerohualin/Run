@@ -17,9 +17,9 @@ namespace Cfg.zerg
 /// <summary>
 /// 蓝图
 /// </summary>
-public sealed class BluePrint :  Bright.Config.BeanBase 
+public sealed class BluePrintConfig :  Bright.Config.BeanBase 
 {
-    public BluePrint(ByteBuf _buf) 
+    public BluePrintConfig(ByteBuf _buf) 
     {
         Id = _buf.ReadString();
         Name = _buf.ReadString();
@@ -30,9 +30,9 @@ public sealed class BluePrint :  Bright.Config.BeanBase
         LinkBuilding = _buf.ReadString();
     }
 
-    public static BluePrint DeserializeBluePrint(ByteBuf _buf)
+    public static BluePrintConfig DeserializeBluePrintConfig(ByteBuf _buf)
     {
-        return new zerg.BluePrint(_buf);
+        return new zerg.BluePrintConfig(_buf);
     }
 
     public string Id { get; private set; }
@@ -43,7 +43,7 @@ public sealed class BluePrint :  Bright.Config.BeanBase
     public int Cost { get; private set; }
     public string LinkBuilding { get; private set; }
 
-    public const int __ID__ = -494377851;
+    public const int __ID__ = -1074881497;
     public override int GetTypeId() => __ID__;
 
     public  void Resolve(Dictionary<string, object> _tables)

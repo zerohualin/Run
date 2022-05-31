@@ -30,9 +30,8 @@ namespace ET
             
             self.AddMineral(new AreaData() { StartPosX = 40, StartPosY = 40, Width = 5, Height = 3 });
 
-            var BaseCampConfig = Game.Scene.GetComponent<LubanComponent>().Tables.TbCardConfig.Get(1);
-            self.AddBuild(new AreaData() { StartPosX = 30, StartPosY = 30, Width = BaseCampConfig.Width, Height = BaseCampConfig.Height },
-                BaseCampConfig);
+            var BaseCampConfig = Game.Scene.GetComponent<LubanComponent>().Tables.TbBuilding.Get("BD000001");
+            self.AddBuild(new AreaData() { StartPosX = 30, StartPosY = 30, Width = BaseCampConfig.Size.X, Height = BaseCampConfig.Size.Y }, BaseCampConfig);
         }
     }
 
@@ -48,9 +47,9 @@ namespace ET
             return self.GridData[x][y];
         }
 
-        public static void AddBuild(this GridGroundComponent self, AreaData area, CardConfig data)
+        public static void AddBuild(this GridGroundComponent self, AreaData area, BuildingConfig config)
         {
-            Building building = self.AddChild<Building, int, int, CardConfig>(area.StartPosX, area.StartPosY, data);
+            Building building = self.AddChild<Building, int, int, BuildingConfig>(area.StartPosX, area.StartPosY, config);
             for (int _x = area.StartPosX; _x <= area.EndPosX; _x++)
             {
                 for (int _y = area.StartPosY; _y <= area.EndPosY; _y++)
@@ -58,7 +57,7 @@ namespace ET
                     var node = self.GridData[_x][_y];
                     node.BuildingId = building.InstanceId;
                     Game.EventSystem.Publish(new EventType.UpdateGridNode() { Node = node });
-                    self.UpdateVision(node, data.Vision);
+                    self.UpdateVision(node, config.Field);
                 }
             }
         }
@@ -102,14 +101,14 @@ namespace ET
             }
         }
 
-        public static void UpdateVision(this GridGroundComponent self, GridNode centerNode, int range)
+        public static void UpdateVision(this GridGroundComponent self, GridNode centerNode, AreaSize AreaSize)
         {
             int x = centerNode.x;
             int y = centerNode.y;
 
-            for (int _x = x - range; _x <= x + range; _x++)
+            for (int _x = x - AreaSize.X; _x <= x + AreaSize.X; _x++)
             {
-                for (int _y = y - range; _y <= y + range; _y++)
+                for (int _y = y - AreaSize.Y; _y <= y + AreaSize.Y; _y++)
                 {
                     if (_x < 0 || _x >= self.Width || _y < 0 || _y >= self.Height)
                     {

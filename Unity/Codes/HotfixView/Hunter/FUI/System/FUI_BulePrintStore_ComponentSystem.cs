@@ -32,7 +32,7 @@ namespace ET
             }
         }
 
-        public static void RenderListItem(this FUI_BulePrintStore_Component self, GObject obj, BluePrint data)
+        public static void RenderListItem(this FUI_BulePrintStore_Component self, GObject obj, BluePrintConfig data)
         {
             var component = self.AddChild<FUI_BulePrint>();
             FGUIHelper.BindRoot(typeof (FUI_BulePrint), component, obj.asCom.GetChild("BluePrint").asCom);

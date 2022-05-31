@@ -37,7 +37,7 @@ namespace ET
             FUICom?.Refresh();
         }
     }
-    
+
     public class FUI_HunterBattle_NewTrun: AEvent<EventType.NewTrun>
     {
         protected override void Run(EventType.NewTrun args)
@@ -68,7 +68,7 @@ namespace ET
 
     [FriendClass(typeof (CardTurnComponent))]
     [FriendClass(typeof (HandComponent))]
-    [FriendClass(typeof (Card))]
+    [FriendClass(typeof (Building))]
     [FriendClass(typeof (FUI_HunterBattle_Component))]
     [FriendClass(typeof (ProgressBar_Resource))]
     [FriendClass(typeof (EnergyComponent))]
@@ -83,8 +83,6 @@ namespace ET
 
         public static void RefreshTurn(this FUI_HunterBattle_Component self)
         {
-            var trunNum = self.Domain.GetComponent<RoomManagerComponent>().GetCardRoom().GetComponent<CardTurnComponent>().Num;
-            self.TurnTxt.text = $"当前回合数 {trunNum}";
         }
 
         public static void RefreshEnerge(this FUI_HunterBattle_Component self)
@@ -112,83 +110,31 @@ namespace ET
             }
         }
 
-        public static void RenderListItem(this FUI_HunterBattle_Component self, GObject obj, Card data)
+        public static void RenderListItem(this FUI_HunterBattle_Component self, GObject obj, BuildingData data)
         {
-            GButton Cell = (GButton)obj;
-            var group = Cell.GetChild("CardGroup");
-            Cell.GetChild("CanUseFrame").visible = data.CanUse();
-            Cell.GetChild("CanNotUseFrame").visible = !data.CanUse();
-            Cell.GetChild("TitleTxt").text = data.Config.Name;
-            Cell.GetChild("DescTxt").text = data.Config.Desc;
-            Cell.GetChild("CostTxt").text = $"消耗能量 {data.Config.Cost}";
+            var Cell = self.AddChild<FUI_BuildingCell>();
+            FGUIHelper.BindRoot(typeof (FUI_BuildingCell), Cell, obj.asButton);
+
             ETCancellationToken cancerToken = null;
 
-            var bg = Cell.GetChild("Bg").asGraph;
             switch (data.Config.Type)
             {
-                case CardType.Building:
-                    bg.color = Color.cyan * 0.6f;
+                case BuildingType.Building:
+                    Cell.Bg.color = Color.cyan * 0.6f;
                     break;
-                case CardType.Skill:
-                    bg.color = Color.yellow * 0.6f;
-                    break;
-                case CardType.Module:
-                    bg.color = Color.gray * 0.6f;
-                    break;
+                // case CardType.Skill:
+                //     Cell.Bg.color = Color.yellow * 0.6f;
+                //     break;
+                // case CardType.Module:
+                //     Cell.Bg.color = Color.gray * 0.6f;
+                //     break;
             }
 
-            Vector2 GetGroupV2()
+            Cell.TitleTxt.text = data.Config.Name;
+
+            Cell.self.AddListener(() =>
             {
-                var LogicPos = GRoot.inst.GlobalToLocal(Input.mousePosition);
-                var v2 = Cell.GlobalToLocal(new Vector2(LogicPos.x, GRoot.inst.height - LogicPos.y));
-                return new Vector2(v2.x - group.width * 0.5f, v2.y - group.height * 0.5f);
-            }
-
-            async void TouchBegin()
-            {
-                switch (data.Config.Type)
-                {
-                    case CardType.Skill:
-                    case CardType.Building:
-                    case CardType.Module:
-                        self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>().CreatePreviewBuilding(data);
-                        break;
-                }
-
-                cancerToken = new ETCancellationToken();
-                @group.TweenMove(GetGroupV2(), 0.15f);
-                @group.TweenScale(Vector2.one * 1.1f, 0.15f);
-                await Game.Scene.GetComponent<TimerComponent>().WaitAsync(150);
-                while (!cancerToken.IsCancel())
-                {
-                    await Game.Scene.GetComponent<TimerComponent>().WaitAsync(10, cancerToken);
-                    var v2 = GetGroupV2();
-                    @group.SetXY(v2.x, v2.y);
-                }
-            }
-
-            Cell.onTouchBegin.Add(TouchBegin);
-            Cell.onTouchEnd.Add(() =>
-            {
-                if (cancerToken != null)
-                    cancerToken.Cancel();
-
-                bool useSucess = true;
-                useSucess = useSucess && -group.y > group.height * 0.66f;
-
-                EnergyComponent energyComponent = self.DomainScene().GetMyPlayer().GetComponent<EnergyComponent>();
-                useSucess = useSucess && energyComponent.CheckCast(data.Config.Cost);
-                if (useSucess)
-                {
-                    energyComponent.Cast(data.Config.Cost);
-                    self.HandComponent.RemoveCard(data);
-                    self.RefreshCard();
-                }
-                else
-                {
-                    @group.TweenScale(Vector2.one, 0.15f);
-                    @group.TweenMove(Vector2.zero, 0.15f);
-                }
+                self.DomainScene().GetComponent<GridGroundComponent>().GetComponent<AreaPreviewComponent>().CreatePreviewBuilding(data);
             });
         }
     }
@@ -203,10 +149,7 @@ namespace ET
         {
             component.HandComponent = component.DomainScene().GetMyPlayer().GetComponent<HandComponent>();
             component.Refresh();
-            component.Btn_EndTurn.self.AddListener(() =>
-            {
-                component.HandComponent.TryAddRandomCard();
-            });
+            component.Btn_EndTurn.self.AddListener(() => { component.HandComponent.TryAddRandomCard(); });
         }
 
         public override void OnShow(FUI_HunterBattle_Component component)

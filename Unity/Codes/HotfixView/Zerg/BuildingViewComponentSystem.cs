@@ -17,7 +17,7 @@ namespace ET
             var FrameObj = ReferenceCollector.Get<GameObject>("Frame");
             var TitleObj = ReferenceCollector.Get<GameObject>("Title");
 
-            CardConfig Config = null;
+            BuildingConfig Config = null;
             int PosX = 0;
             int PosY = 0;
             int PosZ = 0;
@@ -33,18 +33,27 @@ namespace ET
             else
             {
                 var AreaPreview = self.GetParent<AreaPreviewComponent>();
-                Config = AreaPreview.Card.Config;
+                Config = AreaPreview.BuildingData.Config;
                 PosY = 3;
             }
 
-            FrameObj.transform.localScale = new Vector3(Config.Width, Config.Height, 0.1f);
+            FrameObj.transform.localScale = new Vector3(Config.Size.X, Config.Size.Y, 0.1f);
 
-            float x = PosX + Config.Width * 0.5f - 0.5f;
-            float z = PosZ + Config.Height * 0.5f - 0.5f;
+            float x = PosX + Config.Size.X * 0.5f - 0.5f;
+            float z = PosZ + Config.Size.Y * 0.5f - 0.5f;
 
             self.BuildingObj.transform.position = new Vector3(x, PosY, z);
-            TitleObj.transform.localScale = Vector3.one * Config.Height * 0.5f;
-            TitleObj.GetComponent<TextMeshPro>().text = Config.Name;
+
+            bool isWidthLong = Config.Size.X >= Config.Size.Y;
+
+            TitleObj.transform.localScale = Vector3.one * 0.5f * (isWidthLong? Config.Size.X : Config.Size.Y);
+            var textMeshPro = TitleObj.GetComponent<TextMeshPro>();
+            textMeshPro.text = Config.Name;
+            textMeshPro.outlineWidth = 0.2f;
+            textMeshPro.outlineColor = new Color32(0, 0, 0, 255);
+
+            var rect = textMeshPro.GetComponent<RectTransform>();
+            rect.sizeDelta = isWidthLong? new Vector2(20, 5) : new Vector2(0, 5);
         }
     }
 
@@ -61,8 +70,8 @@ namespace ET
         public static void UpdatePos(this BuildingViewComponent self)
         {
             var AreaPreview = self.GetParent<AreaPreviewComponent>();
-            float x = AreaPreview.AreaData.StartPosX + AreaPreview.Card.Config.Width * 0.5f - 0.5f;
-            float z = AreaPreview.AreaData.StartPosY + AreaPreview.Card.Config.Height * 0.5f - 0.5f;
+            float x = AreaPreview.AreaData.StartPosX + AreaPreview.BuildingData.Config.Size.X * 0.5f - 0.5f;
+            float z = AreaPreview.AreaData.StartPosY + AreaPreview.BuildingData.Config.Size.Y * 0.5f - 0.5f;
             self.BuildingObj.transform.position = new Vector3(x, 3, z);
         }
     }

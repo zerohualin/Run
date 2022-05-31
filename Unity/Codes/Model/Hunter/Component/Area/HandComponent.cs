@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using Cfg.zerg;
 
 namespace ET
 {
-    [ChildType(typeof(Card))]
+    [ChildType(typeof(BuildingData))]
     public class HandComponent: Entity, IAwake
     {
-        public List<Card> Cards = new List<Card>();
+        public List<BuildingData> Cards = new List<BuildingData>();
     }
 }

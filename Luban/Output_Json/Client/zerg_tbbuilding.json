@@ -1,0 +1,309 @@
+[
+  {
+    "id": "BD000001",
+    "name": "大本",
+    "type": 0,
+    "size": {
+      "x": 5,
+      "y": 5
+    },
+    "field": {
+      "x": 10,
+      "y": 10
+    },
+    "hp": 1000,
+    "invadeFix": 0,
+    "lvModules": [],
+    "maxLevel": 4,
+    "maxSlot": 3,
+    "requireGroundType": 1
+  },
+  {
+    "id": "BD000002",
+    "name": "灯塔",
+    "type": 0,
+    "size": {
+      "x": 1,
+      "y": 1
+    },
+    "field": {
+      "x": 10,
+      "y": 10
+    },
+    "hp": 40,
+    "invadeFix": 1,
+    "lvModules": [
+      [
+        2,
+        "MD00001"
+      ],
+      [
+        3,
+        "MD00002"
+      ],
+      [
+        4,
+        "MD00003"
+      ]
+    ],
+    "maxLevel": 4,
+    "maxSlot": 3,
+    "requireGroundType": 1
+  },
+  {
+    "id": "BD000003",
+    "name": "采集塔红",
+    "type": 0,
+    "size": {
+      "x": 1,
+      "y": 3
+    },
+    "field": {
+      "x": 3,
+      "y": 5
+    },
+    "hp": 200,
+    "invadeFix": 2,
+    "lvModules": [
+      [
+        2,
+        "MD00001"
+      ],
+      [
+        3,
+        "MD00002"
+      ],
+      [
+        4,
+        "MD00003"
+      ]
+    ],
+    "maxLevel": 4,
+    "maxSlot": 3,
+    "requireGroundType": 3
+  },
+  {
+    "id": "BD000004",
+    "name": "采集塔黄",
+    "type": 0,
+    "size": {
+      "x": 3,
+      "y": 1
+    },
+    "field": {
+      "x": 5,
+      "y": 3
+    },
+    "hp": 200,
+    "invadeFix": 2,
+    "lvModules": [
+      [
+        2,
+        "MD00001"
+      ],
+      [
+        3,
+        "MD00002"
+      ],
+      [
+        4,
+        "MD00003"
+      ]
+    ],
+    "maxLevel": 4,
+    "maxSlot": 3,
+    "requireGroundType": 1
+  },
+  {
+    "id": "BD000005",
+    "name": "采集塔蓝",
+    "type": 0,
+    "size": {
+      "x": 1,
+      "y": 3
+    },
+    "field": {
+      "x": 3,
+      "y": 5
+    },
+    "hp": 200,
+    "invadeFix": 2,
+    "lvModules": [
+      [
+        2,
+        "MD00001"
+      ],
+      [
+        3,
+        "MD00002"
+      ],
+      [
+        4,
+        "MD00003"
+      ]
+    ],
+    "maxLevel": 4,
+    "maxSlot": 3,
+    "requireGroundType": 1
+  },
+  {
+    "id": "BD000006",
+    "name": "采集塔绿",
+    "type": 0,
+    "size": {
+      "x": 3,
+      "y": 1
+    },
+    "field": {
+      "x": 5,
+      "y": 3
+    },
+    "hp": 200,
+    "invadeFix": 2,
+    "lvModules": [
+      [
+        2,
+        "MD00001"
+      ],
+      [
+        3,
+        "MD00002"
+      ],
+      [
+        4,
+        "MD00003"
+      ]
+    ],
+    "maxLevel": 4,
+    "maxSlot": 3,
+    "requireGroundType": 0
+  },
+  {
+    "id": "BD000007",
+    "name": "防御塔红",
+    "type": 0,
+    "size": {
+      "x": 3,
+      "y": 3
+    },
+    "field": {
+      "x": 3,
+      "y": 3
+    },
+    "hp": 100,
+    "invadeFix": 2,
+    "lvModules": [
+      [
+        2,
+        "MD00001"
+      ],
+      [
+        3,
+        "MD00002"
+      ],
+      [
+        4,
+        "MD00003"
+      ]
+    ],
+    "maxLevel": 4,
+    "maxSlot": 3,
+    "requireGroundType": 1
+  },
+  {
+    "id": "BD000008",
+    "name": "防御塔黄",
+    "type": 0,
+    "size": {
+      "x": 3,
+      "y": 3
+    },
+    "field": {
+      "x": 3,
+      "y": 3
+    },
+    "hp": 100,
+    "invadeFix": 2,
+    "lvModules": [
+      [
+        2,
+        "MD00001"
+      ],
+      [
+        3,
+        "MD00002"
+      ],
+      [
+        4,
+        "MD00003"
+      ]
+    ],
+    "maxLevel": 4,
+    "maxSlot": 3,
+    "requireGroundType": 0
+  },
+  {
+    "id": "BD000009",
+    "name": "防御塔蓝",
+    "type": 0,
+    "size": {
+      "x": 3,
+      "y": 3
+    },
+    "field": {
+      "x": 3,
+      "y": 3
+    },
+    "hp": 100,
+    "invadeFix": 2,
+    "lvModules": [
+      [
+        2,
+        "MD00001"
+      ],
+      [
+        3,
+        "MD00002"
+      ],
+      [
+        4,
+        "MD00003"
+      ]
+    ],
+    "maxLevel": 4,
+    "maxSlot": 3,
+    "requireGroundType": 1
+  },
+  {
+    "id": "BD000010",
+    "name": "防御塔绿",
+    "type": 0,
+    "size": {
+      "x": 3,
+      "y": 3
+    },
+    "field": {
+      "x": 3,
+      "y": 3
+    },
+    "hp": 100,
+    "invadeFix": 2,
+    "lvModules": [
+      [
+        2,
+        "MD00001"
+      ],
+      [
+        3,
+        "MD00002"
+      ],
+      [
+        4,
+        "MD00003"
+      ]
+    ],
+    "maxLevel": 4,
+    "maxSlot": 3,
+    "requireGroundType": 1
+  }
+]

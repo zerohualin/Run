@@ -2,9 +2,9 @@
 
 namespace ET
 {
-    public partial class Card : Entity, IAwake, IAwake<int>
+    public partial class BuildingData : Entity, IAwake, IAwake<int>, IAwake<string>
     {
-        public CardConfig Config;
+        public BuildingConfig Config;
         public bool canUse = false;
     }
 }
