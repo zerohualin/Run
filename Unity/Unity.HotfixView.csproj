@@ -971,6 +971,9 @@
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
       <HintPath>C:\101_Dream\Run\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:\101_Dream\Run\Unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:\101_Dream\Run\Unity\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
@@ -1023,8 +1026,5 @@
     <ProjectReference Include="..\Tools\Analyzer\Analyzer.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false">
       <Project>{d1f2986b-b296-4a2d-8f12-be9f470014c3}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Codes\HotfixView\Hunter\FUI\System" />
   </ItemGroup>
 </Project>
