@@ -44,7 +44,10 @@ namespace ET
             var scroll = Input.GetAxis("Mouse ScrollWheel");
             if (scroll != 0)
             {
-                self.PlayerCamera.orthographicSize -= scroll * 10;
+                var size = self.PlayerCamera.orthographicSize - scroll * 10;
+                if (size < 5 && scroll > 0) { size = 3; }
+                if (size > 13 && scroll < 0) { size = 20; }
+                self.PlayerCamera.orthographicSize = size;
             }
         }
     }
