@@ -1,6 +1,3 @@
 {"list":[
 {"_t":"B2SColliderConfig","_id":10001,"B2S_ColliderId":20002,"SyncToUnit":0},
-{"_t":"B2SColliderConfig","_id":10002,"B2S_ColliderId":30001,"SyncToUnit":0},
-{"_t":"B2SColliderConfig","_id":10003,"B2S_ColliderId":20003.00,"SyncToUnit":0},
-{"_t":"B2SColliderConfig","_id":10004,"B2S_ColliderId":20004.00,"SyncToUnit":1},
 ]}
