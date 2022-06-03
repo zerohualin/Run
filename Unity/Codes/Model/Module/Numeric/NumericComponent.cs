@@ -16,12 +16,12 @@ namespace ET
 			public long New;
 		}
 	}
-	
+
+	[ComponentOf(typeof(Unit))]
 	public class NumericComponent: Entity, IAwake, ITransfer, IDestroy
 	{
 		[BsonDictionaryOptions(DictionaryRepresentation.ArrayOfArrays)]
 		public Dictionary<int, long> NumericDic = new Dictionary<int, long>();
-		
 		public Dictionary<int, long> OriNumericDic = new Dictionary<int, long>();
 	}
 }
