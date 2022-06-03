@@ -8,7 +8,7 @@ namespace ET
     {
         public override void OnCreate(UILobbyComponent component)
         {
-            FGUIHelper.AddButtonListener(component.Btn_EnterMap, () => component.OnEnterMap());
+            // FGUIHelper.AddButtonListener(component.Btn_EnterMap, () => component.OnEnterMap());
         }
         public override void OnShow(UILobbyComponent self)
         {
