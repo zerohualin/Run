@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: 3e27ed733ade1cc49b9bed8b843e8ec1
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: bee
+    100004: WaspAntena_L1
+    100006: WaspAntena_L2
+    100008: WaspAntena_R1
+    100010: WaspAntena_R2
+    100012: WaspHead
+    100014: WaspHub001
+    100016: WaspLLeg031
+    100018: WaspLLeg032
+    100020: WaspLLeg03Ankle
+    100022: WaspLLeg03Collarbone
+    100024: WaspLLeg1
+    100026: WaspLLeg1 1
+    100028: WaspLLeg2
+    100030: WaspLLeg2 1
+    100032: WaspLLegAnkle
+    100034: WaspLLegAnkle 1
+    100036: WaspLLegCollarbone
+    100038: WaspLLegCollarbone 1
+    100040: WaspNeck
+    100042: WaspRLeg031
+    100044: WaspRLeg032
+    100046: WaspRLeg03Ankle
+    100048: WaspRLeg03Collarbone
+    100050: WaspRLeg1
+    100052: WaspRLeg1 1
+    100054: WaspRLeg2
+    100056: WaspRLeg2 1
+    100058: WaspRLegAnkle
+    100060: WaspRLegAnkle 1
+    100062: WaspRLegCollarbone
+    100064: WaspRLegCollarbone 1
+    100066: WaspTail1
+    100068: WaspTail2
+    100070: WaspWing_L1
+    100072: WaspWing_L2
+    100074: WaspWing_R1
+    100076: WaspWing_R2
+    100078: wasp
+    400000: //RootNode
+    400002: bee
+    400004: WaspAntena_L1
+    400006: WaspAntena_L2
+    400008: WaspAntena_R1
+    400010: WaspAntena_R2
+    400012: WaspHead
+    400014: WaspHub001
+    400016: WaspLLeg031
+    400018: WaspLLeg032
+    400020: WaspLLeg03Ankle
+    400022: WaspLLeg03Collarbone
+    400024: WaspLLeg1
+    400026: WaspLLeg1 1
+    400028: WaspLLeg2
+    400030: WaspLLeg2 1
+    400032: WaspLLegAnkle
+    400034: WaspLLegAnkle 1
+    400036: WaspLLegCollarbone
+    400038: WaspLLegCollarbone 1
+    400040: WaspNeck
+    400042: WaspRLeg031
+    400044: WaspRLeg032
+    400046: WaspRLeg03Ankle
+    400048: WaspRLeg03Collarbone
+    400050: WaspRLeg1
+    400052: WaspRLeg1 1
+    400054: WaspRLeg2
+    400056: WaspRLeg2 1
+    400058: WaspRLegAnkle
+    400060: WaspRLegAnkle 1
+    400062: WaspRLegCollarbone
+    400064: WaspRLegCollarbone 1
+    400066: WaspTail1
+    400068: WaspTail2
+    400070: WaspWing_L1
+    400072: WaspWing_L2
+    400074: WaspWing_R1
+    400076: WaspWing_R2
+    400078: wasp
+    4300000: bee
+    4300002: wasp
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: bee
+    13700002: wasp
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

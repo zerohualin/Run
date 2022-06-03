@@ -1,0 +1,356 @@
+fileFormatVersion: 2
+guid: a39324e86d9b04b4a940d09417b5489e
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: wasp
+  - first:
+      1: 100002
+    second: //RootNode
+  - first:
+      1: 100004
+    second: WaspAntena_L1
+  - first:
+      1: 100006
+    second: WaspAntena_L2
+  - first:
+      1: 100008
+    second: WaspAntena_R1
+  - first:
+      1: 100010
+    second: WaspAntena_R2
+  - first:
+      1: 100012
+    second: WaspHead
+  - first:
+      1: 100014
+    second: WaspHub001
+  - first:
+      1: 100016
+    second: WaspLLeg031
+  - first:
+      1: 100018
+    second: WaspLLeg032
+  - first:
+      1: 100020
+    second: WaspLLeg03Ankle
+  - first:
+      1: 100022
+    second: WaspLLeg03Collarbone
+  - first:
+      1: 100024
+    second: WaspLLeg1
+  - first:
+      1: 100026
+    second: WaspLLeg1 1
+  - first:
+      1: 100028
+    second: WaspLLeg2
+  - first:
+      1: 100030
+    second: WaspLLeg2 1
+  - first:
+      1: 100032
+    second: WaspLLegAnkle
+  - first:
+      1: 100034
+    second: WaspLLegAnkle 1
+  - first:
+      1: 100036
+    second: WaspLLegCollarbone
+  - first:
+      1: 100038
+    second: WaspLLegCollarbone 1
+  - first:
+      1: 100040
+    second: WaspNeck
+  - first:
+      1: 100042
+    second: WaspRLeg031
+  - first:
+      1: 100044
+    second: WaspRLeg032
+  - first:
+      1: 100046
+    second: WaspRLeg03Ankle
+  - first:
+      1: 100048
+    second: WaspRLeg03Collarbone
+  - first:
+      1: 100050
+    second: WaspRLeg1
+  - first:
+      1: 100052
+    second: WaspRLeg1 1
+  - first:
+      1: 100054
+    second: WaspRLeg2
+  - first:
+      1: 100056
+    second: WaspRLeg2 1
+  - first:
+      1: 100058
+    second: WaspRLegAnkle
+  - first:
+      1: 100060
+    second: WaspRLegAnkle 1
+  - first:
+      1: 100062
+    second: WaspRLegCollarbone
+  - first:
+      1: 100064
+    second: WaspRLegCollarbone 1
+  - first:
+      1: 100066
+    second: WaspTail1
+  - first:
+      1: 100068
+    second: WaspTail2
+  - first:
+      1: 100070
+    second: WaspWing_L1
+  - first:
+      1: 100072
+    second: WaspWing_L2
+  - first:
+      1: 100074
+    second: WaspWing_R1
+  - first:
+      1: 100076
+    second: WaspWing_R2
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: wasp
+  - first:
+      4: 400004
+    second: WaspAntena_L1
+  - first:
+      4: 400006
+    second: WaspAntena_L2
+  - first:
+      4: 400008
+    second: WaspAntena_R1
+  - first:
+      4: 400010
+    second: WaspAntena_R2
+  - first:
+      4: 400012
+    second: WaspHead
+  - first:
+      4: 400014
+    second: WaspHub001
+  - first:
+      4: 400016
+    second: WaspLLeg031
+  - first:
+      4: 400018
+    second: WaspLLeg032
+  - first:
+      4: 400020
+    second: WaspLLeg03Ankle
+  - first:
+      4: 400022
+    second: WaspLLeg03Collarbone
+  - first:
+      4: 400024
+    second: WaspLLeg1
+  - first:
+      4: 400026
+    second: WaspLLeg1 1
+  - first:
+      4: 400028
+    second: WaspLLeg2
+  - first:
+      4: 400030
+    second: WaspLLeg2 1
+  - first:
+      4: 400032
+    second: WaspLLegAnkle
+  - first:
+      4: 400034
+    second: WaspLLegAnkle 1
+  - first:
+      4: 400036
+    second: WaspLLegCollarbone
+  - first:
+      4: 400038
+    second: WaspLLegCollarbone 1
+  - first:
+      4: 400040
+    second: WaspNeck
+  - first:
+      4: 400042
+    second: WaspRLeg031
+  - first:
+      4: 400044
+    second: WaspRLeg032
+  - first:
+      4: 400046
+    second: WaspRLeg03Ankle
+  - first:
+      4: 400048
+    second: WaspRLeg03Collarbone
+  - first:
+      4: 400050
+    second: WaspRLeg1
+  - first:
+      4: 400052
+    second: WaspRLeg1 1
+  - first:
+      4: 400054
+    second: WaspRLeg2
+  - first:
+      4: 400056
+    second: WaspRLeg2 1
+  - first:
+      4: 400058
+    second: WaspRLegAnkle
+  - first:
+      4: 400060
+    second: WaspRLegAnkle 1
+  - first:
+      4: 400062
+    second: WaspRLegCollarbone
+  - first:
+      4: 400064
+    second: WaspRLegCollarbone 1
+  - first:
+      4: 400066
+    second: WaspTail1
+  - first:
+      4: 400068
+    second: WaspTail2
+  - first:
+      4: 400070
+    second: WaspWing_L1
+  - first:
+      4: 400072
+    second: WaspWing_L2
+  - first:
+      4: 400074
+    second: WaspWing_R1
+  - first:
+      4: 400076
+    second: WaspWing_R2
+  - first:
+      43: 4300000
+    second: wasp
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      111: 11100000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: wasp
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips:
+  - 9935e1ee4cf194f4fa614b47797d12b3
+  - 90a98f8ce2ed60d4b92b43fab33b8f2f
+  - 13b042a667553e54f99ef6cd43bd0b4b
+  - cd3b5a6f18c87ee46afaccbc350d2be7
+  - 0983c8cbfbe9b194fbeee33ed3d83127
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.01
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 1
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

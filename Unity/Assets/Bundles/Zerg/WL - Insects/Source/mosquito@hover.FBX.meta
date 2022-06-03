@@ -1,0 +1,168 @@
+fileFormatVersion: 2
+guid: 2543be3d987cc1e4f9d19c0293f9ea12
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: MosquitoAntena_L1
+    100004: MosquitoAntena_L2
+    100006: MosquitoAntena_R1
+    100008: MosquitoAntena_R2
+    100010: MosquitoHead
+    100012: MosquitoHub001
+    100014: MosquitoLLeg031
+    100016: MosquitoLLeg032
+    100018: MosquitoLLeg03Ankle
+    100020: MosquitoLLeg03Collarbone
+    100022: MosquitoLLeg1
+    100024: MosquitoLLeg1 1
+    100026: MosquitoLLeg2
+    100028: MosquitoLLeg2 1
+    100030: MosquitoLLegAnkle
+    100032: MosquitoLLegAnkle 1
+    100034: MosquitoLLegCollarbone
+    100036: MosquitoLLegCollarbone 1
+    100038: MosquitoNeck
+    100040: MosquitoRLeg031
+    100042: MosquitoRLeg032
+    100044: MosquitoRLeg03Ankle
+    100046: MosquitoRLeg03Collarbone
+    100048: MosquitoRLeg1
+    100050: MosquitoRLeg1 1
+    100052: MosquitoRLeg2
+    100054: MosquitoRLeg2 1
+    100056: MosquitoRLegAnkle
+    100058: MosquitoRLegAnkle 1
+    100060: MosquitoRLegCollarbone
+    100062: MosquitoRLegCollarbone 1
+    100064: MosquitoTail1
+    100066: MosquitoTail2
+    100068: MosquitoWing_L1
+    100070: MosquitoWing_L2
+    100072: MosquitoWing_R1
+    100074: MosquitoWing_R2
+    400000: //RootNode
+    400002: MosquitoAntena_L1
+    400004: MosquitoAntena_L2
+    400006: MosquitoAntena_R1
+    400008: MosquitoAntena_R2
+    400010: MosquitoHead
+    400012: MosquitoHub001
+    400014: MosquitoLLeg031
+    400016: MosquitoLLeg032
+    400018: MosquitoLLeg03Ankle
+    400020: MosquitoLLeg03Collarbone
+    400022: MosquitoLLeg1
+    400024: MosquitoLLeg1 1
+    400026: MosquitoLLeg2
+    400028: MosquitoLLeg2 1
+    400030: MosquitoLLegAnkle
+    400032: MosquitoLLegAnkle 1
+    400034: MosquitoLLegCollarbone
+    400036: MosquitoLLegCollarbone 1
+    400038: MosquitoNeck
+    400040: MosquitoRLeg031
+    400042: MosquitoRLeg032
+    400044: MosquitoRLeg03Ankle
+    400046: MosquitoRLeg03Collarbone
+    400048: MosquitoRLeg1
+    400050: MosquitoRLeg1 1
+    400052: MosquitoRLeg2
+    400054: MosquitoRLeg2 1
+    400056: MosquitoRLegAnkle
+    400058: MosquitoRLegAnkle 1
+    400060: MosquitoRLegCollarbone
+    400062: MosquitoRLegCollarbone 1
+    400064: MosquitoTail1
+    400066: MosquitoTail2
+    400068: MosquitoWing_L1
+    400070: MosquitoWing_L2
+    400072: MosquitoWing_R1
+    400074: MosquitoWing_R2
+    7400000: hover
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: hover
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
