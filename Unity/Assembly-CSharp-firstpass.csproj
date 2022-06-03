@@ -1050,9 +1050,6 @@
      <Reference Include="Unity.Searcher.Editor">
      <HintPath>C:\101_Dream\Run\Unity\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.2D.Sprite.Editor">
-     <HintPath>C:\101_Dream\Run\Unity\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.ResourceManager">
      <HintPath>C:\101_Dream\Run\Unity\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
      </Reference>

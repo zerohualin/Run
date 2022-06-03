@@ -1,5 +1,5 @@
 <module name="Enums">
-	<enum name="SceneType" externaltype="et_scene_type">
+	<enum name="SceneType">
 		<var name="Process" value="0"/>
 		<var name="Manager" value="1"/>
 		<var name="Realm" value="2"/>
@@ -12,12 +12,12 @@
 		<var name="Robot" value="32"/>
 	</enum>
 
-	<externaltype name="et_scene_type">
+	<externaltype name="et_scene_type" origin_type_name="Enums.SceneType">
 		<mapper lan="cs" selector="dotnet_cs">
-			<typename>ET.SceneType</typename>
+			<target_type_name>ET.SceneType</target_type_name>
 		</mapper>
 	</externaltype>
-	
+
 	<enum name="FGUILayer">
 		<var name="Background" alias="背景" value="0"/>
 		<var name="Fixed" alias="固定" value="1"/>
