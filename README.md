@@ -165,3 +165,4 @@ __讨论QQ群 : 474643097__
 [et-6-with-ilruntime](https://www.lfzxb.top/et-6-with-ilruntime) 烟雨使用ILRuntime实现的ET客户端热更新  
 [Luban](https://github.com/focus-creative-games/luban) 适用于大中型项目的游戏配置解决方案  
 
+--测试通过 git push newgitpath currentbranch 到另一个仓库的某个分支
