@@ -37,5 +37,10 @@
         <ProjectReference Include="..\..\Share\Analyzer\Share.Analyzer.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
         <ProjectReference Include="..\Model\DotNet.Model.csproj" />
     </ItemGroup>
+    <ItemGroup>
+      <Folder Include="..\..\Unity\Assets\Scripts\Codes\Hotfix\Share\Generate\Luban">
+        <Link>Share\Generate\Luban</Link>
+      </Folder>
+    </ItemGroup>
 
 </Project>

@@ -1,0 +1,3 @@
+[submodule "Sub/luban_examples"]
+	path = Sub/luban_examples
+	url = git@github.com:zerohualin/luban_examples.git

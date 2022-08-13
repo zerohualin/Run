@@ -1,0 +1,386 @@
+[
+  {
+    "Id": "BF010001",
+    "Name": "燃烧",
+    "Type": 1,
+    "Flag": [
+      "Dot"
+    ],
+    "ImmuneFlag": [],
+    "FlagLevel": 0,
+    "MaxStack": 30,
+    "Duration": 10000,
+    "IntervalTime": 2000,
+    "Show": true,
+    "ModifyState": [
+      "Burn"
+    ],
+    "DmgTag": [
+      "Fire"
+    ],
+    "ModifyAttrType": [
+      "CurHp"
+    ],
+    "IconPath": "Spell_Fire_Fire"
+  },
+  {
+    "Id": "BF010002",
+    "Name": "流血",
+    "Type": 1,
+    "Flag": [
+      "Dot"
+    ],
+    "ImmuneFlag": [],
+    "FlagLevel": 0,
+    "MaxStack": 30,
+    "Duration": 10000,
+    "IntervalTime": 2000,
+    "Show": true,
+    "ModifyState": [
+      "Bleed"
+    ],
+    "DmgTag": [
+      "Physics"
+    ],
+    "ModifyAttrType": [
+      "CurHp"
+    ],
+    "IconPath": "CurHp"
+  },
+  {
+    "Id": "BF010003",
+    "Name": "中毒",
+    "Type": 1,
+    "Flag": [
+      "Dot"
+    ],
+    "ImmuneFlag": [],
+    "FlagLevel": 0,
+    "MaxStack": 30,
+    "Duration": 10000,
+    "IntervalTime": 2000,
+    "Show": true,
+    "ModifyState": [
+      "Posion"
+    ],
+    "DmgTag": [
+      "Ying"
+    ],
+    "ModifyAttrType": [
+      "CurHp"
+    ],
+    "IconPath": "Spell_Shadow_DeathCoil"
+  },
+  {
+    "Id": "BF010004",
+    "Name": "法师BUILD1",
+    "Type": 1,
+    "Flag": [
+      "Dot"
+    ],
+    "ImmuneFlag": [],
+    "FlagLevel": 0,
+    "MaxStack": 30,
+    "Duration": 10000,
+    "IntervalTime": 2000,
+    "Show": true,
+    "ModifyState": [
+      "Posion"
+    ],
+    "DmgTag": [
+      "Ying"
+    ],
+    "ModifyAttrType": [
+      "CurHp"
+    ],
+    "IconPath": "Spell_Fire_Immolation"
+  },
+  {
+    "Id": "BF010005",
+    "Name": "法师BUILD2",
+    "Type": 1,
+    "Flag": [
+      "Dot"
+    ],
+    "ImmuneFlag": [],
+    "FlagLevel": 0,
+    "MaxStack": 30,
+    "Duration": 10000,
+    "IntervalTime": 2000,
+    "Show": true,
+    "ModifyState": [
+      "Posion"
+    ],
+    "DmgTag": [
+      "Ying"
+    ],
+    "ModifyAttrType": [
+      "CurHp"
+    ],
+    "IconPath": "Spell_Fire_SoulBurn"
+  },
+  {
+    "Id": "BF010006",
+    "Name": "兄弟盟炸药包",
+    "Type": 1,
+    "Flag": [
+      "Dot"
+    ],
+    "ImmuneFlag": [],
+    "FlagLevel": 0,
+    "MaxStack": 30,
+    "Duration": 10000,
+    "IntervalTime": 2000,
+    "Show": true,
+    "ModifyState": [
+      "Posion"
+    ],
+    "DmgTag": [
+      "Ying"
+    ],
+    "ModifyAttrType": [
+      "CurHp"
+    ],
+    "IconPath": ""
+  },
+  {
+    "Id": "BF010007",
+    "Name": "一团引线",
+    "Type": 1,
+    "Flag": [
+      "Dot"
+    ],
+    "ImmuneFlag": [],
+    "FlagLevel": 0,
+    "MaxStack": 30,
+    "Duration": 10000,
+    "IntervalTime": 2000,
+    "Show": true,
+    "ModifyState": [
+      "Posion"
+    ],
+    "DmgTag": [
+      "Ying"
+    ],
+    "ModifyAttrType": [
+      "CurHp"
+    ],
+    "IconPath": ""
+  },
+  {
+    "Id": "BF010008",
+    "Name": "死神来了",
+    "Type": 1,
+    "Flag": [
+      "Dot"
+    ],
+    "ImmuneFlag": [],
+    "FlagLevel": 0,
+    "MaxStack": 30,
+    "Duration": 10000,
+    "IntervalTime": 2000,
+    "Show": true,
+    "ModifyState": [
+      "Posion"
+    ],
+    "DmgTag": [
+      "Ying"
+    ],
+    "ModifyAttrType": [
+      "CurHp"
+    ],
+    "IconPath": "Ability_BackStab"
+  },
+  {
+    "Id": "BF010009",
+    "Name": "给自己一刀",
+    "Type": 1,
+    "Flag": [
+      "Dot"
+    ],
+    "ImmuneFlag": [],
+    "FlagLevel": 0,
+    "MaxStack": 30,
+    "Duration": 10000,
+    "IntervalTime": 2000,
+    "Show": true,
+    "ModifyState": [
+      "Posion"
+    ],
+    "DmgTag": [
+      "Ying"
+    ],
+    "ModifyAttrType": [
+      "CurHp"
+    ],
+    "IconPath": "CurHp"
+  },
+  {
+    "Id": "BF010010",
+    "Name": "中毒",
+    "Type": 1,
+    "Flag": [
+      "Dot"
+    ],
+    "ImmuneFlag": [],
+    "FlagLevel": 0,
+    "MaxStack": 30,
+    "Duration": 10000,
+    "IntervalTime": 2000,
+    "Show": true,
+    "ModifyState": [
+      "Posion"
+    ],
+    "DmgTag": [
+      "Ying"
+    ],
+    "ModifyAttrType": [
+      "CurHp"
+    ],
+    "IconPath": "Spell_Shadow_DeathCoil"
+  },
+  {
+    "Id": "BF010011",
+    "Name": "唯快不破",
+    "Type": 0,
+    "Flag": [
+      "Dot"
+    ],
+    "ImmuneFlag": [],
+    "FlagLevel": 0,
+    "MaxStack": 3,
+    "Duration": 10000,
+    "IntervalTime": 2000,
+    "Show": true,
+    "ModifyState": [
+      "Posion"
+    ],
+    "DmgTag": [
+      "Ying"
+    ],
+    "ModifyAttrType": [
+      "CurHp"
+    ],
+    "IconPath": "Ability_Hunter_BeastSoothe"
+  },
+  {
+    "Id": "BF010012",
+    "Name": "无敌",
+    "Type": 0,
+    "Flag": [
+      "Dot"
+    ],
+    "ImmuneFlag": [],
+    "FlagLevel": 0,
+    "MaxStack": 3,
+    "Duration": 3000,
+    "IntervalTime": 0,
+    "Show": true,
+    "ModifyState": [
+      "Posion"
+    ],
+    "DmgTag": [
+      "Ying"
+    ],
+    "ModifyAttrType": [
+      "CurHp"
+    ],
+    "IconPath": "Spell_Holy_SealOfSalvation"
+  },
+  {
+    "Id": "BF010013",
+    "Name": "强化",
+    "Type": 0,
+    "Flag": [
+      "Dot"
+    ],
+    "ImmuneFlag": [],
+    "FlagLevel": 0,
+    "MaxStack": 3,
+    "Duration": 10000,
+    "IntervalTime": 2000,
+    "Show": true,
+    "ModifyState": [
+      "Posion"
+    ],
+    "DmgTag": [
+      "Ying"
+    ],
+    "ModifyAttrType": [
+      "CurHp"
+    ],
+    "IconPath": "Ability_Druid_ChallangingRoar"
+  },
+  {
+    "Id": "BF010014",
+    "Name": "眩晕",
+    "Type": 0,
+    "Flag": [
+      "Dot"
+    ],
+    "ImmuneFlag": [],
+    "FlagLevel": 0,
+    "MaxStack": 3,
+    "Duration": 10000,
+    "IntervalTime": 2000,
+    "Show": true,
+    "ModifyState": [
+      "Posion"
+    ],
+    "DmgTag": [
+      "Ying"
+    ],
+    "ModifyAttrType": [
+      "CurHp"
+    ],
+    "IconPath": "Spell_Holy_DivineIntervention"
+  },
+  {
+    "Id": "BF010015",
+    "Name": "炸弹",
+    "Type": 0,
+    "Flag": [
+      "Dot"
+    ],
+    "ImmuneFlag": [],
+    "FlagLevel": 0,
+    "MaxStack": 3,
+    "Duration": 3000,
+    "IntervalTime": 0,
+    "Show": true,
+    "ModifyState": [
+      "Posion"
+    ],
+    "DmgTag": [
+      "Ying"
+    ],
+    "ModifyAttrType": [
+      "CurHp"
+    ],
+    "IconPath": "Trade_Tailoring"
+  },
+  {
+    "Id": "BF010016",
+    "Name": "隐身",
+    "Type": 0,
+    "Flag": [
+      "Dot"
+    ],
+    "ImmuneFlag": [],
+    "FlagLevel": 0,
+    "MaxStack": 3,
+    "Duration": 10000,
+    "IntervalTime": 2000,
+    "Show": true,
+    "ModifyState": [
+      "Posion"
+    ],
+    "DmgTag": [
+      "Ying"
+    ],
+    "ModifyAttrType": [
+      "CurHp"
+    ],
+    "IconPath": "Spell_Holy_WordFortitude"
+  }
+]

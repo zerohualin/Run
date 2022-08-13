@@ -1,0 +1,172 @@
+[
+  {
+    "Id": 1,
+    "Name": "加载中",
+    "Layer": 5
+  },
+  {
+    "Id": 2,
+    "Name": "登陆",
+    "Layer": 2
+  },
+  {
+    "Id": 3,
+    "Name": "背景",
+    "Layer": 0
+  },
+  {
+    "Id": 4,
+    "Name": "大厅",
+    "Layer": 2
+  },
+  {
+    "Id": 5,
+    "Name": "ZesuDemo",
+    "Layer": 2
+  },
+  {
+    "Id": 6,
+    "Name": "AnimatorDemo",
+    "Layer": 2
+  },
+  {
+    "Id": 7,
+    "Name": "BattleDemo",
+    "Layer": 2
+  },
+  {
+    "Id": 8,
+    "Name": "BattleGround",
+    "Layer": 2
+  },
+  {
+    "Id": 9,
+    "Name": "BattleResult",
+    "Layer": 2
+  },
+  {
+    "Id": 10,
+    "Name": "BattleVs",
+    "Layer": 2
+  },
+  {
+    "Id": 11,
+    "Name": "BottomCheck",
+    "Layer": 2
+  },
+  {
+    "Id": 12,
+    "Name": "CharacterDialog",
+    "Layer": 2
+  },
+  {
+    "Id": 13,
+    "Name": "Clan",
+    "Layer": 2
+  },
+  {
+    "Id": 14,
+    "Name": "CommonSelectList",
+    "Layer": 2
+  },
+  {
+    "Id": 15,
+    "Name": "EmojiSelect",
+    "Layer": 2
+  },
+  {
+    "Id": 16,
+    "Name": "ErrorNetwork",
+    "Layer": 2
+  },
+  {
+    "Id": 17,
+    "Name": "GameStatus",
+    "Layer": 2
+  },
+  {
+    "Id": 18,
+    "Name": "Inventory",
+    "Layer": 2
+  },
+  {
+    "Id": 19,
+    "Name": "MJRoom",
+    "Layer": 2
+  },
+  {
+    "Id": 20,
+    "Name": "NormalActionSelect",
+    "Layer": 2
+  },
+  {
+    "Id": 21,
+    "Name": "Play",
+    "Layer": 2
+  },
+  {
+    "Id": 22,
+    "Name": "PopupConfirm",
+    "Layer": 2
+  },
+  {
+    "Id": 23,
+    "Name": "PopupInput",
+    "Layer": 2
+  },
+  {
+    "Id": 24,
+    "Name": "PopupSelect",
+    "Layer": 2
+  },
+  {
+    "Id": 25,
+    "Name": "SelectServer",
+    "Layer": 2
+  },
+  {
+    "Id": 26,
+    "Name": "Setting",
+    "Layer": 2
+  },
+  {
+    "Id": 27,
+    "Name": "SetUsername",
+    "Layer": 2
+  },
+  {
+    "Id": 28,
+    "Name": "SlgPlay",
+    "Layer": 2
+  },
+  {
+    "Id": 29,
+    "Name": "Rank",
+    "Layer": 2
+  },
+  {
+    "Id": 30,
+    "Name": "Chat",
+    "Layer": 2
+  },
+  {
+    "Id": 31,
+    "Name": "Notice",
+    "Layer": 2
+  },
+  {
+    "Id": 32,
+    "Name": "Othello",
+    "Layer": 2
+  },
+  {
+    "Id": 33,
+    "Name": "AFKMain",
+    "Layer": 2
+  },
+  {
+    "Id": 34,
+    "Name": "AFKBattle",
+    "Layer": 2
+  }
+]

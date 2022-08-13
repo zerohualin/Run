@@ -41,89 +41,89 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\04 Brains\KeyboardBrain.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\Characters\RootMotionRedirect.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\01 Game Manager\GameManagerEnum.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\01 Basics\03 Transitions\PlayTransitionOnClick.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\06 Weapons\EquipState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\10 Animation Jobs\03 Lean\SimpleLean.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\05 Brain Transplants\MouseBrain.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\08 Inverse Kinematics\02 Uneven Ground\RaycastFootIK.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\05 Events\02 Golf Events\GolfHitControllerAnimancer.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\04 Directional Sprites\01 Basic Movement\SpriteMovementController.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\02 Hybrid Mini Game\GolfMiniGame.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\08 Inverse Kinematics\02 Uneven Ground\ObstacleTreadmill.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\Characters\CharacterBrain.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\Characters\Character.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\Code\OrbitControls.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\08 Inverse Kinematics\01 Puppet\TransformResetter.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\06 Weapons\AttackInput.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\04 Brains\States\CharacterState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\08 Inverse Kinematics\01 Puppet\MouseDrag.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\01 Basics\02 Playing And Fading\PlayingAndFading.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\Characters\KeyboardAndMouseBrain.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\04 Brains\CharacterStats.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\05 Events\01 Footstep Events\FootstepEventsAnimation.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\06 Weapons\RootMotionRedirect.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\01 Game Manager\GameManagerFSM.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\01 Game Manager\GameManagerFSM.ReadyState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\States\RespawnState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\08 Inverse Kinematics\01 Puppet\IKPuppet.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\08 Inverse Kinematics\01 Puppet\IKPuppetLookTarget.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\States\IdleState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\02 Fine Control\01 Spider Bot\SpiderBot.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\03 Locomotion\02 Linear Blending\ScreenBoundsTeleporter.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\04 Brains\Character.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\States\AirborneState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\Code\TimeScale.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\06 Weapons\Weapon.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\States\LocomotionState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\05 Events\02 Golf Events\GolfHitController.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\07 Layers\LayerExample.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\10 Animation Jobs\01 Two Bone IK\TwoBoneIKJob.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\02 Fine Control\04 Update Rate\LowUpdateRate.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\03 Locomotion\01 Root Motion\RootMotion.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\10 Animation Jobs\01 Two Bone IK\TwoBoneIK.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\States\LandingState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\10 Animation Jobs\02 Damping\DampingJob.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\04 Directional Sprites\02 Character Controller\SpriteCharacterController.cs" />
      <Compile Include="Assets\Plugins\Animancer\Examples\03 Locomotion\02 Linear Blending\LinearBlendTreeLocomotion.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\02 Characters\CharacterState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\Code\AssemblyInfo.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\Characters\CharacterSelector.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\03 Interrupt Management\CharacterState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\08 Inverse Kinematics\02 Uneven Ground\ObstacleTreadmill.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\04 Brains\CharacterBrain.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\02 Characters\Character.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\States\DieState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\01 Basics\03 Transitions\PlayTransitionOnClick.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\05 Events\01 Footstep Events\FootstepEventsAnimation.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\01 Game Manager\GameManagerFSM.ActionState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\04 Directional Sprites\01 Basic Movement\SpriteMovementController.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\08 Inverse Kinematics\01 Puppet\IKPuppetLookTarget.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\05 Events\02 Golf Events\GolfHitControllerAnimancerHybrid.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\06 Weapons\AttackState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\01 Game Manager\GameManagerFSM.FadeState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\Code\TimeScale.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\States\LandingState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\04 Directional Sprites\02 Character Controller\SpriteCharacterController.cs" />
      <Compile Include="Assets\Plugins\Animancer\Examples\02 Fine Control\02 Doors\ClickToInteract.cs" />
      <Compile Include="Assets\Plugins\Animancer\Examples\05 Events\02 Golf Events\GolfHitControllerAnimation.cs" />
      <Compile Include="Assets\Plugins\Animancer\Examples\01 Basics\01 Quick Play\PlayAnimationOnClick.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\03 Locomotion\02 Linear Blending\LinearMixerLocomotion.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\States\CharacterState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\06 Weapons\EquipState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\01 Basics\02 Playing And Fading\PlayingAndFading.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\01 Game Manager\GameManagerFSM.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\02 Fine Control\01 Spider Bot\SpiderBot.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\01 Basics\04 Named Animations\NamedAnimations.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\01 Hybrid Basics\HybridBasics.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\Characters\RootMotionRedirect.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\Code\OrbitControls.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\04 Brains\States\CharacterState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\04 Brains\Character.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\10 Animation Jobs\02 Damping\DampingJob.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\10 Animation Jobs\03 Lean\SimpleLeanComponent.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\04 Brains\States\IdleState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\Characters\Character.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\States\LocomotionState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\02 Fine Control\04 Update Rate\LowUpdateRate.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\02 Characters\CharacterState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\05 Events\02 Golf Events\GolfHitControllerAnimationSimple.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\States\AirborneState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\03 Locomotion\02 Linear Blending\ScreenBoundsTeleporter.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\Code\AssemblyInfo.cs" />
      <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\States\AttackState.cs" />
      <Compile Include="Assets\Plugins\Animancer\Examples\02 Fine Control\04 Update Rate\DynamicUpdateRate.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\05 Events\02 Golf Events\GolfHitControllerAnimationSimple.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\10 Animation Jobs\03 Lean\SimpleLeanComponent.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\01 Basics\04 Named Animations\NamedAnimations.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\05 Events\01 Footstep Events\FootstepEvents.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\04 Brains\CharacterBrain.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\Characters\CharacterSelector.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\01 Game Manager\GameManagerFSM.IntroductionState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\03 Locomotion\02 Linear Blending\LinearMixerLocomotion.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\01 Game Manager\GameManagerFSM.State.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\05 Events\02 Golf Events\GolfHitControllerAnimancerHybrid.cs" />
      <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\Characters\CharacterStats.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\02 Hybrid Mini Game\LocomotionState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\02 Characters\Character.cs" />
      <Compile Include="Assets\Plugins\Animancer\Examples\08 Inverse Kinematics\01 Puppet\IKPuppetTarget.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\10 Animation Jobs\02 Damping\Damping.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\States\DieState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\06 Weapons\AttackState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\03 Locomotion\03 Directional Blending\SpiderBotAdvanced.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\01 Hybrid Basics\HybridBasics.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\04 Brains\States\IdleState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\02 Fine Control\01 Spider Bot\SpiderBotSimple.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\03 Interrupt Management\CharacterState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\05 Events\03 Event Utilities\EventUtilities.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\02 Fine Control\02 Doors\Door.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\States\CharacterState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\02 Hybrid Mini Game\GolfMiniGame.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\08 Inverse Kinematics\01 Puppet\IKPuppet.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\06 Weapons\Weapon.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\05 Events\02 Golf Events\GolfHitController.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\05 Events\01 Footstep Events\FootstepEvents.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\08 Inverse Kinematics\02 Uneven Ground\RaycastFootIK.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\03 Locomotion\01 Root Motion\RootMotion.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\02 Hybrid Mini Game\LocomotionState.cs" />
      <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\States\FlinchState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\01 Game Manager\GameManagerFSM.FadeState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\05 Events\02 Golf Events\GolfHitControllerAnimancer.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\06 Weapons\AttackInput.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\01 Game Manager\GameManagerFSM.IntroductionState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\01 Game Manager\GameManagerEnum.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\10 Animation Jobs\03 Lean\SimpleLean.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\04 Brains\KeyboardBrain.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\05 Brain Transplants\MouseBrain.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\Characters\CharacterBrain.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\Characters\KeyboardAndMouseBrain.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\04 Brains\CharacterStats.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\States\RespawnState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\10 Animation Jobs\01 Two Bone IK\TwoBoneIKJob.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\10 Animation Jobs\01 Two Bone IK\TwoBoneIK.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\03 Locomotion\03 Directional Blending\SpiderBotAdvanced.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\02 Fine Control\02 Doors\Door.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\07 Layers\LayerExample.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\01 Game Manager\GameManagerFSM.State.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\10 Animation Jobs\02 Damping\Damping.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\02 Fine Control\01 Spider Bot\SpiderBotSimple.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\05 Events\03 Event Utilities\EventUtilities.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\08 Inverse Kinematics\01 Puppet\TransformResetter.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\08 Inverse Kinematics\01 Puppet\MouseDrag.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\06 Weapons\RootMotionRedirect.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\01 Game Manager\GameManagerFSM.ReadyState.cs" />
+     <Compile Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\03 3D Game Kit\States\IdleState.cs" />
      <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\04 Brains\States\LocomotionState.cs" />
-     <Compile Include="Assets\Plugins\Animancer\Examples\06 State Machines\01 Game Manager\GameManagerFSM.ActionState.cs" />
      <None Include="Assets\Plugins\Animancer\Examples\Art\Default Humanoid\License.txt" />
      <None Include="Assets\Plugins\Animancer\Examples\04 Directional Sprites\01 Basic Movement\Mage\License.txt" />
      <None Include="Assets\Plugins\Animancer\Examples\05 Events\02 Golf Events\License.txt" />
@@ -383,11 +383,17 @@
      <Reference Include="UnityEditor.UWP.Extensions">
      <HintPath>C:\Program Files\Unity\Hub\Editor\Unity 2021.3.1f1c1\Editor\Data\PlaybackEngines\MetroSupport\UnityEditor.UWP.Extensions.dll</HintPath>
      </Reference>
+     <Reference Include="Sirenix.OdinInspector.Editor">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Burst.Unsafe">
      <HintPath>C:\101_Dream\Run\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.Unsafe.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Cecil.Mdb">
      <HintPath>C:\101_Dream\Run\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+     </Reference>
+     <Reference Include="Sirenix.OdinInspector.Attributes">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.dll</HintPath>
      </Reference>
      <Reference Include="CommandLine">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\CommandLine.dll</HintPath>
@@ -401,32 +407,26 @@
      <Reference Include="Unity.Burst.Cecil">
      <HintPath>C:\101_Dream\Run\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
      </Reference>
+     <Reference Include="Sirenix.Serialization.Config">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.dll</HintPath>
+     </Reference>
+     <Reference Include="Animancer.Lite">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Animancer\Internal\Core\Animancer.Lite.dll</HintPath>
+     </Reference>
+     <Reference Include="Sirenix.Utilities">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Burst.Cecil.Rocks">
      <HintPath>C:\101_Dream\Run\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
      </Reference>
      <Reference Include="ICSharpCode.SharpZipLib">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
      </Reference>
-     <Reference Include="Sirenix.OdinInspector.Editor">
-     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Sirenix.OdinInspector.Attributes">
-     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.dll</HintPath>
-     </Reference>
-     <Reference Include="Sirenix.Serialization.Config">
-     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.dll</HintPath>
-     </Reference>
-     <Reference Include="Sirenix.Utilities">
-     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.dll</HintPath>
-     </Reference>
      <Reference Include="Sirenix.Serialization">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.dll</HintPath>
      </Reference>
      <Reference Include="Sirenix.Utilities.Editor">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Animancer.Lite">
-     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Animancer\Internal\Core\Animancer.Lite.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Android.Types">
      <HintPath>C:\Program Files\Unity\Hub\Editor\Unity 2021.3.1f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
