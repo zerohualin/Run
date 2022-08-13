@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using Animancer;
 
 namespace ET.Client
 {
@@ -17,7 +18,9 @@ namespace ET.Client
             
             Scene clientScene = await SceneFactory.CreateClientScene(1, "Game", Game.Scene);
             
-            await Game.EventSystem.PublishAsync(clientScene, new EventType.AppStartInitFinish());
+            await Game.EventSystem.PublishAsync(clientScene, new EventType.Goto_Animancer_Demo());
+            
+            // await Game.EventSystem.PublishAsync(clientScene, new EventType.AppStartInitFinish());
         }
     }
 }

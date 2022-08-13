@@ -338,7 +338,29 @@
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\AI\AAIHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Realm\RealmGateAddressHelper.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\ActorLocation\ActorLocationSenderComponentSystem.cs" />
+     <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Module\Animancer\AnimationComponentSystem.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Animancer\AnimationComponent.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Fsm\States\IdleState.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Fsm\StateTypeForAnimExtension.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Fsm\States\IFSMState.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Fsm\States\AFsmStateBase.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Fsm\States\CommonAttackState.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Fsm\States\CustomState.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Fsm\StateTypes.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Fsm\StackFsmComponent.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Fsm\States\NavigateState.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Animation\PlayAnimInfo.cs" />
+     <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Module\Fsm\StackFsmComponentSystem.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Share\Module\ReferencePool\ReferencePoolInfo.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Share\Module\ReferencePool\IReference.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Share\Module\ReferencePool\ReferencePool.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Share\Module\ReferencePool\ReferencePool.ReferenceCollection.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Client\WavegamerExample\EventType.cs" />
+     <Compile Include="Assets\Scripts\Codes\HotfixView\Client\WavegamerExample\Goto_Animancer_Demo.cs" />
      <None Include="Assets\Scripts\Codes\Unity.Codes.asmdef" />
+     <Reference Include="Animancer">
+       <HintPath>Library\ScriptAssemblies\Animancer.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\Unity 2021.3.1f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -641,6 +663,9 @@
      </Reference>
      <Reference Include="Sirenix.Utilities.Editor">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Animancer.Lite">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Animancer\Internal\Core\Animancer.Lite.dll</HintPath>
      </Reference>
      <Reference Include="nunit.framework">
      <HintPath>C:\101_Dream\Run\Unity\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -1270,6 +1295,18 @@
     <ProjectReference Include="Unity.Core.csproj">
       <Project>{770e9beb-b313-3761-faa2-76daf4b34ada}</Project>
       <Name>Unity.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="Animancer.FSM.csproj">
+      <Project>{774b51b6-b901-b97e-d593-35721140fea6}</Project>
+      <Name>Animancer.FSM</Name>
+    </ProjectReference>
+    <ProjectReference Include="Animancer.Examples.csproj">
+      <Project>{3887fc76-16b0-e25b-d964-8c25cc3023a6}</Project>
+      <Name>Animancer.Examples</Name>
+    </ProjectReference>
+    <ProjectReference Include="Animancer.csproj">
+      <Project>{159e65f6-d363-1a6d-ec57-6db30da1b98f}</Project>
+      <Name>Animancer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

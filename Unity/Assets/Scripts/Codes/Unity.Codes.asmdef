@@ -4,7 +4,10 @@
     "references": [
         "Unity.Mono",
         "Unity.ThirdParty",
-        "Unity.Core"
+        "Unity.Core",
+        "Animancer.FSM",
+        "Animancer.Examples",
+        "Animancer"
     ],
     "includePlatforms": [
         "Editor"
