@@ -1,3 +1,6 @@
 [submodule "Sub/luban_examples"]
 	path = Sub/luban_examples
 	url = git@github.com:zerohualin/luban_examples.git
+[submodule "Sub/vue-antd-admin"]
+	path = Sub/vue-antd-admin
+	url = git@github.com:zerohualin/vue-antd-admin.git
