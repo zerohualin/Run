@@ -7,3 +7,6 @@
 [submodule "Sub/AftershockFGUI"]
 	path = Sub/AftershockFGUI
 	url = git@github.com:zerohualin/AftershockFGUI.git
+[submodule "Sub/AftershockLuban"]
+	path = Sub/AftershockLuban
+	url = git@github.com:zerohualin/AftershockLuban.git
