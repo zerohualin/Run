@@ -156,13 +156,11 @@ PlayerSettings:
     enable360StereoCapture: 0
   isWsaHolographicRemotingEnabled: 0
   enableFrameTimingStats: 0
-  enableOpenGLProfilerGPURecorders: 1
   useHDRDisplay: 0
   D3DHDRBitDepth: 0
   m_ColorGamuts: 00000000
   targetPixelDensity: 30
   resolutionScalingMode: 0
-  resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
@@ -722,7 +720,6 @@ PlayerSettings:
   ps4videoRecordingFeaturesUsed: 0
   ps4contentSearchFeaturesUsed: 0
   ps4CompatibilityPS5: 0
-  ps4AllowPS5Detection: 0
   ps4GPU800MHz: 1
   ps4attribEyeToEyeDistanceSettingVR: 0
   ps4IncludedModules: []
@@ -750,7 +747,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     Android: NETSTANDARD2_0;UNITY
     Server: NETSTANDARD2_0;UNITY
-    Standalone: NETSTANDARD2_0;UNITY
+    Standalone: NETSTANDARD2_0;UNITY;ENABLE_CODE;ENABLE_CODES;ODIN_INSPECTOR;ODIN_INSPECTOR_3
     WebGL: NETSTANDARD2_0;UNITY
     iPhone: NETSTANDARD2_0;UNITY
   additionalCompilerArguments: {}
@@ -778,7 +775,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: Unity
-  metroPackageVersion: 
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -786,7 +783,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Unity
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: ET
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
