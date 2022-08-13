@@ -378,6 +378,9 @@
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Luban\BeanBase.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Luban\ITypeId.cs" />
      <None Include="Assets\Scripts\Codes\Unity.Codes.asmdef" />
+     <Reference Include="Animancer">
+       <HintPath>Library\ScriptAssemblies\Animancer.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\Unity 2021.3.1f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

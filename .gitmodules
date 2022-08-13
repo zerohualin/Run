@@ -4,3 +4,6 @@
 [submodule "Sub/vue-antd-admin"]
 	path = Sub/vue-antd-admin
 	url = git@github.com:zerohualin/vue-antd-admin.git
+[submodule "Sub/AftershockFGUI"]
+	path = Sub/AftershockFGUI
+	url = git@github.com:zerohualin/AftershockFGUI.git
