@@ -10,3 +10,12 @@
 [submodule "Sub/AftershockLuban"]
 	path = Sub/AftershockLuban
 	url = git@github.com:zerohualin/AftershockLuban.git
+[submodule "Sub/Tools"]
+	path = Sub/Tools
+	url = git@github.com:zerohualin/AftershockTools.git
+[submodule "Sub/Luban"]
+	path = Sub/Luban
+	url = git@github.com:zerohualin/AftershockLuban.git
+[submodule "Sub/FGUI"]
+	path = Sub/FGUI
+	url = git@github.com:zerohualin/AftershockFGUI.git

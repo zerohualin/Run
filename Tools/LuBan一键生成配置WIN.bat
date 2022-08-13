@@ -2,7 +2,7 @@ set WORKSPACE=..
 
 set GEN_CLIENT=dotnet %WORKSPACE%\Sub\luban_examples\Tools\Luban.ClientServer\Luban.ClientServer.dll
 
-set CONF_ROOT=%WORKSPACE%\Sub\AftershockLuban
+set CONF_ROOT=%WORKSPACE%\Sub\Luban
 
 @ECHO =======================CLIENT==========================
 %GEN_CLIENT% -j cfg --^

@@ -377,6 +377,7 @@
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Luban\StringUtil.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Luban\BeanBase.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Luban\ITypeId.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Share\MiniGame\MiniGameComponent.cs" />
      <None Include="Assets\Scripts\Codes\Unity.Codes.asmdef" />
      <Reference Include="Animancer">
        <HintPath>Library\ScriptAssemblies\Animancer.dll</HintPath>
