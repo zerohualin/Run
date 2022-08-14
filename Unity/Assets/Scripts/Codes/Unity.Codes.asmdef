@@ -2,13 +2,13 @@
     "name": "Unity.Codes",
     "rootNamespace": "",
     "references": [
-        "Unity.Mono",
-        "Unity.ThirdParty",
-        "Unity.Core",
+        "Animancer",
         "Animancer.FSM",
         "Animancer.Examples",
-        "Animancer",
-        "YooAsset"
+        "YooAsset",
+        "Unity.Core",
+        "Unity.ThirdParty",
+        "Unity.Mono"
     ],
     "includePlatforms": [
         "Editor"
@@ -16,7 +16,9 @@
     "excludePlatforms": [],
     "allowUnsafeCode": true,
     "overrideReferences": false,
-    "precompiledReferences": [],
+    "precompiledReferences": [
+        "Animancer.Lite.dll"
+    ],
     "autoReferenced": true,
     "defineConstraints": [
         "ENABLE_CODES"

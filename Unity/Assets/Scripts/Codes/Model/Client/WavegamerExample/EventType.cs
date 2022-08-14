@@ -4,7 +4,7 @@ namespace ET
 {
     namespace EventType
     {
-        public struct Goto_Animancer_Demo
+        public struct Goto_MiniGame
         {
             
         }

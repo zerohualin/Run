@@ -340,7 +340,7 @@
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.dll</HintPath>
      </Reference>
      <Reference Include="Animancer.Lite">
-     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Animancer\Internal\Core\Animancer.Lite.dll</HintPath>
+     <HintPath>C:\101_Dream\Run\Unity\Library\PackageCache\com.nkg.animancer@735350affb\Internal\Core\Animancer.Lite.dll</HintPath>
      </Reference>
      <Reference Include="Sirenix.Utilities">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.dll</HintPath>

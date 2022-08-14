@@ -11,7 +11,9 @@ namespace ET.Client
             GameObject gameObject = self.GetParent<Unit>().GetComponent<GameObjectComponent>().GameObject;
             self.AnimancerComponent = gameObject.GetComponent<AnimancerComponent>();
             self.StackFsmComponent = self.GetParent<Unit>().GetComponent<StackFsmComponent>();
+            
             //如果是以Anim开头的key值，说明是动画文件，需要添加引用
+            
             foreach (var referenceCollectorData in gameObject.GetComponent<ReferenceCollector>().data)
             {
                 if (referenceCollectorData.key.StartsWith("Anim"))
