@@ -192,8 +192,8 @@
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\Actor\IMActorHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Client\Demo\Unit\M2C_RemoveUnitsHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\Actor\ActorHelper.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Message\AMHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Demo\Gate\PlayerComponent.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Message\AMHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Map\Unit\UnitEnterSightRange_NotifyClient.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\DB\DBManagerComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Unit\UnitType.cs" />
