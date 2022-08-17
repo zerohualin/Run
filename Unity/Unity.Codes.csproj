@@ -73,7 +73,7 @@
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Gate\SessionPlayerComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Luban\StringUtil.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Generate\Luban\Demo\AIMeta.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Client\WavegamerExample\EventType.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Client\MiniGame\EventType.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Client\Demo\Router\RouterAddressComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Generate\Luban\Global\TbGlobal.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Map\Transfer\C2M_TransferMapHandler.cs" />
@@ -150,7 +150,7 @@
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Animancer\AnimationComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\RobotCase\RobotCaseComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\ActorLocation\ObjectAddRequestHandler.cs" />
-     <Compile Include="Assets\Scripts\Codes\HotfixView\Client\WavegamerExample\Goto_Animancer_Demo.cs" />
+     <Compile Include="Assets\Scripts\Codes\HotfixView\Client\MiniGame\Goto_Animancer_Demo.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Config\StartSceneConfig.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Client\Demo\Router\RouterCheckComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Config\StartProcessConfig.cs" />

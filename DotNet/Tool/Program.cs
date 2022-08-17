@@ -55,6 +55,12 @@ namespace ET.Server
                         Proto2CS.Export();
                         return 0;
                     }
+                    case AppType.SubGameTool:
+                    {
+                        Game.Options.Console = 1;
+                        SubGameTool.CopyToSub();
+                        return 0;
+                    }
                 }
             }
             catch (Exception e)
