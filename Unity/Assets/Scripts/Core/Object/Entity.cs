@@ -872,6 +872,15 @@ namespace ET
             entity.Parent = this;
             return entity;
         }
+        
+        public Entity AddChild(Type type, bool isFromPool = false)
+        {
+            var component = Entity.Create(type, isFromPool);
+            component.Id = IdGenerater.Instance.GenerateId();
+            component.Parent = this;
+            EventSystem.Instance.Awake(component);
+            return component;
+        }
 
         public T AddChild<T>(bool isFromPool = false) where T : Entity, IAwake
         {
