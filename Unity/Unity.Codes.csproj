@@ -73,7 +73,6 @@
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Gate\SessionPlayerComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Luban\StringUtil.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Generate\Luban\Demo\AIMeta.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Client\MiniGame\EventType.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Client\Demo\Router\RouterAddressComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Generate\Luban\Global\TbGlobal.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Map\Transfer\C2M_TransferMapHandler.cs" />
@@ -97,6 +96,7 @@
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\Actor\MailBoxComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\Scene\CurrentScenesComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Message\SessionAcceptTimeoutComponent.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\FGUI\IFGUIComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\MiniGame\MiniGameComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\UI\LayerNames.cs" />
      <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Module\UI\UIEventComponentSystem.cs" />
@@ -132,12 +132,14 @@
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\AOI\CellSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\Http\HttpHandlerAttribute.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Helper\SceneFactory.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\FGUI\FGUIEvent.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Map\Move\C2M_PathfindingResultHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Plugins\Example\ModelShare.cs" />
      <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Demo\Global\GlobalComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Demo\Map\Unit\UnitGateComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Client\Demo\AI\XunLuoPathComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Demo\Opera\OperaComponent.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\FGUI\FGUIEventAttribute.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\Actor\AMActorHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Demo\UI\UILogin\UILoginComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Map\C2M_TestRobotCaseHandler.cs" />
@@ -145,12 +147,13 @@
      <Compile Include="Assets\Scripts\Codes\Model\Client\Demo\Session\SessionComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Demo\Robot\RobotManagerComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Timer\TimerComponent.cs" />
+     <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Module\FGUI\FGUIHelper.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Numeric\NumericComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Plugins\Example\ModelServer.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\FGUI\FGUIEntity.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Animancer\AnimationComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\RobotCase\RobotCaseComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\ActorLocation\ObjectAddRequestHandler.cs" />
-     <Compile Include="Assets\Scripts\Codes\HotfixView\Client\MiniGame\Goto_Animancer_Demo.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Config\StartSceneConfig.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Client\Demo\Router\RouterCheckComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Config\StartProcessConfig.cs" />
@@ -186,10 +189,12 @@
      <Compile Include="Assets\Scripts\Codes\Model\Server\Demo\Gate\Player.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Client\Demo\Router\RouterAddressComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Numeric\INumericWatcher.cs" />
+     <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Module\FGUI\FGUIEventComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Config\IMerge.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Config\UnitConfig.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\Numeric\NumericWatcher_Hp_ShowUI.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\Actor\IMActorHandler.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\FGUI\FGUIComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Client\Demo\Unit\M2C_RemoveUnitsHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\Actor\ActorHelper.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Demo\Gate\PlayerComponent.cs" />
@@ -210,6 +215,7 @@
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Resource\ResourcesComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\CoroutineLock\CoroutineLockQueue.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\DB\IDBCollection.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\FGUI\UIDefaultComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\Recast\NavmeshComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\RobotCase\RobotCase.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\ActorLocation\LocationProxyComponentSystem.cs" />
@@ -226,6 +232,7 @@
      <Compile Include="Assets\Scripts\Codes\Model\Share\Generate\Luban\Fgui\TbFguiConfig.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Message\MessageHandlerAttribute.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\CoroutineLock\CoroutineLockComponent.cs" />
+     <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Module\FGUI\IFGUIComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\Console\ConsoleComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Timer\ATimer.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Client\Demo\Unit\M2C_CreateUnitsHandler.cs" />
@@ -262,6 +269,7 @@
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Gate\R2G_GetLoginKeyHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\Message\SessionAcceptTimeoutComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Client\Plugins\Example\HotfixClient.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\FGUI\FGUIEventComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Demo\UI\UILogin\LoginFinish_RemoveLoginUI.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Numeric\NumericType.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Message\NetThreadComponent.cs" />
@@ -289,6 +297,7 @@
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\ActorLocation\AMActorLocationRpcHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Luban\ByteBuf.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Demo\Robot\Console\CreateRobotArgs.cs" />
+     <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Module\FGUI\FUIPackageHelper.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Resource\ResourcesLoaderComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Client\Demo\Unit\M2C_CreateMyUnitHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\AI\AIComponentSystem.cs" />
@@ -328,6 +337,7 @@
      <Compile Include="Assets\Scripts\Codes\Hotfix\Client\Demo\Router\RouterCheckComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Config\StartMachineConfig.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\ActorLocation\ActorResponse.cs" />
+     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\FGUI\GObjectComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Demo\Gate\GateMapComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Robot\Scene\RobotSceneFactory.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Client\Demo\Session\SessionComponentSystem.cs" />
@@ -363,6 +373,7 @@
      <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Plugins\Example\HotfixShare.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Realm\C2R_LoginHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Map\Transfer\TransferHelper.cs" />
+     <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Module\FGUI\FGUIComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Gate\PlayerSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\MessageInner\NetInnerComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Generate\Luban\Enums\FGUILayer.cs" />
@@ -1305,6 +1316,9 @@
      </Reference>
      <Reference Include="YooAsset">
      <HintPath>C:\101_Dream\Run\Unity\Library\ScriptAssemblies\YooAsset.dll</HintPath>
+     </Reference>
+     <Reference Include="FairyGUI.Runtime">
+     <HintPath>C:\101_Dream\Run\Unity\Library\ScriptAssemblies\FairyGUI.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>C:\101_Dream\Run\Unity\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>

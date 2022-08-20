@@ -18,6 +18,9 @@ namespace ET
             }
 
             FGUIComponent.Instance = self;
+            
+            GRoot.inst.SetContentScaleFactor(1440, 2560, UIContentScaler.ScreenMatchMode.MatchWidth);
+            GRoot.inst.ApplyContentScaleFactor();
 
             var fguiTypes = Game.EventSystem.GetTypes(typeof (FGUIComponentAttribute));
             foreach (Type type in fguiTypes)
