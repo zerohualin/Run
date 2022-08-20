@@ -14,6 +14,13 @@ namespace ET
         SubGameTool
     }
     
+    public enum SubGameActType
+    {
+        Unity2Sub,
+        Sub2Unity,
+        DeleteUnity
+    }
+    
     public class Options
     {
         public static Options Instance { get; set; }
@@ -39,5 +46,12 @@ namespace ET
         // 进程启动是否创建该进程的scenes
         [Option("CreateScenes", Required = false, Default = 1)]
         public int CreateScenes { get; set; } = 1;
+        
+        // SubGameTool
+        [Option("SubGameActType", Required = false, Default = SubGameActType.Unity2Sub, HelpText = "SubGameActType 执行动作分类")]
+        public SubGameActType SubGameActType { get; set; }
+        
+        [Option("MiniGameName", Default = "MiniGame", Required = false)]
+        public string MiniGameName { get; set; }
     }
 }

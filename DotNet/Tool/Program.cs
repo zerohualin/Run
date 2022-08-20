@@ -58,8 +58,7 @@ namespace ET.Server
                     case AppType.SubGameTool:
                     {
                         Game.Options.Console = 1;
-                        SubGameTool.CopyToSub();
-                        return 0;
+                        return SubGameTool.DoSub();
                     }
                 }
             }

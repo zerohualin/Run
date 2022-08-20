@@ -13,6 +13,7 @@ namespace ET
             Game.Scene.AddComponent<NumericWatcherComponent>();
             Game.Scene.AddComponent<AIDispatcherComponent>();
             Game.Scene.AddComponent<ClientSceneManagerComponent>();
+            Game.Scene.AddComponent<LubanComponent>();
             
             await Game.Scene.AddComponent<ConfigComponent>().LoadAsync();
         }
