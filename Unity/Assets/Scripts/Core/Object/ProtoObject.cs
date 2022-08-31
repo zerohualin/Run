@@ -15,26 +15,13 @@ namespace ET
         {
         }
         
+        
         public virtual void EndInit()
         {
         }
-
+        
+        
         public virtual void AfterEndInit()
-        {
-        }
-    }
-    
-    public abstract class DisposeObject: Object, IDisposable, ISupportInitialize
-    {
-        public virtual void Dispose()
-        {
-        }
-        
-        public virtual void BeginInit()
-        {
-        }
-        
-        public virtual void EndInit()
         {
         }
     }

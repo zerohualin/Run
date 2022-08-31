@@ -7,10 +7,8 @@ namespace ET
 {
     [ProtoContract]
     [Config]
-    public partial class StartMachineConfigCategory : ProtoObject, IMerge
+    public partial class StartMachineConfigCategory : ConfigSingleton<StartMachineConfigCategory>, IMerge
     {
-        public static StartMachineConfigCategory Instance;
-		
         [ProtoIgnore]
         [BsonIgnore]
         private Dictionary<int, StartMachineConfig> dict = new Dictionary<int, StartMachineConfig>();
@@ -19,24 +17,22 @@ namespace ET
         [ProtoMember(1)]
         private List<StartMachineConfig> list = new List<StartMachineConfig>();
 		
-        public StartMachineConfigCategory()
-        {
-            Instance = this;
-        }
-        
         public void Merge(object o)
         {
             StartMachineConfigCategory s = o as StartMachineConfigCategory;
             this.list.AddRange(s.list);
         }
 		
-        public override void EndInit()
+		[ProtoAfterDeserialization]        
+        public void ProtoEndInit()
         {
             foreach (StartMachineConfig config in list)
             {
-                config.EndInit();
+                config.AfterEndInit();
                 this.dict.Add(config.Id, config);
-            }            
+            }
+            this.list.Clear();
+            
             this.AfterEndInit();
         }
 		

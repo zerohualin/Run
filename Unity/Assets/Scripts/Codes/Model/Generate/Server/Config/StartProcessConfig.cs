@@ -7,10 +7,8 @@ namespace ET
 {
     [ProtoContract]
     [Config]
-    public partial class StartProcessConfigCategory : ProtoObject, IMerge
+    public partial class StartProcessConfigCategory : ConfigSingleton<StartProcessConfigCategory>, IMerge
     {
-        public static StartProcessConfigCategory Instance;
-		
         [ProtoIgnore]
         [BsonIgnore]
         private Dictionary<int, StartProcessConfig> dict = new Dictionary<int, StartProcessConfig>();
@@ -19,24 +17,22 @@ namespace ET
         [ProtoMember(1)]
         private List<StartProcessConfig> list = new List<StartProcessConfig>();
 		
-        public StartProcessConfigCategory()
-        {
-            Instance = this;
-        }
-        
         public void Merge(object o)
         {
             StartProcessConfigCategory s = o as StartProcessConfigCategory;
             this.list.AddRange(s.list);
         }
 		
-        public override void EndInit()
+		[ProtoAfterDeserialization]        
+        public void ProtoEndInit()
         {
             foreach (StartProcessConfig config in list)
             {
-                config.EndInit();
+                config.AfterEndInit();
                 this.dict.Add(config.Id, config);
-            }            
+            }
+            this.list.Clear();
+            
             this.AfterEndInit();
         }
 		

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace ET
 {
     [ChildOf(typeof(UnitComponent))]
-    [DebuggerDisplay("ViewGoName,nq")]
+    [DebuggerDisplay("ViewName,nq")]
     public class Unit: Entity, IAwake<int>
     {
         public int ConfigId { get; set; } //配置表id
@@ -26,7 +26,7 @@ namespace ET
             {
                 Vector3 oldPos = this.position;
                 this.position = value;
-                Game.EventSystem.Publish(this.DomainScene(), new EventType.ChangePosition() { Unit = this, OldPos = oldPos });
+                EventSystem.Instance.Publish(this.DomainScene(), new EventType.ChangePosition() { Unit = this, OldPos = oldPos });
             }
         }
 
@@ -47,19 +47,16 @@ namespace ET
             set
             {
                 this.rotation = value;
-                Game.EventSystem.Publish(this.DomainScene(), new EventType.ChangeRotation() { Unit = this });
+                EventSystem.Instance.Publish(this.DomainScene(), new EventType.ChangeRotation() { Unit = this });
             }
         }
 
-        
-#if ENABLE_CODES
-        protected override string ViewGoName
+        protected override string ViewName
         {
             get
             {
                 return $"{this.GetType().Name} ({this.Id})";
             }
         }
-#endif
     }
 }

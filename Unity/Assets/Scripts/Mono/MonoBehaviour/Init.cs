@@ -1,84 +1,63 @@
 ﻿using System;
 using System.Threading;
-
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
-
+using CommandLine;
 using UnityEngine;
-using YooAsset;
 
 namespace ET
 {
-#if UNITY_EDITOR
-	// 注册Editor下的Log
-	[InitializeOnLoad]
-	public class EditorRegisteLog
+	public class Init: MonoBehaviour
 	{
-		static EditorRegisteLog()
-		{
-			Game.ILog = new UnityLogger();
-		}
-	}
-#endif
-	
-	public partial class Init: MonoBehaviour
-	{
+		public static Init Instance;
+		
 		public GlobalConfig GlobalConfig;
 		
 		private void Awake()
 		{
-
-			var x = 1 << 10;
+			Instance = this;
+			
+			DontDestroyOnLoad(gameObject);
+			
 			AppDomain.CurrentDomain.UnhandledException += (sender, e) =>
 			{
 				Log.Error(e.ExceptionObject.ToString());
 			};
+				
 			SynchronizationContext.SetSynchronizationContext(ThreadSynchronizationContext.Instance);
-			DontDestroyOnLoad(gameObject);
 
-			Game.ILog = new UnityLogger();
+			// 命令行参数
+			string[] args = "".Split(" ");
+			Parser.Default.ParseArguments<Options>(args)
+				.WithNotParsed(error => throw new Exception($"命令行格式错误! {error}"))
+				.WithParsed(Game.AddSingleton);
 			
-			LoadAssetsAndHotfix().Coroutine();
+			Game.AddSingleton<RandomGenerator>();
+			Game.AddSingleton<TimeInfo>();
+			Game.AddSingleton<Logger>().ILog = new UnityLogger();
+			Game.AddSingleton<ObjectPool>();
+			Game.AddSingleton<IdGenerater>();
+			Game.AddSingleton<EventSystem>();
+			Game.AddSingleton<NetServices>();
+			Game.AddSingleton<Root>();
+			
+			ETTask.ExceptionHandler += Log.Error;
+
+			Game.AddSingleton<CodeLoader>().Start();
 		}
 
-		public async ETTask LoadAssetsAndHotfix()
-		{
-			await YooAssetInitHelper.Start();
-
-			var Mode = YooAssetInitHelper.GetMode();
-			if(Mode == YooAssets.EPlayMode.HostPlayMode)
-				await HotfixProcedureHelper.OnEnter();
-			
-			await LoadAotCode();
-			
-			CodeLoader.Instance.GlobalConfig = this.GlobalConfig;
-			
-			try
-			{
-				await CodeLoader.Instance.Start();
-			}
-			catch (Exception e)
-			{
-				Log.Error($"{e}"); 
-			}
-
-		}
-		
 		private void Update()
 		{
-			CodeLoader.Instance.Update?.Invoke();
+			ThreadSynchronizationContext.Instance.Update();
+			Game.Update();
 		}
 
 		private void LateUpdate()
 		{
-			CodeLoader.Instance.LateUpdate?.Invoke();
+			Game.LateUpdate();
 		}
 
 		private void OnApplicationQuit()
 		{
-			CodeLoader.Instance.OnApplicationQuit();
-			CodeLoader.Instance.Dispose();
+			Game.Close();
 		}
 	}
 }

@@ -5,7 +5,6 @@ using System.Net.Sockets;
 namespace ET.Server
 {
     [FriendOf(typeof(NetInnerComponent))]
-    [FriendOf(typeof(NetThreadComponent))]
     public static class NetInnerComponentSystem
     {
         [ObjectSystem]
@@ -16,11 +15,9 @@ namespace ET.Server
                 NetInnerComponent.Instance = self;
                 self.SessionStreamDispatcherType = sessionStreamDispatcherType;
             
-                self.Service = new KService(NetThreadComponent.Instance.ThreadSynchronizationContext, AddressFamily.InterNetwork, ServiceType.Inner);
+                self.Service = new KService(ThreadSynchronizationContext.Instance, AddressFamily.InterNetwork, ServiceType.Inner);
                 self.Service.ErrorCallback += self.OnError;
                 self.Service.ReadCallback += self.OnRead;
-
-                NetThreadComponent.Instance.Add(self.Service);
             }
         }
 
@@ -32,12 +29,10 @@ namespace ET.Server
                 NetInnerComponent.Instance = self;
                 self.SessionStreamDispatcherType = sessionStreamDispatcherType;
 
-                self.Service = new KService(NetThreadComponent.Instance.ThreadSynchronizationContext, address, ServiceType.Inner);
+                self.Service = new KService(ThreadSynchronizationContext.Instance, address, ServiceType.Inner);
                 self.Service.ErrorCallback += self.OnError;
                 self.Service.ReadCallback += self.OnRead;
                 self.Service.AcceptCallback += self.OnAccept;
-
-                NetThreadComponent.Instance.Add(self.Service);
             }
         }
 
@@ -46,8 +41,7 @@ namespace ET.Server
         {
             protected override void Destroy(NetInnerComponent self)
             {
-                NetThreadComponent.Instance.Remove(self.Service);
-                self.Service.Destroy();
+                self.Service.Dispose();
             }
         }
 
@@ -61,7 +55,7 @@ namespace ET.Server
             }
 
             session.LastRecvTime = TimeHelper.ClientNow();
-            Game.EventSystem.Callback(self.SessionStreamDispatcherType, session, memoryStream);
+            EventSystem.Instance.Callback(new SessionStreamCallback() {Id = self.SessionStreamDispatcherType, Session = session, MemoryStream = memoryStream});
         }
 
         public static void OnError(this NetInnerComponent self, long channelId, int error)

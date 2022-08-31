@@ -7,7 +7,7 @@ namespace ET
     [FriendOf(typeof(MoveComponent))]
     public static class MoveComponentSystem
     {
-        [Callback(CallbackType.MoveTimer)]
+        [Callback(TimerCallbackId.MoveTimer)]
         public class MoveTimer: ATimer<MoveComponent>
         {
             protected override void Run(MoveComponent self)
@@ -95,7 +95,7 @@ namespace ET
             self.Speed = speed;
             self.tcs = ETTask<bool>.Create(true);
 
-            Game.EventSystem.Publish(self.DomainScene(), new EventType.MoveStart() {Unit = self.GetParent<Unit>()});
+            EventSystem.Instance.Publish(self.DomainScene(), new EventType.MoveStart() {Unit = self.GetParent<Unit>()});
             
             self.StartMove();
             
@@ -117,7 +117,7 @@ namespace ET
 
             if (moveRet)
             {
-                Game.EventSystem.Publish(self.DomainScene(), new EventType.MoveStop() {Unit = self.GetParent<Unit>()});
+                EventSystem.Instance.Publish(self.DomainScene(), new EventType.MoveStop() {Unit = self.GetParent<Unit>()});
             }
             return moveRet;
         }
@@ -197,7 +197,7 @@ namespace ET
             self.StartTime = self.BeginTime;
             self.SetNextTarget();
 
-            self.MoveTimer = TimerComponent.Instance.NewFrameTimer(CallbackType.MoveTimer, self);
+            self.MoveTimer = TimerComponent.Instance.NewFrameTimer(TimerCallbackId.MoveTimer, self);
         }
 
         private static void SetNextTarget(this MoveComponent self)
