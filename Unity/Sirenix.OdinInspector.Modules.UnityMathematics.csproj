@@ -305,11 +305,23 @@
      <Reference Include="UnityEditor.UWP.Extensions">
      <HintPath>C:\Program Files\Unity\Hub\Editor\Unity 2021.3.1f1c1\Editor\Data\PlaybackEngines\MetroSupport\UnityEditor.UWP.Extensions.dll</HintPath>
      </Reference>
+     <Reference Include="DemiLib">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Demigiant\DemiLib\Core\DemiLib.dll</HintPath>
+     </Reference>
      <Reference Include="Sirenix.OdinInspector.Editor">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="DOTweenProEditor">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Demigiant\DOTweenPro\Editor\DOTweenProEditor.dll</HintPath>
+     </Reference>
+     <Reference Include="DOTweenEditor">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Burst.Unsafe">
      <HintPath>C:\101_Dream\Run\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.Unsafe.dll</HintPath>
+     </Reference>
+     <Reference Include="DemiEditor">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Demigiant\DemiLib\Core\Editor\DemiEditor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Cecil.Mdb">
      <HintPath>C:\101_Dream\Run\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
@@ -332,6 +344,9 @@
      <Reference Include="Sirenix.Serialization.Config">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.dll</HintPath>
      </Reference>
+     <Reference Include="DOTween">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+     </Reference>
      <Reference Include="Animancer.Lite">
      <HintPath>C:\101_Dream\Run\Unity\Library\PackageCache\com.nkg.animancer@735350affb\Internal\Core\Animancer.Lite.dll</HintPath>
      </Reference>
@@ -347,8 +362,35 @@
      <Reference Include="Sirenix.Serialization">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.dll</HintPath>
      </Reference>
+     <Reference Include="DOTweenPro">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Demigiant\DOTweenPro\DOTweenPro.dll</HintPath>
+     </Reference>
      <Reference Include="Sirenix.Utilities.Editor">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.CompilerServices.Unsafe">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\MongoDB\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+     </Reference>
+     <Reference Include="MongoDB.Libmongocrypt">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\MongoDB\MongoDB.Libmongocrypt.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Text.Encoding.CodePages">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\MongoDB\System.Text.Encoding.CodePages.dll</HintPath>
+     </Reference>
+     <Reference Include="SharpCompress">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\MongoDB\SharpCompress.dll</HintPath>
+     </Reference>
+     <Reference Include="MongoDB.Driver">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\MongoDB\MongoDB.Driver.dll</HintPath>
+     </Reference>
+     <Reference Include="DnsClient">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\MongoDB\DnsClient.dll</HintPath>
+     </Reference>
+     <Reference Include="MongoDB.Driver.Core">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\MongoDB\MongoDB.Driver.Core.dll</HintPath>
+     </Reference>
+     <Reference Include="MongoDB.Bson">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\MongoDB\MongoDB.Bson.dll</HintPath>
      </Reference>
      <Reference Include="nunit.framework">
      <HintPath>C:\101_Dream\Run\Unity\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>

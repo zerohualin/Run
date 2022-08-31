@@ -1,38 +1,63 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
+using CommandLine;
 using UnityEngine;
 
 namespace ET
 {
 	public class Init: MonoBehaviour
 	{
+		public static Init Instance;
+		
 		public GlobalConfig GlobalConfig;
 		
 		private void Awake()
 		{
+			Instance = this;
+			
 			DontDestroyOnLoad(gameObject);
+			
+			AppDomain.CurrentDomain.UnhandledException += (sender, e) =>
+			{
+				Log.Error(e.ExceptionObject.ToString());
+			};
+				
+			SynchronizationContext.SetSynchronizationContext(ThreadSynchronizationContext.Instance);
 
-			CodeLoader.Instance.GlobalConfig = this.GlobalConfig;
-		}
+			// 命令行参数
+			string[] args = "".Split(" ");
+			Parser.Default.ParseArguments<Options>(args)
+				.WithNotParsed(error => throw new Exception($"命令行格式错误! {error}"))
+				.WithParsed(Game.AddSingleton);
+			
+			Game.AddSingleton<RandomGenerator>();
+			Game.AddSingleton<TimeInfo>();
+			Game.AddSingleton<Logger>().ILog = new UnityLogger();
+			Game.AddSingleton<ObjectPool>();
+			Game.AddSingleton<IdGenerater>();
+			Game.AddSingleton<EventSystem>();
+			Game.AddSingleton<NetServices>();
+			Game.AddSingleton<Root>();
+			
+			ETTask.ExceptionHandler += Log.Error;
 
-		private void Start()
-		{
-			CodeLoader.Instance.Start();
+			Game.AddSingleton<CodeLoader>().Start();
 		}
 
 		private void Update()
 		{
-			CodeLoader.Instance.Update();
+			ThreadSynchronizationContext.Instance.Update();
+			Game.Update();
 		}
 
 		private void LateUpdate()
 		{
-			CodeLoader.Instance.LateUpdate();
+			Game.LateUpdate();
 		}
 
 		private void OnApplicationQuit()
 		{
-			CodeLoader.Instance.OnApplicationQuit();
-			CodeLoader.Instance.Dispose();
+			Game.Close();
 		}
 	}
 }

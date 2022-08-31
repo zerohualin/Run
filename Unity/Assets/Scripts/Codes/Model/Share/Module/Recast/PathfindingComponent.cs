@@ -10,19 +10,17 @@ namespace ET
     {
         public const int FindRandomNavPosMaxRadius = 15000;  // 随机找寻路点的最大半径
         
+        [StaticField]
         public static float[] extents = {15, 10, 15};
         
         public string Name;
         
         public long NavMesh;
 
-        [NoMemoryCheck]
         public float[] StartPos = new float[3];
 
-        [NoMemoryCheck]
         public float[] EndPos = new float[3];
 
-        [NoMemoryCheck]
         public float[] Result = new float[Recast.MAX_POLYS * 3];
     }
 }

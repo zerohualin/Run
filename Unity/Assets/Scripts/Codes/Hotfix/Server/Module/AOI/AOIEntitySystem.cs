@@ -13,7 +13,7 @@ namespace ET.Server
             protected override void Awake(AOIEntity self, int distance, Vector3 pos)
             {
                 self.ViewDistance = distance;
-                self.Domain.GetComponent<AOIManagerComponent>().Add(self, pos.x, pos.z);
+                self.DomainScene().GetComponent<AOIManagerComponent>().Add(self, pos.x, pos.z);
             }
         }
 
@@ -22,7 +22,7 @@ namespace ET.Server
         {
             protected override void Destroy(AOIEntity self)
             {
-                self.Domain.GetComponent<AOIManagerComponent>()?.Remove(self);
+                self.DomainScene().GetComponent<AOIManagerComponent>()?.Remove(self);
                 self.ViewDistance = 0;
                 self.SeeUnits.Clear();
                 self.SeePlayers.Clear();
@@ -136,7 +136,7 @@ namespace ET.Server
                     enter.BeSeeUnits.Add(self.Id, self);
                 }
             }
-            Game.EventSystem.Publish(self.DomainScene(), new EventType.UnitEnterSightRange() { A = self, B = enter });
+            EventSystem.Instance.Publish(self.DomainScene(), new EventType.UnitEnterSightRange() { A = self, B = enter });
         }
 
         // leave离开self视野
@@ -164,7 +164,7 @@ namespace ET.Server
                 leave.BeSeePlayers.Remove(self.Id);
             }
 
-            Game.EventSystem.Publish(self.DomainScene(), new EventType.UnitLeaveSightRange { A = self, B = leave });
+            EventSystem.Instance.Publish(self.DomainScene(), new EventType.UnitLeaveSightRange { A = self, B = leave });
         }
 
         /// <summary>

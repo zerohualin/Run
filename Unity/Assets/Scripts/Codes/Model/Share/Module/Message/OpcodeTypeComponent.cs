@@ -17,7 +17,7 @@ namespace ET
                 self.typeOpcodes.Clear();
                 self.requestResponse.Clear();
 
-                HashSet<Type> types = Game.EventSystem.GetTypes(typeof (MessageAttribute));
+                HashSet<Type> types = EventSystem.Instance.GetTypes(typeof (MessageAttribute));
                 foreach (Type type in types)
                 {
                     object[] attrs = type.GetCustomAttributes(typeof (MessageAttribute), false);
@@ -58,7 +58,7 @@ namespace ET
                         }
 
                         ResponseTypeAttribute responseTypeAttribute = attrs[0] as ResponseTypeAttribute;
-                        self.requestResponse.Add(type, Game.EventSystem.GetType($"ET.{responseTypeAttribute.Type}"));
+                        self.requestResponse.Add(type, EventSystem.Instance.GetType($"ET.{responseTypeAttribute.Type}"));
                     }
                 }
             }
@@ -101,6 +101,7 @@ namespace ET
     [ComponentOf(typeof(Scene))]
     public class OpcodeTypeComponent: Entity, IAwake, IDestroy
     {
+        [StaticField]
         public static OpcodeTypeComponent Instance;
         
         public HashSet<ushort> outrActorMessage = new HashSet<ushort>();

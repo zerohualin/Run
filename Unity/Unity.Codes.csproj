@@ -43,8 +43,6 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\Actor\ActorMessageDispatcherComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\Actor\ActorMessageSenderComponent.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Message\InnerOpcode.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Config\ConfigAttribute.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Generate\Luban\Fgui\FguiConfig.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Client\Demo\Move\M2C_StopHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Client\Demo\Scene\SceneFactory.cs" />
@@ -65,7 +63,6 @@
      <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Demo\UI\UILobby\UILobbyEvent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\ActorLocation\ActorLocationSenderComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Gate\C2G_EnterMapHandler.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Config\ConfigComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\CoroutineLock\CoroutineLock.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\Actor\MailBoxComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Module\Animancer\AnimationComponentSystem.cs" />
@@ -85,7 +82,6 @@
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Message\NetKcpComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Demo\UI\UIHelp\UIHelpComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\AOI\AOISeeCheckHelper.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Message\OuterMessage.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\Console\ModeContex.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Config\StartZoneConfig.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Message\MessageSerializeHelper.cs" />
@@ -115,13 +111,11 @@
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\ActorLocation\ObjectLockRequestHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\AOI\Cell.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Demo\Unit\GameObjectComponent.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Share\CallbackType.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\Actor\ActorMessageHandlerAttribute.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Fsm\States\IFSMState.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Map\Unit\UnitGateComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Actor\IActorMessage.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Robot\RobotCaseHelper.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Message\MongoMessage.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Generate\Luban\Tables.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\DB\DBComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\DB\DBManagerComponent.cs" />
@@ -157,16 +151,13 @@
      <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Config\StartSceneConfig.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Client\Demo\Router\RouterCheckComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Config\StartProcessConfig.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Share\WaitType.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Helper\SessionStreamDispatcherServerOuter.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Client\Demo\Move\MoveHelper.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Demo\Robot\RobotCaseType.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Demo\Camera\CameraComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Demo\UI\UILoading\UILoadingComponent.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Server\Module\RobotCase\RobotCaseAttribute.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Fsm\States\AFsmStateBase.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Demo\Config\ConfigLoader.cs" />
-     <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\Config\ConfigComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\ActorLocation\ActorLocationSender.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Scene\ClientSceneManagerComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Module\UI\UIComponentSystem.cs" />
@@ -190,7 +181,6 @@
      <Compile Include="Assets\Scripts\Codes\Model\Client\Demo\Router\RouterAddressComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Numeric\INumericWatcher.cs" />
      <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Module\FGUI\FGUIEventComponentSystem.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Config\IMerge.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Config\UnitConfig.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\Numeric\NumericWatcher_Hp_ShowUI.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\Actor\IMActorHandler.cs" />
@@ -205,7 +195,6 @@
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\Router\RouterComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Generate\Luban\FGUIType.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\Scene\ClientSceneManagerComponentSystem.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Server\Entry.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\Message\SessionIdleCheckerComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\Router\RouterNode.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Recast\NavmeshComponent.cs" />
@@ -220,7 +209,6 @@
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\RobotCase\RobotCase.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\ActorLocation\LocationProxyComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Client\Demo\Scene\SceneChangeHelper.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Scene\ClientSceneFlagComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\Message\NetKcpComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Message\ISessionStreamDispatcher.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Gate\PlayerComponentSystem.cs" />
@@ -246,7 +234,6 @@
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\Actor\ActorMessageSender.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Map\Unit\UnitFactory.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Robot\RobotManagerComponentSystem.cs" />
-     <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\Scene\ClientSceneFlagComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\UI\AUIEvent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\Console\IConsoleHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Helper\InnerMessageDispatcherHelper.cs" />
@@ -255,15 +242,12 @@
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Scene\CurrentScenesComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\Console\ConsoleComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Demo\Camera\CameraComponentSystem.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Message\OuterOpcode.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\Actor\ActorMessageDispatcherComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\Numeric\NumericChangeEvent_NotifyWatcher.cs" />
-     <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Demo\InitClient.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Map\Unit\UnitHelper.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\Luban\LubanComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Watcher\WatcherComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\Http\IHttpHandler.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Share\EventType.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Robot\Console\CreateRobotConsoleHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Client\Demo\Helper\PositionHelper.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Gate\R2G_GetLoginKeyHandler.cs" />
@@ -272,7 +256,6 @@
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\FGUI\FGUIEventComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Demo\UI\UILogin\LoginFinish_RemoveLoginUI.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Numeric\NumericType.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Message\NetThreadComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\ConfigPartial\StartSceneConfig.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\MessageInner\AMRpcHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Numeric\NumericWatcherComponent.cs" />
@@ -314,22 +297,16 @@
      <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Demo\Unit\ChangePosition_SyncGameObjectPos.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Client\Demo\Move\M2C_PathfindingResultHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Animation\PlayAnimInfo.cs" />
-     <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\Console\ReloadDllConsoleHandler.cs" />
-     <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\Message\NetThreadComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\Unit\UnitSystem.cs" />
-     <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\InitServer.cs" />
      <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Demo\UI\UILobby\LoginFinish_CreateLobbyUI.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\CoroutineLock\CoroutineLockQueueType.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Demo\Global\GlobalComponent.cs" />
-     <Compile Include="Assets\Scripts\Codes\ModelView\Client\Entry.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Fsm\States\CommonAttackState.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\Router\RouterNodeSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\Move\MoveComponentSystem.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Message\InnerMessage.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Share\ConstValue.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Module\Fsm\States\CustomState.cs" />
      <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Plugins\Example\HotfixView.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Message\MongoOpcode.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Recast\PathfindingComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\Router\RouterComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Demo\Opera\OperaComponentSystem.cs" />
@@ -348,9 +325,6 @@
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\AI\AIComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Demo\UI\UILogin\AppStartInitFinish_CreateLoginUI.cs" />
      <Compile Include="Assets\Scripts\Codes\ModelView\Client\Demo\UI\UILobby\UILobbyComponent.cs" />
-     <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\RobotCase\RobotCaseDispatcherComponentSystem.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Server\Module\RobotCase\RobotCaseDispatcherComponent.cs" />
-     <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Demo\InitShare.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Generate\Luban\Demo\UnitMeta.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\AOI\AOIEventType.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Numeric\NumericWatcherAttribute.cs" />
@@ -379,16 +353,31 @@
      <Compile Include="Assets\Scripts\Codes\Model\Share\Generate\Luban\Enums\FGUILayer.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Client\Demo\Scene\M2C_StartSceneChangeHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Server\Module\ActorLocation\AMActorLocationHandler.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Server\Module\RobotCase\IRobotCase.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\MessageInner\NetInnerComponentSystem.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Message\OpcodeTypeComponent.cs" />
-     <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Config\IConfig.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\ETTask\ETCancelationTokenHelper.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\AI\AIDispatcherComponent.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Module\AI\AAIHandler.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\Realm\RealmGateAddressHelper.cs" />
      <Compile Include="Assets\Scripts\Codes\Model\Share\Generate\Luban\Demo\TbAIMetas.cs" />
      <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\ActorLocation\ActorLocationSenderComponentSystem.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Server\Module\RobotCase\RobotCallbackArgs.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Message\SessionStreamCallback.cs" />
+     <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Module\RobotCase\ARobotCase.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Client\Demo\Scene\Wait_CreateMyUnit.cs" />
+     <Compile Include="Assets\Scripts\Codes\HotfixView\Client\Demo\EntryEvent3_InitClient.cs" />
+     <Compile Include="Assets\Scripts\Codes\Hotfix\Server\Demo\EntryEvent2_InitServer.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Client\Demo\Move\Wait_UnitStop.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Share\Module\Scene\ServerSceneManagerComponent.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Message\InnerMessage_S_20001.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Message\OuterMessage_C_10001.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Share\TimerCallbackId.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Client\Demo\Scene\Wait_SceneChangeFinish.cs" />
+     <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Module\Scene\ServerSceneManagerComponentSystem.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Share\Entry.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Share\Demo\EventType.cs" />
+     <Compile Include="Assets\Scripts\Codes\Hotfix\Share\Demo\EntryEvent1_InitShare.cs" />
+     <Compile Include="Assets\Scripts\Codes\Model\Generate\Server\Message\MongoMessage_S_30001.cs" />
      <None Include="Assets\Scripts\Codes\Unity.Codes.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\Unity 2021.3.1f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -651,11 +640,23 @@
      <Reference Include="UnityEditor.UWP.Extensions">
      <HintPath>C:\Program Files\Unity\Hub\Editor\Unity 2021.3.1f1c1\Editor\Data\PlaybackEngines\MetroSupport\UnityEditor.UWP.Extensions.dll</HintPath>
      </Reference>
+     <Reference Include="DemiLib">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Demigiant\DemiLib\Core\DemiLib.dll</HintPath>
+     </Reference>
      <Reference Include="Sirenix.OdinInspector.Editor">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="DOTweenProEditor">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Demigiant\DOTweenPro\Editor\DOTweenProEditor.dll</HintPath>
+     </Reference>
+     <Reference Include="DOTweenEditor">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Burst.Unsafe">
      <HintPath>C:\101_Dream\Run\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.Unsafe.dll</HintPath>
+     </Reference>
+     <Reference Include="DemiEditor">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Demigiant\DemiLib\Core\Editor\DemiEditor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Cecil.Mdb">
      <HintPath>C:\101_Dream\Run\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
@@ -678,6 +679,9 @@
      <Reference Include="Sirenix.Serialization.Config">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.dll</HintPath>
      </Reference>
+     <Reference Include="DOTween">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+     </Reference>
      <Reference Include="Animancer.Lite">
      <HintPath>C:\101_Dream\Run\Unity\Library\PackageCache\com.nkg.animancer@735350affb\Internal\Core\Animancer.Lite.dll</HintPath>
      </Reference>
@@ -693,8 +697,35 @@
      <Reference Include="Sirenix.Serialization">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.dll</HintPath>
      </Reference>
+     <Reference Include="DOTweenPro">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Demigiant\DOTweenPro\DOTweenPro.dll</HintPath>
+     </Reference>
      <Reference Include="Sirenix.Utilities.Editor">
      <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.CompilerServices.Unsafe">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\MongoDB\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+     </Reference>
+     <Reference Include="MongoDB.Libmongocrypt">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\MongoDB\MongoDB.Libmongocrypt.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Text.Encoding.CodePages">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\MongoDB\System.Text.Encoding.CodePages.dll</HintPath>
+     </Reference>
+     <Reference Include="SharpCompress">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\MongoDB\SharpCompress.dll</HintPath>
+     </Reference>
+     <Reference Include="MongoDB.Driver">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\MongoDB\MongoDB.Driver.dll</HintPath>
+     </Reference>
+     <Reference Include="DnsClient">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\MongoDB\DnsClient.dll</HintPath>
+     </Reference>
+     <Reference Include="MongoDB.Driver.Core">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\MongoDB\MongoDB.Driver.Core.dll</HintPath>
+     </Reference>
+     <Reference Include="MongoDB.Bson">
+     <HintPath>C:\101_Dream\Run\Unity\Assets\Plugins\MongoDB\MongoDB.Bson.dll</HintPath>
      </Reference>
      <Reference Include="nunit.framework">
      <HintPath>C:\101_Dream\Run\Unity\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>

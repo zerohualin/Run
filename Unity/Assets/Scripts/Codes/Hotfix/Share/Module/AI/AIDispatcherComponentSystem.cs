@@ -34,11 +34,11 @@ namespace ET
             }
         }
         
-        public static void Load(this AIDispatcherComponent self)
+        private static void Load(this AIDispatcherComponent self)
         {
             self.AIHandlers.Clear();
             
-            var types = Game.EventSystem.GetTypes(typeof (AIHandlerAttribute));
+            var types = EventSystem.Instance.GetTypes(typeof (AIHandlerAttribute));
             foreach (Type type in types)
             {
                 AAIHandler aaiHandler = Activator.CreateInstance(type) as AAIHandler;
