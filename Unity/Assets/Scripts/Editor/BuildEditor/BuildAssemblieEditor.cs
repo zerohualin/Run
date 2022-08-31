@@ -205,7 +205,7 @@ namespace ET
             Directory.CreateDirectory(Define.BuildOutputDir);
 
             AssemblyBuilder assemblyBuilder = new AssemblyBuilder(dllPath, scripts.ToArray());
-            
+
             //启用UnSafe
             //assemblyBuilder.compilerOptions.AllowUnsafeCode = true;
 
@@ -214,7 +214,7 @@ namespace ET
             assemblyBuilder.compilerOptions.CodeOptimization = codeOptimization;
             assemblyBuilder.compilerOptions.ApiCompatibilityLevel = PlayerSettings.GetApiCompatibilityLevel(buildTargetGroup);
             // assemblyBuilder.compilerOptions.ApiCompatibilityLevel = ApiCompatibilityLevel.NET_4_6;
-
+            assemblyBuilder.compilerOptions.AllowUnsafeCode = true;
             assemblyBuilder.additionalReferences = additionalReferences;
             
             assemblyBuilder.flags = AssemblyBuilderFlags.None;

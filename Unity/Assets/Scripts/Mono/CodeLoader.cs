@@ -26,34 +26,48 @@ namespace ET
 		{
 		}
 		
-		public void Start()
+		public async ETTask Start()
 		{
-			if (Define.EnableCodes)
-			{
-				this.GlobalConfig.LoadMode = LoadMode.Codes;
-			}
+			// if (Define.EnableCodes)
+			// {
+			// 	this.GlobalConfig.LoadMode = LoadMode.Codes;
+			// }
 			
 			switch (this.GlobalConfig.LoadMode)
 			{
 				case LoadMode.Mono:
 				{
-					if (Define.EnableCodes)
+					// if (Define.EnableCodes)
+					// {
+					// 	throw new Exception("LoadMode.Mono must remove ENABLE_CODE define, please use ET/ChangeDefine/Remove ENABLE_CODE to Remove define");
+					// }
+					var dll = await YooAssetProxy.GetRawFileAsync("Code_Unity.Codes.dll");
+					if(dll == null)
+						Log.Info($"{dll}Is Null");
+					byte[] dllBytes = dll.GetRawBytes();
+					if(dllBytes == null)
+						Log.Info($"{dllBytes}Is Null");
+					
+					Log.Info(dllBytes.Length.ToString());
+					
+					byte[] pdbBytes = (await YooAssetProxy.GetRawFileAsync("Code_Unity.Codes.pdb")).GetRawBytes();
+					Log.Info(pdbBytes.Length.ToString());
+					
+					assembly = Assembly.Load(dllBytes, pdbBytes);
+
+					Log.Info("一切安好？");
+					try
 					{
-						throw new Exception("LoadMode.Mono must remove ENABLE_CODE define, please use ET/ChangeDefine/Remove ENABLE_CODE to Remove define");
+						Dictionary<string, Type> types = AssemblyHelper.GetAssemblyTypes(typeof (Game).Assembly, assembly);
+						Game.EventSystem.Add(types);
+						IStaticMethod start = new StaticMethod(assembly, "ET.Client.Entry", "Start");
+						start?.Run();
 					}
-					
-					Dictionary<string, UnityEngine.Object> dictionary = AssetsBundleHelper.LoadBundle("code.unity3d");
-					byte[] assBytes = ((TextAsset)dictionary["Code.dll"]).bytes;
-					byte[] pdbBytes = ((TextAsset)dictionary["Code.pdb"]).bytes;
-					
-					assembly = Assembly.Load(assBytes, pdbBytes);
-
-
-					Dictionary<string, Type> types = AssemblyHelper.GetAssemblyTypes(typeof (Game).Assembly, this.assembly);
-					Game.EventSystem.Add(types);
-					
-					IStaticMethod start = new StaticMethod(assembly, "ET.Client.Entry", "Start");
-					start.Run();
+					catch (Exception e)
+					{
+						Log.Error(e);
+						throw;
+					}
 					break;
 				}
 				case LoadMode.Reload:
