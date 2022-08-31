@@ -107,3 +107,14 @@ Server/.DS_Store
 /Tools/.cache.meta
 /Unity/Unity.Codes.csproj
 Publish/
+/Unity/HybridCLRData
+/Unity/Release-Win64
+/Unity/IngameDebugConsole.Runtime.csproj
+/Unity/IngameDebugConsole.Editor.csproj
+/Unity/Unity.Codes.csproj
+/Unity/Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj
+/Unity/Sirenix.OdinInspector.Modules.UnityMathematics.csproj
+/Unity/Sirenix.OdinInspector.CompatibilityLayer.csproj
+/Unity/Assembly-CSharp-Editor-firstpass.csproj
+/Unity/Assembly-CSharp-firstpass.csproj
+/Unity/Assembly-CSharp-firstpass.csproj
