@@ -57,7 +57,7 @@ namespace ET
             forResUpdate.TextProgress.text = "版本检查中";
             forResUpdate.ProgressBarDownload.visible = false;
             string AccountServerUrl = "asdfasdf";
-            string versionResultJson = await MonoOnlyHttpHelper.Request($"http://{AccountServerUrl}version");
+            // string versionResultJson = await MonoOnlyHttpHelper.Request($"http://{AccountServerUrl}version");
             // var VersionResult = JsonHelper.FromJson(versionResultJson);
             // if ((int) VersionResult["code"] == 0)
             // {

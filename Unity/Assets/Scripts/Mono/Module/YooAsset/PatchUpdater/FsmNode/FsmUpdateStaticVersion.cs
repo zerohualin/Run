@@ -26,7 +26,7 @@ namespace YooAssetEx
         {
             ETTask etTask = ETTask.Create();
             // 更新资源版本号
-            var operation = YooAssets.UpdateStaticVersionAsync(30);
+            var operation = YooAssets.UpdateStaticVersionAsync(1);
             operation.Completed += _ => { etTask.SetResult(); };
 
             await etTask;

@@ -13,31 +13,13 @@ namespace ET
     
     public static class HotfixProcedureHelper
     {
-        public static bool m_CheckResourcesComplete;
-        
+
         public static async ETTask OnEnter()
         {
-            m_CheckResourcesComplete = false;
             FUIEntry.Init();
-
-            YooAssets.EPlayMode mode = YooAssets.EPlayMode.HostPlayMode;
-
-#if UNITY_EDITOR
-            mode = YooAssets.EPlayMode.EditorSimulateMode;
-#endif
-            
-            if (mode == YooAssets.EPlayMode.EditorSimulateMode)
-            {
-                await YooAssetProxy.StartYooAssetEngine(mode);
-                m_CheckResourcesComplete = true;
-                return;
-            }
-
-            FGUI_CheckForResUpdateComponent.Init(() => { m_CheckResourcesComplete = true; });
-
-            await RequestVersion(mode);
+            FGUI_CheckForResUpdateComponent.Init(() => { });
+            await ETTask.CompletedTask;
         }
-        
         
         public static async ETTask RequestVersion(YooAssets.EPlayMode mode)
         {
@@ -52,7 +34,10 @@ namespace ET
                 FGUI_CheckWindowComponent.Init(() =>
                 {
                     ApplicationHelper.Quit();
-                }, () => { RequestVersion(mode).Coroutine(); }, 
+                }, () =>
+                    {
+                        RequestVersion(mode).Coroutine();
+                    }, 
                     "获取最新资源版本失败!", "退出", "重试");
             }
 
