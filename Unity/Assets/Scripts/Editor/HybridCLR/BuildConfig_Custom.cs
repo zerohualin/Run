@@ -25,8 +25,13 @@ namespace HybridCLR.Editor
             "mscorlib.dll",
             "System.dll",
             "System.Core.dll", // 如果使用了Linq，需要这个
-            "Sirenix.Serialization.dll"
-
+            "Sirenix.Serialization.dll",
+            "Unity.Core.dll",
+            "Unity.Mono.dll",
+            "Unity.ThirdParty.dll",
+            "MongoDB.Bson.dll",
+            "CommandLine.dll",
+            "NLog.dll"
             //
             // 注意！修改这个列表请同步修改HotFix2模块中App.cs文件中的 LoadMetadataForAOTAssembly函数中aotDllList列表。
             // 两者需要完全一致
@@ -35,7 +40,7 @@ namespace HybridCLR.Editor
 
         public static List<string> AssetBundleFiles { get; } = new List<string>
         {
-            "common",
+            "common"
         };
     }
 }

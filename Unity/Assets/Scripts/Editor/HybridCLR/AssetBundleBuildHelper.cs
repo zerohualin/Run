@@ -89,34 +89,35 @@ namespace HybridCLR.Editor
             BuildAssetBundles(BuildConfig.GetAssetBundleTempDirByTarget(target), BuildConfig.GetAssetBundleOutputDirByTarget(target), target);
         }
 
-        [MenuItem("HybridCLR/BuildBundles/ActiveBuildTarget")]
+
+        //[MenuItem("HybridCLR/BuildBundles/ActiveBuildTarget")]
         public static void BuildSceneAssetBundleActiveBuildTarget()
         {
             BuildAssetBundleByTarget(EditorUserBuildSettings.activeBuildTarget);
         }
 
-        [MenuItem("HybridCLR/BuildBundles/Win64")]
+        //[MenuItem("HybridCLR/BuildBundles/Win64")]
         public static void BuildSceneAssetBundleWin64()
         {
             var target = BuildTarget.StandaloneWindows64;
             BuildAssetBundleByTarget(target);
         }
 
-        [MenuItem("HybridCLR/BuildBundles/Win32")]
+        //[MenuItem("HybridCLR/BuildBundles/Win32")]
         public static void BuildSceneAssetBundleWin32()
         {
             var target = BuildTarget.StandaloneWindows;
             BuildAssetBundleByTarget(target);
         }
 
-        [MenuItem("HybridCLR/BuildBundles/Android")]
+        //[MenuItem("HybridCLR/BuildBundles/Android")]
         public static void BuildSceneAssetBundleAndroid()
         {
             var target = BuildTarget.Android;
             BuildAssetBundleByTarget(target);
         }
 
-        [MenuItem("HybridCLR/BuildBundles/IOS")]
+        //[MenuItem("HybridCLR/BuildBundles/IOS")]
         public static void BuildSceneAssetBundleIOS()
         {
             var target = BuildTarget.iOS;

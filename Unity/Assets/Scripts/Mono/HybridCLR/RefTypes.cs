@@ -5,7 +5,6 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Scripting;
-using System.IO;
 using ET;
 
 [assembly: Preserve]
@@ -42,6 +41,7 @@ public class RefTypes : MonoBehaviour
     {
         return new List<Type>
         {
+            typeof(Queue<long>)
         };
     }
 
@@ -55,7 +55,6 @@ public class RefTypes : MonoBehaviour
         Instantiate<GameObject>(null, new Vector3(), new Quaternion());
         Instantiate<GameObject>(null, new Vector3(), new Quaternion(), null);
 
-
         RefAsyncMethod();
         RefETAsyncMethod();
         
@@ -68,7 +67,6 @@ public class RefTypes : MonoBehaviour
         var a = new System.Numerics.BigInteger();
         a.ToString();
     }
-
 
     void RefMisc()
     {
@@ -203,9 +201,7 @@ public class RefTypes : MonoBehaviour
         c9.SetException(null);
         c9.SetResult();
         Debug.Log(b);
-        
-        
-        Game.EventSystem.Callback<ETTask>(0);
+
     }
 
     void RefETAsyncMethod()

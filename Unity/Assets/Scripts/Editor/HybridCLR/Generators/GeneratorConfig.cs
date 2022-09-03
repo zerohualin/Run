@@ -19,7 +19,8 @@ namespace HybridCLR.Editor.Generators
         {
             return new List<string>
             {
-                // "mscorlib",
+                "mscorlib",
+                "CommandLine"
             };
         }
 

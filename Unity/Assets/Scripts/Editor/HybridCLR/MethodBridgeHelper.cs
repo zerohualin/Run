@@ -111,7 +111,7 @@ namespace HybridCLR.Editor
 
         public static void GenerateMethodBridgeAll(bool optimized)
         {
-            // GenerateMethodBridgeCppFile(PlatformABI.Arm64, "MethodBridge_Arm64", optimized);
+            GenerateMethodBridgeCppFile(PlatformABI.Arm64, "MethodBridge_Arm64", optimized);
             GenerateMethodBridgeCppFile(PlatformABI.Universal64, "MethodBridge_Universal64", optimized);
             GenerateMethodBridgeCppFile(PlatformABI.Universal32, "MethodBridge_Universal32", optimized);
         }
