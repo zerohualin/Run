@@ -3,8 +3,8 @@
     "rootNamespace": "ET",
     "references": [
         "Unity.ThirdParty",
-        "Unity.Mono",
-        "Unity.Core"
+        "Unity.Core",
+        "Unity.Mathematics"
     ],
     "includePlatforms": [
         "Editor"
@@ -16,5 +16,5 @@
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
-    "noEngineReferences": false
+    "noEngineReferences": true
 }

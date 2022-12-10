@@ -8,23 +8,28 @@ namespace ET
 	
 	public interface IAddComponentSystem: ISystemType
 	{
-		void Run(object o, Entity component);
+		void Run(Entity o, Entity component);
 	}
 
 	[ObjectSystem]
-	public abstract class AddComponentSystem<T> : IAddComponentSystem where T: IAddComponent
+	public abstract class AddComponentSystem<T> : IAddComponentSystem where T: Entity, IAddComponent
 	{
-		public void Run(object o, Entity component)
+		void IAddComponentSystem.Run(Entity o, Entity component)
 		{
 			this.AddComponent((T)o, component);
 		}
-		
-		public Type SystemType()
+
+		Type ISystemType.SystemType()
 		{
 			return typeof(IAddComponentSystem);
 		}
 
-		public Type Type()
+		InstanceQueueIndex ISystemType.GetInstanceQueueIndex()
+		{
+			return InstanceQueueIndex.None;
+		}
+
+		Type ISystemType.Type()
 		{
 			return typeof(T);
 		}

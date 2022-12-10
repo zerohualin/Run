@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace ET.Client
 {
     public class AI_Attack: AAIHandler
@@ -18,7 +16,7 @@ namespace ET.Client
         {
             Scene clientScene = aiComponent.DomainScene();
 
-            Unit myUnit = Client.UnitHelper.GetMyUnitFromClientScene(clientScene);
+            Unit myUnit = UnitHelper.GetMyUnitFromClientScene(clientScene);
             if (myUnit == null)
             {
                 return;
@@ -34,8 +32,8 @@ namespace ET.Client
                 Log.Debug($"攻击: {i}次");
 
                 // 因为协程可能被中断，任何协程都要传入cancellationToken，判断如果是中断则要返回
-                bool timeRet = await TimerComponent.Instance.WaitAsync(1000, cancellationToken);
-                if (!timeRet)
+                await TimerComponent.Instance.WaitAsync(1000, cancellationToken);
+                if (cancellationToken.IsCancel())
                 {
                     return;
                 }

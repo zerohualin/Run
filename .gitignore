@@ -57,6 +57,7 @@ Server/.DS_Store
 /Unity/Assets/Bundles/Code/Code.pdb.bytes.meta
 /Unity/Assembly-CSharp.csproj
 ~$*.xlsx
+~$*.xlsx.meta
 /.vscode
 /Unity/UserSettings/Search.settings
 /Unity/Unity.Hotfix.csproj
@@ -94,6 +95,8 @@ Server/.DS_Store
 /Unity/Unity.Editor.csproj
 /Unity/Unity.Hotfix.csproj
 /Unity/Unity.HotfixView.csproj
+/Unity/Unity.Codes.csproj
+/Unity/Unity.Loader.csproj
 /Unity/Unity.Ignore.csproj
 /Unity/Unity.Model.csproj
 /Unity/Unity.ModelView.csproj
@@ -105,13 +108,11 @@ Server/.DS_Store
 /Unity/Assets/BundleYoo/LubanBin
 /Unity/Assets/BundleYoo/LubanBin.meta
 /Tools/.cache.meta
-/Unity/Unity.Codes.csproj
 Publish/
 /Unity/HybridCLRData
 /Unity/Release-Win64
 /Unity/IngameDebugConsole.Runtime.csproj
 /Unity/IngameDebugConsole.Editor.csproj
-/Unity/Unity.Codes.csproj
 /Unity/Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj
 /Unity/Sirenix.OdinInspector.Modules.UnityMathematics.csproj
 /Unity/Sirenix.OdinInspector.CompatibilityLayer.csproj
@@ -128,3 +129,15 @@ Publish/
 /Unity/Assets/Bundles/AssetBundleOutput
 /Unity/Assets/Bundles/AssetBundleSourceData
 /Unity/Assets/Bundles/AssetBundleSourceData.meta
+/Unity/Assets/Bundles/Code/*
+/Unity/Assets/Bundles/AssetBundleOutput.meta
+/Unity/Assets/Bundles/AssetBundleOutput
+/Unity/Assets/Bundles/AssetBundleSourceData
+/Unity/Assets/Bundles/AssetBundleSourceData.meta
+/Unity/Unity.Editor.Codes.csproj
+/Unity/Unity.Hotfix.Codes.csproj
+/Unity/Unity.HotfixView.Codes.csproj
+/Unity/Unity.Model.Codes.csproj
+/Unity/Unity.ModelView.Codes.csproj
+/Unity/Unity.GenerateClient.csproj
+/Unity/Unity.GenerateServer.csproj

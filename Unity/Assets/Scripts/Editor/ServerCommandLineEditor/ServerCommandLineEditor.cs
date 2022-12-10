@@ -21,14 +21,14 @@ namespace ET
             GetWindow<ServerCommandLineEditor>(DockDefine.Types);
         }
         
-        private int selectStartConfigIndex;
+        private int selectStartConfigIndex = 1;
         private string[] startConfigs;
         private string startConfig;
         private DevelopMode developMode;
 
         public void OnEnable()
         {
-            DirectoryInfo directoryInfo = new DirectoryInfo("../Config/StartConfig");
+            DirectoryInfo directoryInfo = new DirectoryInfo("../Config/Excel/s/StartConfig");
             this.startConfigs = directoryInfo.GetDirectories().Select(x => x.Name).ToArray();
         }
 
@@ -37,7 +37,6 @@ namespace ET
             selectStartConfigIndex = EditorGUILayout.Popup(selectStartConfigIndex, this.startConfigs);
             this.startConfig = this.startConfigs[this.selectStartConfigIndex];
             this.developMode = (DevelopMode) EditorGUILayout.EnumPopup("起服模式：", this.developMode);
-            int develop = (int) this.developMode;
 
             string dotnet = "dotnet.exe";
             
@@ -45,7 +44,7 @@ namespace ET
             dotnet = "dotnet";
 #endif
             
-            if (GUILayout.Button("Start Server(Single Srocess)"))
+            if (GUILayout.Button("Start Server(Single Process)"))
             {
                 string arguments = $"App.dll --Process=1 --StartConfig=StartConfig/{this.startConfig} --Console=1";
                 ProcessHelper.Run(dotnet, arguments, "../Bin/");

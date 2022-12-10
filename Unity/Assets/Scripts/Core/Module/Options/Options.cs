@@ -11,7 +11,9 @@ namespace ET
         GameTool,
         ExcelExporter,
         Proto2CS,
-        SubGameTool
+        SubGameTool,
+        BenchmarkClient,
+        BenchmarkServer,
     }
     
     public enum SubGameActType

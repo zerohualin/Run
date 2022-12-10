@@ -26,6 +26,7 @@ namespace ET
         private const string protoDir = "../Unity/Assets/Config/Proto";
         private const string clientMessagePath = "../Unity/Assets/Scripts/Codes/Model/Generate/Client/Message/";
         private const string serverMessagePath = "../Unity/Assets/Scripts/Codes/Model/Generate/Server/Message/";
+        private const string clientServerMessagePath = "../Unity/Assets/Scripts/Codes/Model/Generate/ClientServer/Message/";
         private static readonly char[] splitChars = { ' ', '\t' };
         private static readonly List<OpcodeInfo> msgOpcode = new List<OpcodeInfo>();
 
@@ -41,6 +42,11 @@ namespace ET
             if (Directory.Exists(serverMessagePath))
             {
                 Directory.Delete(serverMessagePath, true);
+            }
+            
+            if (Directory.Exists(clientServerMessagePath))
+            {
+                Directory.Delete(clientServerMessagePath, true);
             }
 
             List<string> list = FileHelper.GetAllFiles(protoDir, "*proto");
@@ -87,7 +93,7 @@ namespace ET
                 if (newline.StartsWith("//ResponseType"))
                 {
                     string responseType = line.Split(" ")[1].TrimEnd('\r', '\n');
-                    sb.AppendLine($"\t[ResponseType(nameof({responseType}))]");
+                    sb.Append($"\t[ResponseType(nameof({responseType}))]\n");
                     continue;
                 }
 
@@ -113,7 +119,7 @@ namespace ET
 
                     sb.Append($"\t[Message({protoName}.{msgName})]\n");
                     sb.Append($"\t[ProtoContract]\n");
-                    sb.Append($"\tpublic partial class {msgName}: Object");
+                    sb.Append($"\tpublic partial class {msgName}: ProtoObject");
                     if (parentClass == "IActorMessage" || parentClass == "IActorRequest" || parentClass == "IActorResponse")
                     {
                         sb.Append($", {parentClass}\n");
@@ -147,13 +153,17 @@ namespace ET
 
                     if (newline.Trim().StartsWith("//"))
                     {
-                        sb.AppendLine(newline);
+                        sb.Append($"{newline}\n");
                         continue;
                     }
 
                     if (newline.Trim() != "" && newline != "}")
                     {
-                        if (newline.StartsWith("repeated"))
+                        if (newline.StartsWith("map<"))
+                        {
+                            Map(sb, ns, newline);
+                        }
+                        else if (newline.StartsWith("repeated"))
                         {
                             Repeated(sb, ns, newline);
                         }
@@ -169,10 +179,10 @@ namespace ET
             sb.Append("\tpublic static class " + protoName + "\n\t{\n");
             foreach (OpcodeInfo info in msgOpcode)
             {
-                sb.AppendLine($"\t\t public const ushort {info.Name} = {info.Opcode};");
+                sb.Append($"\t\t public const ushort {info.Name} = {info.Opcode};\n");
             }
 
-            sb.AppendLine("\t}");
+            sb.Append("\t}\n");
             
 
             sb.Append("}\n");
@@ -181,11 +191,13 @@ namespace ET
             {
                 GenerateCS(sb, clientMessagePath, proto);
                 GenerateCS(sb, serverMessagePath, proto);
+                GenerateCS(sb, clientServerMessagePath, proto);
             }
             
             if (cs.Contains("S"))
             {
                 GenerateCS(sb, serverMessagePath, proto);
+                GenerateCS(sb, clientServerMessagePath, proto);
             }
         }
 
@@ -201,6 +213,24 @@ namespace ET
             using StreamWriter sw = new StreamWriter(txt);
             sw.Write(sb.ToString());
         }
+
+        private static void Map(StringBuilder sb, string ns, string newline)
+        {
+            int start = newline.IndexOf("<") + 1;
+            int end = newline.IndexOf(">");
+            string types = newline.Substring(start, end - start);
+            string[] ss = types.Split(",");
+            string keyType = ConvertType(ss[0].Trim());
+            string valueType = ConvertType(ss[1].Trim());
+            string tail = newline.Substring(end + 1);
+            ss = tail.Trim().Replace(";", "").Split(" ");
+            string v = ss[0];
+            string n = ss[2];
+            
+            sb.Append("\t\t[MongoDB.Bson.Serialization.Attributes.BsonDictionaryOptions(MongoDB.Bson.Serialization.Options.DictionaryRepresentation.ArrayOfArrays)]\n");
+            sb.Append($"\t\t[ProtoMember({n})]\n");
+            sb.Append($"\t\tpublic Dictionary<{keyType}, {valueType}> {v} {{ get; set; }}\n");
+        }
         
         private static void Repeated(StringBuilder sb, string ns, string newline)
         {
@@ -215,7 +245,7 @@ namespace ET
                 int n = int.Parse(ss[4]);
 
                 sb.Append($"\t\t[ProtoMember({n})]\n");
-                sb.Append($"\t\tpublic List<{type}> {name} = new List<{type}>();\n\n");
+                sb.Append($"\t\tpublic List<{type}> {name} {{ get; set; }}\n\n");
             }
             catch (Exception e)
             {

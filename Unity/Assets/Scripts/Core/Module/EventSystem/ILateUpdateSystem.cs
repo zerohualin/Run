@@ -8,25 +8,30 @@ namespace ET
 	
 	public interface ILateUpdateSystem: ISystemType
 	{
-		void Run(object o);
+		void Run(Entity o);
 	}
 
 	[ObjectSystem]
-	public abstract class LateUpdateSystem<T> : ILateUpdateSystem where T: ILateUpdate
+	public abstract class LateUpdateSystem<T> : ILateUpdateSystem where T: Entity, ILateUpdate
 	{
-		public void Run(object o)
+		void ILateUpdateSystem.Run(Entity o)
 		{
 			this.LateUpdate((T)o);
 		}
 
-		public Type Type()
+		Type ISystemType.Type()
 		{
 			return typeof(T);
 		}
-		
-		public Type SystemType()
+
+		Type ISystemType.SystemType()
 		{
 			return typeof(ILateUpdateSystem);
+		}
+
+		InstanceQueueIndex ISystemType.GetInstanceQueueIndex()
+		{
+			return InstanceQueueIndex.LateUpdate;
 		}
 
 		protected abstract void LateUpdate(T self);

@@ -1,0 +1,32 @@
+{
+    "name": "Unity.Model.Codes",
+    "rootNamespace": "ET",
+    "references": [
+        "Animancer",
+        "Animancer.FSM",
+        "Animancer.Examples",
+        "YooAsset",
+        "Unity.Core",
+        "Unity.ThirdParty",
+        "Unity.Mono",
+        "FairyGUI.Runtime",
+        "Unity.ThirdParty",
+        "Unity.Core",
+        "Unity.Mathematics"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        "Animancer.Lite.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "ENABLE_CODES"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

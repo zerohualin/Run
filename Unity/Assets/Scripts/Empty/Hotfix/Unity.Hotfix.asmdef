@@ -4,8 +4,9 @@
     "references": [
         "Unity.Model",
         "Unity.ThirdParty",
-        "Unity.Mono",
-        "Unity.Core"
+        "Unity.Core",
+        "Unity.Mathematics",
+        "Unity.Loader"
     ],
     "includePlatforms": [
         "Editor"
@@ -17,5 +18,5 @@
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
-    "noEngineReferences": false
+    "noEngineReferences": true
 }

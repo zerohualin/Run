@@ -1,8 +1,7 @@
 ﻿using System.IO;
 using System.Linq;
-using HybridCLR.Editor;
+using System.Reflection;
 using UnityEditor;
-using UnityEditor.Build;
 using UnityEngine;
 
 namespace ET
@@ -12,6 +11,24 @@ namespace ET
         private const string relativeDirPrefix = "../Release";
 
         public static string BuildFolder = "../Release/{0}/StreamingAssets/";
+        
+        
+        [InitializeOnLoadMethod]
+        public static void ReGenerateProjectFiles()
+        {
+            if (Unity.CodeEditor.CodeEditor.CurrentEditor.GetType().Name== "RiderScriptEditor")
+            {
+                FieldInfo generator = Unity.CodeEditor.CodeEditor.CurrentEditor.GetType().GetField("m_ProjectGeneration", BindingFlags.Static | BindingFlags.NonPublic);
+                var syncMethod = generator.FieldType.GetMethod("Sync");
+                syncMethod.Invoke(generator.GetValue(Unity.CodeEditor.CodeEditor.CurrentEditor), null);
+            }
+            else
+            {
+                Unity.CodeEditor.CodeEditor.CurrentEditor.SyncAll();
+            }
+            
+            Debug.Log("ReGenerateProjectFiles finished.");
+        }
 
         
 #if ENABLE_CODES
@@ -98,7 +115,7 @@ namespace ET
             string exeName = programName;
             switch (type)
             {
-                case PlatformType.PC:
+                case PlatformType.Windows:
                     buildTarget = BuildTarget.StandaloneWindows64;
                     exeName += ".exe";
                     break;
@@ -111,6 +128,10 @@ namespace ET
                     break;
                 case PlatformType.MacOS:
                     buildTarget = BuildTarget.StandaloneOSX;
+                    break;
+                
+                case PlatformType.Linux:
+                    buildTarget = BuildTarget.StandaloneLinux64;
                     break;
             }
 
@@ -145,7 +166,7 @@ namespace ET
             }
             else
             {
-                if (isContainAB && type == PlatformType.PC)
+                if (isContainAB && type == PlatformType.Windows)
                 {
                     string targetPath = Path.Combine(relativeDirPrefix, $"{programName}_Data/StreamingAssets/");
                     FileHelper.CleanDirectory(targetPath);

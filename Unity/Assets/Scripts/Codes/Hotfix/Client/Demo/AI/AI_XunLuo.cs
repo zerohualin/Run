@@ -1,4 +1,4 @@
-using UnityEngine;
+using Unity.Mathematics;
 
 namespace ET.Client
 {
@@ -18,7 +18,7 @@ namespace ET.Client
         {
             Scene clientScene = aiComponent.DomainScene();
 
-            Unit myUnit = Client.UnitHelper.GetMyUnitFromClientScene(clientScene);
+            Unit myUnit = UnitHelper.GetMyUnitFromClientScene(clientScene);
             if (myUnit == null)
             {
                 return;
@@ -29,9 +29,9 @@ namespace ET.Client
             while (true)
             {
                 XunLuoPathComponent xunLuoPathComponent = myUnit.GetComponent<XunLuoPathComponent>();
-                Vector3 nextTarget = xunLuoPathComponent.GetCurrent();
-                int ret = await myUnit.MoveToAsync(nextTarget, cancellationToken);
-                if (ret != 0)
+                float3 nextTarget = xunLuoPathComponent.GetCurrent();
+                await myUnit.MoveToAsync(nextTarget, cancellationToken);
+                if (cancellationToken.IsCancel())
                 {
                     return;
                 }

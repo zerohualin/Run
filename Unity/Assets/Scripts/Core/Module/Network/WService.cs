@@ -14,18 +14,20 @@ namespace ET
         
         private readonly Dictionary<long, WChannel> channels = new Dictionary<long, WChannel>();
 
-        public WService(ThreadSynchronizationContext threadSynchronizationContext, IEnumerable<string> prefixs)
+        public ThreadSynchronizationContext ThreadSynchronizationContext;
+
+        public WService(IEnumerable<string> prefixs)
         {
-            this.ThreadSynchronizationContext = threadSynchronizationContext;
+            this.ThreadSynchronizationContext = new ThreadSynchronizationContext();
             
             this.httpListener = new HttpListener();
 
             StartAccept(prefixs).Coroutine();
         }
         
-        public WService(ThreadSynchronizationContext threadSynchronizationContext)
+        public WService()
         {
-            this.ThreadSynchronizationContext = threadSynchronizationContext;
+            this.ThreadSynchronizationContext = new ThreadSynchronizationContext();
         }
         
         private long GetId
@@ -44,13 +46,15 @@ namespace ET
             return channel;
         }
 
-        public override void Remove(long id)
+        public override void Remove(long id, int error = 0)
         {
             WChannel channel;
             if (!this.channels.TryGetValue(id, out channel))
             {
                 return;
             }
+
+            channel.Error = error;
 
             this.channels.Remove(id);
             channel.Dispose();
@@ -101,7 +105,7 @@ namespace ET
 
                         this.channels[channel.Id] = channel;
 
-                        this.OnAccept(channel.Id, channel.RemoteAddress);
+                        NetServices.Instance.OnAccept(this.Id, channel.Id, channel.RemoteAddress);
                     }
                     catch (Exception e)
                     {
@@ -124,23 +128,25 @@ namespace ET
             }
         }
         
-        protected override void Get(long id, IPEndPoint address)
+        public override void Create(long id, IPEndPoint address)
         {
             throw new NotImplementedException();
         }
 
-        protected override void Send(long channelId, long actorId, MemoryStream stream)
+        public override void Send(long channelId, long actorId, object message)
         {
             this.channels.TryGetValue(channelId, out WChannel channel);
             if (channel == null)
             {
                 return;
             }
-            channel.Send(stream);
+            MemoryStream memoryStream = this.GetMemoryStream(message);
+            channel.Send(memoryStream);
         }
 
         public override void Update()
         {
+            this.ThreadSynchronizationContext.Update();
         }
     }
 }

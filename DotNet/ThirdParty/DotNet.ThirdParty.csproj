@@ -14,14 +14,15 @@
     </PropertyGroup>
     
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <DefineConstants>DOTNET</DefineConstants>
+      <DefineConstants>DOTNET;UNITY_DOTSPLAYER</DefineConstants>
       <OutputPath>..\..\Bin\</OutputPath>
       <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
       <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+      <Optimize>true</Optimize>
     </PropertyGroup>
     
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <DefineConstants>DOTNET</DefineConstants>
+      <DefineConstants>DOTNET;UNITY_DOTSPLAYER</DefineConstants>
       <OutputPath>..\..\Bin\</OutputPath>
       <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
       <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -33,12 +34,16 @@
         <Link>ETTask/%(RecursiveDir)%(FileName)%(Extension)</Link>
     </Compile>
 
-    <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\ShareLib\Kcp\Kcp.cs">
+    <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\Kcp\Kcp.cs">
       <Link>Kcp\Kcp.cs</Link>
     </Compile>
 
-    <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\ShareLib\Recast\Recast.cs">
+    <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\Recast\Recast.cs">
       <Link>Recast\Recast.cs</Link>
+    </Compile>
+
+    <Compile Include="..\..\Unity\Library\PackageCache\com.unity.mathematics*\Unity.Mathematics\**\*.cs">
+        <Link>Unity.Mathematics/$([System.String]::new(%(RecursiveDir)).Substring($([System.String]::new(%(RecursiveDir)).Indexof("Unity.Mathematics"))).Replace("Unity.Mathematics", ""))/%(FileName)%(Extension)</Link>
     </Compile>
     </ItemGroup>
 
@@ -54,6 +59,9 @@
       <Content Include="..\..\Unity\Assets\Plugins\x86_64\kcp.dll">
         <Link>kcp.dll</Link>
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Plugins\x86_64\libkcp.so">
+        <Link>libkcp.so</Link>
       </Content>
       <Content Include="..\..\Unity\Assets\Plugins\x86_64\RecastDll.dll">
         <Link>RecastDll.dll</Link>

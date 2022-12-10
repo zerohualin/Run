@@ -1,4 +1,5 @@
 using System.Net;
+using System.Net.Sockets;
 
 namespace ET.Server
 {
@@ -18,14 +19,15 @@ namespace ET.Server
                         startSceneConfig.StartProcessConfig.InnerIP
                     );
                     break;
-                case SceneType.RouterManager:
-                    scene.AddComponent<HttpComponent, string>($"http://{startSceneConfig.OuterIPPort}/");
+                case SceneType.RouterManager: // 正式发布请用CDN代替RouterManager
+                    // 云服务器在防火墙那里做端口映射
+                    scene.AddComponent<HttpComponent, string>($"http://+:{startSceneConfig.OuterPort}/");
                     break;
                 case SceneType.Realm:
-                    scene.AddComponent<NetKcpComponent, IPEndPoint, int>(startSceneConfig.InnerIPOutPort, SessionStreamCallbackId.SessionStreamDispatcherServerOuter);
+                    scene.AddComponent<NetServerComponent, IPEndPoint>(startSceneConfig.InnerIPOutPort);
                     break;
                 case SceneType.Gate:
-                    scene.AddComponent<NetKcpComponent, IPEndPoint, int>(startSceneConfig.InnerIPOutPort, SessionStreamCallbackId.SessionStreamDispatcherServerOuter);
+                    scene.AddComponent<NetServerComponent, IPEndPoint>(startSceneConfig.InnerIPOutPort);
                     scene.AddComponent<PlayerComponent>();
                     scene.AddComponent<GateSessionKeyComponent>();
                     break;
@@ -38,7 +40,13 @@ namespace ET.Server
                     break;
                 case SceneType.Robot:
                     scene.AddComponent<RobotManagerComponent>();
-                    
+                    break;
+                case SceneType.BenchmarkServer:
+                    scene.AddComponent<BenchmarkServerComponent>();
+                    scene.AddComponent<NetServerComponent, IPEndPoint>(startSceneConfig.OuterIPPort);
+                    break;
+                case SceneType.BenchmarkClient:
+                    scene.AddComponent<BenchmarkClientComponent>();
                     break;
             }
 

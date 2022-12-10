@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using HybridCLR.Editor;
 using UnityEditor;
 using UnityEditor.Compilation;
 using UnityEngine;
@@ -16,8 +15,9 @@ namespace ET
 		None,
 		Android,
 		IOS,
-		PC,
+		Windows,
 		MacOS,
+		Linux
 	}
 	
 	public enum BuildType
@@ -54,9 +54,11 @@ namespace ET
 #elif UNITY_IOS
 			activePlatform = PlatformType.IOS;
 #elif UNITY_STANDALONE_WIN
-			activePlatform = PlatformType.PC;
+			activePlatform = PlatformType.Windows;
 #elif UNITY_STANDALONE_OSX
 			activePlatform = PlatformType.MacOS;
+#elif UNITY_STANDALONE_LINUX
+			activePlatform = PlatformType.Linux;
 #else
 			activePlatform = PlatformType.None;
 #endif
@@ -85,19 +87,6 @@ namespace ET
 			}
 
 			GUILayout.Space(5);
-
-			if (GUILayout.Button("BuildAOTMetadata"))
-			{
-				const string wolongMetaDir = "Assets/Bundles/AssetBundleSourceData";
-				if (Directory.Exists(wolongMetaDir))
-				{
-					Directory.Delete(wolongMetaDir, true);
-				}
-				AssetBundleBuildHelper.BuildSceneAssetBundleActiveBuildTarget();
-				AssetImporter assetImporter = AssetImporter.GetAtPath(wolongMetaDir);
-				assetImporter.assetBundleName = "assetbundlesourcedata.unity3d";
-				AssetDatabase.SaveAssets();
-			}
 			
 			if (GUILayout.Button("BuildPackage"))
 			{
@@ -126,17 +115,20 @@ namespace ET
 			GUILayout.Label("");
 			GUILayout.Label("Code Compile：");
 			
-			this.globalConfig.LoadMode = (LoadMode)EditorGUILayout.EnumPopup("LoadMode: ", this.globalConfig.LoadMode);
-			
 			this.globalConfig.CodeMode = (CodeMode)EditorGUILayout.EnumPopup("CodeMode: ", this.globalConfig.CodeMode);
 			
-			if (GUILayout.Button("BuildCode"))
+			if (GUILayout.Button("BuildModelAndHotfix"))
 			{
 				if (Define.EnableCodes)
 				{
 					throw new Exception("now in ENABLE_CODES mode, do not need Build!");
 				}
-				BuildAssemblieEditor.BuildCode(this.codeOptimization, globalConfig);
+				BuildAssembliesHelper.BuildModel(this.codeOptimization, globalConfig);
+				BuildAssembliesHelper.BuildHotfix(this.codeOptimization, globalConfig);
+
+				AfterCompiling();
+				
+				ShowNotification("Build Model And Hotfix Success!");
 			}
 			
 			if (GUILayout.Button("BuildModel"))
@@ -145,7 +137,11 @@ namespace ET
 				{
 					throw new Exception("now in ENABLE_CODES mode, do not need Build!");
 				}
-				BuildAssemblieEditor.BuildModel(this.codeOptimization, globalConfig);
+				BuildAssembliesHelper.BuildModel(this.codeOptimization, globalConfig);
+
+				AfterCompiling();
+				
+				ShowNotification("Build Model Success!");
 			}
 			
 			if (GUILayout.Button("BuildHotfix"))
@@ -154,33 +150,50 @@ namespace ET
 				{
 					throw new Exception("now in ENABLE_CODES mode, do not need Build!");
 				}
-				BuildAssemblieEditor.BuildHotfix(this.codeOptimization, globalConfig);
+				BuildAssembliesHelper.BuildHotfix(this.codeOptimization, globalConfig);
+
+				AfterCompiling();
+				
+				ShowNotification("Build Hotfix Success!");
 			}
 			
 			if (GUILayout.Button("ExcelExporter"))
 			{
 				//Directory.Delete("Assets/Bundles/Config", true);
 				ToolsEditor.ExcelExporter();
-				// 如果是ClientServer，那么客户端要使用服务端配置
-				if (this.globalConfig.CodeMode == CodeMode.ClientServer)
-				{
-					FileHelper.CopyDirectory("../Config/StartConfig/Localhost", "Assets/Bundles/Config/StartConfig/Localhost");
-					foreach (string file in Directory.GetFiles("../Config/", "*.bytes"))
-					{
-						File.Copy(file, $"Assets/Bundles/Config/{Path.GetFileName(file)}", true);
-					}
-				}
-				Debug.Log("copy config to Assets/Bundles/Config");
+				
+				// 设置ab包
+				AssetImporter assetImporter = AssetImporter.GetAtPath($"Assets/Bundles/Config");
+				assetImporter.assetBundleName = "Config.unity3d";
+				AssetDatabase.SaveAssets();
+				AssetDatabase.Refresh();
 			}
 			
 			if (GUILayout.Button("Proto2CS"))
 			{
 				ToolsEditor.Proto2CS();
 			}
-			
-
 
 			GUILayout.Space(5);
+		}
+		
+		private static void AfterCompiling()
+		{
+			Directory.CreateDirectory(BuildAssembliesHelper.CodeDir);
+
+			// 设置ab包
+			AssetImporter assetImporter = AssetImporter.GetAtPath("Assets/Bundles/Code");
+			assetImporter.assetBundleName = "Code.unity3d";
+			AssetDatabase.SaveAssets();
+			AssetDatabase.Refresh();
+            
+			Debug.Log("build success!");
+		}
+		
+		public static void ShowNotification(string tips)
+		{
+			EditorWindow game = EditorWindow.GetWindow(typeof(EditorWindow).Assembly.GetType("UnityEditor.GameView"));
+			game?.ShowNotification(new GUIContent($"{tips}"));
 		}
 	}
 }

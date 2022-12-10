@@ -72,8 +72,17 @@ namespace ET
                     this.status &= ~EntityStatus.IsRegister;
                 }
 
-                EventSystem.Instance.RegisterSystem(this, value);
                 
+                if (!value)
+                {
+                    Root.Instance.Remove(this.InstanceId);
+                }
+                else
+                {
+                    Root.Instance.Add(this);
+                    EventSystem.Instance.RegisterSystem(this);
+                }
+
 #if ENABLE_VIEW && UNITY_EDITOR
                 if (value)
                 {
@@ -340,11 +349,7 @@ namespace ET
         {
             get
             {
-                if (this.children == null)
-                {
-                    this.children = ObjectPool.Instance.Fetch<Dictionary<long, Entity>>();
-                }
-                return this.children;
+                return this.children ??= ObjectPool.Instance.Fetch<Dictionary<long, Entity>>();
             }
         }
 
@@ -379,7 +384,7 @@ namespace ET
                 return;
             }
 
-            this.childrenDB = this.childrenDB ?? ObjectPool.Instance.Fetch<HashSet<Entity>>();
+            this.childrenDB ??= ObjectPool.Instance.Fetch<HashSet<Entity>>();
 
             this.childrenDB.Add(entity);
         }
@@ -417,11 +422,7 @@ namespace ET
         {
             get
             {
-                if (this.components == null)
-                {
-                    this.components = ObjectPool.Instance.Fetch<Dictionary<Type, Entity>>();
-                }
-                return this.components;
+                return this.components ??= ObjectPool.Instance.Fetch<Dictionary<Type, Entity>>();
             }
         }
 
@@ -521,11 +522,7 @@ namespace ET
                 return;
             }
             
-            if (this.componentsDB == null)
-            {
-                this.componentsDB = ObjectPool.Instance.Fetch<HashSet<Entity>>();
-            }
-
+            this.componentsDB ??= ObjectPool.Instance.Fetch<HashSet<Entity>>();
             this.componentsDB.Add(component);
         }
 
@@ -634,7 +631,6 @@ namespace ET
                 return;
             }
 
-            Type type = component.GetType();
             Entity c = this.GetComponent(component.GetType());
             if (c == null)
             {

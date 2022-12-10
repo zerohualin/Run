@@ -3,10 +3,11 @@
     "rootNamespace": "ET",
     "references": [
         "Unity.Model",
-        "Unity.Mono",
         "Unity.ThirdParty",
         "Unity.Core",
         "Animancer"
+        "Unity.Mathematics",
+        "Unity.Loader"
     ],
     "includePlatforms": [
         "Editor"

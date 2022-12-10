@@ -8,28 +8,32 @@ namespace ET
 	
 	public interface IDeserializeSystem: ISystemType
 	{
-		void Run(object o);
+		void Run(Entity o);
 	}
 
 	/// <summary>
 	/// 反序列化后执行的System
-	/// 要小心使用这个System，因为对象假如要保存到数据库，到dbserver也会进行反序列化，那么也会执行该System
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	[ObjectSystem]
-	public abstract class DeserializeSystem<T> : IDeserializeSystem where T: IDeserialize
+	public abstract class DeserializeSystem<T> : IDeserializeSystem where T: Entity, IDeserialize
 	{
-		public void Run(object o)
+		void IDeserializeSystem.Run(Entity o)
 		{
 			this.Deserialize((T)o);
 		}
-		
-		public Type SystemType()
+
+		Type ISystemType.SystemType()
 		{
 			return typeof(IDeserializeSystem);
 		}
 
-		public Type Type()
+		InstanceQueueIndex ISystemType.GetInstanceQueueIndex()
+		{
+			return InstanceQueueIndex.None;
+		}
+
+		Type ISystemType.Type()
 		{
 			return typeof(T);
 		}
