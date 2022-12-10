@@ -8,11 +8,14 @@ namespace ET
         public static async ETTask AddFGUIPackageAsync(string packageName)
         {
             string path = $"Assets/BundleYoo/{packageName}/FUI/{packageName}_fui.bytes";
+            var package = UIPackage.GetByName(packageName);
+            if (package != null)
+                return;
             var handle = await YooAssetProxy.LoadAssetAsync<TextAsset>(path);
             byte[] bytes = handle.GetAsset<TextAsset>().bytes;
             UIPackage.AddPackage(bytes, packageName, OnTextureLoadComplete);
         }
-        
+
         public static async void OnTextureLoadComplete(string name, string extension, System.Type type, PackageItem item)
         {
             string[] splits = name.Split('_');

@@ -5,7 +5,7 @@ using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace ET
+namespace ET.Client
 {
     public class FGUIAwakeSystem: AwakeSystem<FGUIComponent>
     {
@@ -18,11 +18,14 @@ namespace ET
             }
 
             FGUIComponent.Instance = self;
+
+            var font = Resources.Load<Font>("Fonts/FZSongKeBenXiuKai");
+            FontManager.RegisterFont(new DynamicFont("FZSongKeBenXiuKai", font), "FZSongKeBenXiuKai");
             
-            GRoot.inst.SetContentScaleFactor(1440, 2560, UIContentScaler.ScreenMatchMode.MatchWidth);
+            GRoot.inst.SetContentScaleFactor(1440, 2560, UIContentScaler.ScreenMatchMode.MatchWidthOrHeight);
             GRoot.inst.ApplyContentScaleFactor();
 
-            var fguiTypes = Game.EventSystem.GetTypes(typeof (FGUIComponentAttribute));
+            var fguiTypes = EventSystem.Instance.GetTypes(typeof (FGUIComponentAttribute));
             foreach (Type type in fguiTypes)
             {
                 object[] attrs = type.GetCustomAttributes(typeof (FGUIComponentAttribute), false);
@@ -60,81 +63,87 @@ namespace ET
             }
         }
 
+        public static FGUIEventComponent GetEvent(this FGUIComponent self)
+        {
+            return self.GetComponent<FGUIEventComponent>();
+        }
+        
         private static async ETTask InitBasePackage(this FGUIComponent self)
         {
             if (self.InitializedBasePackages)
             {
                 return;
             }
-            
+
             // await FUIPackageHelper.AddFGUIPackageAsync("ACommonResources_fui");
             // await FUIPackageHelper.AddFGUIPackageAsync("MMO_fui");
-            
-            await FUIPackageHelper.AddFGUIPackageAsync("MiniGame");
+
+            await FUIPackageHelper.AddFGUIPackageAsync("MMO");
 
             // string path = $"Assets/Bundles/FGUI/ABaseComponents_fui.bytes";
             // var handle = await YooAssetProxy.LoadAssetAsync<TextAsset>(path);
             // TextAsset desc = handle.GetAsset<TextAsset>();
             // UIPackage.AddPackage(desc.bytes, "ABaseComponents", OnLoadResourceFinished);
-            
+
             self.InitializedBasePackages = true;
             await ETTask.CompletedTask;
         }
 
         public static async ETTask OpenAysnc(this FGUIComponent self, FGUIType uiType)
         {
-            // try
-            // {
-                FGUIEntity entity = null;
-                if (self.UIDict.ContainsKey(uiType))
+            FGUIEntity entity = null;
+            if (self.UIDict.ContainsKey(uiType))
+            {
+                entity = self.UIDict[uiType];
+                GRoot.inst.AddChild(entity.GObject); //显示到最上层
+                self.GetEvent().OnRefresh(entity);
+                return;
+            }
+            
+            entity = await self.CreateEntity(uiType);
+            
+            self.GetEvent().OnCreate(entity);
+            self.GetEvent().OnShow(entity);
+            self.UIDict.Add(uiType, entity);
+        }
+
+        public static async ETTask<FGUIEntity> CreateEntity(this FGUIComponent self, FGUIType uiType)
+        {
+            FGUIEntity entity = null;
+            await self.InitBasePackage();
+
+            if (!self.TypeDict.TryGetValue(uiType, out Type type))
+            {
+                type = self.TypeDict[FGUIType.Default];
+                if (type == null)
                 {
-                    entity = self.UIDict[uiType];
-                    GRoot.inst.AddChild(entity.GObject); //显示到最上层
-                    self.Event.OnRefresh(entity);
-                    return;
+                    Log.Error("没有定义好Default作为Fallback");
                 }
+            }
 
-                await self.InitBasePackage();
-
-                if (!self.TypeDict.TryGetValue(uiType, out Type type))
-                {
-                    type = self.TypeDict[FGUIType.Default];
-                    if (type == null)
-                    {
-                        Log.Error("没有定义好Default作为Fallback");
-                    }
-                }
-
-                entity = self.AddChild<FGUIEntity, Type, FGUIType>(type, uiType);
-                Entity component = entity.AddComponent(type);
-                if (component == null)
-                {
-                    Log.Error($"打开UI错误，类型为空: {type.Name}");
-                }
-
-                var fuiCom = entity.UIComponent.GetComponent<IFGUIComponent>();
-
-                FguiConfig config = ConfigUtil.Tables.TbFguiConfig.Get(uiType);
-                await FUIPackageHelper.AddFGUIPackageAsync(fuiCom.GetAddressablePath());
-                GComponent gCom = null;
-                GObject go = await FGUIHelper.CreateObjectAsync(fuiCom.GetPackageName(), fuiCom.GetComponentName());
-                gCom = go as GComponent;
-                gCom.sortingOrder = (int)config.Layer * 100;
-                gCom.displayObject.name = fuiCom.GetComponentName();
-                GRoot.inst.AddChild(gCom);
-                gCom.MakeFullScreen();
-                entity.AddComponent<GObjectComponent, GObject>(gCom);
-
-                FGUIHelper.BindRoot(type, component, gCom);
-
-                self.Event.OnCreate(entity);
-                self.Event.OnShow(entity);
-                self.UIDict.Add(uiType, entity);
-            // }
-            // catch (Exception e)
-            // {
-            //     Debug.LogError(e.Message);
-            // }
+            entity = self.AddChild<FGUIEntity, Type, FGUIType>(type, uiType);
+            
+            Entity component = entity.AddComponent(type);
+            if (component == null)
+            {
+                Log.Error($"打开UI错误，类型为空: {type.Name}");
+            }
+            var fuiCom = (IFGUIComponent)entity.UIComponent.GetComponent(typeof(IFGUIComponent));
+            
+            FguiConfig config = ConfigUtil.Tables.TbFguiConfig.Get(uiType);
+            
+            await FUIPackageHelper.AddFGUIPackageAsync(fuiCom.GetAddressablePath());
+            
+            GComponent gCom = null;
+            GObject go = await FGUIHelper.CreateObjectAsync(fuiCom.GetPackageName(), fuiCom.GetComponentName());
+            gCom = go as GComponent;
+            gCom.sortingOrder = (int)config.Layer * 100;
+            gCom.displayObject.name = fuiCom.GetComponentName();
+            GRoot.inst.AddChild(gCom);
+            gCom.MakeFullScreen();
+            entity.AddComponent<GObjectComponent, GObject>(gCom);
+            FGUIHelper.BindRoot(type, component, gCom);
+            return entity;
         }
 
         public static T Get<T>(this FGUIComponent self, FGUIType uiType) where T : Entity
@@ -144,6 +153,7 @@ namespace ET
             {
                 return UIEntity.GetComponent<T>();
             }
+
             return null;
         }
 
@@ -157,8 +167,8 @@ namespace ET
                 }
 
                 FGUIEntity entity = self.UIDict[uiType];
-                self.Event.OnHide(entity);
-                self.Event.OnDestroy(entity);
+                self.GetEvent().OnHide(entity);
+                self.GetEvent().OnDestroy(entity);
                 GRoot.inst.RemoveChild(entity.GObject, true);
                 entity.Dispose();
                 self.UIDict.Remove(uiType);
@@ -173,8 +183,12 @@ namespace ET
         {
             foreach (FGUIEntity entity in self.UIDict.Values)
             {
-                self.Event.OnRefresh(entity);
+                self.GetEvent().OnRefresh(entity);
             }
+        }
+
+        public static async ETTask AddTiny(this FGUIComponent self, FGUIType uiType)
+        {
         }
     }
 }

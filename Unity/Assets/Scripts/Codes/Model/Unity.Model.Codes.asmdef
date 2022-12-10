@@ -8,10 +8,7 @@
         "YooAsset",
         "Unity.Core",
         "Unity.ThirdParty",
-        "Unity.Mono",
         "FairyGUI.Runtime",
-        "Unity.ThirdParty",
-        "Unity.Core",
         "Unity.Mathematics"
     ],
     "includePlatforms": [

@@ -7,7 +7,7 @@
         "Unity.Hotfix",
         "Unity.ModelView",
         "Unity.Core",
-        "Animancer"
+        "Animancer",
         "Unity.Mathematics",
         "Unity.Loader"
     ],

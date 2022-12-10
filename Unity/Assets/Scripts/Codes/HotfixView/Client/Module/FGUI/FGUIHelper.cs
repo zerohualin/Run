@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-namespace ET
+namespace ET.Client
 {
     public static class FGUIHelper
     {
@@ -42,18 +42,28 @@ namespace ET
                                 }
                             }
                         }
+
                         continue;
                     }
 
-                    if (attribute is FGUICustomComAttribute)
+                    try
                     {
-                        var gObj = gComponent.GetChild(fieldInfo.Name).asCom;
-                        var ChildCom = (bindObj as Entity).AddChild(fieldInfo.FieldType);
-                        BindRoot(fieldInfo.FieldType, ChildCom, gObj);
-                        fieldInfo.SetValue(bindObj, ChildCom);
-                        continue;
+                        if (attribute is FGUICustomComAttribute)
+                        {
+                            var gObj = gComponent.GetChild(fieldInfo.Name).asCom;
+                            var ChildCom = (bindObj as Entity).AddChild(fieldInfo.FieldType);
+                            BindRoot(fieldInfo.FieldType, ChildCom, gObj);
+                            fieldInfo.SetValue(bindObj, ChildCom);
+                            continue;
+                        }
                     }
-                    
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        throw;
+                    }
+
+
                     if (attribute is FGUISelfObjectAttribute)
                     {
                         fieldInfo.SetValue(bindObj, gComponent);
@@ -76,6 +86,16 @@ namespace ET
         public static void AddListener(this GButton self, Action action)
         {
             self.onClick.Set(() => action?.Invoke());
+        }
+
+        public static GObject AddWrapperChild(this GComponent parent, GameObject particleObj)
+        {
+            var go = GameObject.Instantiate(particleObj);
+            var wrapper = new GoWrapper(go);
+            var holder = new GGraph();
+            parent.AddChild(holder);
+            holder.SetNativeObject(wrapper);
+            return holder;
         }
 
         public static ETTask<GObject> CreateObjectAsync(string pkgName, string resName)

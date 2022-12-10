@@ -22,14 +22,14 @@ namespace ET.Client
             
             Scene clientScene = await SceneFactory.CreateClientScene(1, "Game");
 
-            await HotfixProcedureHelper.OnEnter();
+            await HotfixProcedureHelper.Start();
             
             await LubanComponent.Instance.LoadAsync(ByteBufLoader);
 
-            Game.Scene.AddComponent<FGUIEventComponent>();
-            Game.Scene.AddComponent<FGUIComponent>();
+            Root.Instance.Scene.AddComponent<FGUIEventComponent>();
+            Root.Instance.Scene.AddComponent<FGUIComponent>();
 
-            await Game.Scene.GetComponent<FGUIComponent>().OpenAysnc(FGUIType.AFKBattle);
+            await Root.Instance.Scene.GetComponent<FGUIComponent>().OpenAysnc(FGUIType.AFKBattle);
 
             // await Game.EventSystem.PublishAsync(clientScene, new EventType.Goto_MiniGame());
             // await Game.EventSystem.PublishAsync(clientScene, new EventType.AppStartInitFinish());

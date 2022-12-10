@@ -3,9 +3,9 @@
     "rootNamespace": "ET",
     "references": [
         "Unity.ThirdParty",
-        "Unity.Core",
         "YooAsset",
-        "FairyGUI.Runtime"
+        "FairyGUI.Runtime",
+        "Unity.Core"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

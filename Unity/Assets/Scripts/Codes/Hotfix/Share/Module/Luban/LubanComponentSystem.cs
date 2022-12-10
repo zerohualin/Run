@@ -1,6 +1,5 @@
 ﻿using Bright.Serialization;
 using System;
-using UnityEngine;
 
 namespace ET
 {

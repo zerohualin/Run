@@ -5,7 +5,7 @@
         "Unity.Model",
         "Unity.ThirdParty",
         "Unity.Core",
-        "Animancer"
+        "Animancer",
         "Unity.Mathematics",
         "Unity.Loader"
     ],

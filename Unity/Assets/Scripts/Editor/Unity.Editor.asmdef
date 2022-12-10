@@ -4,9 +4,9 @@
     "references": [
         "Unity.ThirdParty",
         "Unity.Core",
-        "Unity.Codes",
-        "YooAsset.Editor"
-        "Unity.Loader"
+        "YooAsset.Editor",
+        "Unity.Loader",
+        "HybridCLR.Runtime"
     ],
     "includePlatforms": [
         "Editor"

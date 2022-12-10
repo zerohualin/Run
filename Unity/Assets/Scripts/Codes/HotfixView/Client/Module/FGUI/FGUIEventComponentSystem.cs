@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace ET
+namespace ET.Client
 {
     public class FGUIEventComponentAwakeSystem: AwakeSystem<FGUIEventComponent>
     {
         protected override void Awake(FGUIEventComponent self)
         {
-            var uiEvents = Game.EventSystem.GetTypes(typeof (FGUIEventAttribute));
+            var uiEvents = EventSystem.Instance.GetTypes(typeof (FGUIEventAttribute));
             foreach (Type type in uiEvents)
             {
                 object[] attrs = type.GetCustomAttributes(typeof (FGUIEventAttribute), false);

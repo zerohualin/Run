@@ -1,4 +1,4 @@
-﻿namespace ET
+﻿namespace ET.Client
 {
     [FriendOf(typeof(IFGUIComponent))]
     public static class IFGUIComponentSystem

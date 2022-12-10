@@ -141,3 +141,6 @@ Publish/
 /Unity/Unity.ModelView.Codes.csproj
 /Unity/Unity.GenerateClient.csproj
 /Unity/Unity.GenerateServer.csproj
+/Unity/Aftershock.Base.csproj
+/Unity/Aftershock.Editor.csproj
+/Unity/Aftershock.Runtime.csproj

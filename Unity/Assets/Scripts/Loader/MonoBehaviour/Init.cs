@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ET
 {
-	public class Init: MonoBehaviour
+	public partial class Init: MonoBehaviour
 	{
 		private void Start()
 		{
