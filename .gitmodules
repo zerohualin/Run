@@ -1,18 +1,18 @@
 [submodule "Sub/luban_examples"]
 	path = Sub/luban_examples
-	url = git@github.com:zerohualin/luban_examples.git
+	url = https://github.com/zerohualin/luban_examples.git
 [submodule "Sub/vue-antd-admin"]
 	path = Sub/vue-antd-admin
-	url = git@github.com:zerohualin/vue-antd-admin.git
+	url = https://github.com/zerohualin/vue-antd-admin.git
 [submodule "Sub/Tools"]
 	path = Sub/Tools
-	url = git@github.com:zerohualin/AftershockTools.git
+	url = https://github.com/zerohualin/AftershockTools.git
 [submodule "Sub/Luban"]
 	path = Sub/Luban
-	url = git@github.com:zerohualin/AftershockLuban.git
+	url = https://github.com/zerohualin/AftershockLuban.git
 [submodule "Sub/FGUI"]
 	path = Sub/FGUI
-	url = git@github.com:zerohualin/AftershockFGUI.git
+	url = https://github.com/zerohualin/AftershockFGUI.git
 [submodule "SubGame/MiniGame"]
 	path = SubGame/MiniGame
-	url = git@github.com:zerohualin/Afterschock_MiniGame.git
+	url = https://github.com/zerohualin/Afterschock_MiniGame.git
