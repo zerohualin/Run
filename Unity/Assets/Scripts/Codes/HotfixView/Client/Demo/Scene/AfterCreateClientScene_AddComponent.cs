@@ -5,8 +5,8 @@ namespace ET.Client
     {
         protected override async ETTask Run(Scene scene, EventType.AfterCreateClientScene args)
         {
-            var FGUIComponent = scene.AddComponent<FGUIComponent>();
-            FGUIComponent.AddComponent<FGUIEventComponent>();
+            // var FGUIComponent = scene.AddComponent<FGUIComponent>();
+            // FGUIComponent.AddComponent<FGUIEventComponent>();
             await ETTask.CompletedTask;
         }
     }

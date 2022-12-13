@@ -1,6 +1,3 @@
-using System;
-using System.IO;
-using Animancer;
 using Bright.Serialization;
 using Cfg;
 using UnityEngine;
@@ -22,14 +19,12 @@ namespace ET.Client
             
             Scene clientScene = await SceneFactory.CreateClientScene(1, "Game");
 
-            await HotfixProcedureHelper.Start();
-            
             await LubanComponent.Instance.LoadAsync(ByteBufLoader);
+            
+            var FGUIComponent = clientScene.AddComponent<FGUIComponent>();
+            FGUIComponent.AddComponent<FGUIEventComponent>();
 
-            Root.Instance.Scene.AddComponent<FGUIEventComponent>();
-            Root.Instance.Scene.AddComponent<FGUIComponent>();
-
-            await Root.Instance.Scene.GetComponent<FGUIComponent>().OpenAysnc(FGUIType.AFKBattle);
+            await clientScene.GetComponent<FGUIComponent>().OpenAysnc(FGUIType.AFKBattle);
 
             // await Game.EventSystem.PublishAsync(clientScene, new EventType.Goto_MiniGame());
             // await Game.EventSystem.PublishAsync(clientScene, new EventType.AppStartInitFinish());

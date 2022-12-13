@@ -14,6 +14,7 @@ namespace ET
     /// </summary>
     public static class StateTypeForAnimExtension
     {
+        [StaticField]
         private static Dictionary<StateTypes, string> AllMap = new Dictionary<StateTypes, string>();
 
         static StateTypeForAnimExtension()

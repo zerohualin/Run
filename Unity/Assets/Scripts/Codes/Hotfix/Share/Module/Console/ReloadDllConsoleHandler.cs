@@ -1,3 +1,5 @@
+using ET.Client;
+
 namespace ET
 {
     [ConsoleHandler(ConsoleMode.ReloadDll)]

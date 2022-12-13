@@ -27,3 +27,54 @@ MonoBehaviour:
       PackRuleName: PackDirectory
       FilterRuleName: CollectAll
       AssetTags: 
+  - GroupName: Code
+    GroupDesc: "\u901A\u7528\u7684\u4EE3\u7801"
+    AssetTags: 
+    ActiveRuleName: EnableGroup
+    Collectors:
+    - CollectPath: Assets/BundleYoo/Code
+      CollectorType: 0
+      AddressRuleName: AddressByFileName
+      PackRuleName: PackRawFile
+      FilterRuleName: CollectAll
+      AssetTags: 
+    - CollectPath: Assets/BundleYoo/OtherNativeRes
+      CollectorType: 0
+      AddressRuleName: AddressByFileName
+      PackRuleName: PackRawFile
+      FilterRuleName: CollectAll
+      AssetTags: 
+    - CollectPath: Assets/BundleYoo/AotDll
+      CollectorType: 0
+      AddressRuleName: AddressByFileName
+      PackRuleName: PackDirectory
+      FilterRuleName: CollectAll
+      AssetTags: 
+  - GroupName: LubanData
+    GroupDesc: 
+    AssetTags: 
+    ActiveRuleName: EnableGroup
+    Collectors:
+    - CollectPath: Assets/BundleYoo/LubanBin
+      CollectorType: 0
+      AddressRuleName: AddressByPath
+      PackRuleName: PackDirectory
+      FilterRuleName: CollectAll
+      AssetTags: 
+  - GroupName: FUI
+    GroupDesc: 
+    AssetTags: 
+    ActiveRuleName: EnableGroup
+    Collectors:
+    - CollectPath: Assets/BundleYoo/AFK
+      CollectorType: 0
+      AddressRuleName: AddressByPath
+      PackRuleName: PackDirectory
+      FilterRuleName: CollectAll
+      AssetTags: 
+    - CollectPath: Assets/BundleYoo/MMO
+      CollectorType: 0
+      AddressRuleName: AddressByPath
+      PackRuleName: PackDirectory
+      FilterRuleName: CollectAll
+      AssetTags: 

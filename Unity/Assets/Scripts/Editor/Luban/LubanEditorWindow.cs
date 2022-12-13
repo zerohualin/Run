@@ -20,7 +20,7 @@ public class LubanEditorWindow: OdinEditorWindow
     [Button("Luban Export", ButtonSizes.Gigantic)]
     private void LubanExport()
     {
-        Process.Start(Application.dataPath + "/../../Tools/LuBan一键生成配置WIN.bat");
+        Process.Start(Application.dataPath + "/../../Sub/Tools/LuBan一键生成配置WIN.bat");
     }
 }
 #endif

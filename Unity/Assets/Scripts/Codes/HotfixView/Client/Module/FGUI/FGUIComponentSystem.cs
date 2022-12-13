@@ -2,7 +2,6 @@
 using Cfg.Fgui;
 using FairyGUI;
 using System;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace ET.Client
@@ -128,7 +127,7 @@ namespace ET.Client
             {
                 Log.Error($"打开UI错误，类型为空: {type.Name}");
             }
-            var fuiCom = (IFGUIComponent)entity.UIComponent.GetComponent(typeof(IFGUIComponent));
+            var fuiCom = (IFGUIComponent)entity.GetComponent(typeof(IFGUIComponent));
             
             FguiConfig config = ConfigUtil.Tables.TbFguiConfig.Get(uiType);
             

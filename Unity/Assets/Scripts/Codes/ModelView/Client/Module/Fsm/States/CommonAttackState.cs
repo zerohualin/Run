@@ -11,6 +11,7 @@ namespace ET
 {
     public class CommonAttackState : AFsmStateBase
     {
+        [StaticField]
         /// <summary>
         /// 互斥的状态，如果当前身上有这些状态，将无法切换至此状态
         /// </summary>

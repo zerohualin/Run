@@ -15,7 +15,9 @@ namespace ET
     /// </summary>
     public static partial class ReferencePool
     {
+        [StaticField]
         private static readonly Dictionary<Type, ReferenceCollection> s_ReferenceCollections = new Dictionary<Type, ReferenceCollection>();
+        [StaticField]
         private static bool m_EnableStrictCheck = false;
 
         /// <summary>

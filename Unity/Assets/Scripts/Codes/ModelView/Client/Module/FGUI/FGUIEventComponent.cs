@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace ET
 {
-    [ComponentOf(typeof(Scene))]
+    [ComponentOf(typeof(FGUIComponent))]
     public class FGUIEventComponent: Entity, IAwake
     {
         public Dictionary<Cfg.FGUIType, IFGUIEvent> UIEvents = new Dictionary<Cfg.FGUIType, IFGUIEvent>();

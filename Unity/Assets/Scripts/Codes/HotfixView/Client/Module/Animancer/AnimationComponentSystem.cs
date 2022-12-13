@@ -51,7 +51,7 @@ namespace ET.Client
             self.Avatar_UpOnlyAnimState = null;
         }
     }
-    
+    [FriendOfAttribute(typeof(ET.Client.AnimationComponent))]
     public static class AnimationComponentSystem
     {
         /// <summary>
@@ -135,7 +135,7 @@ namespace ET.Client
             if (self.RuntimeAnimationClips.ContainsKey(currentStateType.ToString()))
             {
                 // 如果正在播放技能
-                if (self.m_SkillAnimInfo.SkillAnimancerState is { IsPlaying : true })
+                if (self.m_SkillAnimInfo.SkillAnimancerState is { IsPlaying: true })
                 {
                     // 技能的LayerMask如果为只影响上半身，且要播放的为行走动画
                     if (self.m_SkillAnimInfo.LayerIndex == (int)PlayAnimInfo.AvatarMaskType.AnimMask_DownNotAffect &&
