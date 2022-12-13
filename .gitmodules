@@ -5,8 +5,9 @@
 	path = Sub/Tools
 	url = https://github.com/zerohualin/AftershockTools.git
 [submodule "Sub/LubanData"]
-	path = Sub/Luban
-	url = https://github.com/zerohualin/AftershockLuban.git Dev/AFK
+	path = Sub/LubanData
+	url = https://github.com/zerohualin/AftershockLuban.git
+	branch = Dev/AFK
 [submodule "Sub/FGUI"]
 	path = Sub/FGUI
 	url = https://github.com/zerohualin/AftershockFGUI.git
