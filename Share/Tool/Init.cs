@@ -57,7 +57,7 @@ namespace ET.Server
                     }
                     case AppType.SubGameTool:
                     {
-                        Game.Options.Console = 1;
+                        Options.Instance.Console = 1;
                         return SubGameTool.DoSub();
                     }
                 }
