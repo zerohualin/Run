@@ -1,15 +1,12 @@
-[submodule "Sub/luban_examples"]
-	path = Sub/luban_examples
-	url = https://github.com/zerohualin/luban_examples.git
 [submodule "Sub/vue-antd-admin"]
 	path = Sub/vue-antd-admin
 	url = https://github.com/zerohualin/vue-antd-admin.git
 [submodule "Sub/Tools"]
 	path = Sub/Tools
 	url = https://github.com/zerohualin/AftershockTools.git
-[submodule "Sub/Luban"]
+[submodule "Sub/LubanData"]
 	path = Sub/Luban
-	url = https://github.com/zerohualin/AftershockLuban.git
+	url = https://github.com/zerohualin/AftershockLuban.git Dev/AFK
 [submodule "Sub/FGUI"]
 	path = Sub/FGUI
 	url = https://github.com/zerohualin/AftershockFGUI.git
