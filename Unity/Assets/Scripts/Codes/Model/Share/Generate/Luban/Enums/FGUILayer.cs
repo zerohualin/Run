@@ -6,8 +6,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace Cfg.Enums
-{
+{ 
     public enum FGUILayer
     {
         /// <summary>
@@ -34,5 +35,10 @@ namespace Cfg.Enums
         /// 加载
         /// </summary>
         Loading = 5,
+        /// <summary>
+        /// 小物件
+        /// </summary>
+        Tiny = 6,
     }
-}
+
+} 

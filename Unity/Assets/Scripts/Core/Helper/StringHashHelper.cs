@@ -26,7 +26,7 @@ namespace ET
         {
             if (mode <= 0)
             {
-                throw new Exception($"string mode < 0: {strText} {mode}");
+                throw new Exception($"string mode <= 0: {strText} {mode}");
             }
             return (int)((ulong)strText.GetLongHashCode() % (uint)mode);
         }

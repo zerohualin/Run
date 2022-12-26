@@ -45,6 +45,9 @@
       <Folder Include="..\..\Unity\Assets\Scripts\Codes\Hotfix\Share\Generate\Luban">
         <Link>Share\Generate\Luban</Link>
       </Folder>
+      <Folder Include="..\..\Unity\Assets\Scripts\Codes\Hotfix\Share\Zeus\Luban">
+        <Link>Share\Zeus\Luban</Link>
+      </Folder>
     </ItemGroup>
 
 </Project>

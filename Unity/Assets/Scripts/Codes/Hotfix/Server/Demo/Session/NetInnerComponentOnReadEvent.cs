@@ -17,7 +17,7 @@ namespace ET.Server
                 int fromProcess = instanceIdStruct.Process;
                 instanceIdStruct.Process = Options.Instance.Process;
                 long realActorId = instanceIdStruct.ToLong();
-                
+
                 // 收到actor消息,放入actor队列
                 switch (message)
                 {
@@ -36,12 +36,12 @@ namespace ET.Server
                                 ActorMessageSenderComponent.Instance.RunMessage(realActorId, response);
                                 return;
                             }
-                            
+
                             Session replySession = NetInnerComponent.Instance.Get(fromProcess);
                             // 发回真实的actorId 做查问题使用
                             replySession.Send(realActorId, response);
                         }
-                        
+
                         Entity entity = Root.Instance.Get(realActorId);
                         if (entity == null)
                         {
@@ -71,8 +71,10 @@ namespace ET.Server
                                         Reply(response);
                                         break;
                                     }
+
                                     await ActorMessageDispatcherComponent.Instance.Handle(entity, iActorRequest, Reply);
                                 }
+
                                 break;
                             }
                             case MailboxType.UnOrderMessageDispatcher:
@@ -81,6 +83,7 @@ namespace ET.Server
                                 break;
                             }
                         }
+
                         break;
                     }
                     case IActorMessage iActorMessage:
@@ -91,7 +94,7 @@ namespace ET.Server
                             Log.Error($"not found actor: {scene.Name} {realActorId} {message}");
                             break;
                         }
-                        
+
                         MailBoxComponent mailBoxComponent = entity.GetComponent<MailBoxComponent>();
                         if (mailBoxComponent == null)
                         {
@@ -109,8 +112,10 @@ namespace ET.Server
                                     {
                                         break;
                                     }
+
                                     await ActorMessageDispatcherComponent.Instance.Handle(entity, iActorMessage, null);
                                 }
+
                                 break;
                             }
                             case MailboxType.UnOrderMessageDispatcher:
@@ -120,14 +125,24 @@ namespace ET.Server
                             }
                             case MailboxType.GateSession:
                             {
-                                if (entity is Session gateSession)
+                                if (entity is GateUser gateUser)
                                 {
+                                    Session gateSession = gateUser?.Session;
+                                    if (gateSession == null)
+                                    {
+                                        return;
+                                    }
+
+                                    if (gateUser.GetComponent<MultiLoginComponent>() != null)
+                                        return;
                                     // 发送给客户端
                                     gateSession.Send(0, iActorMessage);
                                 }
+
                                 break;
                             }
                         }
+
                         break;
                     }
                 }

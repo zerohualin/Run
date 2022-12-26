@@ -40,6 +40,10 @@
         <Compile Include="..\..\Unity\Assets\Scripts\Codes\Model\Generate\Server\**\*.cs"> 
             <Link>Generate\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\Luban\*.cs"> 
+            <Link>ThirdParty\Luban\(FileName)%(Extension)</Link>
+        </Compile>
         
     </ItemGroup> 
     <ItemGroup> 
@@ -47,5 +51,10 @@
         <ProjectReference Include="..\Core\DotNet.Core.csproj" />
         <ProjectReference Include="..\Loader\DotNet.Loader.csproj" />
         <ProjectReference Include="..\ThirdParty\DotNet.ThirdParty.csproj" />
+    </ItemGroup> 
+    <ItemGroup>
+      <Folder Include="..\..\Unity\Assets\Scripts\Codes\Model\Share\Generate\LubanPartial">
+        <Link>Share\Generate\LubanPartial</Link>
+      </Folder>
     </ItemGroup>
 </Project>

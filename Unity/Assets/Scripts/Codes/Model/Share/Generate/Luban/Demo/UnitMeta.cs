@@ -9,10 +9,8 @@ using Bright.Serialization;
 using System.Collections.Generic;
 
 
-
 namespace Cfg.Demo
 {
-
 public sealed partial class UnitMeta :  Bright.Config.BeanBase 
 {
     public UnitMeta(ByteBuf _buf) 

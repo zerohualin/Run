@@ -1,5 +1,6 @@
 ﻿namespace ET.Client
 {
+	[ObjectSystem]
 	public class SessionComponentDestroySystem: DestroySystem<SessionComponent>
 	{
 		protected override void Destroy(SessionComponent self)

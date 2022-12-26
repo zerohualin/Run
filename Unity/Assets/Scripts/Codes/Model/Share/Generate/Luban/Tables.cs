@@ -8,11 +8,49 @@
 using Bright.Serialization;
 
 
+
 namespace Cfg
-{
-   
+{ 
 public partial class Tables
 {
+    /// <summary>
+    /// 单位表
+    /// </summary>
+    public afk.TbUnit TbUnit {get; }
+    /// <summary>
+    /// 技能表
+    /// </summary>
+    public afk.TbSkill TbSkill {get; }
+    /// <summary>
+    /// 动作表
+    /// </summary>
+    public afk.TbAct TbAct {get; }
+    /// <summary>
+    /// Buff表
+    /// </summary>
+    public afk.TbBuff TbBuff {get; }
+    public afk.TbCloths TbCloths {get; }
+    public afk.TbUnitGroup TbUnitGroup {get; }
+    public afk.TbLevelUp TbLevelUp {get; }
+    /// <summary>
+    /// 公式表
+    /// </summary>
+    public afk.TbFormula TbFormula {get; }
+    public afk.TbLanguage TbLanguage {get; }
+    public afk.TbResource TbResource {get; }
+    public afk.TbGameConfig TbGameConfig {get; }
+    /// <summary>
+    /// 属性拓展表
+    /// </summary>
+    public afk.TbAttrTypeEx TbAttrTypeEx {get; }
+    /// <summary>
+    /// 公式拓展表
+    /// </summary>
+    public afk.TbFormuluaEx TbFormuluaEx {get; }
+    /// <summary>
+    /// 测试用的账号
+    /// </summary>
+    public common.TbTestAccountConfig TbTestAccountConfig {get; }
     public Global.TbGlobal TbGlobal {get; }
     public Demo.TbAIMetas TbAIMetas {get; }
     public Demo.TbUnitMeta TbUnitMeta {get; }
@@ -21,6 +59,34 @@ public partial class Tables
     public Tables(System.Func<string, ByteBuf> loader)
     {
         var tables = new System.Collections.Generic.Dictionary<string, object>();
+        TbUnit = new afk.TbUnit(loader("afk_tbunit")); 
+        tables.Add("afk.TbUnit", TbUnit);
+        TbSkill = new afk.TbSkill(loader("afk_tbskill")); 
+        tables.Add("afk.TbSkill", TbSkill);
+        TbAct = new afk.TbAct(loader("afk_tbact")); 
+        tables.Add("afk.TbAct", TbAct);
+        TbBuff = new afk.TbBuff(loader("afk_tbbuff")); 
+        tables.Add("afk.TbBuff", TbBuff);
+        TbCloths = new afk.TbCloths(loader("afk_tbcloths")); 
+        tables.Add("afk.TbCloths", TbCloths);
+        TbUnitGroup = new afk.TbUnitGroup(loader("afk_tbunitgroup")); 
+        tables.Add("afk.TbUnitGroup", TbUnitGroup);
+        TbLevelUp = new afk.TbLevelUp(loader("afk_tblevelup")); 
+        tables.Add("afk.TbLevelUp", TbLevelUp);
+        TbFormula = new afk.TbFormula(loader("afk_tbformula")); 
+        tables.Add("afk.TbFormula", TbFormula);
+        TbLanguage = new afk.TbLanguage(loader("afk_tblanguage")); 
+        tables.Add("afk.TbLanguage", TbLanguage);
+        TbResource = new afk.TbResource(loader("afk_tbresource")); 
+        tables.Add("afk.TbResource", TbResource);
+        TbGameConfig = new afk.TbGameConfig(loader("afk_tbgameconfig")); 
+        tables.Add("afk.TbGameConfig", TbGameConfig);
+        TbAttrTypeEx = new afk.TbAttrTypeEx(loader("afk_tbattrtypeex")); 
+        tables.Add("afk.TbAttrTypeEx", TbAttrTypeEx);
+        TbFormuluaEx = new afk.TbFormuluaEx(loader("afk_tbformuluaex")); 
+        tables.Add("afk.TbFormuluaEx", TbFormuluaEx);
+        TbTestAccountConfig = new common.TbTestAccountConfig(loader("common_tbtestaccountconfig")); 
+        tables.Add("common.TbTestAccountConfig", TbTestAccountConfig);
         TbGlobal = new Global.TbGlobal(loader("global_tbglobal")); 
         tables.Add("Global.TbGlobal", TbGlobal);
         TbAIMetas = new Demo.TbAIMetas(loader("demo_tbaimetas")); 
@@ -31,6 +97,20 @@ public partial class Tables
         tables.Add("Fgui.TbFguiConfig", TbFguiConfig);
 
         PostInit();
+        TbUnit.Resolve(tables); 
+        TbSkill.Resolve(tables); 
+        TbAct.Resolve(tables); 
+        TbBuff.Resolve(tables); 
+        TbCloths.Resolve(tables); 
+        TbUnitGroup.Resolve(tables); 
+        TbLevelUp.Resolve(tables); 
+        TbFormula.Resolve(tables); 
+        TbLanguage.Resolve(tables); 
+        TbResource.Resolve(tables); 
+        TbGameConfig.Resolve(tables); 
+        TbAttrTypeEx.Resolve(tables); 
+        TbFormuluaEx.Resolve(tables); 
+        TbTestAccountConfig.Resolve(tables); 
         TbGlobal.Resolve(tables); 
         TbAIMetas.Resolve(tables); 
         TbUnitMeta.Resolve(tables); 
@@ -40,6 +120,20 @@ public partial class Tables
 
     public void TranslateText(System.Func<string, string, string> translator)
     {
+        TbUnit.TranslateText(translator); 
+        TbSkill.TranslateText(translator); 
+        TbAct.TranslateText(translator); 
+        TbBuff.TranslateText(translator); 
+        TbCloths.TranslateText(translator); 
+        TbUnitGroup.TranslateText(translator); 
+        TbLevelUp.TranslateText(translator); 
+        TbFormula.TranslateText(translator); 
+        TbLanguage.TranslateText(translator); 
+        TbResource.TranslateText(translator); 
+        TbGameConfig.TranslateText(translator); 
+        TbAttrTypeEx.TranslateText(translator); 
+        TbFormuluaEx.TranslateText(translator); 
+        TbTestAccountConfig.TranslateText(translator); 
         TbGlobal.TranslateText(translator); 
         TbAIMetas.TranslateText(translator); 
         TbUnitMeta.TranslateText(translator); 

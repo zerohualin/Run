@@ -16,9 +16,16 @@
 		BenchmarkClient = 10,
 		BenchmarkServer = 11,
 		Benchmark = 12,
+		
+		//Zeus
+		// Account = 21,
+		Name = 21,
+		Queue = 22,
 
 		// 客户端Model层
 		Client = 31,
 		Current = 34,
+		
+		Max = 100,
 	}
 }

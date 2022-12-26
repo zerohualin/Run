@@ -1,7 +1,7 @@
 namespace ET
-{
-    public static partial class ErrorCode
-    {
+{    public static partial class ErrorCode
+     {
+
         public const int ERR_Success = 0;
 
         // 1-11004 是SocketError请看SocketError定义

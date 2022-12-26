@@ -9,10 +9,8 @@ using Bright.Serialization;
 using System.Collections.Generic;
 
 
-
 namespace Cfg.Fgui
 {
-
 public sealed partial class FguiConfig :  Bright.Config.BeanBase 
 {
     public FguiConfig(ByteBuf _buf) 

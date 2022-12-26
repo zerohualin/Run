@@ -40,7 +40,9 @@ namespace ET.Server
                 ProtobufHelper.Init();
 				
                 Log.Info($"server start........................ {Root.Instance.Scene.Id}");
-				
+
+                Options.Instance.AppType = AppType.Proto2CS;
+                        
                 switch (Options.Instance.AppType)
                 {
                     case AppType.ExcelExporter:

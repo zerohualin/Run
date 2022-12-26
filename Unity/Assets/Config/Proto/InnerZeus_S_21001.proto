@@ -1,0 +1,99 @@
+syntax = "proto3";
+// using 
+
+package ET;
+
+message LoginGateInfo
+{
+    string Account = 1;
+    int32 LogicZone = 2;
+}
+
+//ResponseType G2R_GetGateKey
+message R2G_GetGateKey // IActorRequest
+{
+    int32 RpcId = 90;
+
+    LoginGateInfo Info = 1;
+}
+
+message G2R_GetGateKey // IActorResponse
+{
+	int32 Error = 90;
+	string Message = 91;
+	int32 RpcId = 92;
+
+    int64 GateKey = 1;
+}
+
+//ResponseType Name2G_CheckName
+message G2Name_CheckName // IActorRequest
+{
+    int32 RpcId = 90;
+
+    string Name = 1;
+    int64 UnitId = 2;
+}
+
+message Name2G_CheckName // IActorResponse
+{
+    int32 Error = 90;
+	string Message = 91;
+	int32 RpcId = 92;
+}
+
+//ResponseType Queue2G_Enqueue
+message G2Queue_Enqueue // IActorRequest
+{
+    int32 RpcId = 90;
+
+    int64 UnitId = 1;
+    string Account = 2;
+    int64 GateActorId = 3;
+}
+
+message Queue2G_Enqueue // IActorResponse
+{
+    int32 Error = 90;
+	string Message = 91;
+	int32 RpcId = 92;
+
+    bool NeedQueue = 1;
+    int32 Count = 2;
+    int32 Index = 3;
+}
+
+//ResponseType G2Queue_EnterMap
+message Queue2G_EnterMap // IActorRequest
+{
+    int32 RpcId = 90;
+
+    string Account = 1;
+    int64 UnitId = 2;
+}
+
+message G2Queue_EnterMap // IActorResponse
+{
+    int32 Error = 90;
+	string Message = 91;
+	int32 RpcId = 92;
+
+    bool NeedRemove = 1;//是否需要移除在线状态
+}
+
+message Queue2G_UpdateInfo // IActorMessage
+{
+    int32 RpcId = 90;
+
+    repeated string Account = 1;
+    repeated int32 Index = 2;
+    int Count = 3;
+}
+
+message G2Queue_Disconnect // IActorMessage
+{
+    int32 RpcId = 90;
+
+    int64 UnitId = 1;
+    bool IsProtect = 2;
+}

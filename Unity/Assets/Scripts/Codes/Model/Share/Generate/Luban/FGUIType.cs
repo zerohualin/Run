@@ -6,8 +6,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace Cfg
-{
+{ 
     public enum FGUIType
     {
         /// <summary>
@@ -154,5 +155,22 @@ namespace Cfg
         /// 1028
         /// </summary>
         AFKUnitInfo = 35,
+        /// <summary>
+        /// 1029
+        /// </summary>
+        AFKBuffInfo = 36,
+        /// <summary>
+        /// 1030
+        /// </summary>
+        CellNum = 37,
+        /// <summary>
+        /// 1031
+        /// </summary>
+        SetLayout = 38,
+        /// <summary>
+        /// 1032
+        /// </summary>
+        UnitLv = 39,
     }
-}
+
+} 

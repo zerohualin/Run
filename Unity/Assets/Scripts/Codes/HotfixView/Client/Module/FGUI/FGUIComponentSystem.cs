@@ -21,7 +21,7 @@ namespace ET.Client
             var font = Resources.Load<Font>("Fonts/FZSongKeBenXiuKai");
             FontManager.RegisterFont(new DynamicFont("FZSongKeBenXiuKai", font), "FZSongKeBenXiuKai");
             
-            GRoot.inst.SetContentScaleFactor(1440, 2560, UIContentScaler.ScreenMatchMode.MatchWidthOrHeight);
+            GRoot.inst.SetContentScaleFactor(1080, 1920, UIContentScaler.ScreenMatchMode.MatchWidthOrHeight);
             GRoot.inst.ApplyContentScaleFactor();
 
             var fguiTypes = EventSystem.Instance.GetTypes(typeof (FGUIComponentAttribute));

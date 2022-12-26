@@ -80,6 +80,12 @@ namespace ET
 		/// <summary>数据库名</summary>
 		[ProtoMember(3)]
 		public string DBName { get; set; }
+		/// <summary>区服名称</summary>
+		[ProtoMember(4)]
+		public string Name { get; set; }
+		/// <summary>区服类型</summary>
+		[ProtoMember(5)]
+		public int ZoneType { get; set; }
 
 	}
 }

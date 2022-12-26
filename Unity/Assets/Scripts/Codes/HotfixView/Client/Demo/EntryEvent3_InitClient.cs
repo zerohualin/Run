@@ -15,7 +15,7 @@ namespace ET.Client
             
             Root.Instance.Scene.AddComponent<GlobalComponent>();
 
-            await ResourcesComponent.Instance.LoadBundleAsync("unit.unity3d");
+            // await ResourcesComponent.Instance.LoadBundleAsync("unit.unity3d");
             
             Scene clientScene = await SceneFactory.CreateClientScene(1, "Game");
 
@@ -24,7 +24,7 @@ namespace ET.Client
             var FGUIComponent = clientScene.AddComponent<FGUIComponent>();
             FGUIComponent.AddComponent<FGUIEventComponent>();
 
-            await clientScene.GetComponent<FGUIComponent>().OpenAysnc(FGUIType.AFKBattle);
+            await clientScene.GetComponent<FGUIComponent>().OpenAysnc(FGUIType.SelectServer);
 
             // await Game.EventSystem.PublishAsync(clientScene, new EventType.Goto_MiniGame());
             // await Game.EventSystem.PublishAsync(clientScene, new EventType.AppStartInitFinish());

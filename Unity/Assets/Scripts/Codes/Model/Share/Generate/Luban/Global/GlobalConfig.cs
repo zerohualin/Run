@@ -9,10 +9,8 @@ using Bright.Serialization;
 using System.Collections.Generic;
 
 
-
 namespace Cfg.Global
 {
-
 public sealed partial class GlobalConfig :  Bright.Config.BeanBase 
 {
     public GlobalConfig(ByteBuf _buf) 

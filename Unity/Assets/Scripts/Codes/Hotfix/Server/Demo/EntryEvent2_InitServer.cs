@@ -1,4 +1,6 @@
+using System.IO;
 using System.Net;
+using Bright.Serialization;
 
 namespace ET.Server
 {
@@ -7,6 +9,8 @@ namespace ET.Server
     {
         protected override async ETTask Run(Scene scene, ET.EventType.EntryEvent2 args)
         {
+            await LubanComponent.Instance.LoadAsync(ByteBufLoader);
+            
             // 发送普通actor消息
             Root.Instance.Scene.AddComponent<ActorMessageSenderComponent>();
             // 发送location actor消息
@@ -18,7 +22,7 @@ namespace ET.Server
             Root.Instance.Scene.AddComponent<RobotCaseComponent>();
 
             Root.Instance.Scene.AddComponent<NavmeshComponent>();
-
+            
             StartProcessConfig processConfig = StartProcessConfigCategory.Instance.Get(Options.Instance.Process);
             switch (Options.Instance.AppType)
             {
@@ -51,6 +55,14 @@ namespace ET.Server
             {
                 Root.Instance.Scene.AddComponent<ConsoleComponent>();
             }
+        }
+        
+        private ByteBuf ByteBufLoader(string filename)
+        {
+            string directory = Directory.GetCurrentDirectory();
+            string filePath = $"{directory}/Assets/BundleYoo/LubanBin/{filename}.bytes";
+            byte[] bytes = FileHelper.FileToByteArray(filePath);
+            return new ByteBuf(bytes);
         }
     }
 }

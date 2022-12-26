@@ -19,6 +19,7 @@ namespace ET
     }
     
     [FriendOf(typeof(GObjectComponent))]
+    [ChildOf(typeof(FGUIComponent))]
     public class FGUIEntity: Entity, IAwake<Type,FGUIType>
     {
         public Entity UIComponent => GetComponent(ComponentType);

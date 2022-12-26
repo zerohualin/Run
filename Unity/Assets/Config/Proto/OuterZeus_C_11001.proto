@@ -1,0 +1,172 @@
+syntax = "proto3";
+package ET;
+
+//ResponseType R2C_LoginAccount
+message C2R_LoginAccount // IRequest
+{
+	int32 RpcId = 1;
+	string	Account	 = 2;	// 帐号
+	string	Password = 3;	// 密码
+    int32 LoginWay = 4;     //登录方式
+}
+
+message R2C_LoginAccount // IResponse
+{
+	int32 Error = 90;
+	string Message = 91;
+	int32 RpcId = 92;
+	
+	string Token = 1;
+	int64 AccountId = 2;
+}
+
+message A2C_Disconnect // IMessage
+{
+	int32 Error = 1;
+}
+
+message ServerInfoProto
+{
+    int32 Zone = 1;
+    string Name = 2;
+    int32 Status = 3;
+}
+
+//ResponseType R2C_GetServerList
+message C2R_GetServerList // IRequest
+{
+    int32 RpcId = 90;
+}
+
+message R2C_GetServerList // IResponse
+{
+	int32 Error = 90;
+	string Message = 91;
+	int32 RpcId = 92;
+
+    repeated ServerInfoProto ServerInfos = 1;
+}
+
+//ResponseType R2C_LoginZone
+message C2R_LoginZone // IRequest
+{
+    int32 RpcId = 90;
+    int32 ZoneId = 1;
+}
+
+message R2C_LoginZone // IResponse
+{
+	int32 Error = 90;
+	string Message = 91;
+	int32 RpcId = 92;
+
+    string GateAddress = 1;
+    long GateKey = 2;
+}
+
+//ResponseType G2C_Login2Gate
+message C2G_Login2Gate // IRequest
+{
+    int32 RpcId = 90;
+    int64 GateKey = 1;
+}
+
+message G2C_Login2Gate // IResponse
+{
+	int32 Error = 90;
+	string Message = 91;
+	int32 RpcId = 92;
+}
+
+message RoleInfoProto
+{
+	int64 UnitId = 1;
+	string Name = 2;
+	int32 Level = 3;
+}
+
+//ResponseType G2C_GetRoles
+message C2G_GetRoles // IRequest
+{
+	int32 RpcId = 90;
+}
+
+message G2C_GetRoles // IResponse
+{
+	int32 Error = 90;
+	string Message = 91;
+	int32 RpcId = 92;
+
+	repeated RoleInfoProto Roles = 1;
+}
+
+//ResponseType G2C_CreateRole
+message C2G_CreateRole // IRequest
+{
+	int32 RpcId = 90;
+	string Name = 1;
+}
+
+message G2C_CreateRole // IResponse
+{
+	int32 Error = 90;
+	string Message = 91;
+	int32 RpcId = 92;
+
+	RoleInfoProto Role = 1;
+}
+
+//ResponseType G2C_DeleteRole
+message C2G_DeleteRole // IRequest
+{
+	int32 RpcId = 90;
+	int64 UnitId = 1;
+}
+
+message G2C_DeleteRole // IResponse
+{
+	int32 Error = 90;
+	string Message = 91;
+	int32 RpcId = 92;
+}
+
+//ResponseType G2C_Enter2Map
+message C2G_Enter2Map // IRequest
+{
+	int32 RpcId = 90;
+	int64 UnitId = 1;
+}
+
+message G2C_Enter2Map // IResponse
+{
+	int32 Error = 90;
+	string Message = 91;
+	int32 RpcId = 92;
+
+	bool InQueue = 1;//是否需要排队
+	int32 Count = 2;//排队总人数
+	int32 Index = 3;//当前位数
+}
+
+message G2C_UpdateInfo // IMessage
+{
+    int32 RpcId = 90;
+
+    int32 Index = 1;
+    int32 Count = 2;
+}
+
+//ResponseType G2C_CancelQueue
+message C2G_CancelQueue // IRequest
+{
+	int32 RpcId = 90;
+
+	int64 UnitId = 1;
+}
+
+message G2C_CancelQueue // IResponse
+{
+	int32 Error = 90;
+	string Message = 91;
+	int32 RpcId = 92;
+}
