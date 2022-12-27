@@ -7,7 +7,7 @@ namespace ET.Client
     /// <summary>
     /// 基于Animancer插件做的动画机系统。配合可视化编辑使用效果更佳
     /// </summary>
-    [ComponentOf(typeof(Unit))]
+    [ComponentOf(typeof(AvatarComponent))]
     public class AnimationComponent: Entity, IAwake, IDestroy
     {
         public class SkillAnimInfo
@@ -61,9 +61,9 @@ namespace ET.Client
         /// </summary>
         public Dictionary<string, string> RuntimeAnimationClips = new Dictionary<string, string>
         {
-            { StateTypes.Run.GetStateTypeMapedString(), "Anim_Run1" },
-            { StateTypes.Idle.GetStateTypeMapedString(), "Anim_Idle1" },
-            { StateTypes.CommonAttack.GetStateTypeMapedString(), "Anim_Attack1" }
+            { StateTypes.Run.GetStateTypeMapedString(), "Anim_Run" },
+            { StateTypes.Idle.GetStateTypeMapedString(), "Anim_Idle" },
+            { StateTypes.CommonAttack.GetStateTypeMapedString(), "Anim_Attack" }
         };
     }
 }

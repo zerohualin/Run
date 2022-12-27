@@ -18,6 +18,7 @@ namespace ET.Client
 			unit.Position = message.Position;
 			unit.Rotation = message.Rotation;
 			unit.GetComponent<ObjectWait>()?.Notify(new Wait_UnitStop() {Error = message.Error});
+
 			await ETTask.CompletedTask;
 		}
 	}

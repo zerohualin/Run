@@ -15,6 +15,7 @@ namespace ET.Client
             clientScene.AddComponent<AccountInfoComponent>();
             clientScene.AddComponent<ServerInfosComponent>();
             clientScene.AddComponent<RoleInfosComponent>();
+            clientScene.AddComponent<ChatComponent>();
             
             EventSystem.Instance.Publish(clientScene, new EventType.AfterCreateClientScene());
             return clientScene;

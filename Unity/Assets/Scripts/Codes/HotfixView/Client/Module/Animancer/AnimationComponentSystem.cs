@@ -1,19 +1,21 @@
 ﻿using Animancer;
+using MongoDB.Bson;
 using UnityEngine;
 
 namespace ET.Client
 {
     [ObjectSystem]
+    [FriendOfAttribute(typeof (ET.Client.AvatarComponent))]
     public class AnimationComponentAwakeSystem: AwakeSystem<AnimationComponent>
     {
         protected override void Awake(AnimationComponent self)
         {
-            GameObject gameObject = self.GetParent<Unit>().GetComponent<GameObjectComponent>().GameObject;
+            GameObject gameObject = self.GetParent<AvatarComponent>().RoleObj;
             self.AnimancerComponent = gameObject.GetComponent<AnimancerComponent>();
-            self.StackFsmComponent = self.GetParent<Unit>().GetComponent<StackFsmComponent>();
-            
+            // self.StackFsmComponent = self.GetParent<AvatarComponent>().GetComponent<StackFsmComponent>();
+
             //如果是以Anim开头的key值，说明是动画文件，需要添加引用
-            
+
             foreach (var referenceCollectorData in gameObject.GetComponent<ReferenceCollector>().data)
             {
                 if (referenceCollectorData.key.StartsWith("Anim"))
@@ -51,7 +53,8 @@ namespace ET.Client
             self.Avatar_UpOnlyAnimState = null;
         }
     }
-    [FriendOfAttribute(typeof(ET.Client.AnimationComponent))]
+
+    [FriendOfAttribute(typeof (ET.Client.AnimationComponent))]
     public static class AnimationComponentSystem
     {
         /// <summary>
@@ -110,18 +113,27 @@ namespace ET.Client
         /// </summary>
         public static void PlayIdelFromStart(this AnimationComponent self)
         {
-            self.Avatar_DownOnlyAnimState = self.AnimancerComponent.Play(
-                self.AnimationClips[self.RuntimeAnimationClips[StateTypes.Idle.GetStateTypeMapedString()]], 0.25f,
-                FadeMode.FromStart);
+            string IdleName = StateTypes.Idle.GetStateTypeMapedString();
+            self.Avatar_DownOnlyAnimState =
+                    self.AnimancerComponent.Play(self.AnimationClips[self.RuntimeAnimationClips[IdleName]], 0.25f, FadeMode.FromStart);
         }
 
         /// <summary>
         /// 播放默认动画如果在此期间再次播放，则会继续播放
         /// </summary>
-        public static void PlayIdel(this AnimationComponent self)
+        public static void PlayIdle(this AnimationComponent self)
         {
-            self.Avatar_DownOnlyAnimState = self.AnimancerComponent.Play(
-                self.AnimationClips[self.RuntimeAnimationClips[StateTypes.Idle.GetStateTypeMapedString()]], 0.25f);
+            string idleName = StateTypes.Idle.GetStateTypeMapedString();
+            self.Avatar_DownOnlyAnimState = self.AnimancerComponent.Play(self.AnimationClips[self.RuntimeAnimationClips[idleName]], 0.25f);
+        }
+
+        /// <summary>
+        /// 播放跑路动画（非正式版）
+        /// </summary>
+        public static void PlayRun(this AnimationComponent self)
+        {
+            if (self.AnimancerComponent.IsPlayingClip(self.AnimationClips[self.RuntimeAnimationClips[StateTypes.Idle.GetStateTypeMapedString()]]))
+                self.AnimancerComponent.Play(self.AnimationClips[self.RuntimeAnimationClips[StateTypes.Run.GetStateTypeMapedString()]]);
         }
 
         /// <summary>
