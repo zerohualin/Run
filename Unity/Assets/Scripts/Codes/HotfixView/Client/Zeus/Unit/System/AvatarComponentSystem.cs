@@ -19,7 +19,7 @@ namespace ET.Client
             GameObject.Destroy(self.RoleObj);
         }
     }
-    
+
     [ObjectSystem]
     [FriendOfAttribute(typeof(ET.MoveComponent))]
     public class AvatarComponentUpdateSystem : UpdateSystem<AvatarComponent>
@@ -29,6 +29,9 @@ namespace ET.Client
             AnimationComponent AnimationComponent = self.GetComponent<AnimationComponent>();
             if(AnimationComponent == null)
                 return;
+            
+            self.RoleObj.transform.localEulerAngles = Vector3.zero;
+            self.RoleObj.transform.localPosition = Vector3.zero;
             
             Unit unit = self.GetParent<Unit>();
             int N = unit.GetComponent<MoveComponent>().N;

@@ -12,7 +12,8 @@
         "FairyGUI.Runtime",
         "YooAsset",
         "Animancer",
-        "Aftershock.Runtime"
+        "Aftershock.Runtime",
+        "Unity.RenderPipelines.Universal.Runtime"
     ],
     "includePlatforms": [
         "Editor"

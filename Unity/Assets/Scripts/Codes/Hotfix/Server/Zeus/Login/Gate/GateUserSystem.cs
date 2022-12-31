@@ -114,8 +114,8 @@ namespace ET.Server
                 IdGenerater.Instance.GenerateInstanceId(),
                 self.DomainZone(), "GateMap", SceneType.Map, startSceneConfig);
 
-            Unit unit = UnitFactory.Create(gateMapComponent.Scene, accountZoneDB.LastRoleId, UnitType.Player);
-            unit.AddComponent<UnitGateComponent, long>(self.InstanceId);
+            Unit unit = UnitFactory.Create(gateMapComponent.Scene, accountZoneDB.LastRoleId, UnitType.Player, self.InstanceId);
+            
             self.Session.AddComponent<SessionPlayerComponent>().PlayerId = accountZoneDB.LastRoleId;
 
             await TransferHelper.Transfer(unit, startSceneConfig.InstanceId, startSceneConfig.Name);
