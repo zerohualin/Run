@@ -479,6 +479,40 @@ namespace ET
 
 	}
 
+	[ResponseType(nameof(M2C_SayHi))]
+	[Message(OuterMessage.C2M_SayHi)]
+	[ProtoContract]
+	public partial class C2M_SayHi: ProtoObject, IActorLocationRequest
+	{
+		[ProtoMember(1)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(90)]
+		public long TargetId { get; set; }
+
+		[ProtoMember(91)]
+		public string Msg { get; set; }
+
+	}
+
+	[Message(OuterMessage.M2C_SayHi)]
+	[ProtoContract]
+	public partial class M2C_SayHi: ProtoObject, IActorLocationResponse
+	{
+		[ProtoMember(1)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(2)]
+		public int Error { get; set; }
+
+		[ProtoMember(3)]
+		public string Message { get; set; }
+
+		[ProtoMember(90)]
+		public string Msg { get; set; }
+
+	}
+
 	public static class OuterMessage
 	{
 		 public const ushort HttpGetRouterResponse = 10002;
@@ -515,5 +549,7 @@ namespace ET
 		 public const ushort M2C_TransferMap = 10033;
 		 public const ushort C2G_Benchmark = 10034;
 		 public const ushort G2C_Benchmark = 10035;
+		 public const ushort C2M_SayHi = 10036;
+		 public const ushort M2C_SayHi = 10037;
 	}
 }

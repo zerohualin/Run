@@ -28,8 +28,8 @@ namespace ET.Client
     {
         protected override void Destroy(PlayerCameraComponent self)
         {
-            var CurrentScene = self.DomainScene().CurrentScene();
-            CurrentScene.GetComponent<CameraManagerComponent>().RevivePlayerCamera();
+            var CurrentScene = self.DomainScene()?.CurrentScene();
+            CurrentScene?.GetComponent<CameraManagerComponent>().RevivePlayerCamera();
         }
     }
     

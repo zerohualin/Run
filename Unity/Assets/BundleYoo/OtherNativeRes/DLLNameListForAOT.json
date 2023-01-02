@@ -4,7 +4,7 @@
     "DLLNameList": {
         "$id": 1,
         "$type": "1|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-        "$rlength": 10,
+        "$rlength": 9,
         "$rcontent": [
             "System.dll",
             "mscorlib.dll",
@@ -12,7 +12,6 @@
             "Sirenix.Serialization.dll",
             "Unity.Core.dll",
             "Unity.ThirdParty.dll",
-            "Unity.Mono.dll",
             "MongoDB.Bson.dll",
             "CommandLine.dll",
             "NLog.dll"

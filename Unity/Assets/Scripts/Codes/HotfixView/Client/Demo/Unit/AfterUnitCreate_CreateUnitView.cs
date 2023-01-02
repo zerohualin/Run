@@ -17,6 +17,10 @@ namespace ET.Client
             go.transform.position = unit.Position;
             GameObjectComponent gameObjectComponent = unit.AddComponent<GameObjectComponent>();
             gameObjectComponent.SetObj(go);
+
+            unit.AddComponent<UnitColliderComponent>();
+            unit.AddComponent<UnitHeadBarComponent>();
+            
             AvatarComponent AvatarComponent = unit.AddComponent<AvatarComponent>();
             await AvatarComponent.Init();
             

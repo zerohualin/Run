@@ -17,6 +17,9 @@ namespace ET.Client
     [FriendOfAttribute(typeof(ET.Client.MoveJoystick))]
     [FriendOfAttribute(typeof(ET.Client.Btn_Chat))]
     [FriendOfAttribute(typeof(ET.Client.Btn_Setting))]
+    [FriendOfAttribute(typeof(ET.Client.Btn_PlayB))]
+    [FriendOfAttribute(typeof(ET.Client.Btn_PlayA))]
+    [FriendOfAttribute(typeof(ET.Client.Btn_PlayerInfo))]
     public class FUI_Play_ComponentEvent : FGUIEvent<FUI_Play_Component>
     {
         public override void OnCreate(FUI_Play_Component component)
@@ -30,6 +33,10 @@ namespace ET.Client
             {
                 component.ClientScene().GetComponent<FGUIComponent>().OpenAysnc(FGUIType.Setting).Coroutine();
             });
+            component.MoveJoystick.self.visible = false;
+            component.ButtonPlayA.self.visible = false;
+            component.ButtonPlayB.self.visible = false;
+            component.ButtonPlayerInfo.self.visible = false;
         }
 
         public override void OnShow(FUI_Play_Component component)

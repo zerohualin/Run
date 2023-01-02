@@ -48,7 +48,7 @@ PlayerSettings:
   m_SloganImage: {fileID: 0}
   m_SloganHeight: 150
   m_HolographicTrackingLossScreen: {fileID: 0}
-  defaultScreenWidth: 768
+  defaultScreenWidth: 576
   defaultScreenHeight: 1024
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
@@ -748,9 +748,9 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    Android: NETSTANDARD2_0;UNITY
+    Android: NETSTANDARD2_0;UNITY;ODIN_INSPECTOR;ODIN_INSPECTOR_3
     Server: NETSTANDARD2_0;UNITY
-    Standalone: UNITY;ENABLE_CODE;ODIN_INSPECTOR;ODIN_INSPECTOR_3;NET472;ENABLE_CODES
+    Standalone: UNITY;ENABLE_CODE;ODIN_INSPECTOR;ODIN_INSPECTOR_3;NET472
     WebGL: NETSTANDARD2_0;UNITY
     iPhone: NETSTANDARD2_0;UNITY
   additionalCompilerArguments: {}

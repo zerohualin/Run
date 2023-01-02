@@ -235,3 +235,19 @@ message G2C_Benchmark // IResponse
 	int32 Error = 2;
 	string Message = 3;
 }
+
+//ResponseType M2C_SayHi
+message C2M_SayHi // IActorLocationRequest
+{
+	int32 RpcId = 1;
+	int64 TargetId = 90;
+	string Msg = 91;
+}
+
+message M2C_SayHi // IActorLocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	string Msg = 90;
+}

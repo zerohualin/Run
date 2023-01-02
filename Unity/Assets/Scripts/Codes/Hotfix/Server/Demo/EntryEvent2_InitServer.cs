@@ -60,7 +60,11 @@ namespace ET.Server
         private ByteBuf ByteBufLoader(string filename)
         {
             string directory = Directory.GetCurrentDirectory();
-            string filePath = $"{directory}/Assets/BundleYoo/LubanBin/{filename}.bytes";
+            string filePath =$"{directory}/../BinLuban/{filename}.bytes";
+            if (directory.Contains("Unity"))
+            {
+                filePath = $"{directory}/Assets/BundleYoo/LubanBin/{filename}.bytes";
+            }
             byte[] bytes = FileHelper.FileToByteArray(filePath);
             return new ByteBuf(bytes);
         }

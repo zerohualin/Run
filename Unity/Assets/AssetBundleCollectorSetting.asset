@@ -16,17 +16,6 @@ MonoBehaviour:
   AutoCollectShaders: 1
   ShadersBundleName: myshaders
   Groups:
-  - GroupName: MiniGame
-    GroupDesc: MiniGame YooAsset
-    AssetTags: 
-    ActiveRuleName: EnableGroup
-    Collectors:
-    - CollectPath: Assets/BundleYoo/MiniGame
-      CollectorType: 0
-      AddressRuleName: AddressByPath
-      PackRuleName: PackDirectory
-      FilterRuleName: CollectAll
-      AssetTags: 
   - GroupName: Code
     GroupDesc: "\u901A\u7528\u7684\u4EE3\u7801"
     AssetTags: 
@@ -47,7 +36,7 @@ MonoBehaviour:
     - CollectPath: Assets/BundleYoo/AotDll
       CollectorType: 0
       AddressRuleName: AddressByFileName
-      PackRuleName: PackDirectory
+      PackRuleName: PackRawFile
       FilterRuleName: CollectAll
       AssetTags: 
   - GroupName: LubanData

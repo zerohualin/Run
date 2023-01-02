@@ -7,11 +7,11 @@
       "dependencies": {}
     },
     "com.focus-creative-games.hybridclr_unity": {
-      "version": "https://gitee.com/focus-creative-games/hybridclr_unity.git",
+      "version": "https://gitee.com/focus-creative-games/hybridclr_unity.git#1.0",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "0edd8221019f3b1a097224b44b883def3ec7fb90"
+      "hash": "12dd5d868555527a4d1e560e8dff3c6eef20cdf6"
     },
     "com.nkg.animancer": {
       "version": "https://github.com/zerohualin/aftershock.animancer.git",

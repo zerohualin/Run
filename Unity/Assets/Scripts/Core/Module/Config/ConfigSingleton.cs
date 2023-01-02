@@ -11,7 +11,7 @@ namespace ET
         {
             get
             {
-                return instance ??= ConfigComponent.Instance.LoadOneConfig(typeof (T)) as T;
+                return instance ??= ConfigComponent.Instance?.LoadOneConfig(typeof (T)) as T;
             }
         }
 
