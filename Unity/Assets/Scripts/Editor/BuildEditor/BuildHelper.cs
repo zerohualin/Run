@@ -44,7 +44,7 @@ namespace ET
             EnableCodes(true);
         }
 #endif
-        private static void EnableCodes(bool enable)
+        public static void EnableCodes(bool enable)
         {
             string defines = PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
             var ss = defines.Split(';').ToList();

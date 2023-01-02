@@ -1,6 +1,4 @@
-﻿using System.Data;
-
-namespace ET
+﻿namespace ET
 {
     [ObjectSystem]
     public class RoleInfosComponentAwakeSystem: DestroySystem<RoleInfosComponent>

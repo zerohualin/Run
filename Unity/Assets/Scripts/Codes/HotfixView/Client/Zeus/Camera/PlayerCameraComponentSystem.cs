@@ -38,6 +38,8 @@ namespace ET.Client
     {
         protected override void LateUpdate(PlayerCameraComponent self)
         {
+            if(self.CameraFObj == null)
+                return;
             self.CameraFObj.transform.position = self.Target.transform.position;
         }
     }
