@@ -6,6 +6,7 @@ using System.Linq;
 using Cfg;
 using MongoDB.Bson;
 using UnityEngine;
+using YooAsset;
 
 namespace ET.Client
 {
@@ -99,8 +100,8 @@ namespace ET.Client
         {
             if (self.ServerRouters == null)
             {
-                var serverAddress = await YooAssetProxy.GetRawFileAsync("ServerAddress");
-                string json = serverAddress.GetRawString();
+                var serverAddress = YooAssets.LoadRawFileSync("ServerAddress");
+                string json = serverAddress.GetRawFileText();
                 self.ServerRouters = MongoHelper.FromJson<List<ServerRouter>>(json);
             }
 

@@ -6,11 +6,13 @@ namespace ET.Client
         protected override async ETTask Run(Scene scene, EventType.SceneChangeStart args)
         {
             Scene currentScene = scene.CurrentScene();
+            currentScene.AddComponent<CameraManagerComponent>();
 
-            await YooAssetProxy.LoadSceneAsync(currentScene.Name);
+            string path = $"Assets/Scenes/{currentScene.Name}.unity";
+            await YooAssetProxy.LoadSceneAsync(path);
             
             currentScene.AddComponent<OperaComponent>();
-            currentScene.AddComponent<CameraManagerComponent>();
+
             await ETTask.CompletedTask;
         }
     }
