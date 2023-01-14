@@ -18,7 +18,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "735350affba7ce73f78910dea3cf83392f2753cf"
+      "hash": "12af96d27e3d89ea602d5d52afac344752c9518a"
     },
     "com.nkg.fgui": {
       "version": "https://github.com/zerohualin/aftershock.fgui.git",

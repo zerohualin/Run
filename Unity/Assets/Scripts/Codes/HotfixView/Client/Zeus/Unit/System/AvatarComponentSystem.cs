@@ -58,8 +58,9 @@ namespace ET.Client
 
         public static async ETTask CreateRoleModel(this AvatarComponent self, int playerInfo = 0)
         {
-            var unitObj = await YooAssetProxy.LoadAssetAsync<GameObject>(
-                "Assets/BundleYoo/Zeus/Model/Cube - Sci Fi Underworld City/Prefabs/Customize Character here/04 Customized Samples/Hacker.prefab");
+            //string path = "Assets/BundleYoo/Zeus/Model/Cube - Sci Fi Underworld City/Prefabs/Customize Character here/04 Customized Samples/Hacker.prefab";
+            string path = "Assets/BundleYoo/Zeus/Common/Hacker.prefab";
+            var unitObj = await YooAssetProxy.LoadAssetAsync<GameObject>(path);
             GameObject go = UnityEngine.Object.Instantiate(unitObj.GetAssetObject<GameObject>(), GlobalComponent.Instance.Unit, true);
             go.transform.localPosition = Vector3.zero;
             go.transform.localScale = Vector3.one;

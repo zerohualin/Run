@@ -91,13 +91,6 @@ MonoBehaviour:
         PackRuleName: PackDirectory
         FilterRuleName: CollectAll
         AssetTags: 
-      - CollectPath: Assets/BundleYoo/Zeus/Common
-        CollectorGUID: 320196a34efb61140b4b0ab2c82b9adc
-        CollectorType: 0
-        AddressRuleName: AddressByPath
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
       - CollectPath: Assets/Scenes/Map1.unity
         CollectorGUID: a5294483f20f40d449699101bb428cda
         CollectorType: 0
@@ -107,6 +100,26 @@ MonoBehaviour:
         AssetTags: 
       - CollectPath: Assets/Scenes/Map2.unity
         CollectorGUID: 064123f1e5067b249a9fd8967ddbde09
+        CollectorType: 0
+        AddressRuleName: AddressByPath
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+    - GroupName: Map
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/BundleYoo/Zeus/Common
+        CollectorGUID: 320196a34efb61140b4b0ab2c82b9adc
+        CollectorType: 0
+        AddressRuleName: AddressByPath
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+      - CollectPath: Assets/BundleYoo/Zeus/Model/Cube-SciFiUnderworldCity/Prefabs/Customize
+          Character here/04 Customized Samples
+        CollectorGUID: e2dcdb09e0b9f0347b5fc02f88c7dc97
         CollectorType: 0
         AddressRuleName: AddressByPath
         PackRuleName: PackDirectory
