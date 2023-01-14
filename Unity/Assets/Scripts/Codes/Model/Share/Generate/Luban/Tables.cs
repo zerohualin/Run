@@ -51,6 +51,10 @@ public partial class Tables
     /// 测试用的账号
     /// </summary>
     public common.TbTestAccountConfig TbTestAccountConfig {get; }
+    /// <summary>
+    /// 单位表
+    /// </summary>
+    public zeus.TbZeusUnitConfig TbZeusUnitConfig {get; }
     public Global.TbGlobal TbGlobal {get; }
     public Demo.TbAIMetas TbAIMetas {get; }
     public Demo.TbUnitMeta TbUnitMeta {get; }
@@ -87,6 +91,8 @@ public partial class Tables
         tables.Add("afk.TbFormuluaEx", TbFormuluaEx);
         TbTestAccountConfig = new common.TbTestAccountConfig(loader("common_tbtestaccountconfig")); 
         tables.Add("common.TbTestAccountConfig", TbTestAccountConfig);
+        TbZeusUnitConfig = new zeus.TbZeusUnitConfig(loader("zeus_tbzeusunitconfig")); 
+        tables.Add("zeus.TbZeusUnitConfig", TbZeusUnitConfig);
         TbGlobal = new Global.TbGlobal(loader("global_tbglobal")); 
         tables.Add("Global.TbGlobal", TbGlobal);
         TbAIMetas = new Demo.TbAIMetas(loader("demo_tbaimetas")); 
@@ -111,6 +117,7 @@ public partial class Tables
         TbAttrTypeEx.Resolve(tables); 
         TbFormuluaEx.Resolve(tables); 
         TbTestAccountConfig.Resolve(tables); 
+        TbZeusUnitConfig.Resolve(tables); 
         TbGlobal.Resolve(tables); 
         TbAIMetas.Resolve(tables); 
         TbUnitMeta.Resolve(tables); 
@@ -134,6 +141,7 @@ public partial class Tables
         TbAttrTypeEx.TranslateText(translator); 
         TbFormuluaEx.TranslateText(translator); 
         TbTestAccountConfig.TranslateText(translator); 
+        TbZeusUnitConfig.TranslateText(translator); 
         TbGlobal.TranslateText(translator); 
         TbAIMetas.TranslateText(translator); 
         TbUnitMeta.TranslateText(translator); 

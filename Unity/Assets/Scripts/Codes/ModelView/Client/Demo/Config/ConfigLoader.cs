@@ -55,17 +55,18 @@ namespace ET.Client
             }
             else
             {
-                using (Root.Instance.Scene.AddComponent<ResourcesComponent>())
-                {
-                    const string configBundleName = "config.unity3d";
-                    ResourcesComponent.Instance.LoadBundle(configBundleName);
-                    
-                    foreach (Type configType in configTypes)
-                    {
-                        TextAsset v = ResourcesComponent.Instance.GetAsset(configBundleName, configType.Name) as TextAsset;
-                        output[configType] = v.bytes;
-                    }
-                }
+                //客户端不用ET的表格系统
+                // using (Root.Instance.Scene.AddComponent<ResourcesComponent>())
+                // {
+                //     const string configBundleName = "config.unity3d";
+                //     ResourcesComponent.Instance.LoadBundle(configBundleName);
+                //     
+                //     foreach (Type configType in configTypes)
+                //     {
+                //         TextAsset v = ResourcesComponent.Instance.GetAsset(configBundleName, configType.Name) as TextAsset;
+                //         output[configType] = v.bytes;
+                //     }
+                // }
             }
 
             return output;

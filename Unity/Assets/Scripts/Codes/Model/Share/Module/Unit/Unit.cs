@@ -11,7 +11,7 @@ namespace ET
         public int ConfigId { get; set; } //配置表id
 
         [BsonIgnore]
-        public UnitConfig Config => UnitConfigCategory.Instance.Get(this.ConfigId);
+        public Cfg.zeus.UnitConfig Config => LubanComponent.Instance.Tables.TbZeusUnitConfig.Get(this.ConfigId);
 
         public UnitType Type => (UnitType)UnitConfigCategory.Instance.Get(this.ConfigId).Type;
 
