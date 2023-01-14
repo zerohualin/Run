@@ -11,6 +11,3 @@
 [submodule "Sub/FGUI"]
 	path = Sub/FGUI
 	url = https://github.com/zerohualin/AftershockFGUI.git
-[submodule "SubGame/MiniGame"]
-	path = SubGame/MiniGame
-	url = https://github.com/zerohualin/Afterschock_MiniGame.git
