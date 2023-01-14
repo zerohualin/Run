@@ -13,7 +13,7 @@ namespace ET
         [BsonIgnore]
         public Cfg.zeus.UnitConfig Config => LubanComponent.Instance.Tables.TbZeusUnitConfig.Get(this.ConfigId);
 
-        public UnitType Type => (UnitType)UnitConfigCategory.Instance.Get(this.ConfigId).Type;
+        public UnitType Type => (UnitType)LubanComponent.Instance.Tables.TbZeusUnitConfig.Get(this.ConfigId).Type;
 
         [BsonElement]
         private float3 position; //坐标
