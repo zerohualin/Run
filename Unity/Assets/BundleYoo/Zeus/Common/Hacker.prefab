@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 4099971666265904}
   - component: {fileID: 95065685954285580}
   - component: {fileID: 136941443018510012}
-  - component: {fileID: 4108725193870194685}
+  - component: {fileID: 9067915960823569582}
   m_Layer: 0
   m_Name: Hacker
   m_TagString: Untagged
@@ -231,7 +231,7 @@ CapsuleCollider:
   m_Height: 1.71
   m_Direction: 1
   m_Center: {x: 0, y: 0.97, z: 0}
---- !u!114 &4108725193870194685
+--- !u!114 &9067915960823569582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1363823623918668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebe0c58c3a68f4d4b8422cdceb026f69, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ad50f81b1d25c441943c37a89ba23f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _Animator: {fileID: 95065685954285580}
