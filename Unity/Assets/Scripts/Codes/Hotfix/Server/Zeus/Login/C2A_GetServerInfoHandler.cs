@@ -19,17 +19,6 @@ namespace ET.Server
 
             ServerInfosComponent ServerInfosComponent = session.DomainScene().GetComponent<ServerInfosComponent>();
 
-            foreach (StartZoneConfig zoneConfig in StartZoneConfigCategory.Instance.GetAll().Values)
-            {
-                if (zoneConfig.ZoneType == (int)ZoneType.Game)
-                {
-                    ServerInfosComponent.Add(new ServerInfoProto()
-                    {
-                        Name = zoneConfig.Name, Zone = zoneConfig.Id, Status = RandomGenerator.RandomNumber(0, 1)
-                    });
-                }
-            }
-
             response.ServerInfos = new List<ServerInfoProto>();
             foreach (var ServerInfo in ServerInfosComponent.ServerInfos)
             {
