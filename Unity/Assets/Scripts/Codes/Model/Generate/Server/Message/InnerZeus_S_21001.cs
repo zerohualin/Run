@@ -188,6 +188,15 @@ namespace ET
 
 	}
 
+	[Message(InnerZeus.G2M_ReLogin)]
+	[ProtoContract]
+	public partial class G2M_ReLogin: ProtoObject, IActorLocationMessage
+	{
+		[ProtoMember(1)]
+		public int RpcId { get; set; }
+
+	}
+
 	public static class InnerZeus
 	{
 		 public const ushort LoginGateInfo = 21002;
@@ -201,5 +210,6 @@ namespace ET
 		 public const ushort G2Queue_EnterMap = 21010;
 		 public const ushort Queue2G_UpdateInfo = 21011;
 		 public const ushort G2Queue_Disconnect = 21012;
+		 public const ushort G2M_ReLogin = 21013;
 	}
 }

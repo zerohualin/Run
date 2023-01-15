@@ -97,3 +97,8 @@ message G2Queue_Disconnect // IActorMessage
     int64 UnitId = 1;
     bool IsProtect = 2;
 }
+
+message G2M_ReLogin // IActorLocationMessage
+{
+	int32 RpcId = 1;
+}

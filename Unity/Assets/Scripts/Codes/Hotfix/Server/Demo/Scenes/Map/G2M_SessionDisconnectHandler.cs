@@ -1,6 +1,4 @@
-﻿
-
-namespace ET.Server
+﻿namespace ET.Server
 {
 	[ActorMessageHandler(SceneType.Map)]
 	public class G2M_SessionDisconnectHandler : AMActorLocationHandler<Unit, G2M_SessionDisconnect>
