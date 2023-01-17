@@ -339,6 +339,58 @@ namespace ET
 
 	}
 
+	[Message(OuterZeus.Chat2C_NoticeChatInfo)]
+	[ProtoContract]
+	public partial class Chat2C_NoticeChatInfo: ProtoObject, IActorMessage
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+		[ProtoMember(1)]
+		public long UnitId { get; set; }
+
+		[ProtoMember(2)]
+		public string Name { get; set; }
+
+		[ProtoMember(3)]
+		public string ChatMessage { get; set; }
+
+	}
+
+	[ResponseType(nameof(Chat2C_SendChatInfo))]
+	[Message(OuterZeus.C2Chat_SendChatInfo)]
+	[ProtoContract]
+	public partial class C2Chat_SendChatInfo: ProtoObject, IActorChatInfoRequest
+	{
+		[ProtoMember(1)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(2)]
+		public string ChatMessage { get; set; }
+
+	}
+
+	[Message(OuterZeus.Chat2C_SendChatInfo)]
+	[ProtoContract]
+	public partial class Chat2C_SendChatInfo: ProtoObject, IActorChatInfoResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+	}
+
 	public static class OuterZeus
 	{
 		 public const ushort C2R_LoginAccount = 11002;
@@ -363,5 +415,8 @@ namespace ET
 		 public const ushort G2C_UpdateInfo = 11021;
 		 public const ushort C2G_CancelQueue = 11022;
 		 public const ushort G2C_CancelQueue = 11023;
+		 public const ushort Chat2C_NoticeChatInfo = 11024;
+		 public const ushort C2Chat_SendChatInfo = 11025;
+		 public const ushort Chat2C_SendChatInfo = 11026;
 	}
 }

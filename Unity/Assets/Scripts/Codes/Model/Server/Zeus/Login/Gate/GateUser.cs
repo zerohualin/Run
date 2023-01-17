@@ -13,5 +13,7 @@ namespace ET.Server
         public long SessionInstanceId;
         public Session Session => Root.Instance.Get(this.SessionInstanceId) as Session;
         public GateUserState State = GateUserState.InGate; // 记录GateUser的状态
+        
+        public long ChatInfoUnitInstanceId;
     }
 }

@@ -19,6 +19,9 @@ namespace ET.Client
         public static void Refresh(this FUI_Chat_Component self)
         {
             self.List.numItems = self.DomainScene().GetComponent<ChatComponent>().GetChatMessageCount();
+            if(self.List.numItems <= 0)
+                return;
+            self.List.ScrollToView(self.List.numItems - 1);
         }
 
         public static string GetProvider(this FUI_Chat_Component self, int index)
@@ -59,14 +62,14 @@ namespace ET.Client
         {
             try
             {
-                // int errorCode = await ChatHelper.SendMessage(self.ZoneScene(), self.Input_Chat.text);
-                // self.Input_Chat.text = "";
-                // if (errorCode != ErrorCode.ERR_Success)
-                // {
-                //     Log.Error(errorCode.ToString());
-                //     return;
-                // }
-                // self.Refresh();
+                int errorCode = await ChatHelper.SendMessage(self.ClientScene(), self.Input_Chat.text);
+                self.Input_Chat.text = "";
+                if (errorCode != ErrorCode.ERR_Success)
+                {
+                    Log.Error(errorCode.ToString());
+                    return;
+                }
+                self.Refresh();
             }
             catch (Exception e)
             {
