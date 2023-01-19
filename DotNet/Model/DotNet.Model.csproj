@@ -56,5 +56,8 @@
       <Folder Include="..\..\Unity\Assets\Scripts\Codes\Model\Share\Generate\LubanPartial">
         <Link>Share\Generate\LubanPartial</Link>
       </Folder>
+      <Folder Include="..\..\Unity\Assets\Scripts\Codes\Model\Share\Monopoly">
+        <Link>Share\Monopoly</Link>
+      </Folder>
     </ItemGroup>
 </Project>

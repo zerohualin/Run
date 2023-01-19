@@ -1,0 +1,17 @@
+syntax = "proto3";
+package ET;
+
+message Monopoly2C_RollDiceResult // IActorMessage
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+
+	int32 Result = 1;
+}
+
+message C2Monopoly_RollDice // IActorMonopolyMessage
+{
+	int32 RpcId = 1;
+	string ChatMessage = 2;
+}
