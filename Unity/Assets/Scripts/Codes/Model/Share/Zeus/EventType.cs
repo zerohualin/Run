@@ -4,7 +4,6 @@
     {
         public struct UpdateChatInfo
         {
-            public Scene ZoneScene;
         }
         
         public struct EnterRoom

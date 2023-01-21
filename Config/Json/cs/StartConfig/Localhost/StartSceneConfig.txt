@@ -8,6 +8,8 @@
 {"_t":"StartSceneConfig","_id":7,"Process":1,"Zone":1,"SceneType":"Account","Name":"Account","OuterPort":30005},
 {"_t":"StartSceneConfig","_id":8,"Process":1,"Zone":1,"SceneType":"Name","Name":"Name","OuterPort":0},
 {"_t":"StartSceneConfig","_id":9,"Process":1,"Zone":1,"SceneType":"Queue","Name":"Queue","OuterPort":0},
+{"_t":"StartSceneConfig","_id":10,"Process":1,"Zone":1,"SceneType":"Monopoly","Name":"Monopoly","OuterPort":0},
+{"_t":"StartSceneConfig","_id":11,"Process":1,"Zone":1,"SceneType":"ChatInfo","Name":"ChatInfo","OuterPort":0},
 {"_t":"StartSceneConfig","_id":200,"Process":1,"Zone":2,"SceneType":"Robot","Name":"Robot01","OuterPort":0},
 {"_t":"StartSceneConfig","_id":300,"Process":1,"Zone":3,"SceneType":"RouterManager","Name":"RouterManager","OuterPort":30300},
 {"_t":"StartSceneConfig","_id":301,"Process":1,"Zone":3,"SceneType":"Router","Name":"Router01","OuterPort":30301},

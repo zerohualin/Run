@@ -20,7 +20,8 @@ namespace ET.Server
                     scene.AddComponent<RouterComponent, IPEndPoint, string>(startSceneConfig.OuterIPPort,
                         startSceneConfig.StartProcessConfig.InnerIP);
                     break;
-                case SceneType.RouterManager: // 正式发布请用CDN代替RouterManager
+                case SceneType.RouterManager:
+                    // 正式发布请用CDN代替RouterManager
                     // 云服务器在防火墙那里做端口映射
                     scene.AddComponent<HttpComponent, string>($"http://+:{startSceneConfig.OuterPort}/");
                     break;
@@ -57,6 +58,12 @@ namespace ET.Server
                     break;
                 case SceneType.Queue:
                     scene.AddComponent<QueueMgrComponent>();
+                    break;
+                case SceneType.Monopoly:
+                    scene.AddComponent<MonopolyMgrComponent>();
+                    break;
+                case SceneType.ChatInfo:
+                    scene.AddComponent<ChatInfoUnitsComponent>();
                     break;
             }
 

@@ -21,6 +21,8 @@
 		// Account = 21,
 		Name = 21,
 		Queue = 22,
+		Monopoly = 23,
+		ChatInfo = 24,
 
 		// 客户端Model层
 		Client = 31,

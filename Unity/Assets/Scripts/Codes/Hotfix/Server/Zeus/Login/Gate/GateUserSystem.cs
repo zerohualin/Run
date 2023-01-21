@@ -121,7 +121,21 @@ namespace ET.Server
 
             await TransferHelper.Transfer(unit, startSceneConfig.InstanceId, startSceneConfig.Name);
 
+            await self.EnterWorldChat();
+
             await ETTask.CompletedTask;
+        }
+        
+        public static async ETTask EnterWorldChat(this GateUser self)
+        {
+            StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(self.DomainZone(), "ChatInfo");
+            Chat2G_EnterChat chat2GEnterChat = (Chat2G_EnterChat)await MessageHelper.CallActor(startSceneConfig.InstanceId,
+                new G2Chat_EnterChat()
+                {
+                    UnitId = self.Id,
+                    GateSessionActorId = self.InstanceId
+                });
+            self.ChatInfoUnitInstanceId = chat2GEnterChat.ChatInfoUnitInstanceId;
         }
     }
 }

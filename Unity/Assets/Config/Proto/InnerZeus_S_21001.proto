@@ -102,3 +102,33 @@ message G2M_ReLogin // IActorLocationMessage
 {
 	int32 RpcId = 1;
 }
+
+//ResponseType Chat2G_EnterChat
+message G2Chat_EnterChat // IActorRequest
+{
+	int32 RpcId = 90;
+	string Name = 1;
+	int64 UnitId = 2;
+	int64 GateSessionActorId = 3;
+}
+
+message Chat2G_EnterChat // IActorResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+	int64 ChatInfoUnitInstanceId = 1;
+}
+
+//ResponseType Chat2G_ResponseExitChat
+message G2Chat_RequestExitChat // IActorRequest
+{
+	int32 RpcId = 90;
+}
+
+message Chat2G_ResponseExitChat // IActorResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+}

@@ -197,6 +197,68 @@ namespace ET
 
 	}
 
+	[ResponseType(nameof(Chat2G_EnterChat))]
+	[Message(InnerZeus.G2Chat_EnterChat)]
+	[ProtoContract]
+	public partial class G2Chat_EnterChat: ProtoObject, IActorRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(1)]
+		public string Name { get; set; }
+
+		[ProtoMember(2)]
+		public long UnitId { get; set; }
+
+		[ProtoMember(3)]
+		public long GateSessionActorId { get; set; }
+
+	}
+
+	[Message(InnerZeus.Chat2G_EnterChat)]
+	[ProtoContract]
+	public partial class Chat2G_EnterChat: ProtoObject, IActorResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+		[ProtoMember(1)]
+		public long ChatInfoUnitInstanceId { get; set; }
+
+	}
+
+	[ResponseType(nameof(Chat2G_ResponseExitChat))]
+	[Message(InnerZeus.G2Chat_RequestExitChat)]
+	[ProtoContract]
+	public partial class G2Chat_RequestExitChat: ProtoObject, IActorRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+	}
+
+	[Message(InnerZeus.Chat2G_ResponseExitChat)]
+	[ProtoContract]
+	public partial class Chat2G_ResponseExitChat: ProtoObject, IActorResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+	}
+
 	public static class InnerZeus
 	{
 		 public const ushort LoginGateInfo = 21002;
@@ -211,5 +273,9 @@ namespace ET
 		 public const ushort Queue2G_UpdateInfo = 21011;
 		 public const ushort G2Queue_Disconnect = 21012;
 		 public const ushort G2M_ReLogin = 21013;
+		 public const ushort G2Chat_EnterChat = 21014;
+		 public const ushort Chat2G_EnterChat = 21015;
+		 public const ushort G2Chat_RequestExitChat = 21016;
+		 public const ushort Chat2G_ResponseExitChat = 21017;
 	}
 }

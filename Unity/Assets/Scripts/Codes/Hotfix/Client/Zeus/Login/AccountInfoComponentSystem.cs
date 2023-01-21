@@ -1,6 +1,4 @@
-﻿using NotImplementedException = System.NotImplementedException;
-
-namespace ET.Client
+﻿namespace ET.Client
 {
     public class AccountInfoComponentDestorySystem : DestroySystem<AccountInfoComponent>
     { 

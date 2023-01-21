@@ -1,6 +1,7 @@
 ﻿namespace ET.Server
 {
     [Event(SceneType.Process)]
+    [FriendOfAttribute(typeof (ET.Server.GateUser))]
     public class NetServerComponentOnReadEvent: AEvent<NetServerComponentOnRead>
     {
         protected override async ETTask Run(Scene scene, NetServerComponentOnRead args)
@@ -13,7 +14,7 @@
                 session.OnResponse(response);
                 return;
             }
-			
+
             // 根据消息接口判断是不是Actor消息，不同的接口做不同的处理,比如需要转发给Chat Scene，可以做一个IChatMessage接口
             switch (message)
             {
@@ -29,6 +30,7 @@
                     {
                         session.Send(iResponse);
                     }
+
                     break;
                 }
                 case IActorLocationMessage actorLocationMessage:
@@ -37,15 +39,39 @@
                     ActorLocationSenderComponent.Instance.Send(unitId, actorLocationMessage);
                     break;
                 }
-                case IActorRequest actorRequest:  // 分发IActorRequest消息，目前没有用到，需要的自己添加
+                case IActorChatInfoMessage actorChatInfoMessage:
+                {
+                    GateUser gateUser = session.GetComponent<SessionUserComponent>()?.User;
+                    ActorMessageSenderComponent.Instance.Send(gateUser.ChatInfoUnitInstanceId, actorChatInfoMessage);
+                    break;
+                }
+                case IActorChatInfoRequest actorChatInfoRequest:
+                {
+                    GateUser gateUser = session.GetComponent<SessionUserComponent>()?.User;
+                    await MessageHelper.CallActor(gateUser.ChatInfoUnitInstanceId, actorChatInfoRequest);
+                    break;
+                }
+                case IActorMonopolyMessage actorMonopolyMessage:
+                {
+                    GateUser gateUser = session.GetComponent<SessionUserComponent>()?.User;
+                    ActorMessageSenderComponent.Instance.Send(gateUser.ChatInfoUnitInstanceId, actorMonopolyMessage);
+                    break;
+                }
+                case IActorMonopolyRequest actorMonopolyRequest:
+                {
+                    GateUser gateUser = session.GetComponent<SessionUserComponent>()?.User;
+                    await MessageHelper.CallActor(gateUser.ChatInfoUnitInstanceId, actorMonopolyRequest);
+                    break;
+                }
+                case IActorRequest actorRequest: // 分发IActorRequest消息，目前没有用到，需要的自己添加
                 {
                     break;
                 }
-                case IActorMessage actorMessage:  // 分发IActorMessage消息，目前没有用到，需要的自己添加
+                case IActorMessage actorMessage: // 分发IActorMessage消息，目前没有用到，需要的自己添加
                 {
                     break;
                 }
-				
+
                 default:
                 {
                     // 非Actor消息

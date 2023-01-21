@@ -170,3 +170,28 @@ message G2C_CancelQueue // IResponse
 	string Message = 91;
 	int32 RpcId = 92;
 }
+
+message Chat2C_NoticeChatInfo // IActorMessage
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+
+	int64 UnitId = 1;
+	string Name = 2;
+	string ChatMessage = 3;
+}
+
+//ResponseType Chat2C_SendChatInfo
+message C2Chat_SendChatInfo // IActorChatInfoRequest
+{
+	int32 RpcId = 1;
+	string ChatMessage = 2;
+}
+
+message Chat2C_SendChatInfo // IActorChatInfoResponse
+{
+	int RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+}

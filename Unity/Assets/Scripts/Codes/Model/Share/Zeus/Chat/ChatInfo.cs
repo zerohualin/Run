@@ -1,5 +1,6 @@
 ﻿namespace ET
 {
+    [ChildOf(typeof(ChatComponent))]
     public class ChatInfo: Entity, IAwake, IDestroy
     {
         public long UnitId;

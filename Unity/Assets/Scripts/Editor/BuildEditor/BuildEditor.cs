@@ -163,10 +163,10 @@ namespace ET
 				ToolsEditor.ExcelExporter();
 				
 				// 设置ab包
-				AssetImporter assetImporter = AssetImporter.GetAtPath($"Assets/Bundles/Config");
-				assetImporter.assetBundleName = "Config.unity3d";
-				AssetDatabase.SaveAssets();
-				AssetDatabase.Refresh();
+				// AssetImporter assetImporter = AssetImporter.GetAtPath($"Assets/Bundles/Config");
+				// assetImporter.assetBundleName = "Config.unity3d";
+				// AssetDatabase.SaveAssets();
+				// AssetDatabase.Refresh();
 			}
 			
 			if (GUILayout.Button("Proto2CS"))
