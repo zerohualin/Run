@@ -47,5 +47,11 @@ namespace ET.Server
         {
             return self.GetComponent<AOIEntity>().GetBeSeePlayers();
         }
+        
+        // 获取看见unit，主要用于relogin
+        public static Dictionary<long, AOIEntity> GetSeeUnits(this Unit self)
+        {
+            return self.GetComponent<AOIEntity>().GetSeeUnits();
+        }
     }
 }

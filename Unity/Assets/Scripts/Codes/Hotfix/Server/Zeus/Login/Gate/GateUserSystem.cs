@@ -104,6 +104,7 @@ namespace ET.Server
                 };
                 self.Session.Send(sceneChange);
                 self.Session.AddComponent<SessionPlayerComponent>().PlayerId = accountZoneDB.LastRoleId;
+                MessageHelper.SendToLocationActor(accountZoneDB.LastRoleId, new G2M_ReLogin(){});
                 return;
             }
 
