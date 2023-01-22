@@ -10,11 +10,11 @@ using YooAsset;
 
 namespace ET.Client
 {
-    [FriendOf(typeof(Btn_RightSlash))]
-    [FriendOf(typeof(FUI_SelectServer_Component))]
-    [FriendOfAttribute(typeof(ET.ServerInfosComponent))]
-    [FriendOfAttribute(typeof(ET.ServerInfo))]
-    [FriendOfAttribute(typeof(ET.RoleInfosComponent))]
+    [FriendOf(typeof (Btn_RightSlash))]
+    [FriendOf(typeof (FUI_SelectServer_Component))]
+    [FriendOfAttribute(typeof (ET.ServerInfosComponent))]
+    [FriendOfAttribute(typeof (ET.ServerInfo))]
+    [FriendOfAttribute(typeof (ET.RoleInfosComponent))]
     public static class FUI_SelectServer_ComponentSystem
     {
         public static void Init(this FUI_SelectServer_Component self)
@@ -51,8 +51,9 @@ namespace ET.Client
                         {
                             // await LoginHelper.DeleteRoleById(zoneScene, roleInfo.Id);
                         }
+
                         roleInfosComponent.CurrentRoleId = roleInfo.Id;
-                        
+
                         await LoginHelper.EnterMap(zoneScene);
                     }
                 });
@@ -107,6 +108,7 @@ namespace ET.Client
 
             ServerRouter serverRouter = self.ServerRouters[routerIndex];
             self.serverListBtn.name.text = serverRouter.Name;
+            self.serverListBtn.subTitle.text = $"{serverRouter.RouterHost}:{serverRouter.RouterPort}";
             ConstValue.RouterHttpHost = serverRouter.RouterHost;
             ConstValue.RouterHttpPort = serverRouter.RouterPort;
         }

@@ -17,5 +17,7 @@ namespace ET.Client
         public GImage bg;
         [FGUIObject]
         public GTextField name;
+        [FGUIObject]
+        public GTextField subTitle;
     }
 }
