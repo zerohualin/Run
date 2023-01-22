@@ -1,4 +1,5 @@
 using System;
+using FairyGUI;
 using UnityEngine;
 
 namespace ET.Client
@@ -20,8 +21,10 @@ namespace ET.Client
         {
             protected override void Update(OperaComponent self)
             {
-                if (Input.GetMouseButtonDown(1))
+                if (Input.GetMouseButton(1) || Input.GetMouseButton(0))
                 {
+                    if (Stage.isTouchOnUI)
+                        return;
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
                     if (Physics.Raycast(ray, out hit, 1000, self.mapMask))
