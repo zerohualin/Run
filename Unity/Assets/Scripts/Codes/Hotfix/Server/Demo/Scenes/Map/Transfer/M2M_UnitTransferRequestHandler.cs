@@ -6,10 +6,8 @@ namespace ET.Server
 	[ActorMessageHandler(SceneType.Map)]
 	public class M2M_UnitTransferRequestHandler : AMActorRpcHandler<Scene, M2M_UnitTransferRequest, M2M_UnitTransferResponse>
 	{
-		protected override async ETTask Run(Scene scene, M2M_UnitTransferRequest request, M2M_UnitTransferResponse response, Action reply)
+		protected override async ETTask Run(Scene scene, M2M_UnitTransferRequest request, M2M_UnitTransferResponse response)
 		{
-			reply();
-			
 			UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
 			Unit unit = MongoHelper.Deserialize<Unit>(request.Unit);
 			
@@ -41,7 +39,7 @@ namespace ET.Server
 			unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);
 			
 			// 解锁location，可以接收发给Unit的消息
-			await LocationProxyComponent.Instance.UnLock(unit.Id, request.OldInstanceId, unit.InstanceId);
+			await LocationProxyComponent.Instance.UnLock(LocationType.Unit, unit.Id, request.OldInstanceId, unit.InstanceId);
 		}
 	}
 }

@@ -181,13 +181,10 @@ namespace ET
 
                 List<string> excels = FileHelper.GetAllFiles(excelDir, "*.xlsx");
                 
-                List<Task> tasks = new List<Task>();
                 foreach (string path in excels)
                 {
-                    Task task = Task.Run(() => ExportExcel(path));
-                    tasks.Add(task);
+                    ExportExcel(path);
                 }
-                Task.WaitAll(tasks.ToArray());
                 
                 if (Directory.Exists(clientProtoDir))
                 {
@@ -594,17 +591,41 @@ namespace ET
             IMerge final = Activator.CreateInstance(type) as IMerge;
 
             string p = Path.Combine(string.Format(jsonDir, configType, relativeDir));
-            string[] ss = Directory.GetFiles(p, $"{protoName}_*.txt");
+            string[] ss = Directory.GetFiles(p, $"{protoName}*.txt");
             List<string> jsonPaths = ss.ToList();
-            jsonPaths.Add(Path.Combine(string.Format(jsonDir, configType, relativeDir), $"{protoName}.txt"));
 
             jsonPaths.Sort();
             jsonPaths.Reverse();
             foreach (string jsonPath in jsonPaths)
             {
                 string json = File.ReadAllText(jsonPath);
-                object deserialize = BsonSerializer.Deserialize(json, type);
-                final.Merge(deserialize);
+                try
+                {
+                    object deserialize = BsonSerializer.Deserialize(json, type);
+                    final.Merge(deserialize);
+                }
+                catch
+                {
+                    #region 为了定位该文件中具体那一行出现了异常
+                    List<string> list = new List<string>(json.Split('\n'));
+                    if (list.Count > 0)
+                        list.RemoveAt(0);
+                    if (list.Count > 0)
+                        list.RemoveAt(list.Count-1);
+                    foreach (string s in list)
+                    {
+                        try
+                        {
+                            BsonSerializer.Deserialize(s.Substring(0, s.Length-1), subType);
+                        }
+                        catch (Exception)
+                        {
+                            Log.Console($"json : {s}");
+                            throw;
+                        }
+                    }
+                    #endregion
+                }
             }
 
             string path = Path.Combine(dir, $"{protoName}Category.bytes");

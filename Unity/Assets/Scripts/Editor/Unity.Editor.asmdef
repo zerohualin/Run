@@ -6,7 +6,8 @@
         "Unity.Core",
         "YooAsset.Editor",
         "Unity.Loader",
-        "HybridCLR.Runtime"
+        "HybridCLR.Runtime",
+        "HybridCLR.Editor"
     ],
     "includePlatforms": [
         "Editor"

@@ -5,7 +5,7 @@ using Bright.Serialization;
 namespace ET.Server
 {
     [Event(SceneType.Process)]
-    public class EntryEvent2_InitServer: AEvent<ET.EventType.EntryEvent2>
+    public class EntryEvent2_InitServer: AEvent<Scene, ET.EventType.EntryEvent2>
     {
         protected override async ETTask Run(Scene scene, ET.EventType.EntryEvent2 args)
         {
