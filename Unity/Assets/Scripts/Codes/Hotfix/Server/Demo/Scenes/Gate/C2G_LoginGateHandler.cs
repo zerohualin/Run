@@ -1,7 +1,4 @@
-﻿using System;
-
-
-namespace ET.Server
+﻿namespace ET.Server
 {
 	[MessageHandler(SceneType.Gate)]
 	public class C2G_LoginGateHandler : AMRpcHandler<C2G_LoginGate, G2C_LoginGate>
@@ -9,8 +6,8 @@ namespace ET.Server
 		protected override async ETTask Run(Session session, C2G_LoginGate request, G2C_LoginGate response)
 		{
 			Scene scene = session.DomainScene();
-			string account = scene.GetComponent<GateSessionKeyComponent>().Get(request.Key);
-			if (account == null)
+			LoginGateInfo loginGateInfo = scene.GetComponent<GateSessionKeyComponent>().Get(request.Key);
+			if (loginGateInfo == null)
 			{
 				response.Error = ErrorCore.ERR_ConnectGateKeyError;
 				response.Message = "Gate key验证失败!";
@@ -20,7 +17,7 @@ namespace ET.Server
 			session.RemoveComponent<SessionAcceptTimeoutComponent>();
 
 			PlayerComponent playerComponent = scene.GetComponent<PlayerComponent>();
-			Player player = playerComponent.AddChild<Player, string>(account);
+			Player player = playerComponent.AddChild<Player, string>(loginGateInfo.Account);
 			player.AddComponent<PlayerSessionComponent>().Session = session;
 			player.AddComponent<MailBoxComponent, MailboxType>(MailboxType.GateSession);
 			await player.AddLocation(LocationType.Player);

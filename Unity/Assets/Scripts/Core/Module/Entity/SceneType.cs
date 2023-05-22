@@ -21,15 +21,17 @@ namespace ET
 		Benchmark = 1 << 13,
 
 		//Zeus
-		Account = 20,
-		Name = 21,
-		Queue = 22,
-		Monopoly = 23,
-		ChatInfo = 24,
+		Account = 1 << 20,
+		Name = 1 << 21,
+		Queue = 1 << 22,
+		Monopoly = 1 << 23,
+		ChatInfo = 1 << 24,
 
 		// 客户端Model层
 		Client = 1 << 30,
-		Current = 1ul << 31,
+		Current = 1 << 30,
+		
+		Max = 1 << 100,
 		All = ulong.MaxValue,
 	}
 

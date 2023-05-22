@@ -13,7 +13,7 @@ namespace ET.Server
                 case UnitType.Player:
                 {
                     Unit unit = unitComponent.AddChildWithId<Unit, int>(id, 1001);
-                    unit.AddComponent<UnitGateComponent, long>(gateId);
+                    // unit.AddComponent<UnitGateComponent, long>(gateId);
                     unit.AddComponent<MoveComponent>();
                     unit.Position = new float3(-10, 0, -10);
 
@@ -34,7 +34,7 @@ namespace ET.Server
                     unit.Position = new float3(-10, 0, 0);
                     
                     unit.AddComponent<MailBoxComponent>();
-                    unit.AddLocation().Coroutine();
+                    unit.AddLocation(LocationType.Unit).Coroutine();
 
                     NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
                     numericComponent.Set(NumericType.Speed, 6f); // 速度是6米每秒

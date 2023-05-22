@@ -8,20 +8,18 @@ namespace ET.Server
     [FriendOfAttribute(typeof (ET.Server.RealmAccountComponent))]
     public class C2R_LoginZoneHandler: AMRpcHandler<C2R_LoginZone, R2C_LoginZone>
     {
-        protected override async ETTask Run(Session session, C2R_LoginZone request, R2C_LoginZone response, Action reply)
+        protected override async ETTask Run(Session session, C2R_LoginZone request, R2C_LoginZone response)
         {
             RealmAccountComponent realmAccountComponent = session.GetComponent<RealmAccountComponent>();
             if (realmAccountComponent == null)
             {
                 response.Error = ErrorCode.ERR_Login_AccountNotLogin;
-                reply();
                 return;
             }
 
             if (!StartZoneConfigCategory.Instance.Contain(request.ZoneId))
             {
                 response.Error = ErrorCode.ERR_Login_ZoneNotExist;
-                reply();
                 return;
             }
 
@@ -36,14 +34,12 @@ namespace ET.Server
                 if (g2R_GetGateKey.Error != ErrorCode.ERR_Success)
                 {
                     response.Error = g2R_GetGateKey.Error;
-                    reply();
                     return;
                 }
 
                 response.GateAddress = startSceneConfig.InnerIPOutPort.ToString();
                 response.GateKey = g2R_GetGateKey.GateKey;
                 
-                reply();
                 response.Error = ErrorCode.ERR_Success;
                 session?.Disconnect().Coroutine();
             }

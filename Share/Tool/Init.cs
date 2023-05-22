@@ -42,7 +42,7 @@ namespace ET.Server
 				
                 Log.Info($"server start........................ {Root.Instance.Scene.Id}");
 
-                // Options.Instance.AppType = AppType.ExcelExporter;
+                Options.Instance.AppType = AppType.ExcelExporter;
                         
                 switch (Options.Instance.AppType)
                 {

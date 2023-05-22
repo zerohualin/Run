@@ -9,13 +9,12 @@ namespace ET.Server
     [FriendOfAttribute(typeof (ET.Server.GateQueueComponent))]
     public class C2G_Enter2MapHandler: AMRpcHandler<C2G_Enter2Map, G2C_Enter2Map>
     {
-        protected override async ETTask Run(Session session, C2G_Enter2Map request, G2C_Enter2Map response, Action reply)
+        protected override async ETTask Run(Session session, C2G_Enter2Map request, G2C_Enter2Map response)
         {
             var (result, accountZoneDB) = session.CheckAccountZoneDB();
             if (result != ErrorCode.ERR_Success)
             {
                 response.Error = result;
-                reply();
                 return;
             }
 
@@ -47,13 +46,11 @@ namespace ET.Server
                         response.InQueue = true;
                         response.Index = gateQueueComponent.Index;
                         response.Count = gateQueueComponent.Count;
-                        reply();
                         return;
                     }
 
                     if (gateUser.State == GateUserState.InMap)
                     {
-                        reply();
                         gateUser.EnterMap().Coroutine();
                         return;
                     }
@@ -63,7 +60,6 @@ namespace ET.Server
                 if (targetRoleInfo == null || targetRoleInfo.IsDeleted)
                 {
                     response.Error = ErrorCode.ERR_Login_NoRoleDB;
-                    reply();
                     return;
                 }
 
@@ -71,12 +67,11 @@ namespace ET.Server
                 accountZoneDB.LastRoleId = unitId;
                 //询问排队服务器要不要排队
 
-                Queue2G_Enqueue queue2G_Enqueue = (Queue2G_Enqueue)await MessageHelper.CallActor(accountZoneDB.LoginZoneId, SceneType.Queue,
+                Queue2G_Enqueue queue2G_Enqueue = (Queue2G_Enqueue)await MessageHelper.CallActor(accountZoneDB.LoginZoneId,
                     new G2Queue_Enqueue() { Account = account, UnitId = unitId, GateActorId = session.DomainScene().InstanceId });
                 if (queue2G_Enqueue.Error != ErrorCode.ERR_Success)
                 {
                     response.Error = queue2G_Enqueue.Error;
-                    reply();
                     return;
                 }
 
@@ -98,9 +93,7 @@ namespace ET.Server
                     response.Count = queue2G_Enqueue.Count;
                     Log.Console($"-> 账号{account} 需要排队 {response.Count} / {response.Count}");
                 }
-
-                reply();
-
+                
                 DBComponent db = session.GetDirectDB();
                 await db.Save(accountZoneDB);
 

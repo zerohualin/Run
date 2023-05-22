@@ -27,7 +27,7 @@ namespace ET.Server
                     break;
                 case SceneType.Realm:
                     scene.AddComponent<NetServerComponent, IPEndPoint>(startSceneConfig.InnerIPOutPort);
-                    scene.AddComponent<ServerInfosComponent>().Init();
+                    scene.AddComponent<ServerInfosComponent>();
                     break;
                 case SceneType.Gate:
                     scene.AddComponent<NetServerComponent, IPEndPoint>(startSceneConfig.InnerIPOutPort);

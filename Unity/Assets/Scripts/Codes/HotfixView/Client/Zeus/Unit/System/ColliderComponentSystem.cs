@@ -37,7 +37,7 @@ namespace ET.Client
         public static void OnPointDown(this UnitColliderComponent self, BaseEventData baseEventData)
         {
             Unit unit = self.GetUnit();
-            unit.SayHi(unit.Id, "HIHIHIHI!").Coroutine();
+            // unit.SayHi(unit.Id, "HIHIHIHI!").Coroutine();
         }
 
         public static void OnPointUp(this UnitColliderComponent self, BaseEventData baseEventData)

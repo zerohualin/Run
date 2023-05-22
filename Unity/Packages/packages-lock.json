@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.aftershock.package": {
-      "version": "file:/Volumes/Samsung_T5/Zeus/AftershockEditor",
+      "version": "file:C:/101_Dream/AftershockPackage",
       "depth": 0,
       "source": "local",
       "dependencies": {}

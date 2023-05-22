@@ -7,13 +7,12 @@ namespace ET.Server
     [FriendOf(typeof (ET.ServerInfosComponent))]
     public class C2A_GetServerInfoHandler: AMRpcHandler<C2R_GetServerList, R2C_GetServerList>
     {
-        protected override async ETTask Run(Session session, C2R_GetServerList request, R2C_GetServerList response, Action reply)
+        protected override async ETTask Run(Session session, C2R_GetServerList request, R2C_GetServerList response)
         {
             RealmAccountComponent realmAccountComponent = session.GetComponent<RealmAccountComponent>();
             if (realmAccountComponent == null)
             {
                 response.Error = ErrorCode.ERR_Login_NotLogin;
-                reply();
                 return;
             }
 
@@ -24,9 +23,7 @@ namespace ET.Server
             {
                 response.ServerInfos.Add(ServerInfo.ToMessage());
             }
-
-            reply();
-
+            
             await ETTask.CompletedTask;
         }
     }

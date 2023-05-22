@@ -6,20 +6,18 @@ namespace ET.Server
     [FriendOfAttribute(typeof (ET.Server.RoleInfoDB))]
     public class C2G_DeleteRoleHandler: AMRpcHandler<C2G_DeleteRole, G2C_DeleteRole>
     {
-        protected override async ETTask Run(Session session, C2G_DeleteRole request, G2C_DeleteRole response, Action reply)
+        protected override async ETTask Run(Session session, C2G_DeleteRole request, G2C_DeleteRole response)
         {
             var (result, accountZoneDB) = session.CheckAccountZoneDB();
             if (result != ErrorCode.ERR_Success)
             {
                 response.Error = result;
-                reply();
                 return;
             }
 
             if (!accountZoneDB.Children.ContainsKey(request.UnitId))
             {
                 response.Error = ErrorCode.ERR_Login_NoRole;
-                reply();
                 return;
             }
 
@@ -29,7 +27,6 @@ namespace ET.Server
                 if (instanceId != accountZoneDB.InstanceId)
                 {
                     response.Error = ErrorCode.ERR_Login_NoneAccountZone;
-                    reply();
                     return;
                 }
 
@@ -37,7 +34,6 @@ namespace ET.Server
                 if (roleInfoDB == null)
                 {
                     response.Error = ErrorCode.ERR_Login_NoRoleDB;
-                    reply();
                     return;
                 }
 
@@ -46,9 +42,7 @@ namespace ET.Server
                 await db.Save(roleInfoDB);
                 roleInfoDB.Dispose();
             }
-
-            reply();
-
+            
             await ETTask.CompletedTask;
         }
     }

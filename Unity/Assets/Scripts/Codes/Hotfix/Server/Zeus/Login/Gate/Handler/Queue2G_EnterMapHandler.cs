@@ -7,7 +7,7 @@ namespace ET.Server
     [FriendOfAttribute(typeof (ET.Server.GateUser))]
     public class Queue2G_EnterMapHandler: AMActorRpcHandler<Scene, Queue2G_EnterMap, G2Queue_EnterMap>
     {
-        protected override async ETTask Run(Scene scene, Queue2G_EnterMap request, G2Queue_EnterMap response, Action reply)
+        protected override async ETTask Run(Scene scene, Queue2G_EnterMap request, G2Queue_EnterMap response)
         {
             using (await GateUserSystem.GetGateUserLock(request.Account))
             {
@@ -18,17 +18,14 @@ namespace ET.Server
                     || gateUser.State == GateUserState.InGate)
                 {
                     response.NeedRemove = true;
-                    reply();
                     return;
                 }
 
                 if (gateUser.State == GateUserState.InMap)
                 {
-                    reply();
                     return;
                 }
-
-                reply();
+                
                 gateUser.EnterMap().Coroutine();
             }
 

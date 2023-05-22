@@ -8,7 +8,7 @@ namespace ET.Server
     [FriendOfAttribute(typeof (ET.Server.GateUserMgrComponent))]
     public class R2G_GetGateKeyHandler : AMActorRpcHandler<Scene, R2G_GetGateKey, G2R_GetGateKey>
     {
-        protected override async ETTask Run(Scene scene, R2G_GetGateKey request, G2R_GetGateKey response, Action reply)
+        protected override async ETTask Run(Scene scene, R2G_GetGateKey request, G2R_GetGateKey response)
         {
             GateUserMgrComponent gateUserMgrComponent = scene.GetComponent<GateUserMgrComponent>();
             gateUserMgrComponent.Users.TryGetValue(request.Info.Account, out GateUser gateUser);
@@ -21,7 +21,6 @@ namespace ET.Server
                 {
                     if (instanceId != gateUser.InstanceId)
                     {
-                        reply();
                         return;
                     }
                     gateUser.OfflineSession();
@@ -33,9 +32,7 @@ namespace ET.Server
 
             gateSessionKeyComponent.Add(Key, request.Info);
             response.GateKey = Key;
-
-            reply();
-
+            
             await ETTask.CompletedTask;
         }
     }
