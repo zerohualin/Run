@@ -108,7 +108,7 @@ namespace ET.Client
 
             ServerRouter serverRouter = self.ServerRouters[routerIndex];
             self.serverListBtn.name.text = serverRouter.Name;
-            self.serverListBtn.subTitle.text = $"{serverRouter.RouterHost}:{serverRouter.RouterPort}";
+            // self.serverListBtn.subTitle.text = $"{serverRouter.RouterHost}:{serverRouter.RouterPort}";
             ConstValue.RouterHttpHost = serverRouter.RouterHost;
             ConstValue.RouterHttpPort = serverRouter.RouterPort;
         }

@@ -50,6 +50,7 @@ namespace ET.Client
     [FriendOf(typeof (FGUIComponent))]
     public static class FGUIComponentSystem
     {
+        #pragma warning disable
         public static async void OnLoadResourceFinished(string name, string extension, System.Type type, PackageItem item)
         {
             Debug.Log($"{name}, {extension}, {type.ToString()}, {item.ToString()}");

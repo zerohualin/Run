@@ -8,7 +8,6 @@ namespace ET.Client
     {
         protected override void Awake(UnitHeadBarComponent self)
         {
-            self.Unit = self.GetParent<Unit>();
             // fui = mFui as HeadBar;
             self.Target =  self.Unit.GetComponent<GameObjectComponent>().GameObject.transform;
             // fui.icon.url = "";

@@ -8,7 +8,19 @@ namespace ET
     {
         public List<RoomInfo> RoomInfos = new List<RoomInfo>();
 
-        public RoomInfo MyRoomInfo = new RoomInfo();
+        public long myRoomInfoId;
+
+        public RoomInfo MyRoomInfo
+        {
+            get
+            {
+                return GetChild<RoomInfo>(this.myRoomInfoId);
+            }
+            set
+            {
+                this.myRoomInfoId = value.Id;
+            }
+        }
         // public List<RoomUnitProto> RoomUnitList = new List<RoomUnitProto>();
     }
 }

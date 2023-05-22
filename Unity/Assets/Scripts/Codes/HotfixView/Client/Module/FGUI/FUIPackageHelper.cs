@@ -16,6 +16,7 @@ namespace ET
             UIPackage.AddPackage(bytes, packageName, OnTextureLoadComplete);
         }
 
+        #pragma warning disable
         public static async void OnTextureLoadComplete(string name, string extension, System.Type type, PackageItem item)
         {
             string[] splits = name.Split('_');
