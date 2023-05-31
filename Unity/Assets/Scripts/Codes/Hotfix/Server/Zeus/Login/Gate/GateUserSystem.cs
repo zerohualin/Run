@@ -94,7 +94,7 @@ namespace ET.Server
             StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(self.DomainZone(), "Map1");
             self.RemoveComponent<GateQueueComponent>();
 
-            var player = self.DomainScene().GetComponent<PlayerComponent>().GetPlayer(accountZoneDB.LastRoleId);
+            var player = self.DomainScene().GetComponent<PlayerComponent>().GetPlayer(accountZoneDB.Id);
             
             if (self.State == GateUserState.InMap)
             {
@@ -106,7 +106,7 @@ namespace ET.Server
                 self.Session.Send(sceneChange);
   
                 self.Session.AddComponent<SessionPlayerComponent>().Player = player;
-                MessageHelper.SendToLocationActor(LocationType.Unit, accountZoneDB.LastRoleId, new G2M_ReLogin(){});
+                MessageHelper.SendToLocationActor(LocationType.Unit, accountZoneDB.Id, new G2M_ReLogin(){});
                 return;
             }
 
@@ -117,9 +117,9 @@ namespace ET.Server
                 IdGenerater.Instance.GenerateInstanceId(),
                 self.DomainZone(), "GateMap", SceneType.Map, startSceneConfig);
 
-            Unit unit = UnitFactory.Create(gateMapComponent.Scene, accountZoneDB.LastRoleId, UnitType.Player, self.InstanceId);
+            Unit unit = UnitFactory.Create(gateMapComponent.Scene, accountZoneDB.Id, UnitType.Player, self.InstanceId);
             
-            self.Session.AddComponent<SessionPlayerComponent>().Player = player;
+            // self.Session.AddComponent<SessionPlayerComponent>().Player = player;
 
             await TransferHelper.Transfer(unit, startSceneConfig.InstanceId, startSceneConfig.Name);
 

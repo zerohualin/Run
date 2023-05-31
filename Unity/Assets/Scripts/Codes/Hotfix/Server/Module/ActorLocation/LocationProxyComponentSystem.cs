@@ -30,8 +30,8 @@ namespace ET.Server
         public static async ETTask Add(this LocationProxyComponent self, int type, long key, long instanceId)
         {
             Log.Info($"location proxy add {key}, {instanceId} {TimeHelper.ServerNow()}");
-            await ActorMessageSenderComponent.Instance.Call(GetLocationSceneId(key),
-                new ObjectAddRequest() { Type = type, Key = key, InstanceId = instanceId });
+            long sceneId = GetLocationSceneId(key);
+            await ActorMessageSenderComponent.Instance.Call(sceneId, new ObjectAddRequest() { Type = type, Key = key, InstanceId = instanceId });
         }
 
         public static async ETTask Lock(this LocationProxyComponent self, int type, long key, long instanceId, int time = 60000)

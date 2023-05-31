@@ -31,26 +31,25 @@ namespace ET.Server
         {
             GateUser gateUser = self.AddChild<GateUser>();
 
-            AccountZoneDB accountZoneDB = gateUser.AddComponent<AccountZoneDB>();
+            AccountZoneDB accountZoneDB = gateUser.AddComponentWithId<AccountZoneDB>(gateUser.Id);
             accountZoneDB.Account = account;
             accountZoneDB.LoginZoneId = zone;
             gateUser.AddComponent<MailBoxComponent, MailboxType>(MailboxType.GateSession);
-
+            gateUser.AddLocation(LocationType.Player).Coroutine();
             self.GetDirectDB().Save(accountZoneDB).Coroutine();
 
             self.Users.Add(account, gateUser);
-
             return gateUser;
         }
 
         public static GateUser Create(this GateUserMgrComponent self, AccountZoneDB accountZoneDB)
         {
-            GateUser gateUser = self.AddChild<GateUser>();
+            GateUser gateUser = self.AddChildWithId<GateUser>(accountZoneDB.Id);
 
             gateUser.AddComponent(accountZoneDB);
 
             gateUser.AddComponent<MailBoxComponent, MailboxType>(MailboxType.GateSession);
-
+            gateUser.AddLocation(LocationType.Player).Coroutine();
             self.Users.Add(accountZoneDB.Account, gateUser);
 
             return gateUser;

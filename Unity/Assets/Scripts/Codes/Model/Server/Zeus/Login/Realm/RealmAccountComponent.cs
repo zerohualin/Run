@@ -12,6 +12,8 @@ namespace ET.Server
             }
             set
             {
+                if(value == null)
+                    return;
                 this.accountDbId = value.Id;
             }
         }

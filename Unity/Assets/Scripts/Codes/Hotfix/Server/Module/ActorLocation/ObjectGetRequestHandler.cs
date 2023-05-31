@@ -7,7 +7,8 @@ namespace ET.Server
     {
         protected override async ETTask Run(Scene scene, ObjectGetRequest request, ObjectGetResponse response)
         {
-            long instanceId = await scene.GetComponent<LocationManagerComoponent>().Get(request.Type).Get(request.Key);
+            LocationOneType locationOneType = scene.GetComponent<LocationManagerComoponent>().Get(request.Type);
+            long instanceId = await locationOneType.Get(request.Key);
             response.InstanceId = instanceId;
         }
     }

@@ -16,6 +16,9 @@ namespace ET.Server
                     // unit.AddComponent<UnitGateComponent, long>(gateId);
                     unit.AddComponent<MoveComponent>();
                     unit.Position = new float3(-10, 0, -10);
+                    
+                    unit.AddComponent<MailBoxComponent>();
+                    unit.AddLocation(LocationType.Unit).Coroutine();
 
                     NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
                     numericComponent.Set(NumericType.Speed, 6f); // 速度是6米每秒
@@ -23,7 +26,7 @@ namespace ET.Server
 
                     unitComponent.Add(unit);
                     // 加入aoi
-                    unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);
+                    // unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);
                     return unit;
                 }
 

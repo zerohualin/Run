@@ -130,6 +130,10 @@ namespace ET.Server
                     {
                         player.GetComponent<PlayerSessionComponent>()?.Session?.Send(iActorMessage);
                     }
+                    if (entity is GateUser gateUser)
+                    {
+                        gateUser.Session?.Send(iActorMessage);
+                    }
                     break;
                 }
                 default:

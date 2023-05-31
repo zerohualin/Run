@@ -5,7 +5,7 @@ namespace ET.Server
     [MessageHandler(SceneType.Gate)]
     [FriendOfAttribute(typeof(ET.Server.AccountZoneDB))]
     [FriendOfAttribute(typeof(ET.Server.RoleInfoDB))]
-    public class G2C_CreateRoleHandler : AMRpcHandler<C2G_CreateRole, G2C_CreateRole>
+    public class C2G_CreateRoleHandler : AMRpcHandler<C2G_CreateRole, G2C_CreateRole>
     {
         protected override async ETTask Run(Session session, C2G_CreateRole request, G2C_CreateRole response)
         {
@@ -32,8 +32,11 @@ namespace ET.Server
                 }
 
                 long UnitId = IdGenerater.Instance.GenerateUnitId(accountZoneDB.LoginZoneId);
-
-                Name2G_CheckName name2GCheckName = (Name2G_CheckName) await MessageHelper.CallActor(accountZoneDB.LoginZoneId, new G2Name_CheckName() { Name = request.Name, UnitId = UnitId });
+                
+                Name2G_CheckName name2GCheckName = (Name2G_CheckName) await MessageHelper.CallSceneActor(
+                    accountZoneDB.LoginZoneId,
+                    SceneType.Name,
+                    new G2Name_CheckName() { Name = request.Name, UnitId = UnitId });
 
                 if (name2GCheckName.Error != ErrorCode.ERR_Success)
                 {

@@ -63,5 +63,11 @@ namespace ET.Server
         {
             return await ActorMessageSenderComponent.Instance.Call(actorId, message);
         }
+        
+        public static async ETTask<IActorResponse> CallSceneActor(int zoneId, SceneType sceneType, IActorRequest message)
+        {
+            var NameScene = StartSceneConfigCategory.Instance.GetBySceneName(zoneId, sceneType.ToString());
+            return await CallActor(NameScene.InstanceId, message);
+        }
     }
 }

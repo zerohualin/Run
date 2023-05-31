@@ -25,7 +25,10 @@ namespace ET.Server
 			unit.Position = new float3(-10, 0, -10);
 			
 			unit.AddComponent<MailBoxComponent>();
-
+			// 解锁location，可以接收发给Unit的消息
+			await LocationProxyComponent.Instance.UnLock(LocationType.Unit, unit.Id, request.OldInstanceId, unit.InstanceId);
+			await unit.AddLocation(LocationType.Unit);
+			
 			// 通知客户端开始切场景
 			M2C_StartSceneChange m2CStartSceneChange = new M2C_StartSceneChange() {SceneInstanceId = scene.InstanceId, SceneName = scene.Name};
 			MessageHelper.SendToClient(unit, m2CStartSceneChange);
@@ -37,9 +40,6 @@ namespace ET.Server
 			
 			// 加入aoi
 			unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);
-			
-			// 解锁location，可以接收发给Unit的消息
-			await LocationProxyComponent.Instance.UnLock(LocationType.Unit, unit.Id, request.OldInstanceId, unit.InstanceId);
 		}
 	}
 }

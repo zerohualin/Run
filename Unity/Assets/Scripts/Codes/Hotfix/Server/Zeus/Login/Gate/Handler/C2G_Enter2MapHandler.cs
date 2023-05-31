@@ -67,7 +67,9 @@ namespace ET.Server
                 accountZoneDB.LastRoleId = unitId;
                 //询问排队服务器要不要排队
 
-                Queue2G_Enqueue queue2G_Enqueue = (Queue2G_Enqueue)await MessageHelper.CallActor(accountZoneDB.LoginZoneId,
+                Queue2G_Enqueue queue2G_Enqueue = (Queue2G_Enqueue)await MessageHelper.CallSceneActor(
+                    accountZoneDB.LoginZoneId,
+                    SceneType.Queue,
                     new G2Queue_Enqueue() { Account = account, UnitId = unitId, GateActorId = session.DomainScene().InstanceId });
                 if (queue2G_Enqueue.Error != ErrorCode.ERR_Success)
                 {

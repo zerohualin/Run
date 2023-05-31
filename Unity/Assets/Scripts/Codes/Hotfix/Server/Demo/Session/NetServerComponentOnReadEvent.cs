@@ -19,7 +19,10 @@
             {
                 case IActorLocationMessage actorLocationMessage:
                 {
-                    long unitId = session.GetComponent<SessionPlayerComponent>().Player.Id;
+                    var SessionUserComponent = session.GetComponent<SessionUserComponent>();
+                    GateUser gateUser = SessionUserComponent.User;
+                    AccountZoneDB accountZoneDB = gateUser.GetComponent<AccountZoneDB>();
+                    long unitId = accountZoneDB.Id;
                     ActorLocationSenderComponent.Instance.Get(LocationType.Unit).Send(unitId, actorLocationMessage);
                     break;
                 }
