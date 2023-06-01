@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using ET.EventType;
@@ -6,9 +7,11 @@ using MongoDB.Bson;
 
 namespace ET.Client
 {
-    [FriendOf(typeof (AccountInfoComponent))]
-    [FriendOf(typeof (SessionComponent))]
-    [FriendOf(typeof (RoleInfosComponent))]
+    [FriendOf(typeof(AccountInfoComponent))]
+    [FriendOf(typeof(SessionComponent))]
+    [FriendOf(typeof(RoleInfosComponent))]
+    [FriendOfAttribute(typeof(ET.ServerInfosComponent))]
+    [FriendOfAttribute(typeof(ET.ServerInfo))]
     public static partial class LoginHelper
     {
         // //账号服务器 返回token的模式
@@ -18,26 +21,37 @@ namespace ET.Client
             {
                 IPEndPoint realmAddress = await GetRealmAddress(zoneScene, account);
 
-                int accountLoginResult = await LoginAccount(zoneScene, realmAddress, account, password);
-                if (accountLoginResult != ErrorCode.ERR_Success)
-                    return accountLoginResult;
+                int result = await LoginAccount(zoneScene, realmAddress, account, password);
+                if (result != ErrorCode.ERR_Success)
+                    return result;
 
-                // R2C_Login r2CLogin;
-                // using (Session session = await RouterHelper.CreateRouterSession(clientScene, realmAddress))
-                // {
-                //     r2CLogin = (R2C_Login) await session.Call(new C2R_Login() { Account = account, Password = password });
-                // }
-                //
-                // // 创建一个gate Session,并且保存到SessionComponent中
-                // Session gateSession = await RouterHelper.CreateRouterSession(clientScene, NetworkHelper.ToIPEndPoint(r2CLogin.Address));
-                // clientScene.AddComponent<SessionComponent>().Session = gateSession;
-                //
-                // G2C_LoginGate g2CLoginGate = (G2C_LoginGate)await gateSession.Call(
-                //     new C2G_LoginGate() { Key = r2CLogin.Key, GateId = r2CLogin.GateId});
-                //
-                // Log.Debug("登陆gate成功!");
+                result = await LoginHelper.GetServerInfos(zoneScene);
+                if (result != ErrorCode.ERR_Success)
+                    return result;
 
-                // await EventSystem.Instance.PublishAsync(clientScene, new EventType.LoginFinish());
+                var serverInfo = zoneScene.GetComponent<ServerInfosComponent>().ServerInfos.First();
+                
+                await LoginHelper.LoginZone(zoneScene, serverInfo.Zone);
+                if (result != ErrorCode.ERR_Success)
+                    return result; ;
+
+                result = await LoginHelper.LoginGate(zoneScene);
+                if (result != ErrorCode.ERR_Success)
+                    return result;
+
+                result = await LoginHelper.GetRoleInfos(zoneScene);
+                if (result != ErrorCode.ERR_Success)
+                    return result;
+
+                RoleInfosComponent roleInfosComponent = zoneScene.GetComponent<RoleInfosComponent>();
+                RoleInfo roleInfo = roleInfosComponent.RoleInfos.First();
+                if (roleInfo != null)
+                {
+                    // await LoginHelper.DeleteRoleById(zoneScene, roleInfo.Id);
+                }
+                roleInfosComponent.CurrentRoleId = roleInfo.Id;
+
+                await LoginHelper.EnterMap(zoneScene);
             }
             catch (Exception e)
             {
@@ -106,7 +120,9 @@ namespace ET.Client
                 r2CLoginAccount =
                         (R2C_LoginAccount)await realmSession.Call(new C2R_LoginAccount()
                         {
-                            Account = account, Password = password, LoginWay = (int)LoginWayType.Normal
+                            Account = account,
+                            Password = password,
+                            LoginWay = (int)LoginWayType.Normal
                         });
             }
             catch (Exception e)

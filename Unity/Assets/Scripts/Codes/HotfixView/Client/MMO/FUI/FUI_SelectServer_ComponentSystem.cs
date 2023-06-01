@@ -33,28 +33,6 @@ namespace ET.Client
                     Name = serverInfo.Name,
                     Action = async () =>
                     {
-                        int result = await LoginHelper.LoginZone(zoneScene, serverInfo.Zone);
-                        if (result != ErrorCode.ERR_Success)
-                            return;
-
-                        result = await LoginHelper.LoginGate(zoneScene);
-                        if (result != ErrorCode.ERR_Success)
-                            return;
-
-                        result = await LoginHelper.GetRoleInfos(zoneScene);
-                        if (result != ErrorCode.ERR_Success)
-                            return;
-
-                        RoleInfosComponent roleInfosComponent = zoneScene.GetComponent<RoleInfosComponent>();
-                        RoleInfo roleInfo = roleInfosComponent.RoleInfos.First();
-                        if (roleInfo != null)
-                        {
-                            // await LoginHelper.DeleteRoleById(zoneScene, roleInfo.Id);
-                        }
-
-                        roleInfosComponent.CurrentRoleId = roleInfo.Id;
-
-                        await LoginHelper.EnterMap(zoneScene);
                     }
                 });
             }
@@ -126,25 +104,8 @@ namespace ET.Client
                     Log.Error(loginResultCode.ToString());
                     return;
                 }
-
-                int getServerInfosResult = await LoginHelper.GetServerInfos(self.DomainScene());
-                if (getServerInfosResult != ErrorCode.ERR_Success)
-                {
-                    Log.Error(loginResultCode.ToString());
-                    return;
-                }
-
-                self.ShowServerInfos().Coroutine();
-
+                
                 self.DomainScene().GetComponent<FGUIComponent>().Close(FGUIType.SelectServer);
-
-                // await LoginHelper.GetServerInfos(self.DomainScene());
-                //
-                // await LoginHelper.GetRealmKey(self.DomainScene());
-                //
-                // await LoginHelper.EnterGame(self.DomainScene());
-                //
-                // await EventSystem.Instance.PublishAsync(new EventType.LoginFinish() { ZoneScene = self.DomainScene(), LastSceneType = SceneType.Map });
             }
             catch (Exception e)
             {
