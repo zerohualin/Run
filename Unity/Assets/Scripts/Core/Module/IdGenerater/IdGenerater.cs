@@ -145,6 +145,8 @@ namespace ET
 
         public const int MaxZone = 1024;
         
+        public const int MaxSceneType = 1024;
+        
         private long epoch2020;
         private ushort value;
         private uint lastIdTime;

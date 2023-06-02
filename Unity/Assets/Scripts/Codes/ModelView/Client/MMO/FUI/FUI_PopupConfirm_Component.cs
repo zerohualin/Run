@@ -14,11 +14,19 @@ namespace ET.Client
         [FGUISelfObjectAttribute]
         public GComponent self;
 
-        [FGUIObject]
-        public GTextField title;
-        [FGUIObject]
-        public GTextField content;
         [FGUICustomCom]
-        public Btn_Middle ButtonConfirm;
+        public BgGray BgGray;
+        [FGUIObject]
+        public GImage Bg;
+        [FGUIObject]
+        public GImage Line;
+        [FGUIObject]
+        public GTextField Text_Title;
+        [FGUIObject]
+        public GTextField Text_Context;
+        [FGUICustomCom]
+        public Btn_Middle Btn_Confirm;
+        [FGUICustomCom]
+        public Btn_Close Btn_Close;
     }
 }

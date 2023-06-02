@@ -14,8 +14,8 @@ namespace ET.Client
         public GButton self;
 
         [FGUIObject]
-        public GLoader bg;
+        public GImage Bg;
         [FGUIObject]
-        public GTextField buttonText;
+        public GTextField Text;
     }
 }

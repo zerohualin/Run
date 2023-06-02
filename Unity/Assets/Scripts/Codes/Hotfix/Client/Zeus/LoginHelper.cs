@@ -288,7 +288,7 @@ namespace ET.Client
             if (g2C_Enter2Map.InQueue)
             {
                 EventSystem.Instance.Publish(zoneScene, new UpdateQueueInfo() { Count = g2C_Enter2Map.Count, Index = g2C_Enter2Map.Index });
-                return ErrorCode.ERR_Success;
+                // return ErrorCode.ERR_Success;
             }
             else
             {

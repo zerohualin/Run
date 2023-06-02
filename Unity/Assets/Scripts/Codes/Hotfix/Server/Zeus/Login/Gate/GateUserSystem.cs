@@ -105,7 +105,7 @@ namespace ET.Server
                 };
                 self.Session.Send(sceneChange);
   
-                self.Session.AddComponent<SessionPlayerComponent>().Player = player;
+                // self.Session.AddComponent<SessionPlayerComponent>().Player = player;
                 MessageHelper.SendToLocationActor(LocationType.Unit, accountZoneDB.Id, new G2M_ReLogin(){});
                 return;
             }

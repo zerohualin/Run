@@ -29,7 +29,11 @@
                     }
                 case IActorLocationRequest actorLocationRequest: // gate session收到actor rpc消息，先向actor 发送rpc请求，再将请求结果返回客户端
                     {
-                        long unitId = session.GetComponent<SessionPlayerComponent>().Player.Id;
+                        var SessionUserComponent = session.GetComponent<SessionUserComponent>();
+                        GateUser gateUser = SessionUserComponent.User;
+                        AccountZoneDB accountZoneDB = gateUser.GetComponent<AccountZoneDB>();
+                        long unitId = accountZoneDB.Id;
+                        
                         int rpcId = actorLocationRequest.RpcId; // 这里要保存客户端的rpcId
                         long instanceId = session.InstanceId;
                         IResponse iResponse = await ActorLocationSenderComponent.Instance.Get(LocationType.Unit).Call(unitId, actorLocationRequest);
