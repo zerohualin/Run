@@ -1,3 +1,5 @@
+using Cfg;
+
 namespace ET.Client
 {
     [Event(SceneType.Client)]
@@ -7,6 +9,8 @@ namespace ET.Client
         {
             Scene currentScene = scene.CurrentScene();
             currentScene.AddComponent<CameraManagerComponent>();
+
+            await scene.GetComponent<FGUIComponent>().OpenAysnc(FGUIType.Loading);
 
             string path = $"Assets/Scenes/{currentScene.Name}.unity";
             await YooAssetProxy.LoadSceneAsync(path);

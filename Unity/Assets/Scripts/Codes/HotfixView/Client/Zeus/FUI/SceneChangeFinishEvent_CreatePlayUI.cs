@@ -7,6 +7,7 @@ namespace ET.Client
     {
         protected override async ETTask Run(Scene scene, EventType.SceneChangeFinish args)
         {
+            await TimerComponent.Instance.WaitAsync(2000);
             await scene.GetComponent<FGUIComponent>().OpenAysnc(FGUIType.Play);
             scene.GetComponent<FGUIComponent>().Close(FGUIType.Loading);
         }

@@ -17,9 +17,14 @@ namespace ET.Client
 
             Root.Instance.Scene.AddComponent<AnimaResourceComponent>();
 
+            
             // await ResourcesComponent.Instance.LoadBundleAsync("unit.unity3d");
             
             Scene clientScene = await SceneFactory.CreateClientScene(1, "Game");
+            
+#if UNITY_EDITOR
+            clientScene.AddComponent<UnityDebugComponent>();   
+#endif
 
             await LubanComponent.Instance.LoadAsync(ByteBufLoader);
             
