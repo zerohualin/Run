@@ -16,7 +16,6 @@ namespace ET.Client
             Root.Instance.Scene.AddComponent<GlobalComponent>();
 
             Root.Instance.Scene.AddComponent<AnimaResourceComponent>();
-
             
             // await ResourcesComponent.Instance.LoadBundleAsync("unit.unity3d");
             
@@ -25,14 +24,13 @@ namespace ET.Client
 #if UNITY_EDITOR
             clientScene.AddComponent<UnityDebugComponent>();   
 #endif
-
             await LubanComponent.Instance.LoadAsync(ByteBufLoader);
             
             var FGUIComponent = clientScene.AddComponent<FGUIComponent>();
             FGUIComponent.AddComponent<FGUIEventComponent>();
 
-            await clientScene.GetComponent<FGUIComponent>().OpenAysnc(FGUIType.SelectServer);
-
+            clientScene.AddComponent<ProcedureComponent>();
+            
             // await Game.EventSystem.PublishAsync(clientScene, new EventType.Goto_MiniGame());
             // await Game.EventSystem.PublishAsync(clientScene, new EventType.AppStartInitFinish());
         }

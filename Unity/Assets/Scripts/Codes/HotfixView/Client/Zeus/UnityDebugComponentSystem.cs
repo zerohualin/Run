@@ -1,3 +1,4 @@
+using ET.EventType;
 using UnityEngine;
 
 namespace ET.Client
@@ -14,6 +15,14 @@ namespace ET.Client
             if (Input.GetKeyDown(KeyCode.L))
             {
                 SceneChangeHelper.SceneChangeTo(self.ClientScene(), "Login", 10001).Coroutine();
+            }
+
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                EventSystem.Instance.Publish(self.ClientScene(), new NetDisconnect()
+                {
+                    Code = 100
+                });
             }
         }
     }

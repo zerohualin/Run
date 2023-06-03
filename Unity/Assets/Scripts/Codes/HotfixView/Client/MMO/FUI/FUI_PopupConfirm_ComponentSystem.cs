@@ -22,6 +22,7 @@ namespace ET.Client
             {
                 if (action != null)
                     action();
+                FGUIComponent.Instance.Close(FGUIType.PopupConfirm);
             });
         }
     }

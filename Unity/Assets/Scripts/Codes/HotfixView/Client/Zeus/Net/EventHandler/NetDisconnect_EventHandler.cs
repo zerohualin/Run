@@ -12,7 +12,8 @@ namespace ET.Client
             var FUI_PopupConfirm_Component = FGUIComponent.Instance.Get<FUI_PopupConfirm_Component>(FGUIType.PopupConfirm);
             FUI_PopupConfirm_Component.SetData("提示", "有人顶你下线了哦", () =>
             {
-                Log.Error("回到登录界面吧");
+                scene.GetComponent<ProcedureComponent>().GetComponent<FSMComponent>().Post(FSMAct.ToLogin);
+                SceneChangeHelper.DisposeCurrentScene(scene);
             });
         }
     }

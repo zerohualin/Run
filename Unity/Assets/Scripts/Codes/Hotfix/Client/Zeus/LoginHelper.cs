@@ -3,7 +3,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using ET.EventType;
-using MongoDB.Bson;
 
 namespace ET.Client
 {
@@ -15,35 +14,35 @@ namespace ET.Client
     public static partial class LoginHelper
     {
         // //账号服务器 返回token的模式
-        public static async ETTask<int> LoginAsync(Scene zoneScene, string account, string password)
+        public static async ETTask<int> LoginAsync(Scene clientScene, string account, string password)
         {
             try
             {
-                IPEndPoint realmAddress = await GetRealmAddress(zoneScene, account);
+                IPEndPoint realmAddress = await GetRealmAddress(clientScene, account);
 
-                int result = await LoginAccount(zoneScene, realmAddress, account, password);
+                int result = await LoginAccount(clientScene, realmAddress, account, password);
                 if (result != ErrorCode.ERR_Success)
                     return result;
 
-                result = await LoginHelper.GetServerInfos(zoneScene);
+                result = await LoginHelper.GetServerInfos(clientScene);
                 if (result != ErrorCode.ERR_Success)
                     return result;
 
-                var serverInfo = zoneScene.GetComponent<ServerInfosComponent>().ServerInfos.First();
+                var serverInfo = clientScene.GetComponent<ServerInfosComponent>().ServerInfos.First();
                 
-                await LoginHelper.LoginZone(zoneScene, serverInfo.Zone);
+                await LoginHelper.LoginZone(clientScene, serverInfo.Zone);
                 if (result != ErrorCode.ERR_Success)
                     return result; ;
 
-                result = await LoginHelper.LoginGate(zoneScene);
+                result = await LoginHelper.LoginGate(clientScene);
                 if (result != ErrorCode.ERR_Success)
                     return result;
 
-                result = await LoginHelper.GetRoleInfos(zoneScene);
+                result = await LoginHelper.GetRoleInfos(clientScene);
                 if (result != ErrorCode.ERR_Success)
                     return result;
 
-                RoleInfosComponent roleInfosComponent = zoneScene.GetComponent<RoleInfosComponent>();
+                RoleInfosComponent roleInfosComponent = clientScene.GetComponent<RoleInfosComponent>();
                 RoleInfo roleInfo = roleInfosComponent.RoleInfos.First();
                 if (roleInfo != null)
                 {
@@ -51,7 +50,7 @@ namespace ET.Client
                 }
                 roleInfosComponent.CurrentRoleId = roleInfo.Id;
 
-                await LoginHelper.EnterMap(zoneScene);
+                await LoginHelper.EnterMap(clientScene);
             }
             catch (Exception e)
             {
@@ -99,8 +98,11 @@ namespace ET.Client
                 routerAddressComponent =
                         zoneScene.AddComponent<RouterAddressComponent, string, int>(ConstValue.RouterHttpHost, ConstValue.RouterHttpPort);
                 await routerAddressComponent.Init();
-
-                zoneScene.AddComponent<NetClientComponent, AddressFamily>(routerAddressComponent.RouterManagerIPAddress.AddressFamily);
+                
+                AddressFamily addressFamily = routerAddressComponent.RouterManagerIPAddress.AddressFamily;
+                var netClientComponent = zoneScene.GetComponent<NetClientComponent>();
+                if(netClientComponent == null)
+                    zoneScene.AddComponent<NetClientComponent, AddressFamily>(addressFamily);
             }
 
             IPEndPoint realmAddress = routerAddressComponent.GetRealmAddress(account);

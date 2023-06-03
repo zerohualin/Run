@@ -11,6 +11,9 @@ namespace ET.Client
             {
                 Code = message.Error
             });
+            Scene ClientScene = session.DomainScene();
+            ClientScene.RemoveComponent<SessionComponent>();
+            ClientScene.RemoveComponent<NetClientComponent>();
             await ETTask.CompletedTask;
         }
     }

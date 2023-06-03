@@ -26,6 +26,7 @@ namespace ET.Client
     {
         protected override void Destroy(CameraManagerComponent self)
         {
+            self.GlobalCamera.enabled = true;
             GameObject.Destroy(self.FTra.gameObject);
         }
     }

@@ -17,13 +17,15 @@ namespace ET.Client
     }
 
     [ObjectSystem]
-    public class UnitHeadBarComponentDestorySystem: DestroySystem<UnitHeadBarComponent>
+    [FriendOfAttribute(typeof(ET.Client.HeadBar))]
+    public class UnitHeadBarComponentDestorySystem : DestroySystem<UnitHeadBarComponent>
     {
         protected override void Destroy(UnitHeadBarComponent self)
         {
+            GRoot.inst.RemoveChild(self.fui.self);
         }
     }
-    
+
     [ObjectSystem]
     public class UnitHeadBarComponentUpdateSystem: UpdateSystem<UnitHeadBarComponent>
     {

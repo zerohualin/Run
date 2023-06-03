@@ -104,8 +104,6 @@ namespace ET.Client
                     Log.Error(loginResultCode.ToString());
                     return;
                 }
-                
-                self.DomainScene().GetComponent<FGUIComponent>().Close(FGUIType.SelectServer);
             }
             catch (Exception e)
             {
