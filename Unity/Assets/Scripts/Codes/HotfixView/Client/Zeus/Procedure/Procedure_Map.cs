@@ -9,6 +9,7 @@ namespace ET.Client
         {
             base.OnInit(fsmComponent);
             AddAction<Procedure_Login>(FSMAct.ToLogin);
+            AddAction<Procedure_Loding>(FSMAct.ToLoading);
         }
         
         public override async ETTask OnEnter(FSMComponent fsmComponent)

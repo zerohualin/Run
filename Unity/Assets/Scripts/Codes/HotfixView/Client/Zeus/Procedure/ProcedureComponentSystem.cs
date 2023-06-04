@@ -21,7 +21,7 @@ namespace ET.Client
             self.GetComponent<FSMComponent>().Post(FSMAct.ToLoading);
             
             string path = $"Assets/Scenes/{self.TargetMap}.unity";
-            await TimerComponent.Instance.WaitAsync(1000);
+            await TimerComponent.Instance.WaitAsync(1500);
             await YooAssetProxy.LoadSceneAsync(path);
             
             self.IsFinishLoadMapScene = true;

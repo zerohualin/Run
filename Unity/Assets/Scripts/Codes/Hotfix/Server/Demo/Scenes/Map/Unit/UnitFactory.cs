@@ -5,14 +5,14 @@ namespace ET.Server
 {
     public static class UnitFactory
     {
-        public static Unit Create(Scene scene, long id, UnitType unitType, long gateId = 0)
+        public static Unit Create(Scene scene, long id, UnitType unitType, long gateId = 0, int unitConfgiId = 1001)
         {
             UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
             switch (unitType)
             {
                 case UnitType.Player:
                 {
-                    Unit unit = unitComponent.AddChildWithId<Unit, int>(id, 1001);
+                    Unit unit = unitComponent.AddChildWithId<Unit, int>(id, unitConfgiId);
                     // unit.AddComponent<UnitGateComponent, long>(gateId);
                     unit.AddComponent<MoveComponent>();
                     unit.Position = new float3(-10, 0, -10);
@@ -32,7 +32,7 @@ namespace ET.Server
 
                 case UnitType.NPC:
                 {
-                    Unit unit = unitComponent.AddChildWithId<Unit, int>(id, 1002);
+                    Unit unit = unitComponent.AddChildWithId<Unit, int>(id, unitConfgiId);
                     unit.AddComponent<MoveComponent>();
                     unit.Position = new float3(-10, 0, 0);
                     

@@ -226,6 +226,7 @@ message M2C_TestRobotCase2 // IActorLocationMessage
 message C2M_TransferMap // IActorLocationRequest
 {
 	int32 RpcId = 1;
+	string TargetMapName = 2;
 }
 
 message M2C_TransferMap // IActorLocationResponse

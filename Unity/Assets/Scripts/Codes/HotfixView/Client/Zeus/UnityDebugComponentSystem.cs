@@ -24,6 +24,27 @@ namespace ET.Client
                     Code = 100
                 });
             }
+            
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                CodeLoader.Instance.LoadHotfix();
+                EventSystem.Instance.Load();
+                Log.Debug("hot reload success!");
+            }
+            
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                C2M_TransferMap c2MTransferMap = new C2M_TransferMap();
+                c2MTransferMap.TargetMapName = "Map2";
+                self.ClientScene().GetComponent<SessionComponent>().Session.Call(c2MTransferMap).Coroutine();
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Y))
+            {
+                C2M_TransferMap c2MTransferMap = new C2M_TransferMap();
+                c2MTransferMap.TargetMapName = "Map1";
+                self.ClientScene().GetComponent<SessionComponent>().Session.Call(c2MTransferMap).Coroutine();
+            }
         }
     }
 }

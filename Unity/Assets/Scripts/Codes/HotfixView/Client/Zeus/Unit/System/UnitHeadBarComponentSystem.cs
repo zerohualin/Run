@@ -51,7 +51,7 @@ namespace ET.Client
             self.fui.ProgressBarMp.self.visible = false;
             self.fui.network.visible = false;
 
-            self.fui.title.text = self.Unit.Config.Name;
+            self.fui.title.text = self.Unit.Config.Desc;
             if (self.Unit.Type == UnitType.Player)
                 self.fui.title.color = Color.cyan;
             if (self.Unit.Type == UnitType.NPC)
