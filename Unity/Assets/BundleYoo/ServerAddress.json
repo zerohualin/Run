@@ -2,8 +2,13 @@
   "_t": "System.Collections.Generic.List`1[[ET.Client.ServerRouter, Unity.ModelView.Codes]]",
   "_v": [
     {
-      "Name": "华林",
+      "Name": "LocalHost",
       "RouterHost": "127.0.0.1",
+      "RouterPort": 30300
+    },
+    {
+      "Name": "192.168.1.2",
+      "RouterHost": "192.168.1.2",
       "RouterPort": 30300
     },
     {
