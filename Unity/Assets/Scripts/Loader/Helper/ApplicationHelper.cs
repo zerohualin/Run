@@ -22,13 +22,18 @@ namespace ET
         
         public static string GetPlatName(RuntimePlatform platform)
         {
-            if (platform == RuntimePlatform.Android)
-                return RuntimePlatform.Android.ToString();
-            if (platform == RuntimePlatform.WindowsPlayer || platform == RuntimePlatform.WindowsEditor)
-                return "StandaloneWindows64";
-            if (platform == RuntimePlatform.OSXPlayer || platform == RuntimePlatform.OSXEditor)
-                return "StandaloneOSX";
-            return "StandaloneOSX";
+            switch (platform)
+            {
+                case RuntimePlatform.Android:
+                case RuntimePlatform.WindowsEditor:
+                    return RuntimePlatform.Android.ToString();
+                case RuntimePlatform.WindowsPlayer:
+                    return "StandaloneWindows64";
+                case RuntimePlatform.OSXPlayer:
+                case RuntimePlatform.OSXEditor:
+                    return "StandaloneOSX";
+            }
+            return "Android";
         }
 #if UNITY_EDITOR
         public static string GetPlatName(BuildTarget BT)

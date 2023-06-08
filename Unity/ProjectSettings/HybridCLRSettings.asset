@@ -19,7 +19,7 @@ MonoBehaviour:
   hotUpdateAssemblyDefinitions: []
   hotUpdateAssemblies:
   - Model
-  - Hotfix_426972013
+  - Hotfix
   preserveHotUpdateAssemblies: []
   hotUpdateDllCompileOutputRootDir: HybridCLRData/HotUpdateDlls
   externalHotUpdateAssembliyDirs:
