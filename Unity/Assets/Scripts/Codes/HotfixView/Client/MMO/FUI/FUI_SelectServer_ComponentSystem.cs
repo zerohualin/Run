@@ -79,7 +79,7 @@ namespace ET.Client
         {
             if (self.ServerRouters == null)
             {
-                var serverAddress = YooAssets.LoadRawFileSync("ServerAddress");
+                var serverAddress = YooAssetProxy.Zeus.LoadRawFileSync("ServerAddress");
                 string json = serverAddress.GetRawFileText();
                 self.ServerRouters = MongoHelper.FromJson<List<ServerRouter>>(json);
             }

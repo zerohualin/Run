@@ -13,8 +13,8 @@ namespace ET.Client
 
         public override async ETTask OnEnter(FSMComponent fsmComponent)
         {
-            string path = $"Assets/Scenes/Login.unity";
-            await YooAssetProxy.LoadSceneAsync(path);
+            string path = $"{ConstValueView.ZeusBundlePath}/Scenes/Login.unity";
+            await YooAssetProxy.Zeus.LoadSceneETAsync(path);
             await FGUIComponent.Instance.OpenAysnc(FGUIType.SelectServer);
         }
         

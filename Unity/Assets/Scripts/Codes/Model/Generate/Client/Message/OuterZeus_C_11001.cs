@@ -391,6 +391,15 @@ namespace ET
 
 	}
 
+	[Message(OuterZeus.HttpGetConfigResponse)]
+	[ProtoContract]
+	public partial class HttpGetConfigResponse: ProtoObject
+	{
+		[MongoDB.Bson.Serialization.Attributes.BsonDictionaryOptions(MongoDB.Bson.Serialization.Options.DictionaryRepresentation.ArrayOfArrays)]
+		[ProtoMember(6)]
+		public Dictionary<string, string> KV { get; set; }
+	}
+
 	public static class OuterZeus
 	{
 		 public const ushort C2R_LoginAccount = 11002;
@@ -418,5 +427,6 @@ namespace ET
 		 public const ushort Chat2C_NoticeChatInfo = 11024;
 		 public const ushort C2Chat_SendChatInfo = 11025;
 		 public const ushort Chat2C_SendChatInfo = 11026;
+		 public const ushort HttpGetConfigResponse = 11027;
 	}
 }

@@ -57,7 +57,7 @@ namespace ET.Client
 
             if (type == typeof (Texture))
             {
-                var handle = await YooAssetProxy.LoadAssetAsync<Texture>(name);
+                var handle = await YooAssetProxy.Zeus.LoadAssetETAsync<Texture>(name);
                 Texture t = handle.GetAsset<Texture>();
                 item.owner.SetItemAsset(item, t, DestroyMethod.Custom);
             }

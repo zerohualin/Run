@@ -37,8 +37,8 @@ namespace ET.Client
         
         private ByteBuf ByteBufLoader(string filename)
         {
-            string path = $"Assets/BundleYoo/LubanBin/{filename}.bytes";
-            var handle = YooAssets.LoadRawFileSync(path);
+            string path = $"{ConstValueView.ZeusBundlePath}/LubanBin/{filename}.bytes";
+            var handle = YooAssetProxy.Zeus.LoadRawFileSync(path);
             var bytes = handle.GetRawFileData();
             return new ByteBuf(bytes);
         }

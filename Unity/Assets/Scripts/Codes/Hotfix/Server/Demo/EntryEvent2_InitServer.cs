@@ -63,7 +63,7 @@ namespace ET.Server
             string filePath =$"{directory}/../BinLuban/{filename}.bytes";
             if (directory.Contains("Unity"))
             {
-                filePath = $"{directory}/Assets/BundleYoo/LubanBin/{filename}.bytes";
+                filePath = $"{directory}/../../Zeus_Res/BundleYoo/LubanBin/{filename}.bytes";
             }
             byte[] bytes = FileHelper.FileToByteArray(filePath);
             return new ByteBuf(bytes);

@@ -195,3 +195,8 @@ message Chat2C_SendChatInfo // IActorChatInfoResponse
 	int32 Error = 91;
 	string Message = 92;
 }
+
+message HttpGetConfigResponse
+{
+	map<string, string> KV = 6;
+}

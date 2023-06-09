@@ -43,8 +43,8 @@ namespace ET.Client
 
         public static void CreatePlayerCamera(this CameraManagerComponent self)
         {
-            string cameraPrefabPath = "Assets/BundleYoo/Zeus/Common/PlayerCamera.prefab";
-            var handle = YooAssets.LoadAssetSync<GameObject>(cameraPrefabPath);
+            string cameraPrefabPath = $"{ConstValueView.ZeusBundlePath}/Common/PlayerCamera.prefab";
+            var handle = YooAssetProxy.Zeus.LoadAssetSync<GameObject>(cameraPrefabPath);
             GameObject bundleGameObject = handle.GetAssetObject<GameObject>();
             self.PlayerCamera = GameObject.Instantiate(bundleGameObject).GetComponentInChildren<Camera>();
             self.PlayerCamera.transform.parent.SetParent(self.FTra);

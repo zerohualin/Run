@@ -20,9 +20,9 @@ namespace ET.Client
             self.TargetMap = targetMap;
             self.GetComponent<FSMComponent>().Post(FSMAct.ToLoading);
             
-            string path = $"Assets/Scenes/{self.TargetMap}.unity";
+            string path = $"{ConstValueView.ZeusBundlePath}/Scenes/{self.TargetMap}.unity";
             await TimerComponent.Instance.WaitAsync(1500);
-            await YooAssetProxy.LoadSceneAsync(path);
+            await YooAssetProxy.Zeus.LoadSceneETAsync(path);
             
             self.IsFinishLoadMapScene = true;
             self.GetComponent<FSMComponent>().Post(FSMAct.TryFinishLoading);
