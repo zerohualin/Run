@@ -13,7 +13,6 @@ namespace ET.Server
             {
                 tasks[i] = self.NewZeusRobot(scenes);
             }
-
             await ETTaskHelper.WaitAll(tasks);
         }
         
