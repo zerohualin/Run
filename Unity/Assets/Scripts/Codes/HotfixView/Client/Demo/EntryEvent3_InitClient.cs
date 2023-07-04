@@ -1,3 +1,4 @@
+using System.Net.Mime;
 using Bright.Serialization;
 using Cfg;
 using UnityEngine;
@@ -10,6 +11,9 @@ namespace ET.Client
     {
         protected override async ETTask Run(Scene scene, ET.EventType.EntryEvent3 args)
         {
+            string LocalDataPath = $"{Application.persistentDataPath}";
+            Game.AddSingleton<LocalDataComponent>().Init(LocalDataPath, "15168392381");
+            
             // 加载配置
             Root.Instance.Scene.AddComponent<ResourcesComponent>();
             

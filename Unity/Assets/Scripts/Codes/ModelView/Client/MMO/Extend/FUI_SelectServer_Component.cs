@@ -6,5 +6,6 @@ namespace ET.Client
     public partial class FUI_SelectServer_Component
     {
         public List<ServerRouter> ServerRouters;
+        public int SelectIndex;
     }
 }

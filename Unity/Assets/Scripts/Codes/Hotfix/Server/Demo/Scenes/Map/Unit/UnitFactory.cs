@@ -15,7 +15,7 @@ namespace ET.Server
                     Unit unit = unitComponent.AddChildWithId<Unit, int>(id, unitConfgiId);
                     // unit.AddComponent<UnitGateComponent, long>(gateId);
                     unit.AddComponent<MoveComponent>();
-                    unit.Position = new float3(-10, 0, -10);
+                    unit.Position = new float3(0, 0, 0);
                     
                     unit.AddComponent<MailBoxComponent>();
                     unit.AddLocation(LocationType.Unit).Coroutine();
@@ -34,7 +34,7 @@ namespace ET.Server
                 {
                     Unit unit = unitComponent.AddChildWithId<Unit, int>(id, unitConfgiId);
                     unit.AddComponent<MoveComponent>();
-                    unit.Position = new float3(-10, 0, 0);
+                    unit.Position = new float3(0, 0, 6);
                     
                     unit.AddComponent<MailBoxComponent>();
                     unit.AddLocation(LocationType.Unit).Coroutine();

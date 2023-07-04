@@ -67,7 +67,7 @@ namespace ETEditor
         private static Dictionary<Vert, Dictionary<Vert, Pair>> vertPairDict = new Dictionary<Vert, Dictionary<Vert, Pair>>();
         private static Dictionary<float, Dictionary<float, Vert>> pointVertDict = new Dictionary<float, Dictionary<float, Vert>>();
         private static Dictionary<int, Vert> indexVertDict = new Dictionary<int, Vert>();
-        private static string outputClientFolder = "../RecastNavMesh/Meshes/";
+        private static string outputClientFolder = "../Tools/RecastNavExportor/Meshes/";
         private static string outputServerFolder = "../Config/RecastNavData/ExportedObj/";
 
         #region 菜单主函数

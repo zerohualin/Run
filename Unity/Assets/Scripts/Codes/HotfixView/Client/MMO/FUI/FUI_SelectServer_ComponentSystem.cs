@@ -72,11 +72,12 @@ namespace ET.Client
         public static void SetUsername(this FUI_SelectServer_Component self, string acc)
         {
             self.userNameBtn.name.text = acc;
-            PlayerPrefs.SetString(LocalData.LastAccount, acc);
         }
 
         public static async ETTask SetSelectServer(this FUI_SelectServer_Component self, int routerIndex = 0)
         {
+            self.SelectIndex = routerIndex;
+            
             if (self.ServerRouters == null)
             {
                 var serverAddress = YooAssetProxy.Zeus.LoadRawFileSync("ServerAddress");
@@ -104,6 +105,9 @@ namespace ET.Client
                     Log.Error(loginResultCode.ToString());
                     return;
                 }
+                
+                LocalDataComponent.Instance.Set(LocalData.LastServer, self.SelectIndex);
+                LocalDataComponent.Instance.Set(LocalData.LastAccount, account);
             }
             catch (Exception e)
             {
@@ -123,10 +127,10 @@ namespace ET.Client
     {
         public override void OnCreate(FUI_SelectServer_Component component)
         {
-            var LastAccount = PlayerPrefs.GetString(LocalData.LastAccount);
+            var LastAccount = LocalDataComponent.Instance.GetString(LocalData.LastAccount);
             component.SetUsername(LastAccount);
-
-            var lastServer = PlayerPrefs.GetInt(LocalData.LastServer);
+            
+            int lastServer = LocalDataComponent.Instance.GetInt(LocalData.LastServer);
             component.SetSelectServer(lastServer).Coroutine();
 
             component.userNameBtn.self.AddListener(() => { component.OpenAccountList(); });
@@ -136,6 +140,8 @@ namespace ET.Client
             component.Btn_Bg.self.AddListener(() => { component.TryLogin().Coroutine(); });
 
             component.Btn_Notice.self.AddListener(() => { FGUIComponent.Instance.OpenAysnc(FGUIType.Notice).Coroutine(); });
+
+            component.Text_Version.text = "1.1.1";
         }
 
         public override void OnShow(FUI_SelectServer_Component component)
