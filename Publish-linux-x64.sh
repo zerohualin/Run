@@ -1,4 +1,5 @@
 dotnet restore
+
 dotnet publish -r linux-x64 --no-self-contained --no-dependencies -c Release
 
 path="./Publish/linux-x64"
