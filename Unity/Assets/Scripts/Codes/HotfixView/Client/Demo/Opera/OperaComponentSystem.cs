@@ -34,19 +34,6 @@ namespace ET.Client
                         self.ClientScene().GetComponent<SessionComponent>().Session.Send(c2MPathfindingResult);
                     }
                 }
-
-                if (Input.GetKeyDown(KeyCode.R))
-                {
-                    CodeLoader.Instance.LoadHotfix();
-                    EventSystem.Instance.Load();
-                    Log.Debug("hot reload success!");
-                }
-            
-                if (Input.GetKeyDown(KeyCode.T))
-                {
-                    C2M_TransferMap c2MTransferMap = new C2M_TransferMap();
-                    self.ClientScene().GetComponent<SessionComponent>().Session.Call(c2MTransferMap).Coroutine();
-                }
             }
         }
     }

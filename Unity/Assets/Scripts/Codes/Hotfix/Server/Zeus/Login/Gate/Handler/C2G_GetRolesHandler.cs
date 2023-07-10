@@ -6,13 +6,12 @@ namespace ET.Server
     [MessageHandler(SceneType.Gate)]
     public class C2G_GetRolesHandler: AMRpcHandler<C2G_GetRoles, G2C_GetRoles>
     {
-        protected override async ETTask Run(Session session, C2G_GetRoles request, G2C_GetRoles response, Action reply)
+        protected override async ETTask Run(Session session, C2G_GetRoles request, G2C_GetRoles response)
         {
             var (result, accountZoneDB) = session.CheckAccountZoneDB();
             if (result != ErrorCode.ERR_Success)
             {
                 response.Error = result;
-                reply();
                 return;
             }
             
@@ -27,9 +26,7 @@ namespace ET.Server
                     }
                 }
             }
-
-            reply();
-
+            
             await ETTask.CompletedTask;
         }
     }

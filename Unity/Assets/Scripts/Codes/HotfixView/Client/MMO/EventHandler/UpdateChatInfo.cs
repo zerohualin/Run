@@ -3,7 +3,7 @@
 namespace ET.Client
 {
     [Event(SceneType.Client)]
-    public class UpdateChatInfo: AEvent<EventType.UpdateChatInfo>
+    public class UpdateChatInfo: AEvent<Scene, EventType.UpdateChatInfo>
     {
         protected override async ETTask Run(Scene scene,EventType.UpdateChatInfo args)
         {

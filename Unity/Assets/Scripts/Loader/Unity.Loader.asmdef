@@ -5,7 +5,8 @@
         "Unity.ThirdParty",
         "YooAsset",
         "FairyGUI.Runtime",
-        "Unity.Core"
+        "Unity.Core",
+        "HybridCLR.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

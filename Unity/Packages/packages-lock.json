@@ -1,17 +1,23 @@
 {
   "dependencies": {
     "com.aftershock.package": {
-      "version": "file:/Volumes/Samsung_T5/Zeus/AftershockEditor",
+      "version": "file:C:/101_Dream/AftershockPackage",
       "depth": 0,
       "source": "local",
       "dependencies": {}
     },
-    "com.focus-creative-games.hybridclr_unity": {
+    "com.aftershock.zeus": {
+      "version": "file:../../../Zeus_Res",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
+    "com.code-philosophy.hybridclr": {
       "version": "https://gitee.com/focus-creative-games/hybridclr_unity.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "83c336a5ce93b313779e25069cdd290ffe452f35"
+      "hash": "7d58454fddca3ae2fcdd8374311e489343ea80ee"
     },
     "com.nkg.animancer": {
       "version": "https://github.com/zerohualin/aftershock.animancer.git",
@@ -28,19 +34,18 @@
       "hash": "f09ec43f89a573be8722262e343634e8ec239b32"
     },
     "com.tuyoogame.yooasset": {
-      "version": "1.4.2-preview",
+      "version": "file:../../../YooAsset/Assets/YooAsset",
       "depth": 0,
-      "source": "registry",
+      "source": "local",
       "dependencies": {
         "com.unity.scriptablebuildpipeline": "1.20.2",
         "com.unity.modules.assetbundle": "1.0.0",
         "com.unity.modules.unitywebrequest": "1.0.0",
         "com.unity.modules.unitywebrequestassetbundle": "1.0.0"
-      },
-      "url": "https://package.openupm.cn"
+      }
     },
     "com.unity.burst": {
-      "version": "1.6.6",
+      "version": "1.8.4",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -56,7 +61,7 @@
       "url": "https://packages.unity.cn"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.15",
+      "version": "3.0.21",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -72,7 +77,7 @@
       "url": "https://packages.unity.cn"
     },
     "com.unity.render-pipelines.core": {
-      "version": "12.1.7",
+      "version": "12.1.11",
       "depth": 1,
       "source": "builtin",
       "dependencies": {
@@ -82,14 +87,14 @@
       }
     },
     "com.unity.render-pipelines.universal": {
-      "version": "12.1.7",
+      "version": "12.1.11",
       "depth": 0,
       "source": "builtin",
       "dependencies": {
         "com.unity.mathematics": "1.2.1",
-        "com.unity.burst": "1.5.0",
-        "com.unity.render-pipelines.core": "12.1.7",
-        "com.unity.shadergraph": "12.1.7"
+        "com.unity.burst": "1.8.4",
+        "com.unity.render-pipelines.core": "12.1.11",
+        "com.unity.shadergraph": "12.1.11"
       }
     },
     "com.unity.scriptablebuildpipeline": {
@@ -107,11 +112,11 @@
       "url": "https://packages.unity.cn"
     },
     "com.unity.shadergraph": {
-      "version": "12.1.7",
+      "version": "12.1.11",
       "depth": 1,
       "source": "builtin",
       "dependencies": {
-        "com.unity.render-pipelines.core": "12.1.7",
+        "com.unity.render-pipelines.core": "12.1.11",
         "com.unity.searcher": "4.9.1"
       }
     },

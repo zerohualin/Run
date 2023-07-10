@@ -50,13 +50,14 @@ namespace ET.Client
     [FriendOf(typeof (FGUIComponent))]
     public static class FGUIComponentSystem
     {
+        #pragma warning disable
         public static async void OnLoadResourceFinished(string name, string extension, System.Type type, PackageItem item)
         {
             Debug.Log($"{name}, {extension}, {type.ToString()}, {item.ToString()}");
 
             if (type == typeof (Texture))
             {
-                var handle = await YooAssetProxy.LoadAssetAsync<Texture>(name);
+                var handle = await YooAssetProxy.Zeus.LoadAssetETAsync<Texture>(name);
                 Texture t = handle.GetAsset<Texture>();
                 item.owner.SetItemAsset(item, t, DestroyMethod.Custom);
             }

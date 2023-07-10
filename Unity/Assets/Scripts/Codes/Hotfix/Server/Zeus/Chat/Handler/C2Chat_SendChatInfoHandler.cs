@@ -6,12 +6,11 @@ namespace ET.Server
     [FriendOfAttribute(typeof(ET.Server.ChatInfoUnitsComponent))]
     public class C2Chat_SendChatInfoHandler : AMActorRpcHandler<ChatInfoUnit, C2Chat_SendChatInfo, Chat2C_SendChatInfo>
     {
-        protected override async ETTask Run(ChatInfoUnit chatInfoUnit, C2Chat_SendChatInfo request, Chat2C_SendChatInfo response, Action reply)
+        protected override async ETTask Run(ChatInfoUnit chatInfoUnit, C2Chat_SendChatInfo request, Chat2C_SendChatInfo response)
         {
             if (string.IsNullOrEmpty(request.ChatMessage))
             {
                 response.Error = ErrorCode.ERR_ChatMessageEmpty;
-                reply();
                 return;
             }
 
@@ -21,8 +20,7 @@ namespace ET.Server
                 MessageHelper.SendActor(otherUnit.GateSessionActorId,
                     new Chat2C_NoticeChatInfo() { Name = chatInfoUnit.Name, ChatMessage = request.ChatMessage, UnitId = chatInfoUnit.Id });
             }
-
-            reply();
+            
             await ETTask.CompletedTask;
         }
     }

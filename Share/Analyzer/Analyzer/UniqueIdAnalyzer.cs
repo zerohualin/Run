@@ -24,7 +24,7 @@ namespace ET.Analyzer
         
         private void Analyzer(SymbolAnalysisContext context)
         {
-            if (!AnalyzerHelper.IsAssemblyNeedAnalyze(context.Compilation.AssemblyName, AnalyzeAssembly.AllModel))
+            if (!AnalyzerHelper.IsAssemblyNeedAnalyze(context.Compilation.AssemblyName, AnalyzeAssembly.All))
             {
                 return;
             }
@@ -78,6 +78,7 @@ namespace ET.Analyzer
             
             void ReportDiagnostic(IFieldSymbol fieldSymbol, int idValue, DiagnosticDescriptor rule)
             {
+                ET.Analyzer.ClientClassInServerAnalyzer analyzer = new ClientClassInServerAnalyzer();
                 foreach (var syntaxReference in fieldSymbol.DeclaringSyntaxReferences)
                 {
                     var syntax = syntaxReference.GetSyntax();

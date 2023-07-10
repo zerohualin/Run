@@ -24,16 +24,22 @@ namespace ET.Server
             Scene scene = await SceneFactory.CreateServerScene(self, IdGenerater.Instance.GenerateId(), IdGenerater.Instance.GenerateInstanceId(),
                 self.DomainZone(), "bechmark", SceneType.Benchmark);
             
-            NetClientComponent netClientComponent = scene.AddComponent<NetClientComponent, AddressFamily>(AddressFamily.InterNetwork);
+            Client.NetClientComponent netClientComponent = scene.AddComponent<Client.NetClientComponent, AddressFamily>(AddressFamily.InterNetwork);
 
             using Session session = netClientComponent.Create(StartSceneConfigCategory.Instance.BenchmarkServer.OuterIPPort);
-            List<ETTask<IResponse>> list = new List<ETTask<IResponse>>(100000);
+            List<ETTask> list = new List<ETTask>(100000);
+
+            async ETTask Call(Session s)
+            {
+                await s.Call(new C2G_Benchmark());
+            }
+            
             for (int j = 0; j < 100000000; ++j)
             {
                 list.Clear();
                 for (int i = 0; i < list.Capacity; ++i)
                 {
-                    list.Add(session.Call(new C2G_Benchmark()));
+                    list.Add(Call(session));
                 }
                 await ETTaskHelper.WaitAll(list);
             }

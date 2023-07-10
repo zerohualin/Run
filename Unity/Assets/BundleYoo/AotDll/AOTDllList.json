@@ -1,0 +1,21 @@
+{
+    "$id": 0,
+    "$type": "0|ET.DLLNameListForAOT, Unity.Mono",
+    "DLLNameList": {
+        "$id": 1,
+        "$type": "1|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+        "$rlength": 10,
+        "$rcontent": [
+            "System.dll",
+            "mscorlib.dll",
+            "System.Core.dll",
+            "Sirenix.Serialization.dll",
+            "Unity.Loader.dll",
+            "Unity.Core.dll",
+            "Unity.ThirdParty.dll",
+            "MongoDB.Bson.dll",
+            "CommandLine.dll",
+            "NLog.dll"
+        ]
+    }
+}

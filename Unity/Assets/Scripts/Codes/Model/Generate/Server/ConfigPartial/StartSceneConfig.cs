@@ -22,7 +22,7 @@ namespace ET
 
         public List<StartSceneConfig> Robots = new List<StartSceneConfig>();
 
-        public StartSceneConfig[,] SceneTypeByScenes = new StartSceneConfig[IdGenerater.MaxZone, (int)SceneType.Max];
+        public StartSceneConfig[,] SceneTypeByScenes = new StartSceneConfig[IdGenerater.MaxZone, IdGenerater.MaxSceneType];
 
         public StartSceneConfig BenchmarkServer;
 
@@ -69,9 +69,9 @@ namespace ET
                     case SceneType.BenchmarkServer:
                         this.BenchmarkServer = startSceneConfig;
                         break;
-                    default:
-                        this.SceneTypeByScenes[startSceneConfig.Zone, (int)startSceneConfig.Type] = startSceneConfig;
-                        break;
+                    // default:
+                    //     this.SceneTypeByScenes[startSceneConfig.Zone, (int)startSceneConfig.Type] = startSceneConfig;
+                    //     break;
                 }
             }
         }

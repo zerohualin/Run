@@ -28,20 +28,21 @@ namespace ET.Server
                 Game.AddSingleton<Logger>().ILog = new NLogger(Options.Instance.AppType.ToString(), Options.Instance.Process, "../Config/NLog/NLog.config");
                 Game.AddSingleton<ObjectPool>();
                 Game.AddSingleton<IdGenerater>();
-                Game.AddSingleton<EventSystem>();
-                Game.AddSingleton<Root>();
                 
                 ETTask.ExceptionHandler += Log.Error;
-
+                
+                Game.AddSingleton<EventSystem>();
                 Dictionary<string, Type> types = AssemblyHelper.GetAssemblyTypes(typeof (Game).Assembly);
                 EventSystem.Instance.Add(types);
+                
+                Game.AddSingleton<Root>();
 
                 MongoHelper.Init();
                 ProtobufHelper.Init();
 				
                 Log.Info($"server start........................ {Root.Instance.Scene.Id}");
 
-                // Options.Instance.AppType = AppType.ExcelExporter;
+                Options.Instance.AppType = AppType.Proto2CS;
                         
                 switch (Options.Instance.AppType)
                 {

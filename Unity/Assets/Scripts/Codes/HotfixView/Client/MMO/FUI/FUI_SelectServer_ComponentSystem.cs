@@ -33,28 +33,6 @@ namespace ET.Client
                     Name = serverInfo.Name,
                     Action = async () =>
                     {
-                        int result = await LoginHelper.LoginZone(zoneScene, serverInfo.Zone);
-                        if (result != ErrorCode.ERR_Success)
-                            return;
-
-                        result = await LoginHelper.LoginGate(zoneScene);
-                        if (result != ErrorCode.ERR_Success)
-                            return;
-
-                        result = await LoginHelper.GetRoleInfos(zoneScene);
-                        if (result != ErrorCode.ERR_Success)
-                            return;
-
-                        RoleInfosComponent roleInfosComponent = zoneScene.GetComponent<RoleInfosComponent>();
-                        RoleInfo roleInfo = roleInfosComponent.RoleInfos.First();
-                        if (roleInfo != null)
-                        {
-                            // await LoginHelper.DeleteRoleById(zoneScene, roleInfo.Id);
-                        }
-
-                        roleInfosComponent.CurrentRoleId = roleInfo.Id;
-
-                        await LoginHelper.EnterMap(zoneScene);
                     }
                 });
             }
@@ -94,21 +72,22 @@ namespace ET.Client
         public static void SetUsername(this FUI_SelectServer_Component self, string acc)
         {
             self.userNameBtn.name.text = acc;
-            PlayerPrefs.SetString(LocalData.LastAccount, acc);
         }
 
         public static async ETTask SetSelectServer(this FUI_SelectServer_Component self, int routerIndex = 0)
         {
+            self.SelectIndex = routerIndex;
+            
             if (self.ServerRouters == null)
             {
-                var serverAddress = YooAssets.LoadRawFileSync("ServerAddress");
+                var serverAddress = YooAssetProxy.Zeus.LoadRawFileSync("ServerAddress");
                 string json = serverAddress.GetRawFileText();
                 self.ServerRouters = MongoHelper.FromJson<List<ServerRouter>>(json);
             }
 
             ServerRouter serverRouter = self.ServerRouters[routerIndex];
             self.serverListBtn.name.text = serverRouter.Name;
-            self.serverListBtn.subTitle.text = $"{serverRouter.RouterHost}:{serverRouter.RouterPort}";
+            // self.serverListBtn.subTitle.text = $"{serverRouter.RouterHost}:{serverRouter.RouterPort}";
             ConstValue.RouterHttpHost = serverRouter.RouterHost;
             ConstValue.RouterHttpPort = serverRouter.RouterPort;
         }
@@ -126,25 +105,9 @@ namespace ET.Client
                     Log.Error(loginResultCode.ToString());
                     return;
                 }
-
-                int getServerInfosResult = await LoginHelper.GetServerInfos(self.DomainScene());
-                if (getServerInfosResult != ErrorCode.ERR_Success)
-                {
-                    Log.Error(loginResultCode.ToString());
-                    return;
-                }
-
-                self.ShowServerInfos().Coroutine();
-
-                self.DomainScene().GetComponent<FGUIComponent>().Close(FGUIType.SelectServer);
-
-                // await LoginHelper.GetServerInfos(self.DomainScene());
-                //
-                // await LoginHelper.GetRealmKey(self.DomainScene());
-                //
-                // await LoginHelper.EnterGame(self.DomainScene());
-                //
-                // await EventSystem.Instance.PublishAsync(new EventType.LoginFinish() { ZoneScene = self.DomainScene(), LastSceneType = SceneType.Map });
+                
+                LocalDataComponent.Instance.Set(LocalData.LastServer, self.SelectIndex);
+                LocalDataComponent.Instance.Set(LocalData.LastAccount, account);
             }
             catch (Exception e)
             {
@@ -164,10 +127,10 @@ namespace ET.Client
     {
         public override void OnCreate(FUI_SelectServer_Component component)
         {
-            var LastAccount = PlayerPrefs.GetString(LocalData.LastAccount);
+            var LastAccount = LocalDataComponent.Instance.GetString(LocalData.LastAccount);
             component.SetUsername(LastAccount);
-
-            var lastServer = PlayerPrefs.GetInt(LocalData.LastServer);
+            
+            int lastServer = LocalDataComponent.Instance.GetInt(LocalData.LastServer);
             component.SetSelectServer(lastServer).Coroutine();
 
             component.userNameBtn.self.AddListener(() => { component.OpenAccountList(); });
@@ -177,6 +140,8 @@ namespace ET.Client
             component.Btn_Bg.self.AddListener(() => { component.TryLogin().Coroutine(); });
 
             component.Btn_Notice.self.AddListener(() => { FGUIComponent.Instance.OpenAysnc(FGUIType.Notice).Coroutine(); });
+
+            component.Text_Version.text = "1.1.1";
         }
 
         public override void OnShow(FUI_SelectServer_Component component)

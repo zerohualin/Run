@@ -8,8 +8,7 @@ namespace ET.Server
     [FriendOfAttribute(typeof(ET.Server.RealmAccountComponent))]
     public class C2A_LoginAccountHandler : AMRpcHandler<C2R_LoginAccount, R2C_LoginAccount>
     {
-        protected override async ETTask Run(Session session, C2R_LoginAccount request, R2C_LoginAccount response,
-        Action reply)
+        protected override async ETTask Run(Session session, C2R_LoginAccount request, R2C_LoginAccount response)
         {
             session.RemoveComponent<SessionAcceptTimeoutComponent>();
 
@@ -24,7 +23,6 @@ namespace ET.Server
             if (session.DomainScene().InstanceId != StartSceneConfigCategory.Instance.Realms[modCount].InstanceId)
             {
                 response.Error = ErrorCode.ERR_Login_RealmAdressError;
-                reply();
                 session.Disconnect().Coroutine();
                 return;
             }
@@ -32,14 +30,12 @@ namespace ET.Server
             if (session.GetComponent<SessionLockingComponent>() != null)
             {
                 response.Error = ErrorCode.ERR_Repeatedly;
-                reply();
                 return;
             }
 
             if (string.IsNullOrEmpty(request.Account) || string.IsNullOrEmpty(request.Password))
             {
                 response.Error = ErrorCode.ERR_Login_AccountOrPasswordWrongFormat;
-                reply();
                 session.Disconnect().Coroutine();
                 return;
             }
@@ -64,7 +60,6 @@ namespace ET.Server
             if (realmAccountComponent != null)
             {
                 response.Error = ErrorCode.ERR_Login_RepeatLogin;
-                reply();
                 return;
             }
 
@@ -84,14 +79,12 @@ namespace ET.Server
                     if (accountDB == null)
                     {
                         response.Error = ErrorCode.ERR_Login_AccountNotExits;
-                        reply();
                         return;
                     }
                     
                     if (accountDB.AccountType == (int)AccountType.BlackList)
                     {
                         response.Error = ErrorCode.ERR_AccountInBlackListError;
-                        reply();
                         session.Disconnect().Coroutine();
                         accountDB?.Dispose();
                         return;
@@ -100,7 +93,6 @@ namespace ET.Server
                     if (!accountDB.Password.Equals(request.Password))
                     {
                         response.Error = ErrorCode.ERR_Login_PasswordWrong;
-                        reply();
                         session.Disconnect().Coroutine();
                         accountDB?.Dispose();
                         return;
@@ -161,8 +153,7 @@ namespace ET.Server
             }
 
             response.Error = ErrorCode.ERR_Success;
-            reply();
-
+            
             await ETTask.CompletedTask;
         }
     }

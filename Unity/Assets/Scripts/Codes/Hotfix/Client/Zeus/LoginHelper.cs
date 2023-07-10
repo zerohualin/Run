@@ -1,43 +1,56 @@
 using System;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using ET.EventType;
-using MongoDB.Bson;
 
 namespace ET.Client
 {
-    [FriendOf(typeof (AccountInfoComponent))]
-    [FriendOf(typeof (SessionComponent))]
-    [FriendOf(typeof (RoleInfosComponent))]
+    [FriendOf(typeof(AccountInfoComponent))]
+    [FriendOf(typeof(SessionComponent))]
+    [FriendOf(typeof(RoleInfosComponent))]
+    [FriendOfAttribute(typeof(ET.ServerInfosComponent))]
+    [FriendOfAttribute(typeof(ET.ServerInfo))]
     public static partial class LoginHelper
     {
         // //账号服务器 返回token的模式
-        public static async ETTask<int> LoginAsync(Scene zoneScene, string account, string password)
+        public static async ETTask<int> LoginAsync(Scene clientScene, string account, string password)
         {
             try
             {
-                IPEndPoint realmAddress = await GetRealmAddress(zoneScene, account);
+                IPEndPoint realmAddress = await GetRealmAddress(clientScene, account);
 
-                int accountLoginResult = await LoginAccount(zoneScene, realmAddress, account, password);
-                if (accountLoginResult != ErrorCode.ERR_Success)
-                    return accountLoginResult;
+                int result = await LoginAccount(clientScene, realmAddress, account, password);
+                if (result != ErrorCode.ERR_Success)
+                    return result;
 
-                // R2C_Login r2CLogin;
-                // using (Session session = await RouterHelper.CreateRouterSession(clientScene, realmAddress))
-                // {
-                //     r2CLogin = (R2C_Login) await session.Call(new C2R_Login() { Account = account, Password = password });
-                // }
-                //
-                // // 创建一个gate Session,并且保存到SessionComponent中
-                // Session gateSession = await RouterHelper.CreateRouterSession(clientScene, NetworkHelper.ToIPEndPoint(r2CLogin.Address));
-                // clientScene.AddComponent<SessionComponent>().Session = gateSession;
-                //
-                // G2C_LoginGate g2CLoginGate = (G2C_LoginGate)await gateSession.Call(
-                //     new C2G_LoginGate() { Key = r2CLogin.Key, GateId = r2CLogin.GateId});
-                //
-                // Log.Debug("登陆gate成功!");
+                result = await LoginHelper.GetServerInfos(clientScene);
+                if (result != ErrorCode.ERR_Success)
+                    return result;
 
-                // await EventSystem.Instance.PublishAsync(clientScene, new EventType.LoginFinish());
+                var serverInfo = clientScene.GetComponent<ServerInfosComponent>().ServerInfos.First();
+                
+                await LoginHelper.LoginZone(clientScene, serverInfo.Zone);
+                if (result != ErrorCode.ERR_Success)
+                    return result; ;
+
+                result = await LoginHelper.LoginGate(clientScene);
+                if (result != ErrorCode.ERR_Success)
+                    return result;
+
+                result = await LoginHelper.GetRoleInfos(clientScene);
+                if (result != ErrorCode.ERR_Success)
+                    return result;
+
+                RoleInfosComponent roleInfosComponent = clientScene.GetComponent<RoleInfosComponent>();
+                RoleInfo roleInfo = roleInfosComponent.RoleInfos.First();
+                if (roleInfo != null)
+                {
+                    // await LoginHelper.DeleteRoleById(zoneScene, roleInfo.Id);
+                }
+                roleInfosComponent.CurrentRoleId = roleInfo.Id;
+
+                await LoginHelper.EnterMap(clientScene);
             }
             catch (Exception e)
             {
@@ -85,8 +98,11 @@ namespace ET.Client
                 routerAddressComponent =
                         zoneScene.AddComponent<RouterAddressComponent, string, int>(ConstValue.RouterHttpHost, ConstValue.RouterHttpPort);
                 await routerAddressComponent.Init();
-
-                zoneScene.AddComponent<NetClientComponent, AddressFamily>(routerAddressComponent.RouterManagerIPAddress.AddressFamily);
+                
+                AddressFamily addressFamily = routerAddressComponent.RouterManagerIPAddress.AddressFamily;
+                var netClientComponent = zoneScene.GetComponent<NetClientComponent>();
+                if(netClientComponent == null)
+                    zoneScene.AddComponent<NetClientComponent, AddressFamily>(addressFamily);
             }
 
             IPEndPoint realmAddress = routerAddressComponent.GetRealmAddress(account);
@@ -106,7 +122,9 @@ namespace ET.Client
                 r2CLoginAccount =
                         (R2C_LoginAccount)await realmSession.Call(new C2R_LoginAccount()
                         {
-                            Account = account, Password = password, LoginWay = (int)LoginWayType.Normal
+                            Account = account,
+                            Password = password,
+                            LoginWay = (int)LoginWayType.Normal
                         });
             }
             catch (Exception e)
@@ -272,7 +290,7 @@ namespace ET.Client
             if (g2C_Enter2Map.InQueue)
             {
                 EventSystem.Instance.Publish(zoneScene, new UpdateQueueInfo() { Count = g2C_Enter2Map.Count, Index = g2C_Enter2Map.Index });
-                return ErrorCode.ERR_Success;
+                // return ErrorCode.ERR_Success;
             }
             else
             {

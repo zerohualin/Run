@@ -25,6 +25,22 @@ MonoBehaviour:
       AssetTags: 
       ActiveRuleName: EnableGroup
       Collectors:
+      - CollectPath: Assets/BundleYoo/MiniGame
+        CollectorGUID: 0c15a0ca61252cf4aa6236174b5d9dda
+        CollectorType: 0
+        AddressRuleName: AddressByPath
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/BundleYoo/Monopoly
+        CollectorGUID: 9f9c4210a20d08a45a2190d464d79c40
+        CollectorType: 0
+        AddressRuleName: AddressByPath
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
       - CollectPath: Assets/BundleYoo/AotDll
         CollectorGUID: 9a0b86ff7ac10da4995b1792b4f53d31
         CollectorType: 0
@@ -32,13 +48,7 @@ MonoBehaviour:
         PackRuleName: PackRawFile
         FilterRuleName: CollectAll
         AssetTags: 
-      - CollectPath: Assets/BundleYoo/OtherNativeRes
-        CollectorGUID: 4a02ecdd00a148a469204be7457f9541
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackRawFile
-        FilterRuleName: CollectAll
-        AssetTags: 
+        UserData: 
       - CollectPath: Assets/BundleYoo/Code
         CollectorGUID: 2a008250cb4bf2645b8ca749aafc531a
         CollectorType: 0
@@ -46,94 +56,99 @@ MonoBehaviour:
         PackRuleName: PackRawFile
         FilterRuleName: CollectAll
         AssetTags: 
-      - CollectPath: Assets/BundleYoo/LubanBin
+        UserData: 
+  - PackageName: Zeus
+    PackageDesc: Zeus
+    Groups:
+    - GroupName: MMO
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Packages/com.aftershock.zeus/BundleYoo/MMO
+        CollectorGUID: fa27334c65786a54ca139d290c0122e8
+        CollectorType: 0
+        AddressRuleName: AddressByPath
+        PackRuleName: PackSeparately
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: LubanBin
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Packages/com.aftershock.zeus/BundleYoo/LubanBin
         CollectorGUID: c5e09c443eabeb948a014cf265454662
         CollectorType: 0
         AddressRuleName: AddressByPath
         PackRuleName: PackRawFile
         FilterRuleName: CollectAll
         AssetTags: 
-      - CollectPath: Assets/BundleYoo/ServerAddress.json
+        UserData: 
+    - GroupName: Common
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Packages/com.aftershock.zeus/BundleYoo/Common
+        CollectorGUID: d82ca7a3d6006804aaf3047567b8bfd9
+        CollectorType: 0
+        AddressRuleName: AddressByPath
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Packages/com.aftershock.zeus/BundleYoo/ServerAddress.json
         CollectorGUID: 36476fe2310810b419fad572f684480c
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackRawFile
         FilterRuleName: CollectAll
         AssetTags: 
-    - GroupName: AFK
+        UserData: 
+    - GroupName: Scene
       GroupDesc: 
       AssetTags: 
       ActiveRuleName: EnableGroup
       Collectors:
-      - CollectPath: Assets/BundleYoo/AFK
-        CollectorGUID: 05f2527aef1355849a1b15a54b17cba6
-        CollectorType: 0
-        AddressRuleName: AddressByPath
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-    - GroupName: Zeus
-      GroupDesc: 
-      AssetTags: 
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/BundleYoo/MMO
-        CollectorGUID: fa27334c65786a54ca139d290c0122e8
-        CollectorType: 0
-        AddressRuleName: AddressByPath
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-      - CollectPath: Assets/Scenes/Init.unity
+      - CollectPath: Packages/com.aftershock.zeus/BundleYoo/Scenes/Init.unity
         CollectorGUID: e0d691ac8c1d0454ba07089ea820e18a
         CollectorType: 0
         AddressRuleName: AddressByPath
-        PackRuleName: PackDirectory
+        PackRuleName: PackSeparately
         FilterRuleName: CollectAll
         AssetTags: 
-      - CollectPath: Assets/Scenes/Map1.unity
+        UserData: 
+      - CollectPath: Packages/com.aftershock.zeus/BundleYoo/Scenes/Login.unity
+        CollectorGUID: 91b878a7bcbd9734b954166d7e087033
+        CollectorType: 0
+        AddressRuleName: AddressByPath
+        PackRuleName: PackSeparately
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Packages/com.aftershock.zeus/BundleYoo/Scenes/Map1.unity
         CollectorGUID: a5294483f20f40d449699101bb428cda
         CollectorType: 0
         AddressRuleName: AddressByPath
-        PackRuleName: PackDirectory
+        PackRuleName: PackSeparately
         FilterRuleName: CollectAll
         AssetTags: 
-      - CollectPath: Assets/Scenes/Map2.unity
+        UserData: 
+      - CollectPath: Packages/com.aftershock.zeus/BundleYoo/Scenes/Map2.unity
         CollectorGUID: 064123f1e5067b249a9fd8967ddbde09
         CollectorType: 0
         AddressRuleName: AddressByPath
-        PackRuleName: PackDirectory
+        PackRuleName: PackSeparately
         FilterRuleName: CollectAll
         AssetTags: 
-    - GroupName: Map
-      GroupDesc: 
-      AssetTags: 
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/BundleYoo/Zeus/Common
-        CollectorGUID: 320196a34efb61140b4b0ab2c82b9adc
+        UserData: 
+      - CollectPath: Packages/com.aftershock.zeus/BundleYoo/Scenes/Monopoly.unity
+        CollectorGUID: 73c628c2ec375ec47b24bd4331a1a0c8
         CollectorType: 0
         AddressRuleName: AddressByPath
-        PackRuleName: PackDirectory
+        PackRuleName: PackSeparately
         FilterRuleName: CollectAll
         AssetTags: 
-      - CollectPath: Assets/BundleYoo/Zeus/Model/Cube-SciFiUnderworldCity/Prefabs/Customize
-          Character here/04 Customized Samples
-        CollectorGUID: e2dcdb09e0b9f0347b5fc02f88c7dc97
-        CollectorType: 0
-        AddressRuleName: AddressByPath
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-    - GroupName: Ludo
-      GroupDesc: 
-      AssetTags: 
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/BundleYoo/Ludo
-        CollectorGUID: 19bd8851855567240a5ff16ef48e35ab
-        CollectorType: 0
-        AddressRuleName: AddressByPath
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
+        UserData: 

@@ -1,6 +1,60 @@
-# English: please use your browser to translate to english  
+# English: please use your browser to translate to english
 
 # __讨论QQ群 : 474643097__  
+
+# 双端预测回滚帧同步框架课程2023年5月25日推出，熊猫出品，必属精品，有需要请加QQ:80081771    
+# [帧同步预告视频](https://www.bilibili.com/video/BV1tX4y1C7pM/?share_source=copy_web&vd_source=001b901865c99550d1b2a8cd663695d4)  
+### 1. 网络多线程0GC实现，优美的实现，性能提升  
+### 2. ET框架调整：  
+    a. EntityRef Entity弱引用机制  
+    b. Entity不再统一注册到Root中，只有Actor对象挂载了MailboxComponent的注册到  ActorMessageDispatcherComponent中  
+    c. TypeSystem EntitySystemSingleton，可扩展的Entity System机制，自定义System极其轻松  
+    d. Domain IScene, 更完善，Scene的代码都简化了  
+    e. Entity中Components改成SortedDictionary，保证有序  
+    f. Mongo序列化BeginInit, 增加了一个SerializeSystem  
+    g. 配置文件改成了Bson，直接支持Dictionary以及更复杂的配置  
+### 3. 实现了一个极其优美的预测回滚的帧同步框架，包含客户端跟服务端。注意，并不是只能做帧同步，帧同步框架只是ET框架一小部分  
+    a. 帧同步专用的LSEntity，LSWorld帧同步定点数domain  
+    b. LSUpdateSystem 处理帧的Update逻辑  
+    c. LSRollbackSystem 处理表现层和解   
+    d. 客户端可膨胀收缩的FixedUpdate  
+    ......
+### 4. 逻辑层表现层分离，前后端共享逻辑层实现, 服务端会同时跑战斗，杜绝结果作弊  
+### 5. 帧同步预测回滚实现  
+### 6. 客户端时间动态膨胀收缩  
+### 7. 录像文件随时保存，播放可以随意跳转播放，加速播放  
+### 8. 断线重连，瞬间重连  
+### 9. ET状态帧实现方式，学会ET帧同步，状态帧非常简单。
+### 10.还有更多同步方式......  
+
+# 熊猫的课程ET框架设计课：《网络游戏架构设计》已经完结，有需要请加QQ:80081771 课程详细介绍了ET框架的设计思路跟细节，以下是课程目录:
+01. 代码结构
+02. All In one-01
+03. All In one-02
+04. 单间管理器
+05. 多线程单线程跟task await async的关系
+06. ETTask-01
+07. ETTask-02
+08. 计时器
+09. 协程锁
+10. 协程同步
+11. Id-Time-ObjectPool
+12. 日志 Options ConfigComponent
+13. why not 继承，多态，组合?
+14. 实体组件系统
+15. EventSystem
+16. 序列化反序列化
+17. Network
+18. TCP
+19. KCP
+20. NetComponent跟Session
+21. 软路由
+22. Actor
+23. ActorLocation
+24. 机器人框架测试用例框架
+25. AI框架
+26. 架构设计细节
+27. 分析器
 
 # [ET论坛](https://et-framework.cn)  
 
@@ -44,7 +98,7 @@ Unity Menu->ServerTools select Benchmark, Start Watcher。然后在Logs目录，
 5. 增加软路由，可以防各种网络攻击而不影响正常玩家，网游必备！-- 已实现  
 6. 各种事件跟网络消息订阅带上DomainSceneType，更精确，更不容易出错 -- 已实现  
 7. sj兄弟添加了各种分析器，分析器保证了写出的代码必须符合ET规范，否则编译不通过！（这点ET6也增加上了） -- 已实现  
-8. ET7已经去除客户端热更新，请大家自己选择接入,接入huatuo或者ILRuntime都非常简单, 注意！(不要混淆客户端热更新跟服务端热更新，服务端热更新，ET一直都有)  
+8. ET7集成了huatuo热更新库。 注意！(不要混淆客户端热更新跟服务端热更新，服务端热更新，ET一直都有)  
 9. 网络改成独立线程，序列化反序列化都在网络线程处理，主线程压力大大减轻。并且重新整理了网络层代码，更优美了  
 10. 集成Unity.Mathematic数学库，逻辑层客户端跟服务端都使用这一套数学库，这样服务端跟客户端完全统一了  
 11. ENABLE_CODES模式下拆分成4个程序集，解决分析器失效的问题  
@@ -155,11 +209,12 @@ ET框架是一个强大灵活的分布式服务端架构，完全可以满足绝
 
 商业项目:  
 1. [千古风流](https://www.qiangu.com/)  
-2. [魔法点点2](https://www.taptap.com/app/227804)  
-3. [养不大](https://www.taptap.com/app/71064)  
-4. 天天躲猫猫2（ios2019春节下载排行19）  
-5. [牛虎棋牌](https://gitee.com/ECPS_admin/PlanB)  
-6. [五星麻将](https://github.com/wufanjoin/fivestar)  
+2. [神选誓约](https://www.taptap.cn/app/248095)  
+3. [魔法点点2](https://www.taptap.com/app/227804)  
+4. [养不大](https://www.taptap.com/app/71064)  
+5. 天天躲猫猫2（ios2019春节下载排行19）  
+6. [牛虎棋牌](https://gitee.com/ECPS_admin/PlanB)  
+7. [五星麻将](https://github.com/wufanjoin/fivestar)  
 
 群友demo：  
 1. [斗地主（客户端服务端）](https://github.com/Viagi/LandlordsCore)  

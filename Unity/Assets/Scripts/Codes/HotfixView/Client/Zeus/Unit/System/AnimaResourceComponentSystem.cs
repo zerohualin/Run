@@ -16,8 +16,8 @@ namespace ET.Client
     {
         public static async ETTask LoadAnima(this AnimaResourceComponent self)
         {
-            string path = "Assets/BundleYoo/Zeus/Common/Anima.prefab";
-            var bundleGameObject = await YooAssetProxy.LoadAssetAsync<GameObject>(path);
+            string path = $"{ConstValueView.ZeusBundlePath}/Common/Anima.prefab";
+            var bundleGameObject = await YooAssetProxy.Zeus.LoadAssetETAsync<GameObject>(path);
             var obj = GameObject.Instantiate(bundleGameObject.GetAssetObject<GameObject>());
             self.AnimaReferenceCollector = obj.GetComponent<ReferenceCollector>();
             GameObject.DontDestroyOnLoad(obj);

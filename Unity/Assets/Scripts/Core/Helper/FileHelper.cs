@@ -115,5 +115,18 @@ namespace ET
 			buff = br.ReadBytes((int) numBytes);
 			return buff;
 		}
+		
+		public static void SaveFile(string outputPath, string outputFileName, string suffix, byte[] content)
+		{
+			if (!Directory.Exists(outputPath))
+			{
+				Directory.CreateDirectory(outputPath);
+			}
+			string csPath = Path.Combine(outputPath, outputFileName + suffix); 
+			FileStream fs = new FileStream(csPath, FileMode.Create);
+			fs.Write(content, 0, content.Length);
+			fs.Dispose();
+		}
+		
 	}
 }

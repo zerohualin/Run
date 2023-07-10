@@ -4,6 +4,7 @@
     {
         public struct SceneChangeStart
         {
+            public string TargetSceneName;
         }
         
         public struct SceneChangeFinish

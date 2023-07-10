@@ -4,7 +4,7 @@ using Cfg;
 namespace ET.Client
 {
     [Event(SceneType.Client)]
-    public class InitFUICommonSelectList: AEvent<EventType.CommonSelectListEvent>
+    public class InitFUICommonSelectList: AEvent<Scene, EventType.CommonSelectListEvent>
     {
         protected override async ETTask Run(Scene scene, EventType.CommonSelectListEvent args)
         {

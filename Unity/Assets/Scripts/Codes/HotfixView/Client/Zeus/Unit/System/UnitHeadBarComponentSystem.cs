@@ -8,7 +8,6 @@ namespace ET.Client
     {
         protected override void Awake(UnitHeadBarComponent self)
         {
-            self.Unit = self.GetParent<Unit>();
             // fui = mFui as HeadBar;
             self.Target =  self.Unit.GetComponent<GameObjectComponent>().GameObject.transform;
             // fui.icon.url = "";
@@ -18,13 +17,15 @@ namespace ET.Client
     }
 
     [ObjectSystem]
-    public class UnitHeadBarComponentDestorySystem: DestroySystem<UnitHeadBarComponent>
+    [FriendOfAttribute(typeof(ET.Client.HeadBar))]
+    public class UnitHeadBarComponentDestorySystem : DestroySystem<UnitHeadBarComponent>
     {
         protected override void Destroy(UnitHeadBarComponent self)
         {
+            GRoot.inst.RemoveChild(self.fui.self);
         }
     }
-    
+
     [ObjectSystem]
     public class UnitHeadBarComponentUpdateSystem: UpdateSystem<UnitHeadBarComponent>
     {
@@ -50,7 +51,7 @@ namespace ET.Client
             self.fui.ProgressBarMp.self.visible = false;
             self.fui.network.visible = false;
 
-            self.fui.title.text = self.Unit.Config.Name;
+            self.fui.title.text = self.Unit.Config.Desc;
             if (self.Unit.Type == UnitType.Player)
                 self.fui.title.color = Color.cyan;
             if (self.Unit.Type == UnitType.NPC)

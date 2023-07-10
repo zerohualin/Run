@@ -22,5 +22,7 @@ namespace ET.Client
         public Btn_RightSlash serverListBtn;
         [FGUICustomCom]
         public Btn_Notice Btn_Notice;
+        [FGUIObject]
+        public GRichTextField Text_Version;
     }
 }

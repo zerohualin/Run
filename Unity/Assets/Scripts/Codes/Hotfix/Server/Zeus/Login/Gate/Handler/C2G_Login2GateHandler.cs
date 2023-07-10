@@ -10,7 +10,7 @@ namespace ET.Server
     [FriendOfAttribute(typeof (ET.Server.RoleInfoDB))]
     public class C2G_Login2GateHandler: AMRpcHandler<C2G_Login2Gate, G2C_Login2Gate>
     {
-        protected override async ETTask Run(Session session, C2G_Login2Gate request, G2C_Login2Gate response, Action reply)
+        protected override async ETTask Run(Session session, C2G_Login2Gate request, G2C_Login2Gate response)
         {
             session.RemoveComponent<SessionAcceptTimeoutComponent>();
             Scene scene = session.DomainScene();
@@ -20,7 +20,6 @@ namespace ET.Server
             if (loginGateInfo == null)
             {
                 response.Error = ErrorCode.ERR_Login_NoLoginGateInfo;
-                reply();
                 return;
             }
 
@@ -74,8 +73,6 @@ namespace ET.Server
                 {
                     gateUser.AddComponent<MultiLoginComponent>();
                 }
-
-                reply();
             }
 
             await ETTask.CompletedTask;

@@ -5,7 +5,7 @@ using Bright.Serialization;
 namespace ET.Server
 {
     [Event(SceneType.Process)]
-    public class EntryEvent2_InitServer: AEvent<ET.EventType.EntryEvent2>
+    public class EntryEvent2_InitServer: AEvent<Scene, ET.EventType.EntryEvent2>
     {
         protected override async ETTask Run(Scene scene, ET.EventType.EntryEvent2 args)
         {
@@ -63,7 +63,7 @@ namespace ET.Server
             string filePath =$"{directory}/../BinLuban/{filename}.bytes";
             if (directory.Contains("Unity"))
             {
-                filePath = $"{directory}/Assets/BundleYoo/LubanBin/{filename}.bytes";
+                filePath = $"{directory}/../../Zeus_Res/BundleYoo/LubanBin/{filename}.bytes";
             }
             byte[] bytes = FileHelper.FileToByteArray(filePath);
             return new ByteBuf(bytes);

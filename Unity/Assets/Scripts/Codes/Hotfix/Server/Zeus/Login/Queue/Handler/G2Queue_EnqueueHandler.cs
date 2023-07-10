@@ -6,7 +6,7 @@ namespace ET.Server
     [FriendOfAttribute(typeof (ET.Server.QueueMgrComponent))]
     public class G2Queue_EnqueueHandler: AMActorRpcHandler<Scene, G2Queue_Enqueue, Queue2G_Enqueue>
     {
-        protected override async ETTask Run(Scene scene, G2Queue_Enqueue request, Queue2G_Enqueue response, Action reply)
+        protected override async ETTask Run(Scene scene, G2Queue_Enqueue request, Queue2G_Enqueue response)
         {
             QueueMgrComponent queueMgrComponent = scene.GetComponent<QueueMgrComponent>();
 
@@ -16,8 +16,7 @@ namespace ET.Server
                 response.Count = queueMgrComponent.Queue.Count;
                 response.Index = queueMgrComponent.GetIndex(request.UnitId);
             }
-
-            reply();
+            
             await ETTask.CompletedTask;
         }
     }

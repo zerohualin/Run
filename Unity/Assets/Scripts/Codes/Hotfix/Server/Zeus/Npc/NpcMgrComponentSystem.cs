@@ -7,7 +7,11 @@
         protected override void Awake(NpcMgrComponent self)
         {
             UnitComponent unitComponent = self.DomainScene().GetComponent<UnitComponent>();
-            Unit unit = UnitFactory.Create(self.DomainScene(), IdGenerater.Instance.GenerateInstanceId(), UnitType.NPC);
+            int unitConfigId = 1002;
+            string mapName = self.DomainScene().Name;
+            if (mapName == "Map2")
+                unitConfigId = 1003;
+            Unit unit = UnitFactory.Create(self.DomainScene(), IdGenerater.Instance.GenerateInstanceId(), UnitType.NPC, 0, unitConfigId);
             unitComponent.Add(unit);
         }
     }

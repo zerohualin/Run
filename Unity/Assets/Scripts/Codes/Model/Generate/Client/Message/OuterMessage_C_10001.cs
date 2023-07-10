@@ -42,7 +42,7 @@ namespace ET
 
 	[Message(OuterMessage.M2C_TestResponse)]
 	[ProtoContract]
-	public partial class M2C_TestResponse: ProtoObject, IActorLocationResponse
+	public partial class M2C_TestResponse: ProtoObject, IActorResponse
 	{
 		[ProtoMember(1)]
 		public int RpcId { get; set; }
@@ -191,7 +191,7 @@ namespace ET
 	[ProtoContract]
 	public partial class M2C_RemoveUnits: ProtoObject, IActorMessage
 	{
-		[ProtoMember(2)]
+		[ProtoMember(1)]
 		public List<long> Units { get; set; }
 
 	}
@@ -429,6 +429,30 @@ namespace ET
 
 	}
 
+	[Message(OuterMessage.C2M_TestRobotCase2)]
+	[ProtoContract]
+	public partial class C2M_TestRobotCase2: ProtoObject, IActorLocationMessage
+	{
+		[ProtoMember(1)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(2)]
+		public int N { get; set; }
+
+	}
+
+	[Message(OuterMessage.M2C_TestRobotCase2)]
+	[ProtoContract]
+	public partial class M2C_TestRobotCase2: ProtoObject, IActorLocationMessage
+	{
+		[ProtoMember(1)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(2)]
+		public int N { get; set; }
+
+	}
+
 	[ResponseType(nameof(M2C_TransferMap))]
 	[Message(OuterMessage.C2M_TransferMap)]
 	[ProtoContract]
@@ -436,6 +460,9 @@ namespace ET
 	{
 		[ProtoMember(1)]
 		public int RpcId { get; set; }
+
+		[ProtoMember(2)]
+		public string TargetMapName { get; set; }
 
 	}
 
@@ -545,11 +572,13 @@ namespace ET
 		 public const ushort G2C_TestHotfixMessage = 10029;
 		 public const ushort C2M_TestRobotCase = 10030;
 		 public const ushort M2C_TestRobotCase = 10031;
-		 public const ushort C2M_TransferMap = 10032;
-		 public const ushort M2C_TransferMap = 10033;
-		 public const ushort C2G_Benchmark = 10034;
-		 public const ushort G2C_Benchmark = 10035;
-		 public const ushort C2M_SayHi = 10036;
-		 public const ushort M2C_SayHi = 10037;
+		 public const ushort C2M_TestRobotCase2 = 10032;
+		 public const ushort M2C_TestRobotCase2 = 10033;
+		 public const ushort C2M_TransferMap = 10034;
+		 public const ushort M2C_TransferMap = 10035;
+		 public const ushort C2G_Benchmark = 10036;
+		 public const ushort G2C_Benchmark = 10037;
+		 public const ushort C2M_SayHi = 10038;
+		 public const ushort M2C_SayHi = 10039;
 	}
 }

@@ -7,15 +7,16 @@ namespace ET
     {
         public static async ETTask AddFGUIPackageAsync(string packageName)
         {
-            string path = $"Assets/BundleYoo/{packageName}/FUI/{packageName}_fui.bytes";
+            string path = $"{ConstValueView.ZeusBundlePath}/{packageName}/FUI/{packageName}_fui.bytes";
             var package = UIPackage.GetByName(packageName);
             if (package != null)
                 return;
-            var handle = await YooAssetProxy.LoadAssetAsync<TextAsset>(path);
+            var handle = await YooAssetProxy.Zeus.LoadAssetETAsync<TextAsset>(path);
             byte[] bytes = handle.GetAsset<TextAsset>().bytes;
             UIPackage.AddPackage(bytes, packageName, OnTextureLoadComplete);
         }
 
+        #pragma warning disable
         public static async void OnTextureLoadComplete(string name, string extension, System.Type type, PackageItem item)
         {
             string[] splits = name.Split('_');
@@ -23,8 +24,8 @@ namespace ET
             if (item.type == PackageItemType.Atlas)
             {
                 string texName = name.Replace("_fui", "");
-                string path = $"Assets/BundleYoo/{SubName}/FUI/{texName}.png";
-                var handle = await YooAssetProxy.LoadAssetAsync<Texture>(path);
+                string path = $"{ConstValueView.ZeusBundlePath}/{SubName}/FUI/{texName}.png";
+                var handle = await YooAssetProxy.Zeus.LoadAssetETAsync<Texture>(path);
                 Texture t = handle.GetAsset<Texture>();
                 item.owner.SetItemAsset(item, t, DestroyMethod.Custom);
             }

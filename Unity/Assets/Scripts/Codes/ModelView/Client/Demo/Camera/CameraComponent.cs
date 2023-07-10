@@ -7,7 +7,19 @@ namespace ET.Client
 		// 战斗摄像机
 		public Camera mainCamera;
 
-		public Unit Unit;
+		private EntityRef<Unit> unit;
+
+		public Unit Unit
+		{
+			get
+			{
+				return this.unit;
+			}
+			set
+			{
+				this.unit = value;
+			}
+		}
 
 		public Camera MainCamera
 		{

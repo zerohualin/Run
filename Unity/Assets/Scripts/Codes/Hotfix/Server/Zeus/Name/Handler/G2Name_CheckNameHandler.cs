@@ -8,12 +8,11 @@ namespace ET
     [FriendOfAttribute(typeof(ET.CheckNameLog))]
     public class G2Name_CheckNameHandler : AMActorRpcHandler<Scene, G2Name_CheckName, Name2G_CheckName>
     {
-        protected override async ETTask Run(Scene scene, G2Name_CheckName request, Name2G_CheckName response, Action reply)
+        protected override async ETTask Run(Scene scene, G2Name_CheckName request, Name2G_CheckName response)
         {
             if (string.IsNullOrEmpty(request.Name))
             {
                 response.Error = ErrorCode.ERR_Login_NoneCheckName;
-                reply();
                 return;
             }
 
@@ -24,7 +23,6 @@ namespace ET
                 if (list.Count > 0)
                 {
                     response.Error = ErrorCode.ERR_Login_NameRepeated;
-                    reply();
                     return;
                 }
 
@@ -36,10 +34,6 @@ namespace ET
                     await db.Save(checkNameLog);
                 }
             }
-
-            reply();
-
-            await ETTask.CompletedTask;
         }
     }
 }

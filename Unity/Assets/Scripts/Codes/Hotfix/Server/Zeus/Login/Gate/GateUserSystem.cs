@@ -49,8 +49,7 @@ namespace ET.Server
             if (accountZoneDB != null)
             {
                 //通知排队服务器下线
-                MessageHelper.SendActor(self.DomainZone(), SceneType.Queue,
-                    new G2Queue_Disconnect() { UnitId = accountZoneDB.LastRoleId, IsProtect = false });
+                MessageHelper.SendActor(self.DomainZone(), new G2Queue_Disconnect() { UnitId = accountZoneDB.LastRoleId, IsProtect = false });
                 //TODO 通知地图服务器进行角色下线
             }
 
@@ -95,6 +94,8 @@ namespace ET.Server
             StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(self.DomainZone(), "Map1");
             self.RemoveComponent<GateQueueComponent>();
 
+            var player = self.DomainScene().GetComponent<PlayerComponent>().GetPlayer(accountZoneDB.Id);
+            
             if (self.State == GateUserState.InMap)
             {
                 //顶号登录
@@ -103,8 +104,9 @@ namespace ET.Server
                     SceneInstanceId = startSceneConfig.InstanceId, SceneName = startSceneConfig.Name
                 };
                 self.Session.Send(sceneChange);
-                self.Session.AddComponent<SessionPlayerComponent>().PlayerId = accountZoneDB.LastRoleId;
-                MessageHelper.SendToLocationActor(accountZoneDB.LastRoleId, new G2M_ReLogin(){});
+  
+                // self.Session.AddComponent<SessionPlayerComponent>().Player = player;
+                MessageHelper.SendToLocationActor(LocationType.Unit, accountZoneDB.Id, new G2M_ReLogin(){});
                 return;
             }
 
@@ -115,9 +117,9 @@ namespace ET.Server
                 IdGenerater.Instance.GenerateInstanceId(),
                 self.DomainZone(), "GateMap", SceneType.Map, startSceneConfig);
 
-            Unit unit = UnitFactory.Create(gateMapComponent.Scene, accountZoneDB.LastRoleId, UnitType.Player, self.InstanceId);
+            Unit unit = UnitFactory.Create(gateMapComponent.Scene, accountZoneDB.Id, UnitType.Player, self.InstanceId);
             
-            self.Session.AddComponent<SessionPlayerComponent>().PlayerId = accountZoneDB.LastRoleId;
+            // self.Session.AddComponent<SessionPlayerComponent>().Player = player;
 
             await TransferHelper.Transfer(unit, startSceneConfig.InstanceId, startSceneConfig.Name);
 
