@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: GlobalConfig
   m_EditorClassIdentifier: 
   CodeMode: 3
+  BuildType: 1
+  AppType: 7
+  EPlayMode: 0

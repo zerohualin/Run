@@ -2,59 +2,46 @@
 
 # __讨论QQ群 : 474643097__  
 
-# 双端预测回滚帧同步框架课程2023年5月25日推出，熊猫出品，必属精品，有需要请加QQ:80081771    
-# [帧同步预告视频](https://www.bilibili.com/video/BV1tX4y1C7pM/?share_source=copy_web&vd_source=001b901865c99550d1b2a8cd663695d4)  
-### 1. 网络多线程0GC实现，优美的实现，性能提升  
-### 2. ET框架调整：  
-    a. EntityRef Entity弱引用机制  
-    b. Entity不再统一注册到Root中，只有Actor对象挂载了MailboxComponent的注册到  ActorMessageDispatcherComponent中  
-    c. TypeSystem EntitySystemSingleton，可扩展的Entity System机制，自定义System极其轻松  
-    d. Domain IScene, 更完善，Scene的代码都简化了  
-    e. Entity中Components改成SortedDictionary，保证有序  
-    f. Mongo序列化BeginInit, 增加了一个SerializeSystem  
-    g. 配置文件改成了Bson，直接支持Dictionary以及更复杂的配置  
-### 3. 实现了一个极其优美的预测回滚的帧同步框架，包含客户端跟服务端。注意，并不是只能做帧同步，帧同步框架只是ET框架一小部分  
-    a. 帧同步专用的LSEntity，LSWorld帧同步定点数domain  
-    b. LSUpdateSystem 处理帧的Update逻辑  
-    c. LSRollbackSystem 处理表现层和解   
-    d. 客户端可膨胀收缩的FixedUpdate  
-    ......
-### 4. 逻辑层表现层分离，前后端共享逻辑层实现, 服务端会同时跑战斗，杜绝结果作弊  
-### 5. 帧同步预测回滚实现  
-### 6. 客户端时间动态膨胀收缩  
-### 7. 录像文件随时保存，播放可以随意跳转播放，加速播放  
-### 8. 断线重连，瞬间重连  
-### 9. ET状态帧实现方式，学会ET帧同步，状态帧非常简单。
-### 10.还有更多同步方式......  
+# 用ET的17个理由（熊猫从不吹牛！）  
+1. 多进程多线程Actor架构，客户端跟服务端都可以轻松创建纤程(fiber)利用多核，比如客户端网络一个纤程，寻路一个纤程，帧同步逻辑层一个纤程，表现层一个纤程  
+2. async await协程同步代码编写，避免回调地狱  
+3. 0GC消耗，超强的MemoryPack序列化, 超强的网络层性能  
+4. 可靠udp支持，网络响应非常迅速，并且闪断wifi 4g都不会导致掉线，做竞技游戏必备  
+5. 软路由防攻击设计，买些垃圾主机就可以防住黑客攻击，比买高防省钱多了，并且用户不会掉线  
+6. 双端C#开发，前后端共享代码，C#本身性能极强，仅次于CPP，不需要学一些乱起八糟的语言，很多独立游戏开发者，一个人就能用ET开发mmorpg游戏  
+7. 强大的编译分析器，编译器就能帮助大家写出正确的ET风格的代码  
+8. 客户端hybridclr热更新支持  
+9. 客户端服务端均支持运行时热重载，客户端服务端不需要关闭进程就能修改代码，大大提升了开发效率以及运营效率  
+10. 完善的demo，源码带有状态同步跟预测回滚的帧同步demo  
+11. 完善的机器人开发机制，机器人直接共享客户端逻辑代码，减少95%机器人开发工作量，接入ai机器人非常轻松。大规模机器人压测，轻而易举  
+12. 强大的ai开发机制，比行为树更加容易  
+13. 强大的单元测试开发机制，每个单元测试都是整个游戏环境，不用搞mock隔离，开发起来非常轻松  
+14. 优美的程序结构，数据跟方法完全分离  
+15. all in one的开发体验，开发时只需要启动unity，发布的时候又可以单独发布服务端，并且可以跨windows跟linux平台  
+16. 客户端服务端数据开发期完全可视化，开启ENABLE_VIEW宏即可在Unity Hierarchy面板中看到客户端跟服务端的所有的Entity对象以及字段的内容  
+17. WebGL以及微信小游戏支持，有ET8的webgl版本，开发体验跟ET8完全一致，无缝对接ET8的服务器  
 
-# 熊猫的课程ET框架设计课：《网络游戏架构设计》已经完结，有需要请加QQ:80081771 课程详细介绍了ET框架的设计思路跟细节，以下是课程目录:
-01. 代码结构
-02. All In one-01
-03. All In one-02
-04. 单间管理器
-05. 多线程单线程跟task await async的关系
-06. ETTask-01
-07. ETTask-02
-08. 计时器
-09. 协程锁
-10. 协程同步
-11. Id-Time-ObjectPool
-12. 日志 Options ConfigComponent
-13. why not 继承，多态，组合?
-14. 实体组件系统
-15. EventSystem
-16. 序列化反序列化
-17. Network
-18. TCP
-19. KCP
-20. NetComponent跟Session
-21. 软路由
-22. Actor
-23. ActorLocation
-24. 机器人框架测试用例框架
-25. AI框架
-26. 架构设计细节
-27. 分析器
+
+# 熊猫的三门课程,需要请加QQ 80081771：  
+1. [网络游戏架构设计](https://www.bilibili.com/video/BV1h84y1G7aH/?spm_id_from=333.999.0.0&vd_source=e55f8234b8f8039504cbf131082c93dd)  基于ET7.2，共27集，讲解ET7.2的框架设计细节  
+2. [帧同步设计](https://www.bilibili.com/video/BV1tX4y1C7pM/?share_source=copy_web&vd_source=001b901865c99550d1b2a8cd663695d4)  基于ET8，共12集，讲解预测回滚帧同步设计  
+3. [多线程架构设计](https://www.bilibili.com/video/BV1Ah4y1f7QT/?spm_id_from=333.999.0.0&vd_source=e55f8234b8f8039504cbf131082c93dd)  基于ET8，共11集，讲解ET8的多线程设计  
+4. WebGL小游戏框架，基于ET8，完善的网络，配置，热更等等，跟ET8使用一样  
+
+# ET8 预览版! 17岁亦菲  
+1. 多线程多进程架构,架构更加灵活强大  
+2. 抽象出纤程(Fiber)的概念，类似erlang的进程，非常轻松的创建多个纤程，利用多核  
+3. 纤程调度: 主线程，线程池，每个纤程一个线程，3种调度方式  
+4. Fiber间通信的Actor消息机制  
+5. Entity方面，domain改成IScene，只要实现IScene接口，Entity就是domain，这样定义domain更加自由  
+6. 预测回滚的帧同步实现  想详细了解可以看帧同步课程  
+7. protobuf换成了memorypack，实现无gc的网络  
+8. 纯C#版的kcp库，性能非常强，由sj提交  
+9. 热更dll改成用ide编译，更加方便  
+10. sj利用source generater实现了代码自动模板功能，目前可以自动生成System类，开发者只需要定义Awake Update静态方法即可，特别方便  
+11. sj开发了分析器，实现了EntitySystemOf，根据entity接口一键生成对应的system方法  
+12. 客户端利用fiber实现网络独立线程（demo已实现），甚至可以把逻辑跟表现使用独立的纤程，更好的利用多核  
+13. 帧同步demo直接利用纤程创建房间，更加方便  
 
 # [ET论坛](https://et-framework.cn)  
 
@@ -208,12 +195,14 @@ ET框架是一个强大灵活的分布式服务端架构，完全可以满足绝
 5. 天天躲猫猫2（ios2019春节下载排行19）  
 6. [牛虎棋牌](https://gitee.com/ECPS_admin/PlanB)  
 7. [五星麻将](https://github.com/wufanjoin/fivestar)  
+8. [神选誓约](https://www.taptap.cn/app/248095)  
+9. [代号肉鸽：无限](https://www.taptap.cn/app/247225)  
 
 群友demo：  
 1. [斗地主（客户端服务端）](https://github.com/Viagi/LandlordsCore)  
 2. [背包系统](https://gitee.com/ECPS_admin/planc)  
 3. [移动端渲染技术demo](https://github.com/Acgmart/Sekia_TechDemo)  
-
+4. [球球大作战(ET7.2)](https://github.com/FlameskyDexive/Legends-Of-Heroes)
 
 
 视频教程：  
