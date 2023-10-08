@@ -1,0 +1,21 @@
+{
+    "name": "Aftershock.Runtime",
+    "rootNamespace": "ET",
+    "references": [
+        "YooAsset",
+        "FairyGUI.Runtime",
+        "Unity.ThirdParty",
+        "Unity.Core",
+        "Unity.Loader",
+        "HybridCLR.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

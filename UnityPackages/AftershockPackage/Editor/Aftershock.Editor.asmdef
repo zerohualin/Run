@@ -1,0 +1,26 @@
+{
+    "name": "Aftershock.Editor",
+    "rootNamespace": "FairyGUI",
+    "references": [
+        "GUID:000a53018e5e7c14aa75273e1f7be8e2",
+        "GUID:9ef2053bcf13a254ab3940a767f7b1a5",
+        "GUID:1aa3e8589868c80499255710874679c0",
+        "GUID:4d1926c9df5b052469a1c63448b7609a",
+        "GUID:6e17cd4649ea94c0cb18f30a60b9b4b4",
+        "GUID:f1f8f8acb22284844ba77123c6cbc954",
+        "GUID:2373f786d14518f44b0f475db77ba4de",
+        "GUID:1aed51cd6275e0541b03f9feea3a2354",
+        "GUID:e34a5702dd353724aa315fb8011f08c3"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
